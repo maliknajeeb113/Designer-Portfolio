@@ -12,6 +12,9 @@ export default {
       boxShadow:{
         neu: '-8px -6px 15px #fff, 6px 8px 15px rgba(0, 0, 0, 0.15)',
         'neu-i': 'inset -8px -6px 15px #fff, inset 6px 8px 15px rgba(0, 0, 0, 0.15)',
+      },
+      backgroundColor:{
+        primary: 'rgb(241, 241, 241)'
       }
     },
   },
