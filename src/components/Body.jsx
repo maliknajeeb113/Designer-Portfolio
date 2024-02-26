@@ -39,7 +39,7 @@ const Body = () => {
           </div>
           <div className="flex flex-col md:flex-row justify-start gap-6">
             <div
-              className="flex justify-center rounded-xl hover:shadow-neu-i items-center shadow-neu w-48 h-16 gap-3"
+              className="flex justify-center rounded-xl hover:shadow-neu-i items-center shadow-neu w-48 h-16 gap-3 cursor-pointer"
               id="get-in-touch"
             >
               <FaArrowRight />
