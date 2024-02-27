@@ -31,7 +31,7 @@ const Body = () => {
               className="!leading-[1.2] text-3xl md:text-6xl font-medium "
               font-medium
             >
-              Hi, I'm Avni. <br /> A UX/UI designer based in Bangalore.
+              Hi, I'm Avni Garg. <br /> UX/UI Designer based in Bangalore.
             </h1>
             <span className="text-[rgb(156,156,156)]  md:text-lg font-thin">
               I focus on minimalism and easy-to-understand information.
