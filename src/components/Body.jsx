@@ -1,4 +1,5 @@
 import hero from "../assets/hero.jpeg";
+
 import {
   FaArrowRight,
   FaBehance,
@@ -14,6 +15,7 @@ const Body = () => {
       className="bg-primary w-screen top-[120px] absolute flex flex-col justify-center font-poppins items-center px-6 md:px-10 mx-auto"
       id="body"
     >
+      {/* hero section */}
       <div
         className="container flex flex-col md:flex-row-reverse gap-10 items-center"
         id="hero"
@@ -39,11 +41,11 @@ const Body = () => {
           </div>
           <div className="flex flex-col md:flex-row justify-start gap-6">
             <div
-              className="flex justify-center rounded-xl hover:shadow-neu-i items-center shadow-neu w-48 h-16 gap-3 cursor-pointer"
+              className="flex justify-center rounded-xl hover:shadow-neu-i items-center shadow-neu w-56 font-medium text-xl h-16 gap-3 cursor-pointer"
               id="get-in-touch"
             >
               <FaArrowRight />
-              <span>Get it touch</span>
+              <span>Get in touch</span>
             </div>
             <div id="hero-icons" className="flex flex-row gap-4 items-center">
               <Link to={"https://www.behance.net/avniigarg"} target="_blank">
@@ -76,6 +78,29 @@ const Body = () => {
             </div>
           </div>
         </div>
+      </div>
+      {/* hero section end */}
+
+      {/* body section */}
+      <div className="container flex pt-28 justify-between items-end">
+        <div className="shadow-neu rounded-3xl p-10 w-4/6">
+          <div className="text-5xl font-medium">About Me 👋🏻</div>
+          <div className="text-[rgb(156,156,156)]  md:text-lg font-thin pt-4">
+            Hello there! Recent graduate with a B.Tech, specialising in simple
+            and sleek design. I create fun and user-friendly interfaces – even
+            grandma-approved! Outside design, you'll find me enjoying Rom-coms.
+            Not a fan of complicated UIs, though. Excited to bring my design
+            flair to your team!
+          </div>
+        </div>
+
+        <div
+              className="flex justify-center rounded-xl hover:shadow-neu-i items-center shadow-neu w-56 font-medium text-xl h-16 gap-3 cursor-pointer"
+              id="get-in-touch"
+            >
+              <FaArrowRight />
+              <span>Get in touch</span>
+            </div>
       </div>
     </main>
   );
