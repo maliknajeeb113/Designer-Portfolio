@@ -1,4 +1,5 @@
 import hero from "../assets/hero.jpeg";
+import brandshark_hero from "../assets/Brandshark_title.png"
 import { PiHandWaving, PiDeviceMobileLight, PiNotebook } from "react-icons/pi";
 import { BsLaptop } from "react-icons/bs";
 
@@ -42,40 +43,39 @@ const Body = () => {
             </span>
           </div>
           <div className="flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]">
-            <div
-              className="flex justify-center rounded-2xl hover:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer "
+            <button
+              className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500"
               id="get-in-touch"
             >
               <FaArrowRight />
               <span>Get in touch</span>
-            </div>
+            </button>
             <div id="hero-icons" className="flex flex-row gap-4 items-center ">
               <Link to={"https://www.behance.net/avniigarg"} target="_blank">
-                <div className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full hover:shadow-neu-i">
+              <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
                   <FaBehance className="w-5 h-5 font-semibold " />
-                </div>
+                </button>
               </Link>
               <Link
                 to={"https://www.linkedin.com/in/garg-avni/"}
                 target="_blank"
               >
-                <div className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full hover:shadow-neu-i">
+                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
                   <FaLinkedinIn className="w-5 h-5" />
-                </div>
+                </button>
               </Link>
               <Link to={"https://twitter.com/avniigarg"} target="_blank">
-                {" "}
-                <div className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full hover:shadow-neu-i">
+                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
                   <FaXTwitter className="w-5 h-5" />
-                </div>
+                </button>
               </Link>
               <Link
                 to={"https://www.instagram.com/avnigarg.ux/"}
                 target="_blank"
               >
-                <div className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full hover:shadow-neu-i">
+                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
                   <FaInstagram className="w-5 h-5" />
-                </div>
+                </button>
               </Link>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Body = () => {
       <div className="container flex flex-col md:flex-row mt-32 justify-between md:items-end gap-8">
         <div className="shadow-neu rounded-3xl p-10 md:w-4/6">
           <div className="text-4xl font-medium flex gap-3">
-            About Me{" "}
+            About Me
             <span>
               <PiHandWaving />
             </span>
@@ -101,13 +101,13 @@ const Body = () => {
           </div>
         </div>
 
-        <div
-          className="flex justify-center rounded-2xl hover:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer text-[rgb(126,126,126)]"
-          id="get-in-touch"
-        >
-          <FaArrowRight />
-          <span>More About Me</span>
-        </div>
+        <button
+              className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
+              id="get-in-touch"
+            >
+              <FaArrowRight />
+              <span>More about me</span>
+            </button>
       </div>
       {/* about section end */}
 
@@ -116,7 +116,7 @@ const Body = () => {
         <h1 className="text-4xl font-medium pb-16">My Services</h1>
 
         <div className="flex flex-col lg:flex-row gap-10" id="cards">
-          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between">
+          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between lg:w-1/3">
             <BsLaptop className="text-4xl text-[rgb(126,126,126)]" />
             <div className="text-2xl">Web Design</div>
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
@@ -127,7 +127,7 @@ const Body = () => {
             </div>
           </div>
 
-          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between">
+          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between lg:w-1/3">
             <PiDeviceMobileLight className="text-4xl text-[rgb(126,126,126)]" />
             <div className="text-2xl">Mobile Design</div>
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
@@ -135,7 +135,7 @@ const Body = () => {
             </div>
           </div>
 
-          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between">
+          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between lg:w-1/3">
             <PiNotebook className="text-4xl text-[rgb(126,126,126)]" />
             <div className="text-2xl">UX Research</div>
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
@@ -153,7 +153,7 @@ const Body = () => {
         <h1 className="text-4xl font-medium pb-16">My Portfolio</h1>
 
         <div className="flex flex-col gap-10" id="cards">
-          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between">
+          <div className="shadow-neu flex flex-col-reverse md:flex-row gap-4 p-10 rounded-3xl justify-between">
             <div id="project-description" className="flex flex-col gap-4 md:w-1/2">
             <div className="text-[rgb(156,156,156)] font-thin">Redesign Application/ UX Case Study</div>
             <div className="text-2xl">Marketing Website Redesign</div>
@@ -163,9 +163,9 @@ const Body = () => {
               layouts, I bring a fresh perspective to elevate your digital
               presence.
             </div>
-            <div>
-              
             </div>
+            <div className="md:w-1/2 " id="project-image">
+                <img src={brandshark_hero} className="rounded-2xl w-full object-cover"/>
             </div>
             
           </div>
