@@ -112,7 +112,7 @@ const Body = () => {
       {/* about section end */}
 
       {/* my Services */}
-      <div className="container flex flex-col lg:flex-row my-32">
+      <div className="container flex flex-col my-16">
         <h1 className="text-4xl font-medium pb-16">My Services</h1>
 
         <div className="flex flex-col lg:flex-row gap-10" id="cards">
@@ -146,6 +146,33 @@ const Body = () => {
         </div>
       </div>
       {/* my services end */}
+
+
+      {/* projects start*/}
+      <div className="container flex flex-col my-16">
+        <h1 className="text-4xl font-medium pb-16">My Portfolio</h1>
+
+        <div className="flex flex-col gap-10" id="cards">
+          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between">
+            <div id="project-description" className="flex flex-col gap-4 md:w-1/2">
+            <div className="text-[rgb(156,156,156)] font-thin">Redesign Application/ UX Case Study</div>
+            <div className="text-2xl">Marketing Website Redesign</div>
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
+              Crafting seamless online experiences with a focus on simplicity
+              and user delight. From intuitive interfaces to visually engaging
+              layouts, I bring a fresh perspective to elevate your digital
+              presence.
+            </div>
+            <div>
+              
+            </div>
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+      {/* projects end */}
     </main>
   );
 };
