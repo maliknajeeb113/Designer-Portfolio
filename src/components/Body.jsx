@@ -1,6 +1,6 @@
 import hero from "../assets/hero.jpeg";
-import { PiHandWaving } from "react-icons/pi";
-
+import { PiHandWaving, PiDeviceMobileLight, PiNotebook } from "react-icons/pi";
+import { BsLaptop } from "react-icons/bs";
 
 import {
   FaArrowRight,
@@ -84,9 +84,14 @@ const Body = () => {
       {/* hero section end */}
 
       {/* about section */}
-      <div className="container flex flex-col md:flex-row pt-32 justify-between md:items-end gap-8">
+      <div className="container flex flex-col md:flex-row mt-32 justify-between md:items-end gap-8">
         <div className="shadow-neu rounded-3xl p-10 md:w-4/6">
-          <div className="text-4xl font-medium flex gap-3">About Me <span><PiHandWaving/></span></div>
+          <div className="text-4xl font-medium flex gap-3">
+            About Me{" "}
+            <span>
+              <PiHandWaving />
+            </span>
+          </div>
           <div className="text-[rgb(156,156,156)]  md:text-lg font-thin pt-4">
             Hello there! Recent graduate with a B.Tech, specialising in simple
             and sleek design. I create fun and user-friendly interfaces – even
@@ -97,29 +102,50 @@ const Body = () => {
         </div>
 
         <div
-              className="flex justify-center rounded-2xl hover:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer text-[rgb(126,126,126)]"
-              id="get-in-touch"
-            >
-              <FaArrowRight />
-              <span>More About Me</span>
-            </div>
+          className="flex justify-center rounded-2xl hover:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer text-[rgb(126,126,126)]"
+          id="get-in-touch"
+        >
+          <FaArrowRight />
+          <span>More About Me</span>
+        </div>
       </div>
       {/* about section end */}
 
       {/* my Services */}
-      <div className="container flex flex-col lg:flex-row pt-32">
-        <h1 className="text-4xl font-medium">My Services</h1>
+      <div className="container flex flex-col lg:flex-row my-32">
+        <h1 className="text-4xl font-medium pb-16">My Services</h1>
 
-        <div className="flex flex-col md:flex-row" id="cards">
-          <div className="shadow-neu"></div>
+        <div className="flex flex-col lg:flex-row gap-10" id="cards">
+          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between">
+            <BsLaptop className="text-4xl text-[rgb(126,126,126)]" />
+            <div className="text-2xl">Web Design</div>
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
+              Crafting seamless online experiences with a focus on simplicity
+              and user delight. From intuitive interfaces to visually engaging
+              layouts, I bring a fresh perspective to elevate your digital
+              presence.
+            </div>
+          </div>
 
+          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between">
+            <PiDeviceMobileLight className="text-4xl text-[rgb(126,126,126)]" />
+            <div className="text-2xl">Mobile Design</div>
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
+            Elevating mobile experiences through intuitive interfaces and sleek design. From responsive layouts to user-centric interactions, I specialize in creating engaging and accessible apps for a seamless digital journey. 
+            </div>
+          </div>
+
+          <div className="shadow-neu flex flex-col gap-4 p-10 rounded-3xl justify-between">
+            <PiNotebook className="text-4xl text-[rgb(126,126,126)]" />
+            <div className="text-2xl">UX Research</div>
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
+            Gaining deep insights through user-centric analysis, my UX research ensures your design meets user needs seamlessly. Uncover the essence of user experience for impactful digital solutions.
+            </div>
+          </div>
 
         </div>
-
-
       </div>
       {/* my services end */}
-
     </main>
   );
 };
