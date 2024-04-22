@@ -10,8 +10,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${isNavOpen ? "h-screen" : ""} w-screen text-[rgb(85,85,85)] font-poppins fixed top-0 bg-[rgb(241,241,241)] z-10`}>
-      <div className="container flex px-6 md:px-0 md:mx-auto py-4 items-center justify-between">
+    <nav className={`${isNavOpen ? "h-screen" : ""} w-screen text-[rgb(85,85,85)] px-6 md:px-[10rem] font-poppins fixed top-0 bg-[rgb(241,241,241)] z-10`}>
+      <div className="container flex py-4 items-center justify-between">
         <div className="font-medium text-3xl" id="Logo">
           <Link to={"/"}>Avni.</Link>
         </div>
