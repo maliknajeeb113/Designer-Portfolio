@@ -153,7 +153,7 @@ const Body = () => {
       {/* my services end */}
 
       {/* projects start*/}
-      <div className="container flex flex-col my-16 gap-20">
+      <div className="container flex flex-col mb-16 md:my-16 gap-10">
         <h1 className="text-4xl font-medium">My Portfolio</h1>
 
         {/* project 1 */}
