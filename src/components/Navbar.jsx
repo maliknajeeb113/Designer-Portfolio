@@ -30,13 +30,13 @@ const Navbar = () => {
       >
         <div className="flex flex-col gap-10 items-center p-10">
           <Link to={"/"} onClick={toggleNav} >
-            <button className="shadow-neu px-20 py-10 rounded-xl text-xl cursor-pointer active:shadow-neu-i hover:scale-105 duration-500">Home</button>
+            <button className="shadow-neu px-16 py-8 rounded-xl text-xl cursor-pointer active:shadow-neu-i hover:scale-105 duration-500">Home</button>
           </Link>
           <Link to={"/about"} onClick={toggleNav}>
-            <button className="shadow-neu px-20 py-10 rounded-xl text-xl cursor-pointer active:shadow-neu-i hover:scale-105 duration-500">About</button>
+            <button className="shadow-neu px-16 py-8 rounded-xl text-xl cursor-pointer active:shadow-neu-i hover:scale-105 duration-500">About</button>
           </Link>
           <Link to={"/contact"} onClick={toggleNav}>
-            <button className="shadow-neu px-20 py-10 rounded-xl text-xl cursor-pointer active:shadow-neu-i hover:scale-105 duration-500">Contact</button>
+            <button className="shadow-neu px-16 py-8 rounded-xl text-xl cursor-pointer active:shadow-neu-i hover:scale-105 duration-500">Playground</button>
           </Link>
         </div>
         <div className="flex flex-row items-center justify-center gap-x-5">
