@@ -156,12 +156,12 @@ const About = () => {
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between items-center">
             
             
-            <div id='left' className="flex flex-col w-1/2 gap-2">
+            <div id='left' className="flex flex-col lg:w-1/2 gap-2">
                 <div className="text-[rgb(156,156,156)]">BLIVE - Dec 2023 - Mar 2024</div>
                 <div className="text-2xl">UX Desgin Intern</div>
             </div>
             
-            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin w-1/2">
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.
             </div>
             
@@ -170,12 +170,12 @@ const About = () => {
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between items-center">
             
             
-            <div id='left' className="flex flex-col w-1/2 gap-2">
+            <div id='left' className="flex flex-col lg:w-1/2 gap-2">
                 <div className="text-[rgb(156,156,156)]">Oasis InfoByte - Dec 2023 - Mar 2024</div>
                 <div className="text-2xl">Web Developer</div>
             </div>
             
-            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin w-1/2">
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.
             </div>
             
@@ -188,7 +188,7 @@ const About = () => {
 
       <div
         id="contact"
-        className="container text-2xl md:text-5xl flex flex-col mb-10 md:my-16 shadow-neu rounded-3xl items-center justify-center text-center py-10 md:py-20 px-8 gap-8 font-medium"
+        className="container text-2xl md:text-5xl flex flex-col mb-10 my-16 shadow-neu rounded-3xl items-center justify-center text-center py-10 md:py-20 px-8 gap-8 font-medium"
       >
         <h1>Want to create something awesome? </h1>
         <h1>Drop me an email.</h1>
