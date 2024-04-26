@@ -4,6 +4,7 @@ import { PiHandWaving, PiDeviceMobileLight, PiNotebook } from "react-icons/pi";
 import { BsLaptop } from "react-icons/bs";
 import { TbMailFilled } from "react-icons/tb";
 
+
 import {
   FaArrowRight,
   FaBehance,
@@ -13,10 +14,11 @@ import {
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
+
 const Body = () => {
   return (
     <main
-      className="bg-primary w-screen top-[120px] absolute flex flex-col justify-center font-poppins items-center px-6 md:px-[10rem] mx-auto"
+      className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins items-center px-6 md:px-[10rem] mx-auto"
       id="body"
     >
       {/* hero section */}
@@ -37,9 +39,10 @@ const Body = () => {
               className="!leading-[1.2] text-3xl md:text-5xl font-medium "
               font-medium
             >
-              Hi, I'm Avni Garg. <br /> UX/UI Designer based in Bangalore.
+              Hey, I'm Avni Garg. <br /> UX/UI Designer based in Bangalore. 
             </h1>
-            <span className="text-[rgb(156,156,156)]  md:text-lg font-thin">
+            <span className="text-[rgb(156,156,156)]  md:text-lg ">Previously at BLive.</span>
+            <span className="text-[rgb(156,156,156)]  md:text-lg ">
               I focus on minimalism and easy-to-understand information.
             </span>
           </div>
@@ -85,7 +88,7 @@ const Body = () => {
       {/* hero section end */}
 
       {/* about section */}
-      <div className="container flex flex-col md:flex-row mt-32 justify-between md:items-end gap-8">
+      {/* <div className="container flex flex-col md:flex-row mt-32 justify-between md:items-end gap-8">
         <div className="shadow-neu rounded-3xl p-10 md:w-4/6">
           <div className="text-4xl font-medium flex gap-3">
             About Me
@@ -109,11 +112,11 @@ const Body = () => {
           <FaArrowRight />
           <span>More about me</span>
         </button>
-      </div>
+      </div> */}
       {/* about section end */}
 
       {/* my Services */}
-      <div className="container flex flex-col my-16">
+      {/* <div className="container flex flex-col my-16">
         <h1 className="text-4xl font-medium pb-16">My Services</h1>
 
         <div className="flex flex-col lg:flex-row gap-10" id="cards">
@@ -149,11 +152,11 @@ const Body = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* my services end */}
 
       {/* projects start*/}
-      <div className="container flex flex-col mb-16 md:my-16 gap-10">
+      <div className="container flex flex-col my-16 gap-10">
         <h1 className="text-4xl font-medium">My Portfolio</h1>
 
         {/* project 1 */}
@@ -277,13 +280,15 @@ const Body = () => {
       >
         <h1>Want to create something awesome? </h1>
         <h1>Drop me an email.</h1>
+        <Link to={"mailto:avni.garg.in@gmail.com"}>
         <button
           className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu font-medium text-sm md:text-lg gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)] py-4 px-6"
           id="get-in-touch"
         >
           <TbMailFilled />
           <span>avni.garg.in@gmail.com</span>
-        </button>
+        </button>   
+        </Link>
       </div>
 
       {/* contact me */}

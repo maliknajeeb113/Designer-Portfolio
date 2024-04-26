@@ -5,15 +5,22 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Body from './components/Body'
 import Error from './components/Error'
+
+
 import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
+import Footer from './components/Footer'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+
       <Navbar/>
       <Outlet/>
+      <Footer/>
+      
     </>
   )
 }
@@ -36,10 +43,7 @@ export const appRouter = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       }
-      // {
-      //   path: "/restaurant/:resId",
-      //   element: <RestaurantPage/>
-      // }
+      
     ]
   }
   

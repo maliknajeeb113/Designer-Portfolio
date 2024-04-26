@@ -8,6 +8,10 @@
   background-color: rgb(241, 241, 241);
   color: rgb(85,85,85)
 }
+body {
+  margin: 0;
+  padding: 0;
+}
 
 .neu{
   box-shadow: -8px -6px 15px #fff, 6px 8px 15px rgba(0, 0, 0, .15);
