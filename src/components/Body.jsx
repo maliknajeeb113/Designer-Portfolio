@@ -4,6 +4,7 @@ import { PiHandWaving, PiDeviceMobileLight, PiNotebook } from "react-icons/pi";
 import { BsLaptop } from "react-icons/bs";
 import { TbMailFilled } from "react-icons/tb";
 
+
 import {
   FaArrowRight,
   FaBehance,
@@ -13,10 +14,11 @@ import {
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
+
 const Body = () => {
   return (
     <main
-      className="bg-primary w-screen top-[120px] absolute flex flex-col justify-center font-poppins items-center px-6 md:px-[10rem] mx-auto"
+      className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins items-center px-6 md:px-[10rem] mx-auto"
       id="body"
     >
       {/* hero section */}
@@ -37,7 +39,7 @@ const Body = () => {
               className="!leading-[1.2] text-3xl md:text-5xl font-medium "
               font-medium
             >
-              Hi, I'm Avni Garg. <br /> UX/UI Designer based in Bangalore. 
+              Hey, I'm Avni Garg. <br /> UX/UI Designer based in Bangalore. 
             </h1>
             <span className="text-[rgb(156,156,156)]  md:text-lg ">Previously at BLive.</span>
             <span className="text-[rgb(156,156,156)]  md:text-lg ">
