@@ -5,6 +5,7 @@ import { BsLaptop } from "react-icons/bs";
 import { TbMailFilled } from "react-icons/tb";
 
 
+
 import {
   FaArrowRight,
   FaBehance,
@@ -157,7 +158,7 @@ const Body = () => {
 
       {/* projects start*/}
       <div className="container flex flex-col my-16 gap-10">
-        <h1 className="text-4xl font-medium">My Portfolio</h1>
+        <h1 className="text-4xl font-medium">My Work</h1>
 
         {/* project 1 */}
 
