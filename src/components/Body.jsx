@@ -186,13 +186,14 @@ const Body = () => {
                   elevate your digital presence.
                 </div>
               </div>
-              <button
+              <Link to={'/project1'}><button
                 className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
                 id="get-in-touch"
               >
                 <FaArrowRight />
                 <span>View Project</span>
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -233,6 +234,7 @@ const Body = () => {
             </div>
           </div>
         </div>
+        
 
         {/* Project 3 */}
 
