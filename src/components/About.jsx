@@ -19,7 +19,9 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div
-      className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins items-center px-6 md:px-[10rem] mx-auto"
+      className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins items-center px-6 md:px-[10rem] mx-auto mt-[150px]"
+      // className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px]"
+
       id="About"
     >
       {/* hero section */}
@@ -49,8 +51,8 @@ const About = () => {
           </div>
           <div className="flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]">
             <button
-              className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500"
-              id="get-in-touch"
+                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
+                id="get-in-touch"
             >
               <FaArrowRight />
               <span>Get in touch</span>
@@ -91,7 +93,7 @@ const About = () => {
       {/* about section */}
       <div className="container flex flex-col md:flex-row mt-32 justify-between md:items-end gap-8">
         <div className="shadow-neu rounded-3xl p-10 ">
-          <div className="text-4xl font-medium flex gap-3">
+          <div className="text-2xl md:text-4xl font-medium flex gap-3">
             About Me
             <span>
               <PiHandWaving />

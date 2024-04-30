@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import About from './components/About'
-import Contact from './components/Contact'
+import Project1 from './components/Project1'
 import Body from './components/Body'
 import Error from './components/Error'
 
@@ -40,8 +40,8 @@ export const appRouter = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/contact",
-        element: <Contact />,
+        path: "/project1",
+        element: <Project1 />,
       }
       
     ]

@@ -19,9 +19,10 @@ import { Link } from "react-router-dom";
 const Body = () => {
   return (
     <main
-      className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins items-center px-6 md:px-[10rem] mx-auto"
+      className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px]"
       id="body"
     >
+      {/* className="bg-primary w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen" */}
       {/* hero section */}
       <div
         className="container flex flex-col md:flex-row-reverse gap-10 items-center justify-between"
@@ -49,8 +50,8 @@ const Body = () => {
           </div>
           <div className="flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]">
             <button
-              className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500"
-              id="get-in-touch"
+                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
+                id="get-in-touch"
             >
               <FaArrowRight />
               <span>Get in touch</span>
@@ -186,13 +187,14 @@ const Body = () => {
                   elevate your digital presence.
                 </div>
               </div>
-              <button
-                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
+              <Link to={'/project1'}><button
+                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
                 id="get-in-touch"
               >
                 <FaArrowRight />
                 <span>View Project</span>
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -224,7 +226,7 @@ const Body = () => {
                 </div>
               </div>
               <button
-                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
+                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
                 id="get-in-touch"
               >
                 <FaArrowRight />
@@ -233,6 +235,7 @@ const Body = () => {
             </div>
           </div>
         </div>
+        
 
         {/* Project 3 */}
 
@@ -261,7 +264,7 @@ const Body = () => {
                 </div>
               </div>
               <button
-                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
+                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
                 id="get-in-touch"
               >
                 <FaArrowRight />
