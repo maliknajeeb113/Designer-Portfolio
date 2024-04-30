@@ -5,6 +5,9 @@ import About from './components/About'
 import Project1 from './components/Project1'
 import Body from './components/Body'
 import Error from './components/Error'
+import Project2 from './components/Project1'
+import Project3 from './components/Project3'
+import Playground from './components/Playground'
 
 
 import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
@@ -42,7 +45,19 @@ export const appRouter = createBrowserRouter([
       {
         path: "/project1",
         element: <Project1 />,
-      }
+      },
+      {
+        path: "/project2",
+        element: <Project2 />,
+      },
+      {
+        path: "/project3",
+        element: <Project3 />,
+      },
+      {
+        path: "/playground",
+        element: <Playground />,
+      },
       
     ]
   }

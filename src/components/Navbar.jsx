@@ -35,7 +35,7 @@ const Navbar = () => {
           <Link to={"/about"} onClick={toggleNav}>
             <button className="shadow-neu px-16 py-8 rounded-xl text-xl cursor-pointer active:shadow-neu-i hover:scale-105 duration-500">About</button>
           </Link>
-          <Link to={"/contact"} onClick={toggleNav}>
+          <Link to={"/playground"} onClick={toggleNav}>
             <button className="shadow-neu px-16 py-8 rounded-xl text-xl cursor-pointer active:shadow-neu-i hover:scale-105 duration-500">Playground</button>
           </Link>
         </div>
