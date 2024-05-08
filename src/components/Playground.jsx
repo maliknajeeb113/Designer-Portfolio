@@ -1,8 +1,12 @@
-
-import { TbMailFilled } from "react-icons/tb";
 import car_gif from "../assets/gifs/car.gif";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 const Playground = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
     return (
     <div className="bg-primary w-screen top-[120px] flex flex-col font-poppins items-center px-6 md:px-[10rem] mx-auto mt-[150px] min-h-screen">
         <div className="text-[rgb(182,154,137)] text-5xl font-medium">Playground</div>

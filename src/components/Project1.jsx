@@ -4,11 +4,17 @@ import {
   FaArrowRight
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-const Project2 = () => {
+const Project1 = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
     return (<div
         className="bg-primary w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
-        id="Project2"
+        id="Project1"
       >
          <div id='head' className="container flex flex-col items-start gap-6 mt-[150px]">
             <div className="text-3xl lg:text-6xl font-medium">
@@ -122,4 +128,4 @@ const Project2 = () => {
     </div>)
 }
 
-export default Project2
+export default Project1

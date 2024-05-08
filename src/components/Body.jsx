@@ -3,6 +3,7 @@ import brandshark_hero from "../assets/Brandshark_title.png";
 import blive_hero from "../assets/Blive.png";
 import { TbMailFilled } from "react-icons/tb";
 import { HashLink } from "react-router-hash-link";
+import { useEffect } from "react";
 
 
 
@@ -14,13 +15,23 @@ import {
   FaInstagram,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 
 const Body = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <main
+    <motion.main
       className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px]"
       id="body"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{duration: 1.5}}
+      exit={{ opacity: 0 }}
     >
       {/* className="bg-primary w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen" */}
       {/* hero section */}
@@ -295,7 +306,7 @@ Conducted market analysis, documented trends, and designed wireframes for Blive'
       </div>
 
       {/* contact me */}
-    </main>
+    </motion.main>
   );
 };
 

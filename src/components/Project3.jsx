@@ -1,21 +1,27 @@
-import brandshark_hero from "../assets/Brandshark_title.png";
+import blive_hero from "../assets/Blive.png";
 
 import {
   FaArrowRight
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Project3 = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
     return (<div
         className="bg-primary w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
         id="Project3"
       >
          <div id='head' className="container flex flex-col items-start gap-6 mt-[150px]">
             <div className="text-3xl lg:text-6xl font-medium">
-            BrandShark
+            BLive EZY Application Redesign
             </div> 
-            <div className="md:text-xl text-[rgb(156,156,156)] font-thin lg:w-3/5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit lorem.
+            <div className="md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5">
+            Conducted market analysis, documented trends, and designed wireframes for Blive's Ezy App, enhancing user experience for a subscription-based EV rental service.
             </div>
 
             <div className="container flex flex-col md:flex-row md:justify-between gap-10">
@@ -23,20 +29,20 @@ const Project3 = () => {
                 <div id="left" className="flex md:gap-24 justify-between text-[rgb(156,156,156)]">
 
                     <div className="flex flex-col md:gap-4">
-                    <h1 className="font-medium md:text-xl">Client</h1>
-                    <p className="text-sm md:text-lg font-thin">BrandShark</p>
+                    <h1 className="font-medium md:text-xl">Project</h1>
+                    <p className="text-sm md:text-lg font-thin">Application Redesign</p>
 
                     </div>
 
                     <div className="flex flex-col md:gap-4">
-                    <h1 className="font-medium md:text-xl">Date</h1>
-                    <p className="text-sm md:text-lg font-thin">October 27, 2023</p>
+                    <h1 className="font-medium md:text-xl">Role</h1>
+                    <p className="text-sm md:text-lg font-thin">UX/UI Designer</p>
 
                     </div>
 
                     <div className="flex flex-col md:gap-4">
-                    <h1 className="font-medium md:text-xl">Service</h1>
-                    <p className="text-sm md:text-lg font-thin">3D modeling</p>
+                    <h1 className="font-medium md:text-xl">Team</h1>
+                    <p className="text-sm md:text-lg font-thin">Product Design Team</p>
 
                     </div>
 
@@ -44,12 +50,12 @@ const Project3 = () => {
                 </div>
 
                 <div id="right" className="flex">
-               <Link to={''}> <button
+               <Link to={'https://www.behance.net/gallery/195991509/EZY-Application-Redesign-Rental-Bike-UIUX-Design'} target="_blank"> <button
                 className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
                 id="get-in-touch"
               >
                 <FaArrowRight />
-                <span>View Project</span>
+                <span>View Case Study</span>
               </button></Link>
 
                 </div>
@@ -60,12 +66,12 @@ const Project3 = () => {
 
          <div className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center" id="project-image">
               <img
-                src={brandshark_hero}
+                src={blive_hero}
                 className="rounded-3xl object-cover w-full"
               />
             </div>
             
-            <div className="container flex flex-col shadow-neu rounded-3xl p-8 gap-6">
+            <div className="container flex flex-col shadow-neu rounded-3xl p-12 gap-6">
                 <div className="text-2xl md:text-4xl">
                     Challenge
                 </div>
@@ -92,7 +98,7 @@ const Project3 = () => {
 
                 <div className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center" id="project-image">
               <img
-                src={brandshark_hero}
+                src={blive_hero}
                 className="rounded-3xl object-cover w-full"
               />
             </div>

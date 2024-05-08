@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom"
 import { FaArrowLeft } from "react-icons/fa6"
+import { useEffect } from "react";
+
 const Error = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
+
     return (
     <div className="flex flex-col items-center justify-center w-screen h-screen gap-10">
         <div className="text-5xl font-medium">
