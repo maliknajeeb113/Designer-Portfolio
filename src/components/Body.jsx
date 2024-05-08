@@ -1,5 +1,6 @@
 import hero from "../assets/hero.jpeg";
 import brandshark_hero from "../assets/Brandshark_title.png";
+import blive_hero from "../assets/Blive.png";
 import { TbMailFilled } from "react-icons/tb";
 import { HashLink } from "react-router-hash-link";
 
@@ -40,7 +41,7 @@ const Body = () => {
               className="!leading-[1.2] text-3xl md:text-5xl font-medium "
               font-medium
             >
-              Hey, I'm Avni Garg. <br /> UX/UI Designer based in Bangalore. 
+              Hey, I'm <span className="text-[rgb(182,154,137)]">Avni Garg.</span> <br /> UX/UI Designer <br /> based in Bangalore. 
             </h1>
             <span className="text-[rgb(156,156,156)]  md:text-lg ">Previously at BLive.</span>
             <span className="text-[rgb(156,156,156)]  md:text-lg ">
@@ -167,7 +168,7 @@ const Body = () => {
           <div className="shadow-neu flex flex-col md:flex-row-reverse gap-4 md:gap-20 p-6 md:p-10 rounded-3xl justify-between">
             <div className="md:w-1/2 " id="project-image">
               <img
-                src={brandshark_hero}
+                src={blive_hero}
                 className="rounded-2xl w-full object-cover"
               />
             </div>
@@ -177,14 +178,12 @@ const Body = () => {
             >
               <div className="flex flex-col gap-6">
                 <div className="text-[rgb(156,156,156)] font-thin">
-                  Redesign Application/ UX Case Study
+                  UX Intern - Application Redesign
                 </div>
-                <div className="text-2xl">Marketing Website Redesign</div>
+                <div className="text-2xl">BLive EZY Application Redesign</div>
                 <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
-                  Crafting seamless online experiences with a focus on
-                  simplicity and user delight. From intuitive interfaces to
-                  visually engaging layouts, I bring a fresh perspective to
-                  elevate your digital presence.
+                  
+Conducted market analysis, documented trends, and designed wireframes for Blive's Ezy App, enhancing user experience for a subscription-based EV rental service.
                 </div>
               </div>
               <Link to={'/project1'}><button
@@ -215,7 +214,7 @@ const Body = () => {
             >
               <div className="flex flex-col gap-6">
                 <div className="text-[rgb(156,156,156)] font-thin">
-                  Redesign Application/ UX Case Study
+                  UX Case Study - Redesign Application
                 </div>
                 <div className="text-2xl">Marketing Website Redesign</div>
                 <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
@@ -253,7 +252,7 @@ const Body = () => {
             >
               <div className="flex flex-col gap-6">
                 <div className="text-[rgb(156,156,156)] font-thin">
-                  Redesign Application/ UX Case Study
+                  UX Case Study - Redesign Application
                 </div>
                 <div className="text-2xl">Marketing Website Redesign</div>
                 <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">

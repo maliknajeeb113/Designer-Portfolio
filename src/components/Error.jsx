@@ -4,7 +4,7 @@ const Error = () => {
     return (
     <div className="flex flex-col items-center justify-center w-screen h-screen gap-10">
         <div className="text-5xl font-medium">
-            :( Oops! Looks like you sumbled away.
+            :( Oops! Looks like you stumbled away.
         </div>
 
         <div className="text-5xl font-medium">

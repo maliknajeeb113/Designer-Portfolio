@@ -39,17 +39,17 @@ const About = () => {
         <div className="flex flex-col gap-6" id="hero-left">
           <div className=" flex flex-col gap-6">
             <h1
-              className="!leading-[1.2] text-3xl md:text-5xl font-medium "
+              className="!leading-[1.2] text-3xl md:text-3xl font-medium "
               font-medium
             >
-              Hey, I'm Avni Garg. <br /> UX/UI Designer based in Bangalore. 
+              Hey there !
             </h1>
-            <span className="text-[rgb(156,156,156)]  md:text-lg ">Previously at BLive.</span>
             <span className="text-[rgb(156,156,156)]  md:text-lg ">
-              I focus on minimalism and easy-to-understand information.
+              I focus on minimalism and easy-to-understand information. I focus on minimalism and easy-to-understand information. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati libero perspiciatis eius expedita quasi eaque sequi officiis iusto, optio dignissimos tempora. Asperiores aperiam incidunt praesentium distinctio suscipit exercitationem veniam eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut temporibus debitis porro, illo consequatur perspiciatis quis iure. Maxime perferendis, qui assumenda delectus iure dolorem aut placeat saepe molestias dignissimos itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, recusandae labore minus animi fuga temporibus vitae! Similique quo itaque ratione repellendus! Sint illum et iusto architecto, consequatur quos! Asperiores, iure.
+
             </span>
           </div>
-          <div className="flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]">
+          {/* <div className="flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]">
             <button
                 className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
                 id="get-in-touch"
@@ -85,13 +85,13 @@ const About = () => {
                 </button>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* hero section end */}
 
       {/* about section */}
-      <div className="container flex flex-col md:flex-row mt-32 justify-between md:items-end gap-8">
+      {/* <div className="container flex flex-col md:flex-row mt-32 justify-between md:items-end gap-8">
         <div className="shadow-neu rounded-3xl p-10 ">
           <div className="text-2xl md:text-4xl font-medium flex gap-3">
             About Me
@@ -106,7 +106,7 @@ const About = () => {
             Not a fan of complicated UIs, though. Excited to bring my design
             flair to your team!
           </div>
-        </div>
+        </div> */}
 
         {/* <button
           className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
@@ -115,12 +115,12 @@ const About = () => {
           <FaArrowRight />
           <span>More about me</span>
         </button> */}
-      </div>
+      {/* </div> */}
       {/* about section end */}
 
       {/* my Process */}
-      <div className="container flex flex-col my-16">
-        <h1 className="text-4xl font-medium pb-16">My Process</h1>
+      {/* <div className="container flex flex-col my-16 mt-24">
+        <h1 className="text-4xl font-medium pb-1">Design Process</h1>
 
         <div className="flex flex-col lg:flex-row gap-10" id="cards">
 
@@ -148,12 +148,12 @@ const About = () => {
 
           
         </div>
-      </div>
+      </div> */}
       {/* my services end */}
 
       {/* My experience */}
-      <div className="container flex flex-col ">
-      <h1 className="text-4xl font-medium pb-16">My Experience</h1>
+      <div className="container flex flex-col mt-16">
+      <h1 className="text-4xl font-medium pb-10">Work Experience</h1>
       <div className="flex flex-col gap-10" id="cards">
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between items-center">
             
@@ -164,7 +164,8 @@ const About = () => {
             </div>
             
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.
+            BLive EZY Application - Research, Competitve analysis, Application Redesign ---- isko acha karna hai
+
             </div>
             
           </div>
