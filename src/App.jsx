@@ -8,8 +8,6 @@ import Error from './components/Error'
 import Project2 from './components/Project1'
 import Project3 from './components/Project3'
 import Playground from './components/Playground'
-
-
 import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
 import Footer from './components/Footer'
 
