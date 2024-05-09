@@ -1,87 +1,110 @@
 import blive_hero from "../assets/Blive.png";
+import blive_proto from "../assets/blive_hero.png";
+import blive_compare from "../assets/blive_compare.png";
+import blive_presentaion from "../assets/blive_presentation.jpeg";
 
-import {
-  FaArrowRight
-} from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Project1 = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-    return (<div
-        className="bg-primary w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
-        id="Project1"
+  return (
+    <motion.div
+      className="bg-primary w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
+      id="Project1"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      exit={{ opacity: 0 }}
+    >
+      <div
+        id="head"
+        className="container flex flex-col items-start gap-6 mt-[150px]"
       >
-         <div id='head' className="container flex flex-col items-start gap-6 mt-[150px]">
-            <div className="text-3xl lg:text-6xl font-medium">
-            BLive EZY Application Redesign
-            </div> 
-            <div className="md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5">
-            Conducted market analysis, documented trends, and designed wireframes for Blive's Ezy App, enhancing user experience for a subscription-based EV rental service.
+        <div className="text-3xl lg:text-6xl font-medium">
+          BLive EZY Application Redesign
+        </div>
+        <div className="md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5">
+          Conducted market analysis, documented trends, and designed wireframes
+          for Blive's Ezy App, enhancing user experience for a
+          subscription-based EV rental service.
+        </div>
+
+        <div className="container flex flex-col md:flex-row md:justify-between gap-10">
+          <div
+            id="left"
+            className="flex md:gap-24 justify-between text-[rgb(156,156,156)]"
+          >
+            <div className="flex flex-col md:gap-4">
+              <h1 className="font-medium md:text-xl">Project</h1>
+              <p className="text-sm md:text-lg font-thin">
+                Application Redesign
+              </p>
             </div>
 
-            <div className="container flex flex-col md:flex-row md:justify-between gap-10">
+            <div className="flex flex-col md:gap-4">
+              <h1 className="font-medium md:text-xl">Role</h1>
+              <p className="text-sm md:text-lg font-thin">UX/UI Designer</p>
+            </div>
 
-                <div id="left" className="flex md:gap-24 justify-between text-[rgb(156,156,156)]">
+            <div className="flex flex-col md:gap-4">
+              <h1 className="font-medium md:text-xl">Team</h1>
+              <p className="text-sm md:text-lg font-thin">
+                Product Design Team
+              </p>
+            </div>
+          </div>
 
-                    <div className="flex flex-col md:gap-4">
-                    <h1 className="font-medium md:text-xl">Project</h1>
-                    <p className="text-sm md:text-lg font-thin">Application Redesign</p>
-
-                    </div>
-
-                    <div className="flex flex-col md:gap-4">
-                    <h1 className="font-medium md:text-xl">Role</h1>
-                    <p className="text-sm md:text-lg font-thin">UX/UI Designer</p>
-
-                    </div>
-
-                    <div className="flex flex-col md:gap-4">
-                    <h1 className="font-medium md:text-xl">Team</h1>
-                    <p className="text-sm md:text-lg font-thin">Product Design Team</p>
-
-                    </div>
-
-                    
-                </div>
-
-                <div id="right" className="flex">
-               <Link to={'https://www.behance.net/gallery/195991509/EZY-Application-Redesign-Rental-Bike-UIUX-Design'} target="_blank"> <button
+          <div id="right" className="flex">
+            <Link
+              to={
+                "https://www.behance.net/gallery/195991509/EZY-Application-Redesign-Rental-Bike-UIUX-Design"
+              }
+              target="_blank"
+            >
+              {" "}
+              <button
                 className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
                 id="get-in-touch"
               >
                 <FaArrowRight />
                 <span>View Case Study</span>
-              </button></Link>
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
 
-                </div>
+      <div
+        className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center"
+        id="project-image"
+      >
+        <img src={blive_hero} className="rounded-3xl object-cover w-full" />
+      </div>
 
-            </div>
-
-         </div>
-
-         <div className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center" id="project-image">
-              <img
-                src={blive_hero}
-                className="rounded-3xl object-cover w-full"
-              />
-            </div>
-            
-            <div className="container flex flex-col shadow-neu rounded-3xl p-12 gap-6">
-                <div className="text-2xl md:text-4xl">
-                    Challenge
-                </div>
-                <div className=" text-[rgb(156,156,156)] font-thin">
+      <div className="container flex flex-col shadow-neu rounded-3xl p-12 gap-6">
+        <div className="text-2xl md:text-4xl">About the Project</div>
+        <div className=" text-[rgb(156,156,156)] font-thin text-lg">
+          Embark on a journey with me as I redesign Blive's Ezy App - a
+          subscription-based bike rental service for delivery executives.
+          Immersed in a dynamic startup culture, I fused sustainability with
+          intuitive design to enhance user experience. Before diving in, I
+          conducted in-depth market research and competitive analysis. Armed
+          with insights, I breathed new life into the existing Ezy App, infusing
+          it with fresh energy and functionality while staying true to its
+          innovative roots. This project is more than a redesign; it's a
+          reinvention that sets a new standard for convenience and
+          sustainability in the delivery industry.
+        </div>
+        {/* <div className=" text-[rgb(156,156,156)] font-thin">
                 Velit euismod in pellentesque massa placerat volutpat lacus laoreet non curabitur gravida odio aenean sed adipiscing diam donec adipiscing tristique risus. amet est placerat in egestas erat imperdiet sed euismod nisi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec et odio pellentesque diam volutpat commodo.
-                </div>
-                <div className=" text-[rgb(156,156,156)] font-thin">
-                Velit euismod in pellentesque massa placerat volutpat lacus laoreet non curabitur gravida odio aenean sed adipiscing diam donec adipiscing tristique risus. amet est placerat in egestas erat imperdiet sed euismod nisi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec et odio pellentesque diam volutpat commodo.
-                </div>
-                <div className=" text-[rgb(156,156,156)] font-thin ml-8 md:ml-16">
+                </div> */}
+        {/* <div className=" text-[rgb(156,156,156)] font-thin ml-8 md:ml-16">
                     <ul className="list-disc flex flex-col gap-3">
                         <li>
                         Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec
@@ -93,39 +116,60 @@ const Project1 = () => {
                         Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec
                         </li>
                     </ul>
-                </div>
-                </div> 
+                </div> */}
+      </div>
 
-                <div className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center" id="project-image">
-              <img
-                src={blive_hero}
-                className="rounded-3xl object-cover w-full"
-              />
-            </div>
-            
-            <div className="container flex flex-col shadow-neu rounded-3xl p-8 gap-6 mb-10 md:mb-20">
-            <div className="text-2xl md:text-4xl">
-                Project Results
-                </div>
-                <div className=" text-[rgb(156,156,156)] font-thin">
-                Velit euismod in pellentesque massa placerat volutpat lacus laoreet non curabitur gravida odio aenean sed adipiscing diam donec adipiscing tristique risus. amet est placerat in egestas erat imperdiet sed euismod nisi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec et odio pellentesque diam volutpat commodo.
-                </div>
-                <div className=" text-[rgb(156,156,156)] font-thin ml-8 md:ml-16 ">
-                    <ul className="list-decimal flex flex-col gap-3">
-                        <li>
-                        Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec
-                        </li>
-                        <li>
-                        Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec
-                        </li>
-                        <li>
-                        Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec
-                        </li>
-                    </ul>
-                </div>
-                </div>  
-        
-    </div>)
-}
+      <div
+        className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center"
+        id="project-image"
+      >
+        <img src={blive_proto} className="rounded-3xl object-cover w-full" />
+      </div>
 
-export default Project1
+      <div className="container flex flex-col md:flex-row gap-10">
+        <div className="flex flex-col shadow-neu rounded-3xl p-8 gap-6 md:w-1/2">
+          <div className="text-2xl md:text-4xl">UX Challenges</div>
+          <div className=" text-[rgb(156,156,156)] font-thin text-lg">
+            The mission is clear: give the EZY app a total makeover. The goal? A
+            user interface that's as easy as pie for riders to navigate. We're
+            talking about a user experience that's straightforward and far from
+            baffling, especially since there've been times when users found
+            themselves in a bit of a pickle.
+          </div>
+        </div>
+        <div className="flex flex-col shadow-neu rounded-3xl p-8 gap-6 md:w-1/2">
+          <div className="text-2xl md:text-4xl">UX Solution</div>
+          <div className=" text-[rgb(156,156,156)] font-thin text-lg">
+            We're on a mission to revamp the app's vibe, making it a breeze for
+            delivery executives like Raj. First up on the agenda? A shiny "Check
+            Availability" feature front and centre. This tweak is all about
+            streamlining the process of snagging an EV, based on when they're
+            ready to roll. The result? A smoother app experience, happier users,
+            and a day-to-day that feels like a walk in the park for our delivery
+            heroes.
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center"
+        id="project-image"
+      >
+        <img src={blive_compare} className="rounded-3xl object-cover w-full" />
+      </div>
+
+      <h1 className="text-4xl font-medium">Final Presentation!!</h1>
+
+      <div
+        className="container flex shadow-neu rounded-3xl my-10 justify-center"
+        id="project-image"
+      >
+        <img src={blive_presentaion} className="rounded-3xl object-cover w-full" />
+      </div>
+
+
+    </motion.div>
+  );
+};
+
+export default Project1;
