@@ -2,6 +2,13 @@ import { Cross as Hamburger } from "hamburger-react";
 import { FaBehance,FaLinkedinIn,FaXTwitter,FaInstagram } from "react-icons/fa6";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const variants = {
+  open: { opacity: 1},
+  closed: { opacity: 0 },
+}
+
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -10,7 +17,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${isNavOpen ? "h-screen" : ""} w-screen text-[rgb(85,85,85)] px-6 md:px-[10rem] font-poppins fixed top-0 bg-[rgb(241,241,241)] z-10`}>
+    <motion.nav className={`${isNavOpen ? "h-screen" : ""} w-screen text-[rgb(85,85,85)] px-6 md:px-[10rem] font-poppins fixed top-0 bg-[rgb(241,241,241)] z-10`} 
+    >
       <div className="container flex py-4 items-center justify-between">
         <div className="font-medium text-3xl" id="Logo">
           <Link to={"/"}>Avni.</Link>
@@ -23,11 +31,19 @@ const Navbar = () => {
           ></Hamburger>
         </div>
       </div>
-      <div
-        className={`${isNavOpen ? "flex" : "hidden"} justify-center flex-col`}
+      <motion.div
+        animate={isNavOpen ? "open" : "closed"}
+        transition={{duration:1}}
+        exit={{ opacity: 0 }}
+        variants={variants}
         id="nav-items"
         aria-expanded={isNavOpen}
-      >
+      > 
+      <motion.div className={`${isNavOpen ? "":"hidden"}`}
+      animate={isNavOpen ? "open" : "closed"}
+        transition={{duration:1}}
+        exit={{ opacity: 0 }}
+        variants={variants}>
         <div className="flex flex-col gap-10 items-center p-10">
           <Link to={"/"} onClick={toggleNav} >
             <button className="shadow-neu px-16 py-8 rounded-xl text-xl cursor-pointer active:shadow-neu-i hover:scale-105 duration-500">Home</button>
@@ -54,8 +70,9 @@ const Navbar = () => {
             </button></Link>
 
         </div>
-      </div>
-    </nav>
+        </motion.div>
+      </motion.div>
+    </motion.nav>
   );
 };
 
