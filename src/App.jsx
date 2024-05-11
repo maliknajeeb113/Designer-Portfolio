@@ -1,17 +1,16 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import About from './components/About'
-import Project1 from './components/Project1'
+import BLive from './components/BLive'
 import Body from './components/Body'
 import Error from './components/Error'
-import Project2 from './components/Project1'
-import Project3 from './components/Project3'
 import Playground from './components/Playground'
-
-
-import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
+import TanishqPortfolio from './components/TanishqPortfolio'
 import Footer from './components/Footer'
+import Brandshark from './components/Brandshark'
+
+import { createBrowserRouter,Outlet } from "react-router-dom";
+import { useState } from 'react'
 
 
 function App() {
@@ -43,16 +42,16 @@ export const appRouter = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/project1",
-        element: <Project1 />,
+        path: "/BLive",
+        element: <BLive />,
       },
       {
-        path: "/project2",
-        element: <Project2 />,
+        path: "/TanishqPortfolio",
+        element: <TanishqPortfolio />,
       },
       {
-        path: "/project3",
-        element: <Project3 />,
+        path: "/Brandshark",
+        element: <Brandshark />,
       },
       {
         path: "/playground",

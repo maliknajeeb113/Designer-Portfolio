@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-const Project1 = () => {
+const BLive = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -16,7 +16,7 @@ const Project1 = () => {
   return (
     <motion.div
       className="bg-primary w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
-      id="Project1"
+      id="BLive"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
@@ -38,7 +38,7 @@ const Project1 = () => {
         <div className="container flex flex-col md:flex-row md:justify-between gap-10">
           <div
             id="left"
-            className="flex md:gap-24 justify-between text-[rgb(156,156,156)]"
+            className="flex flex-col md:flex-row gap-4 md:gap-24 md:justify-between text-[rgb(156,156,156)]"
           >
             <div className="flex flex-col md:gap-4">
               <h1 className="font-medium md:text-xl">Project</h1>
@@ -101,22 +101,7 @@ const Project1 = () => {
           reinvention that sets a new standard for convenience and
           sustainability in the delivery industry.
         </div>
-        {/* <div className=" text-[rgb(156,156,156)] font-thin">
-                Velit euismod in pellentesque massa placerat volutpat lacus laoreet non curabitur gravida odio aenean sed adipiscing diam donec adipiscing tristique risus. amet est placerat in egestas erat imperdiet sed euismod nisi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec et odio pellentesque diam volutpat commodo.
-                </div> */}
-        {/* <div className=" text-[rgb(156,156,156)] font-thin ml-8 md:ml-16">
-                    <ul className="list-disc flex flex-col gap-3">
-                        <li>
-                        Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec
-                        </li>
-                        <li>
-                        Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec
-                        </li>
-                        <li>
-                        Eget lorem dolor sed viverra ipsum nunc aliquet bibendum felis donec
-                        </li>
-                    </ul>
-                </div> */}
+
       </div>
 
       <div
@@ -172,4 +157,4 @@ const Project1 = () => {
   );
 };
 
-export default Project1;
+export default BLive;

@@ -1,19 +1,13 @@
 import hero from "../assets/hero.jpeg";
 import { TbMailFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import { useEffect } from 'react';
-import { motion } from "framer-motion"
-
-
-
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
-
-  
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <motion.div
@@ -21,10 +15,8 @@ useEffect(() => {
       // className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{duration:1.5}}
+      transition={{ duration: 1.5 }}
       exit={{ opacity: 0 }}
-      
-
       id="About"
     >
       {/* hero section */}
@@ -47,148 +39,68 @@ useEffect(() => {
             >
               Hey there !
             </h1>
-            <span className="text-[rgb(156,156,156)]  md:text-lg ">
-              I focus on minimalism and easy-to-understand information. I focus on minimalism and easy-to-understand information. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati libero perspiciatis eius expedita quasi eaque sequi officiis iusto, optio dignissimos tempora. Asperiores aperiam incidunt praesentium distinctio suscipit exercitationem veniam eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut temporibus debitis porro, illo consequatur perspiciatis quis iure. Maxime perferendis, qui assumenda delectus iure dolorem aut placeat saepe molestias dignissimos itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, recusandae labore minus animi fuga temporibus vitae! Similique quo itaque ratione repellendus! Sint illum et iusto architecto, consequatur quos! Asperiores, iure.
-
+            <span className="text-[rgb(156,156,156)] md:text-lg text-justify">
+              As a UX designer, I'm deeply passionate about crafting minimalist
+              designs that resonate with users. My journey in UX design may be
+              recent, but my dedication knows no bounds—I'm constantly learning
+              and refining my skills. Each project is an opportunity for me to
+              push boundaries and create intuitive, user-centric experiences. I
+              thrive on challenges, constantly seeking to innovate and elevate
+              my work. My goal is simple: to design solutions that not only meet
+              user needs but also inspire and delight.
             </span>
           </div>
-          {/* <div className="flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]">
-            <button
-                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
-                id="get-in-touch"
-            >
-              <FaArrowRight />
-              <span>Get in touch</span>
-            </button>
-            <div id="hero-icons" className="flex flex-row gap-4 items-center ">
-              <Link to={"https://www.behance.net/avniigarg"} target="_blank">
-                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
-                  <FaBehance className="w-5 h-5 font-semibold " />
-                </button>
-              </Link>
-              <Link
-                to={"https://www.linkedin.com/in/garg-avni/"}
-                target="_blank"
-              >
-                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
-                  <FaLinkedinIn className="w-5 h-5" />
-                </button>
-              </Link>
-              <Link to={"https://twitter.com/avniigarg"} target="_blank">
-                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
-                  <FaXTwitter className="w-5 h-5" />
-                </button>
-              </Link>
-              <Link
-                to={"https://www.instagram.com/avnigarg.ux/"}
-                target="_blank"
-              >
-                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
-                  <FaInstagram className="w-5 h-5" />
-                </button>
-              </Link>
-            </div>
-          </div> */}
         </div>
       </div>
       {/* hero section end */}
 
-      {/* about section */}
-      {/* <div className="container flex flex-col md:flex-row mt-32 justify-between md:items-end gap-8">
-        <div className="shadow-neu rounded-3xl p-10 ">
-          <div className="text-2xl md:text-4xl font-medium flex gap-3">
-            About Me
-            <span>
-              <PiHandWaving />
-            </span>
-          </div>
-          <div className="text-[rgb(156,156,156)]  md:text-lg font-thin pt-4">
-            Hello there! Recent graduate with a B.Tech, specialising in simple
-            and sleek design. I create fun and user-friendly interfaces – even
-            grandma-approved! Outside design, you'll find me enjoying Rom-coms.
-            Not a fan of complicated UIs, though. Excited to bring my design
-            flair to your team!
-          </div>
-        </div> */}
-
-        {/* <button
-          className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-56 font-medium text-lg h-16 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
-          id="get-in-touch"
-        >
-          <FaArrowRight />
-          <span>More about me</span>
-        </button> */}
-      {/* </div> */}
-      {/* about section end */}
-
-      {/* my Process */}
-      {/* <div className="container flex flex-col my-16 mt-24">
-        <h1 className="text-4xl font-medium pb-1">Design Process</h1>
-
-        <div className="flex flex-col lg:flex-row gap-10" id="cards">
-
-          <div className="shadow-neu flex flex-col p-10 rounded-3xl justify-between lg:w-1/3 gap-4">
-            <h1 className="font-extrabold text-3xl text-[rgb(156,156,156)]">01</h1>
-            <div className="text-3xl ">Define the project</div>
-            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
-            </div>
-          </div>
-          <div className="shadow-neu flex flex-col p-10 rounded-3xl justify-between lg:w-1/3 gap-4">
-            <h1 className="font-extrabold text-3xl text-[rgb(156,156,156)]">02</h1>
-            <div className="text-3xl ">Design the solution</div>
-            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
-            </div>
-          </div>
-          <div className="shadow-neu flex flex-col p-10 rounded-3xl justify-between lg:w-1/3 gap-4">
-            <h1 className="font-extrabold text-3xl text-[rgb(156,156,156)]">03</h1>
-            <div className="text-3xl ">Deliver the result</div>
-            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
-            </div>
-          </div>
-
-          
-        </div>
-      </div> */}
-      {/* my services end */}
-
       {/* My experience */}
       <div className="container flex flex-col mt-16">
-      <h1 className="text-4xl font-medium pb-10">Work Experience</h1>
-      <div className="flex flex-col gap-10" id="cards">
+        <h1 className="text-4xl font-medium pb-10">Work Experience</h1>
+        <div className="flex flex-col gap-10" id="cards">
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between items-center">
-            
-            
-            <div id='left' className="flex flex-col lg:w-1/2 gap-2">
-                <div className="text-[rgb(156,156,156)]">BLIVE - Dec 2023 - Mar 2024</div>
-                <div className="text-2xl">UX Desgin Intern</div>
+            <div id="left" className="flex flex-col lg:w-1/2 gap-2">
+              <div className="text-[rgb(156,156,156)]">
+                BLive - Dec 2023 - Mar 2024
+              </div>
+              <div className="text-2xl">UX Desgin Intern</div>
             </div>
-            
-            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
-            BLive EZY Application - Research, Competitve analysis, Application Redesign ---- isko acha karna hai
 
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
+              At Blive, I redesigned EZY app, an EV rental platform for delivery
+              professionals, prioritizing user experience.
             </div>
-            
           </div>
 
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between items-center">
-            
-            
-            <div id='left' className="flex flex-col lg:w-1/2 gap-2">
-                <div className="text-[rgb(156,156,156)]">Oasis InfoByte - Dec 2023 - Mar 2024</div>
-                <div className="text-2xl">Web Developer</div>
+            <div id="left" className="flex flex-col lg:w-1/2 gap-2">
+              <div className="text-[rgb(156,156,156)]">
+                Freelance - Oct 2023 - Dec 2023
+              </div>
+              <div className="text-2xl">UX Designer</div>
             </div>
-            
+
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.
+              I crafted a stunning portfolio design tailored for a web
+              developer, emphasizing UX and visual appeal.
             </div>
-            
+          </div>
+
+          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between items-center">
+            <div id="left" className="flex flex-col lg:w-1/2 gap-2">
+              <div className="text-[rgb(156,156,156)]">
+                Oasis InfoByte - Dec 2023 - Mar 2024
+              </div>
+              <div className="text-2xl">Web Developer</div>
+            </div>
+
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
+              Crafted visually appealing and user-friendly web interfaces, and
+              developed responsive websites.
+            </div>
           </div>
         </div>
       </div>
-
 
       {/* Contact me */}
 
@@ -199,13 +111,13 @@ useEffect(() => {
         <h1>Want to create something awesome? </h1>
         <h1>Drop me an email.</h1>
         <Link to={"mailto:avni.garg.in@gmail.com"}>
-        <button
-          className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu font-medium text-sm md:text-lg gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)] py-4 px-6"
-          id="get-in-touch"
-        >
-          <TbMailFilled />
-          <span>avni.garg.in@gmail.com</span>
-        </button>   
+          <button
+            className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu font-medium text-sm md:text-lg gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)] py-4 px-6"
+            id="get-in-touch"
+          >
+            <TbMailFilled />
+            <span>avni.garg.in@gmail.com</span>
+          </button>
         </Link>
       </div>
 
