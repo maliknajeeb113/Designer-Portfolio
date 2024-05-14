@@ -11,13 +11,14 @@
 body {
   margin: 0;
   padding: 0;
+  @apply overflow-x-hidden;
 }
 
 .neu{
-  box-shadow: -8px -6px 15px #fff, 6px 8px 15px rgba(0, 0, 0, .15);
+  box-shadow: -8px -6px 15px rgb(241, 241, 241), 6px 8px 15px rgba(0, 0, 0, .15);
   transition: box-shadow 0.2s ease-in-out;
 }
 
 .neu-i{
-  box-shadow:inset -8px -6px 15px #fff,inset 6px 8px 15px rgba(0, 0, 0, .15);
+  box-shadow:inset -8px -6px 15px rgb(241, 241, 241),inset 6px 8px 15px rgba(0, 0, 0, .15);
 }
