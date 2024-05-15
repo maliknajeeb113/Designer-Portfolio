@@ -17,9 +17,9 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav className={`${isNavOpen ? "h-screen" : ""} w-screen text-[rgb(85,85,85)] px-6 md:px-[10rem] font-poppins fixed top-0 bg-[rgb(241,241,241)] z-10`} 
+    <motion.nav className={`flex flex-col w-screen text-[rgb(85,85,85)] px-6 md:px-[10rem] font-poppins fixed top-0 bg-[rgb(241,241,241)] z-10 items-center ${isNavOpen ? "min-h-screen" : ""}`} 
     >
-      <div className="container flex py-4 items-center justify-between">
+      <div className={`container flex py-4 items-center justify-between`}>
         <div className="font-medium text-3xl text-[rgb(182,154,137)]" id="Logo">
           <Link to={"/"}>Avni.</Link>
         </div>

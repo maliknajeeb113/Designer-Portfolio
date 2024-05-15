@@ -1,4 +1,5 @@
 import car_gif from "../assets/gifs/car.gif";
+import porsche from "../assets/gifs/Porsche.gif";
 import { useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
@@ -10,7 +11,7 @@ const Playground = () => {
 
   return (
     <motion.div
-      className="bg-primary w-screen flex flex-col font-poppins items-center px-6 md:px-[10rem] mx-auto mt-[150px] min-h-screen"
+      className="bg-primary w-screen top-[120px] flex flex-col items-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px] h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
@@ -20,16 +21,24 @@ const Playground = () => {
         Playground
       </div>
       {/* Contact me */}
-      <Marquee autoFill>
-        <div>
+      {/* <Marquee autoFill pauseOnHover speed={100}> */}
+        <div id="mega-grid" className="grid grid-cols-12 mt-16 gap-4 mx-2">
           <div
             id="contact"
-            className="text-2xl md:text-5xl flex flex-col mb-10 my-16 shadow-neu rounded-3xl items-center justify-center text-center mx-2 font-medium"
+            className="shadow-neu rounded-3xl col-span-6"
           >
-            <img src={car_gif} alt="loading..." className="rounded-3xl" />
+            <img src={porsche} alt="porsche" className="rounded-3xl object-contain w-full max-h-full" />
           </div>
+
+          <div
+            id="contact"
+            className="shadow-neu rounded-3xl col-span-6 flex"
+          >
+            <img src={car_gif} alt="car" className="rounded-3xl object-cover" />
+          </div>
+          
         </div>
-      </Marquee>
+      {/* </Marquee> */}
 
       {/* contact me */}
     </motion.div>

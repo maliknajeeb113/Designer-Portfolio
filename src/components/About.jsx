@@ -11,7 +11,7 @@ const About = () => {
 
   return (
     <motion.div
-      className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins items-center px-6 md:px-[10rem] mx-auto mt-[150px]"
+      className="bg-primary w-screen top-[120px] flex flex-col font-poppins items-center px-6 md:px-[10rem] mx-auto mt-[150px]"
       // className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

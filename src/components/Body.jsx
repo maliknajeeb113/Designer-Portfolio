@@ -23,7 +23,7 @@ const Body = () => {
 
   return (
     <motion.main
-      className="bg-primary w-screen top-[120px] flex flex-col justify-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px]"
+      className="bg-primary w-screen top-[120px] flex flex-col items-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px]"
       id="body"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
