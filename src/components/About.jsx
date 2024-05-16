@@ -1,4 +1,4 @@
-import hero from "../assets/hero.jpeg";
+import hero from "../assets/about.jpg";
 import { TbMailFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";

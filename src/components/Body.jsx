@@ -1,4 +1,4 @@
-import hero from "../assets/hero.jpeg";
+import hero from "../assets/avni.jpg";
 import brandshark_hero from "../assets/brandshark_header.png";
 import tanishq_cover from "../assets/tanishq_cover.png";
 import blive_hero from "../assets/Blive.png";
@@ -49,8 +49,8 @@ const Body = () => {
               className="!leading-[1.2] text-3xl md:text-5xl font-medium "
               font-medium
             >
-              Hey, I'm{" "}
-              <span className="text-[rgb(182,154,137)]">Avni Garg.</span> <br />{" "}
+              Hey, I'm
+              <span className="text-[rgb(182,154,137)]">Avni Garg.</span> <br />
               UX/UI Designer <br /> based in Bangalore.
             </h1>
             <span className="text-[rgb(156,156,156)]  md:text-lg ">
