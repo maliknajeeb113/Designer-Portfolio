@@ -21,7 +21,7 @@ const About = () => {
     >
       {/* hero section */}
       <div
-        className="container flex flex-col md:flex-row gap-10 items-center justify-between"
+        className="container flex flex-col lg:flex-row gap-10 items-center justify-between"
         id="hero"
       >
         <div id="hero-img" className="flex items-center justify-center">
