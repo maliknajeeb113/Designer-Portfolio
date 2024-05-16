@@ -40,14 +40,16 @@ const About = () => {
               Hey there !
             </h1>
             <span className="text-[rgb(156,156,156)] md:text-lg text-justify">
-              As a UX designer, I'm deeply passionate about crafting minimalist
-              designs that resonate with users. My journey in UX design may be
-              recent, but my dedication knows no bounds—I'm constantly learning
-              and refining my skills. Each project is an opportunity for me to
-              push boundaries and create intuitive, user-centric experiences. I
-              thrive on challenges, constantly seeking to innovate and elevate
-              my work. My goal is simple: to design solutions that not only meet
-              user needs but also inspire and delight.
+              I'm a passionate UX designer with a recent internship at BLive
+              under my belt. I thrive on creating beautiful and functional user
+              experiences, with a minimalist aesthetic that prioritizes user
+              needs. During my internship, I had the opportunity to spearhead a
+              project from market research to prototyping, utilizing Figma to
+              craft a seamless user journey. When I'm not meticulously
+              designing, you might find me in the kitchen, whipping up a
+              delicious meal and experimenting with new flavors (much like I do
+              with design!), or on the squash court, always striving to improve
+              my game (and maybe yours, if you're up for a challenge!).
             </span>
           </div>
         </div>
