@@ -60,7 +60,7 @@ const About = () => {
       <div className="container flex flex-col mt-16">
         <h1 className="text-4xl font-medium pb-10">Work Experience</h1>
         <div className="flex flex-col gap-10" id="cards">
-          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between items-center">
+          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
                 BLive - Dec 2023 - Mar 2024
@@ -74,7 +74,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between items-center">
+          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
                 Freelance - Oct 2023 - Dec 2023
@@ -88,7 +88,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between items-center">
+          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
                 Oasis InfoByte - Dec 2023 - Mar 2024
