@@ -1,6 +1,8 @@
-import car_gif from "../assets/playground/car.gif";
+import bank from "../assets/playground/bank.gif";
+import coffee from "../assets/playground/coffee.gif";
 import porsche from "../assets/playground/Porsche.gif";
-import zara from "../assets/playground/zara.png";
+import zara from "../assets/playground/zara.gif";
+import ezy from "../assets/playground/ezy.gif";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -23,28 +25,49 @@ const Playground = () => {
 
       <div
         id="mega-grid"
-        className="grid grid-cols-12 mt-16 gap-4 justify-center "
+        className="container flex flex-col mt-16 gap-4 justify-center"
       >
-        <div
+       <div className="flex flex-row gap-4">
+       <div
           id="contact"
-          className="shadow-neu rounded-3xl md:col-span-7 row-span-2 col-span-12"
+          className="shadow-neu rounded-3xl w-9/12 h-max"
         >
           <img
             src={porsche}
             alt="porsche"
-            className="rounded-3xl object-contain w-full max-h-full"
+            className="rounded-3xl object-contain w-full max-h-full p-2"
           />
         </div>
 
-        <div id="contact" className="shadow-neu rounded-3xl col-span-3 row-span-2 flex ">
-          <img src={car_gif} alt="car" className="rounded-3xl object-cover" />
+        <div id="contact" className="shadow-neu rounded-3xl flex h-max w-4/12">
+          <img src={bank} alt="car" className="rounded-3xl object-cover p-2" />
         </div>
+       </div>
+
         <div
           id="contact"
-          className="shadow-neu rounded-3xl col-start-7 col-span-5 col-end-12 flex"
+          className="shadow-neu rounded-3xl flex justify-center "
         >
-          <img src={zara} alt="zara" className="rounded-3xl object-cover" />
+          <img src={zara} alt="zara" className="rounded-3xl object-con" />
         </div>
+
+        <div className="flex flex-row gap-4">
+        <div id="contact" className="shadow-neu rounded-3xl flex h-max w-4/12">
+          <img src={coffee} alt="car" className="rounded-3xl object-cover p-2" />
+        </div>
+       <div
+          id="contact"
+          className="shadow-neu rounded-3xl w-9/12 h-max"
+        >
+          <img
+            src={ezy}
+            alt="porsche"
+            className="rounded-3xl object-contain w-full max-h-full p-2"
+          />
+        </div>
+
+       
+       </div>
       </div>
     </motion.div>
   );
