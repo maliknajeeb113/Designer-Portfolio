@@ -27,47 +27,63 @@ const Playground = () => {
         id="mega-grid"
         className="container flex flex-col mt-16 gap-4 justify-center"
       >
-       <div className="flex flex-row gap-4">
-       <div
-          id="contact"
-          className="shadow-neu rounded-3xl w-9/12 h-max"
-        >
-          <img
-            src={porsche}
-            alt="porsche"
-            className="rounded-3xl object-contain w-full max-h-full p-2"
-          />
-        </div>
+        <div className="flex flex-row gap-4">
+          <div
+            id="contact"
+            className="shadow-neu rounded-2xl md:rounded-3xl w-9/12 h-max"
+          >
+            <img
+              src={porsche}
+              alt="porsche"
+              className="rounded-2xl md:rounded-3xl object-contain w-full max-h-full p-1 md:p-2 "
+            />
+          </div>
 
-        <div id="contact" className="shadow-neu rounded-3xl flex h-max w-4/12">
-          <img src={bank} alt="car" className="rounded-3xl object-cover p-2" />
+          <div
+            id="contact"
+            className="shadow-neu rounded-2xl md:rounded-3xl flex h-max w-4/12"
+          >
+            <img
+              src={bank}
+              alt="car"
+              className="rounded-2xl md:rounded-3xl object-cover p-1 md:p-2"
+            />
+          </div>
         </div>
-       </div>
 
         <div
           id="contact"
-          className="shadow-neu rounded-3xl flex justify-center "
-        >
-          <img src={zara} alt="zara" className="rounded-3xl object-con" />
-        </div>
-
-        <div className="flex flex-row gap-4">
-        <div id="contact" className="shadow-neu rounded-3xl flex h-max w-4/12">
-          <img src={coffee} alt="car" className="rounded-3xl object-cover p-2" />
-        </div>
-       <div
-          id="contact"
-          className="shadow-neu rounded-3xl w-9/12 h-max"
+          className="shadow-neu rounded-2xl md:rounded-3xl flex justify-center "
         >
           <img
-            src={ezy}
-            alt="porsche"
-            className="rounded-3xl object-contain w-full max-h-full p-2"
+            src={zara}
+            alt="zara"
+            className="rounded-2xl md:rounded-3xl object-con"
           />
         </div>
 
-       
-       </div>
+        <div className="flex flex-row gap-4">
+          <div
+            id="contact"
+            className="shadow-neu rounded-2xl md:rounded-3xl flex h-max w-4/12"
+          >
+            <img
+              src={coffee}
+              alt="car"
+              className="rounded-2xl md:rounded-3xl object-cover p-1 md:p-2"
+            />
+          </div>
+          <div
+            id="contact"
+            className="shadow-neu rounded-2xl md:rounded-3xl w-9/12 h-max"
+          >
+            <img
+              src={ezy}
+              alt="porsche"
+              className="rounded-2xl md:rounded-3xl object-contain w-full max-h-full p-1 md:p-2"
+            />
+          </div>
+        </div>
       </div>
     </motion.div>
   );

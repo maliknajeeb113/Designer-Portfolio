@@ -61,15 +61,16 @@ const Body = () => {
             </span>
           </div>
           <div className="flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]">
-            <HashLink smooth to={"/#contact"}>
-              <button
+
+             <Link to={"https://docs.google.com/document/d/1K1fvJvgJJ7I2gwHaUoRCkRt0m_w9-Cg7xWXp3itoGOU/edit?usp=sharing"} target="_blank">
+             <button 
                 className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
                 id="get-in-touch"
               >
-                <FaArrowRight />
-                <span>Get in touch</span>
-              </button>
-            </HashLink>
+
+                <span>Download resume</span>
+              </button></Link>
+
             <div id="hero-icons" className="flex flex-row gap-4 items-center ">
               <Link to={"https://www.behance.net/avniigarg"} target="_blank">
                 <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">

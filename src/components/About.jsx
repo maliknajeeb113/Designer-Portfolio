@@ -3,6 +3,10 @@ import { TbMailFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { MdSportsTennis } from "react-icons/md";
+import { GiCampCookingPot } from "react-icons/gi";
+
+
 
 const About = () => {
   useEffect(() => {
@@ -39,18 +43,19 @@ const About = () => {
             >
               Hey there !
             </h1>
-            <span className="text-[rgb(156,156,156)] md:text-lg text-justify">
-              I'm a passionate UX designer with a recent internship at BLive
-              under my belt. I thrive on creating beautiful and functional user
+            <span className="text-[rgb(156,156,156)] md:text-lg">
+              I'm a passionate <span className="bg-[rgb(210,170,146)] text-white">UX Designer</span> with a recent internship at <span className="bg-[rgb(210,170,146 ̰)] text-white">BLive </span>
+               under my belt. I thrive on creating beautiful and functional user
               experiences, with a minimalist aesthetic that prioritizes user
               needs. During my internship, I had the opportunity to spearhead a
               project from market research to prototyping, utilizing Figma to
               craft a seamless user journey. When I'm not meticulously
               designing, you might find me in the kitchen, whipping up a
-              delicious meal and experimenting with new flavors (much like I do
-              with design!), or on the squash court, always striving to improve
+              delicious meal <GiCampCookingPot className="inline-block text-[rgb(162,98,39)]" /> and experimenting with new flavors (much like I do
+              with design!), or on the squash court <MdSportsTennis className="inline-block text-[rgb(162,98,39)]"/> , always striving to improve
               my game (and maybe yours, if you're up for a challenge!).
             </span>
+
           </div>
         </div>
       </div>
