@@ -44,7 +44,7 @@ const About = () => {
               Hey there !
             </h1>
             <span className="text-[rgb(156,156,156)] md:text-lg">
-              I'm a passionate <span className="bg-[rgb(210,170,146)] text-white">UX Designer</span> with a recent internship at <span className="bg-[rgb(210,170,146 ̰)] text-white">BLive </span>
+              I'm a passionate <span className="bg-[rgb(210,170,146)] text-white">UX Designer</span> with a recent internship at <span className="bg-[rgb(210,170,146)] text-white">BLive </span>
                under my belt. I thrive on creating beautiful and functional user
               experiences, with a minimalist aesthetic that prioritizes user
               needs. During my internship, I had the opportunity to spearhead a
