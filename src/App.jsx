@@ -9,8 +9,15 @@ import TanishqPortfolio from './components/TanishqPortfolio'
 import Footer from './components/Footer'
 import Brandshark from './components/Brandshark'
 
-import { createBrowserRouter,Outlet } from "react-router-dom";
+import { createBrowserRouter,Link,Outlet } from "react-router-dom";
 import { useState } from 'react'
+
+const Redirect = ({ to }) => {
+  window.location.href = to;
+
+};
+
+
 
 
 function App() {
@@ -57,6 +64,10 @@ export const appRouter = createBrowserRouter([
         path: "/playground",
         element: <Playground />,
       },
+      {
+        path: "/pre-onboarding",
+        element: <Redirect to="https://eejp1kkl8an.typeform.com/to/ZyWjcdcq" />,
+      }
       
     ]
   }
