@@ -1,13 +1,13 @@
 import './App.css'
 import Navbar from './components/Navbar'
-import About from './components/About'
-import BLive from './components/BLive'
-import Body from './components/Body'
+import About from './pages/About'
+import BLive from './pages/BLive'
+import Body from './pages/Body'
 import Error from './components/Error'
-import Playground from './components/Playground'
-import TanishqPortfolio from './components/TanishqPortfolio'
+import Playground from './pages/Playground'
+import TanishqPortfolio from './pages/TanishqPortfolio'
 import Footer from './components/Footer'
-import Brandshark from './components/Brandshark'
+import Brandshark from './pages/Brandshark'
 
 import { createBrowserRouter,Link,Outlet } from "react-router-dom";
 import { useState } from 'react'
@@ -19,9 +19,7 @@ const Redirect = ({ to }) => {
 
 
 
-
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

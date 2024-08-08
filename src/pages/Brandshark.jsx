@@ -1,21 +1,22 @@
-import tanishq_banner from "../assets/tanishq_banner.png";
-import tanishq_wireframe from "../assets/tanishq_wireframe.png";
-import tanishq_mock from "../assets/tanishq_mock.png";
+import brandsharkTitle from "../assets/brandsharkTitle.png";
+import brandsharkWireframe from "../assets/brandsharkWireframe.png";
+import brandsharkCompare from "../assets/brandsharkCompare.png";
+
 
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-const TanishqPortfolio = () => {
+const Brandshark = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <motion.div
-      className="bg-primary w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
-      id="TanishqPortfolio"
+      className="bg-primary w-screen flex jus flex-col items-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
+      id="Brandshark"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
@@ -25,10 +26,13 @@ const TanishqPortfolio = () => {
         id="head"
         className="container flex flex-col items-start gap-6 mt-[150px]"
       >
-        <div className="text-3xl lg:text-6xl font-medium">Portfolio Design</div>
+        <div className="text-3xl lg:text-6xl font-medium">
+          Marketing Website Redesign
+        </div>
         <div className="md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5">
-          Designed a website that helps Tanishq showcase all their work and
-          skills easily in one place for job interviews.
+          Transformed Brand Shark's online presence with a sleek, visually
+          stunning website, showcasing their video production prowess to
+          captivate potential clients.
         </div>
 
         <div className="container flex flex-col md:flex-row md:justify-between gap-10">
@@ -38,7 +42,7 @@ const TanishqPortfolio = () => {
           >
             <div className="flex flex-col md:gap-4">
               <h1 className="font-medium md:text-xl">Project</h1>
-              <p className="text-sm md:text-lg font-thin">Freelance Project</p>
+              <p className="text-sm md:text-lg font-thin">Personal Project</p>
             </div>
 
             <div className="flex flex-col md:gap-4">
@@ -57,7 +61,7 @@ const TanishqPortfolio = () => {
           <div id="right" className="flex">
             <Link
               to={
-                "https://www.behance.net/gallery/186924897/Portfolio-Design-Developer-UXUI-Design"
+                "https://www.behance.net/gallery/188272785/Marketing-Website-Redesign-UIUX-Design-Web-Design"
               }
               target="_blank"
             >
@@ -77,22 +81,23 @@ const TanishqPortfolio = () => {
         className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center"
         id="project-image"
       >
-        <img src={tanishq_banner} className="rounded-3xl object-cover w-full" />
+        <img
+          src={brandsharkTitle}
+          className="rounded-3xl object-cover w-full"
+        />
       </div>
 
       <div className="container flex flex-col shadow-neu rounded-3xl p-12 gap-6">
         <div className="text-2xl md:text-4xl">About the Project</div>
         <div className=" text-[rgb(156,156,156)] font-thin text-lg">
-          Embark on a journey with me as I delve into the intricacies of user
-          experience, meticulously optimizing the portfolio's layout,
-          navigation, and content flow to create an engaging journey for
-          visitors. Along this path, we'll explore the art of crafting a
-          visually distinctive design language, where tailored color schemes,
-          typography, and graphics converge to breathe life into the brand and
-          forge a memorable visual narrative. Join me as we transform concepts
-          into captivating experiences, one pixel at a time.
+          Brandshark's video marketing page faced significant challenges in
+          engaging and converting visitors. The cluttered design overwhelmed
+          users, making it difficult to navigate and find relevant information.
+          Additionally, the value proposition was unclear, leaving visitors
+          unsure about the benefits of Brandshark's services. Combined with an
+          unintuitive user experience, these obstacles hindered the page's
+          effectiveness in capturing attention and driving conversions.
         </div>
-
       </div>
 
       <div
@@ -100,7 +105,9 @@ const TanishqPortfolio = () => {
         id="project-image"
       >
         <img
-          src={tanishq_wireframe}
+          src={brandsharkWireframe
+          
+          }
           className="rounded-3xl object-cover w-full"
         />
       </div>
@@ -109,20 +116,21 @@ const TanishqPortfolio = () => {
         <div className="flex flex-col shadow-neu rounded-3xl p-8 gap-6 md:w-1/2">
           <div className="text-2xl md:text-4xl">UX Challenges</div>
           <div className=" text-[rgb(156,156,156)] font-thin text-lg">
-            Creating a website that gathers all of someone's projects and skills
-            in one place would help during job interviews. The goal is to design
-            a user-friendly platform for showcasing a comprehensive portfolio
-            effortlessly.
+            Develop a visually engaging, user-centric design for Brandshark's
+            video marketing page, effectively communicating their expertise and
+            value proposition. Streamline the user experience with clear calls
+            to action and intuitive navigation, guiding visitors seamlessly
+            towards conversion. Implement analytics and user feedback mechanisms
+            to continuously measure and improve the page's performance.
           </div>
         </div>
         <div className="flex flex-col shadow-neu rounded-3xl p-8 gap-6 md:w-1/2">
           <div className="text-2xl md:text-4xl">UX Solution</div>
           <div className=" text-[rgb(156,156,156)] font-thin text-lg">
-            Make the website simple to use, with clear sections for different
-            projects and abilities. Ensure the website looks nice and organized,
-            so it makes a good impression on potential employers. Enable users
-            to personalize their portfolio to stand out and tell their unique
-            story effectively. heroes.
+            The meticulously crafted redesign brought about remarkable
+            enhancements in visual appeal, clarity, and user experience,
+            fostering heightened engagement, clearer understanding of
+            Brandshark's offerings, and a substantial surge in conversion rates.
           </div>
         </div>
       </div>
@@ -131,7 +139,7 @@ const TanishqPortfolio = () => {
         className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center"
         id="project-image"
       >
-        <img src={tanishq_mock} className="rounded-3xl object-cover w-full" />
+        <img src={brandsharkCompare} className="rounded-3xl object-cover w-full" />
       </div>
 
       {/* <h1 className="text-4xl font-medium">Final Presentation!!</h1>
@@ -149,4 +157,4 @@ const TanishqPortfolio = () => {
   );
 };
 
-export default TanishqPortfolio;
+export default Brandshark;

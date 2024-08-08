@@ -1,7 +1,8 @@
-import hero from "../assets/avni.jpg";
-import brandshark_hero from "../assets/brandshark_header.png";
-import tanishq_cover from "../assets/tanishq_cover.png";
-import blive_hero from "../assets/Blive.png";
+import hero from "../assets/heroImage.jpg";
+import brandsharkCover from "../assets/brandsharkCover.png";
+import tanishqCover from "../assets/tanishqCover.png";
+import bliveCover from "../assets/blive/bliveCover.png";
+
 import { TbMailFilled } from "react-icons/tb";
 import { HashLink } from "react-router-hash-link";
 import { useEffect } from "react";
@@ -114,7 +115,7 @@ const Body = () => {
           <div className="shadow-neu flex flex-col md:flex-row-reverse gap-4 md:gap-20 p-6 md:p-10 rounded-3xl justify-between">
             <div className="md:w-1/2 " id="project-image">
               <img
-                src={blive_hero}
+                src={bliveCover}
                 className="rounded-2xl w-full object-cover"
               />
             </div>
@@ -152,7 +153,7 @@ const Body = () => {
           <div className="shadow-neu flex flex-col md:flex-row-reverse gap-4 md:gap-20 p-6 md:p-10 rounded-3xl justify-between">
             <div className="md:w-1/2 " id="project-image">
               <img
-                src={tanishq_cover}
+                src={tanishqCover}
                 className="rounded-2xl w-full object-cover"
               />
             </div>
@@ -191,7 +192,7 @@ const Body = () => {
           <div className="shadow-neu flex flex-col md:flex-row-reverse gap-4 md:gap-20 p-6 md:p-10 rounded-3xl justify-between">
             <div className="md:w-1/2 " id="project-image">
               <img
-                src={brandshark_hero}
+                src={brandsharkCover}
                 className="rounded-2xl w-full object-cover"
               />
             </div>
