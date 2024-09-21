@@ -55,7 +55,7 @@ const Body = () => {
               UX/UI Designer <br /> based in Bangalore.
             </h1>
             <span className="text-[rgb(156,156,156)]  md:text-lg ">
-              Previously at BLive.
+              Curently working at Salesken.ai
             </span>
             <span className="text-[rgb(156,156,156)]  md:text-lg ">
               I focus on minimalism and easy-to-understand information.

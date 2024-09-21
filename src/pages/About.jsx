@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { MdSportsTennis } from "react-icons/md";
 import { GiCampCookingPot } from "react-icons/gi";
 
-
-
 const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,26 +34,29 @@ const About = () => {
           />
         </div>
         <div className="flex flex-col gap-6" id="hero-left">
-          <div className=" flex flex-col gap-6">
-            <h1
-              className="!leading-[1.2] text-3xl md:text-3xl font-medium "
-              font-medium
-            >
-              Hey there !
+          <div className="flex flex-col gap-6">
+            <h1 className="!leading-[1.2] text-3xl md:text-3xl font-medium">
+              Hey there!
             </h1>
             <span className="text-[rgb(156,156,156)] md:text-lg">
-              I'm a passionate <span className="bg-[rgb(210,170,146)] text-white">UX Designer</span> with a recent internship at <span className="bg-[rgb(210,170,146)] text-white">BLive </span>
-               under my belt. I thrive on creating beautiful and functional user
-              experiences, with a minimalist aesthetic that prioritizes user
-              needs. During my internship, I had the opportunity to spearhead a
-              project from market research to prototyping, utilizing Figma to
-              craft a seamless user journey. When I'm not meticulously
-              designing, you might find me in the kitchen, whipping up a
-              delicious meal <GiCampCookingPot className="inline-block text-[rgb(162,98,39)]" /> and experimenting with new flavors (much like I do
-              with design!), or on the squash court <MdSportsTennis className="inline-block text-[rgb(162,98,39)]"/> , always striving to improve
-              my game (and maybe yours, if you're up for a challenge!).
+              I'm a dedicated{" "}
+              <span className="bg-[rgb(210,170,146)] text-white">
+                UX/UI Designer
+              </span>{" "}
+              with experience working on diverse projects that focus on creating
+              seamless user experiences. Currently, I’m at{" "}
+              <span className="bg-[rgb(210,170,146)] text-white">Salesken</span>
+              , where I’m designing the UI for an AI-powered platform aimed at
+              enhancing customer support interactions.<br/> My approach to design is
+              centered around minimalism and ensuring intuitive, user-friendly
+              interfaces. <br/>When I'm not working on design projects, I enjoy
+              reading{" "}
+              <span className="bg-[rgb(210,170,146)] text-white">
+                (recently developed hobby!)
+              </span>{" "}
+              or hitting the squash court{" "}
+              <MdSportsTennis className="inline-block text-[rgb(162,98,39)]" />.
             </span>
-
           </div>
         </div>
       </div>
@@ -68,13 +69,26 @@ const About = () => {
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
+                Salesken - Aug 2024 - Present
+              </div>
+              <div className="text-2xl">UX/UI Desginer</div>
+            </div>
+
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
+            Crafting the UI for an AI platform designed to streamline customer interactions and boost support efficiency.
+            </div>
+          </div>
+
+          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
+            <div id="left" className="flex flex-col lg:w-1/2 gap-2">
+              <div className="text-[rgb(156,156,156)]">
                 BLive - Dec 2023 - Mar 2024
               </div>
               <div className="text-2xl">UX Desgin Intern</div>
             </div>
 
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
-              At Blive, I redesigned EZY app, an EV rental platform for delivery
+              Redesigned EZY app, an EV rental platform for delivery
               professionals, prioritizing user experience.
             </div>
           </div>
@@ -88,7 +102,7 @@ const About = () => {
             </div>
 
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
-              I crafted a stunning portfolio design tailored for a web
+              Crafted a stunning portfolio design tailored for a web
               developer, emphasizing UX and visual appeal.
             </div>
           </div>
