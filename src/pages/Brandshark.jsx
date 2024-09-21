@@ -15,7 +15,7 @@ const Brandshark = () => {
 
   return (
     <motion.div
-      className="bg-primary w-screen flex jus flex-col items-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
+      className=" w-screen flex jus flex-col items-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
       id="Brandshark"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

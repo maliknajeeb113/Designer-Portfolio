@@ -9,13 +9,11 @@ import { useEffect } from "react";
 
 import {
   FaArrowRight,
-  FaBehance,
-  FaLinkedinIn,
-  FaXTwitter,
-  FaInstagram,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Socials from "../components/Socials";
+import Button from "../components/Button";
 
 const Body = () => {
   useEffect(() => {
@@ -24,14 +22,14 @@ const Body = () => {
 
   return (
     <motion.main
-      className="bg-primary w-screen top-[120px] flex flex-col items-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px]"
+      className=" w-screen top-[120px] flex flex-col items-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px]"
       id="body"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       exit={{ opacity: 0 }}
     >
-      {/* className="bg-primary w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen" */}
+      {/* className=" w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen" */}
       {/* hero section */}
       <div
         className="container flex flex-col md:flex-row-reverse gap-10 items-center justify-between"
@@ -48,7 +46,6 @@ const Body = () => {
           <div className=" flex flex-col gap-6">
             <h1
               className="!leading-[1.2] text-3xl md:text-5xl font-medium "
-              font-medium
             >
               Hey, I'm{" "}
               <span className="text-[rgb(182,154,137)]">Avni Garg.</span> <br />{" "}
@@ -63,43 +60,17 @@ const Body = () => {
           </div>
           <div className="flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]">
 
-             <Link to={"/Avni_Garg_Resume.pdf"} target="_blank">
+             <Link to="/Avni_Garg_Resume.pdf" target="_blank">
              <button
                 className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
                 id="get-in-touch"
               >
-
-                <span>Download resume</span>
+                Download Resume
               </button></Link>
 
-            <div id="hero-icons" className="flex flex-row gap-4 items-center ">
-              <Link to={"https://www.behance.net/avniigarg"} target="_blank">
-                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
-                  <FaBehance className="w-5 h-5 font-semibold " />
-                </button>
-              </Link>
-              <Link
-                to={"https://www.linkedin.com/in/garg-avni/"}
-                target="_blank"
-              >
-                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
-                  <FaLinkedinIn className="w-5 h-5" />
-                </button>
-              </Link>
-              <Link to={"https://twitter.com/avniigarg"} target="_blank">
-                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
-                  <FaXTwitter className="w-5 h-5" />
-                </button>
-              </Link>
-              <Link
-                to={"https://www.instagram.com/avnigarg.ux/"}
-                target="_blank"
-              >
-                <button className="shadow-neu p-3 hover:scale-105 duration-500 rounded-full active:shadow-neu-i">
-                  <FaInstagram className="w-5 h-5" />
-                </button>
-              </Link>
-            </div>
+              
+
+            <Socials/>
           </div>
         </div>
       </div>
@@ -134,15 +105,8 @@ const Body = () => {
                   a subscription-based EV rental service.
                 </div>
               </div>
-              <Link to={"/BLive"}>
-                <button
-                  className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
-                  id="get-in-touch"
-                >
-                  <FaArrowRight />
-                  <span>View Project</span>
-                </button>
-              </Link>
+              <Button to="/blive"><FaArrowRight />
+              <span>View Project</span></Button>
             </div>
           </div>
         </div>
@@ -173,15 +137,8 @@ const Body = () => {
                   effective presentation of their portfolio.
                 </div>
               </div>
-              <Link to={"/TanishqPortfolio"}>
-                <button
-                  className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
-                  id="get-in-touch"
-                >
-                  <FaArrowRight />
-                  <span>View Project</span>
-                </button>
-              </Link>
+              <Button to="/portfolio-project"><FaArrowRight />
+              <span>View Project</span></Button>
             </div>
           </div>
         </div>
@@ -211,15 +168,8 @@ const Body = () => {
                   engaging potential clients effectively.
                 </div>
               </div>
-              <Link to={"/Brandshark"}>
-                <button
-                  className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
-                  id="get-in-touch"
-                >
-                  <FaArrowRight />
-                  <span>View Project</span>
-                </button>
-              </Link>
+              <Button to="/brandshark"><FaArrowRight />
+              <span>View Project</span></Button>
             </div>
           </div>
         </div>
@@ -234,6 +184,7 @@ const Body = () => {
       >
         <h1>Want to create something awesome? </h1>
         <h1>Drop me an email.</h1>
+        
         <Link to={"mailto:avni.garg.in@gmail.com"}>
           <button
             className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu font-medium text-sm md:text-lg gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)] py-4 px-6"
@@ -244,6 +195,7 @@ const Body = () => {
           </button>
         </Link>
       </div>
+  
 
       {/* contact me */}
     </motion.main>
