@@ -31,14 +31,14 @@ const Body = () => {
       {/* className=" w-screen flex flex-col justify-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen" */}
       {/* hero section */}
       <div
-        className="container flex flex-col md:flex-row-reverse gap-10 items-center justify-between"
+        className="container flex flex-col lg:flex-row-reverse gap-10 items-center justify-between"
         id="hero"
       >
         <div id="hero-img" className="flex items-center justify-center">
           <img
             src={hero}
             alt=""
-            className=" border-white border-8 md:border-[12px] rounded-full shadow-neu lg:max-w-xl object-cover"
+            className=" border-white border-8 md:border-[12px] rounded-full shadow-neu sm:max-w-xs lg:max-w-sm xl:max-w-lg object-cover"
           />
         </div>
         <div className="flex flex-col gap-6" id="hero-left">

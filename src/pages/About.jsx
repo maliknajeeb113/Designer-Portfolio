@@ -30,7 +30,7 @@ const About = () => {
           <img
             src={hero}
             alt=""
-            className=" border-white border-8 md:border-[12px] rounded-full shadow-neu lg:max-w-xl object-cover"
+            className=" border-white border-8 md:border-[12px] rounded-full shadow-neu sm:max-w-xs lg:max-w-sm xl:max-w-lg object-cover"
           />
         </div>
         <div className="flex flex-col gap-6" id="hero-left">

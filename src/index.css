@@ -5,10 +5,10 @@
 @tailwind utilities;
 
 :root{
-  background-color: rgb(241, 241, 241);
-  /* background-color: rgb(0, 0, 0); */
-  color: rgb(85,85,85);
-  /* color: rgb(255, 255, 255); */
+  background-color: rgb(241, 241, 241); 
+   color: rgb(85,85,85);
+  /* background-color: #1e1e1e;
+  color: rgb(255, 255, 255); */
 }
 body {
   margin: 0;
