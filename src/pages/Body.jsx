@@ -4,7 +4,6 @@ import tanishqCover from "../assets/portfolio-project/tanishqCover.png";
 import bliveCover from "../assets/blive/bliveCover.png";
 
 import { TbMailFilled } from "react-icons/tb";
-import { HashLink } from "react-router-hash-link";
 import { useEffect } from "react";
 
 import {
