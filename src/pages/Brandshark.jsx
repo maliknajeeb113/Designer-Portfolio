@@ -1,6 +1,6 @@
-import brandsharkTitle from "../assets/brandsharkTitle.png";
-import brandsharkWireframe from "../assets/brandsharkWireframe.png";
-import brandsharkCompare from "../assets/brandsharkCompare.png";
+import brandsharkTitle from "../assets/brandshark/brandsharkTitle.png";
+import brandsharkWireframe from "../assets/brandshark/brandsharkWireframe.png";
+import brandsharkCompare from "../assets/brandshark/brandsharkCompare.png";
 
 
 import { FaArrowRight } from "react-icons/fa6";
