@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { MdSportsTennis } from "react-icons/md";
-import { GiCampCookingPot } from "react-icons/gi";
+
 
 const About = () => {
   useEffect(() => {

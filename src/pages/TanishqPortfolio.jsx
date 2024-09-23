@@ -1,6 +1,6 @@
-import tanishqBanner from "../assets/tanishqBanner.png";
-import tanishqWireframe from "../assets/tanishqWireframe.png";
-import tanishqMockup from "../assets/tanishqMockup.png";
+import tanishqBanner from "../assets/portfolio-project/tanishqBanner.png";
+import tanishqWireframe from "../assets/portfolio-project/tanishqWireframe.png";
+import tanishqMockup from "../assets/portfolio-project/tanishqMockup.png";
 
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";

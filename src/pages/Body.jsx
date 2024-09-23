@@ -1,6 +1,6 @@
 import hero from "../assets/heroImage.jpg";
-import brandsharkCover from "../assets/brandsharkCover.png";
-import tanishqCover from "../assets/tanishqCover.png";
+import brandsharkCover from "../assets/brandshark/brandsharkCover.png";
+import tanishqCover from "../assets/portfolio-project/tanishqCover.png";
 import bliveCover from "../assets/blive/bliveCover.png";
 
 import { TbMailFilled } from "react-icons/tb";
