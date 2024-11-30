@@ -15,63 +15,58 @@ const BLive = () => {
 
   return (
     <motion.div
-      className=" w-screen flex flex-col items-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen"
-      id="BLive"
+      className=' w-screen flex flex-col items-center font-poppins  px-6 md:px-[10rem] mx-auto h-min-screen'
+      id='BLive'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      exit={{ opacity: 0 }}
-    >
+      exit={{ opacity: 0 }}>
       <div
-        id="head"
-        className="container flex flex-col items-start gap-6 mt-[150px]"
-      >
-        <div className="text-3xl lg:text-6xl font-medium">
+        id='head'
+        className='container flex flex-col items-start gap-6 mt-[150px]'>
+        <div className='text-3xl lg:text-6xl font-medium'>
           BLive EZY Application Redesign
         </div>
-        <div className="md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5">
+        <div className='md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5'>
           Conducted market analysis, documented trends, and designed wireframes
           for Blive's Ezy App, enhancing user experience for a
           subscription-based EV rental service.
         </div>
 
-        <div className="container flex flex-col md:flex-row md:justify-between gap-10">
+        <div className='container flex flex-col md:flex-row md:justify-between gap-10'>
           <div
-            id="left"
-            className="flex flex-col md:flex-row gap-4 md:gap-24 md:justify-between text-[rgb(156,156,156)]"
-          >
-            <div className="flex flex-col md:gap-4">
-              <h1 className="font-medium md:text-xl">Project</h1>
-              <p className="text-sm md:text-lg font-thin">
+            id='left'
+            className='flex flex-col md:flex-row gap-4 md:gap-24 md:justify-between text-[rgb(156,156,156)]'>
+            <div className='flex flex-col md:gap-4'>
+              <h1 className='font-medium md:text-xl'>Project</h1>
+              <p className='text-sm md:text-lg font-thin'>
                 Application Redesign
               </p>
             </div>
 
-            <div className="flex flex-col md:gap-4">
-              <h1 className="font-medium md:text-xl">Role</h1>
-              <p className="text-sm md:text-lg font-thin">UX/UI Designer</p>
+            <div className='flex flex-col md:gap-4'>
+              <h1 className='font-medium md:text-xl'>Role</h1>
+              <p className='text-sm md:text-lg font-thin'>UX/UI Designer</p>
             </div>
 
-            <div className="flex flex-col md:gap-4">
-              <h1 className="font-medium md:text-xl">Team</h1>
-              <p className="text-sm md:text-lg font-thin">
+            <div className='flex flex-col md:gap-4'>
+              <h1 className='font-medium md:text-xl'>Team</h1>
+              <p className='text-sm md:text-lg font-thin'>
                 Product Design Team
               </p>
             </div>
           </div>
 
-          <div id="right" className="flex">
+          <div id='right' className='flex'>
             <Link
               to={
                 "https://www.behance.net/gallery/195991509/EZY-Application-Redesign-Rental-Bike-UIUX-Design"
               }
-              target="_blank"
-            >
+              target='_blank'>
               {" "}
               <button
-                className="flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]"
-                id="get-in-touch"
-              >
+                className='flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]'
+                id='get-in-touch'>
                 <FaArrowRight />
                 <span>View Case Study</span>
               </button>
@@ -81,15 +76,14 @@ const BLive = () => {
       </div>
 
       <div
-        className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center"
-        id="project-image"
-      >
-        <img src={bliveCover} className="rounded-3xl object-cover w-full" />
+        className='container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center'
+        id='project-image'>
+        <img src={bliveCover} className='rounded-3xl object-cover w-full' />
       </div>
 
-      <div className="container flex flex-col shadow-neu rounded-3xl p-12 gap-6">
-        <div className="text-2xl md:text-4xl">About the Project</div>
-        <div className=" text-[rgb(156,156,156)] font-thin text-lg">
+      <div className='container flex flex-col shadow-neu rounded-3xl p-12 gap-6'>
+        <div className='text-2xl md:text-4xl'>About the Project</div>
+        <div className=' text-[rgb(156,156,156)] font-thin text-lg'>
           Embark on a journey with me as I redesign Blive's Ezy App - a
           subscription-based bike rental service for delivery executives.
           Immersed in a dynamic startup culture, I fused sustainability with
@@ -101,20 +95,18 @@ const BLive = () => {
           reinvention that sets a new standard for convenience and
           sustainability in the delivery industry.
         </div>
-
       </div>
 
       <div
-        className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center"
-        id="project-image"
-      >
-        <img src={blivePrototype} className="rounded-3xl object-cover w-full" />
+        className='container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center'
+        id='project-image'>
+        <img src={blivePrototype} className='rounded-3xl object-cover w-full' />
       </div>
 
-      <div className="container flex flex-col md:flex-row gap-10">
-        <div className="flex flex-col shadow-neu rounded-3xl p-8 gap-6 md:w-1/2">
-          <div className="text-2xl md:text-4xl">UX Challenges</div>
-          <div className=" text-[rgb(156,156,156)] font-thin text-lg">
+      <div className='container flex flex-col md:flex-row gap-10'>
+        <div className='flex flex-col shadow-neu rounded-3xl p-8 gap-6 md:w-1/2'>
+          <div className='text-2xl md:text-4xl'>UX Problem</div>
+          <div className=' text-[rgb(156,156,156)] font-thin text-lg'>
             The mission is clear: give the EZY app a total makeover. The goal? A
             user interface that's as easy as pie for riders to navigate. We're
             talking about a user experience that's straightforward and far from
@@ -122,9 +114,9 @@ const BLive = () => {
             themselves in a bit of a pickle.
           </div>
         </div>
-        <div className="flex flex-col shadow-neu rounded-3xl p-8 gap-6 md:w-1/2">
-          <div className="text-2xl md:text-4xl">UX Solution</div>
-          <div className=" text-[rgb(156,156,156)] font-thin text-lg">
+        <div className='flex flex-col shadow-neu rounded-3xl p-8 gap-6 md:w-1/2'>
+          <div className='text-2xl md:text-4xl'>UX Solution</div>
+          <div className=' text-[rgb(156,156,156)] font-thin text-lg'>
             We're on a mission to revamp the app's vibe, making it a breeze for
             delivery executives like Raj. First up on the agenda? A shiny "Check
             Availability" feature front and centre. This tweak is all about
@@ -137,22 +129,21 @@ const BLive = () => {
       </div>
 
       <div
-        className="container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center"
-        id="project-image"
-      >
-        <img src={bliveCompare} className="rounded-3xl object-cover w-full" />
+        className='container flex shadow-neu rounded-3xl my-10 md:my-20 justify-center'
+        id='project-image'>
+        <img src={bliveCompare} className='rounded-3xl object-cover w-full' />
       </div>
 
-      <h1 className="text-4xl font-medium">Final Presentation!!</h1>
+      <h1 className='text-4xl font-medium'>Final Presentation!!</h1>
 
       <div
-        className="container flex shadow-neu rounded-3xl my-10 justify-center"
-        id="project-image"
-      >
-        <img src={blivePresentation} className="rounded-3xl object-cover w-full" />
+        className='container flex shadow-neu rounded-3xl my-10 justify-center'
+        id='project-image'>
+        <img
+          src={blivePresentation}
+          className='rounded-3xl object-cover w-full'
+        />
       </div>
-
-
     </motion.div>
   );
 };
