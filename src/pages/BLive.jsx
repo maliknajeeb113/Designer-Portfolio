@@ -27,11 +27,11 @@ const BLive = () => {
         <div className='text-3xl lg:text-6xl font-medium'>
           BLive EZY Application Redesign
         </div>
-        <div className='md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5'>
+        {/* <div className='md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5'>
           Conducted market analysis, documented trends, and designed wireframes
           for Blive's Ezy App, enhancing user experience for a
           subscription-based EV rental service.
-        </div>
+        </div> */}
 
         <div className='container flex flex-col md:flex-row md:justify-between gap-10'>
           <div

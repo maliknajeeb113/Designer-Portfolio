@@ -28,11 +28,11 @@ const BLive = () => {
         <div className='text-3xl lg:text-6xl font-medium'>
           Native Application Redesign
         </div>
-        <div className='md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5'>
+        {/* <div className='md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5'>
           Led competitive research and designed user-focused interfaces at
           Salesken.ai, streamlining sales workflows with AI-driven tools and
           actionable insights.
-        </div>
+        </div> */}
 
         <div className='container flex flex-col md:flex-row md:justify-between gap-10'>
           <div

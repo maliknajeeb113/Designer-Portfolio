@@ -24,10 +24,10 @@ const TanishqPortfolio = () => {
         id='head'
         className='container flex flex-col items-start gap-6 mt-[150px]'>
         <div className='text-3xl lg:text-6xl font-medium'>Portfolio Design</div>
-        <div className='md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5'>
+        {/* <div className='md:text-xl text-[rgb(156,156,156)] font-thin lg:w-4/5'>
           Designed a website that helps Tanishq showcase all their work and
           skills easily in one place for job interviews.
-        </div>
+        </div> */}
 
         <div className='container flex flex-col md:flex-row md:justify-between gap-10'>
           <div
