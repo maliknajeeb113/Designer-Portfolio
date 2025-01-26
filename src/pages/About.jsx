@@ -122,7 +122,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
+          {/* <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
                 Oasis InfoByte - Sep 2023 - Oct 2023
@@ -134,7 +134,7 @@ const About = () => {
               Crafted visually appealing and user-friendly web interfaces, and
               developed responsive websites.
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
