@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { MdSportsTennis } from "react-icons/md";
 
-
 const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,13 +43,14 @@ const About = () => {
                 Product Designer
               </span>{" "}
               with experience working on diverse projects that focus on creating
-              seamless user experiences. Currently, I’m at{" "}
-              <span className="bg-[rgb(210,170,146)] text-white">Salesken</span>
-              , where I’m designing the UI for an AI-powered platform aimed at
-              enhancing customer support interactions.<br/> My approach to design is
+              seamless user experiences. <br />
+              Currently, I’m at{" "}
+              <span className="bg-[rgb(210,170,146)] text-white">B:Live</span>
+              , where I’m designing the UI for a sustainable E-Bike Rental
+              Platform aimed for Delivery Executives. My approach to design is
               centered around minimalism and ensuring intuitive, user-friendly
-              interfaces. <br/>When I'm not working on design projects, I enjoy
-              reading{" "}
+              interfaces. <br />
+              When I'm not working on design projects, I enjoy reading{" "}
               <span className="bg-[rgb(210,170,146)] text-white">
                 (recently developed hobby!)
               </span>{" "}
@@ -69,20 +69,35 @@ const About = () => {
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
-                Salesken - Aug 2024 - Present
+                B:Live - Jan 2025 - Present
               </div>
-              <div className="text-2xl">UX/UI Desginer</div>
+              <div className="text-2xl">Product Designer</div>
             </div>
 
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
-            Crafting the UI for an AI platform designed to streamline customer interactions and boost support efficiency.
+              Working on a sustainable EV rental platform for delivery
+              professionals, prioritizing user experience.
             </div>
           </div>
 
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
-                BLive - Dec 2023 - Mar 2024
+                Salesken - Aug 2024 - Present
+              </div>
+              <div className="text-2xl">UX/UI Desginer</div>
+            </div>
+
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
+              Crafting the UI for an AI platform designed to streamline customer
+              interactions and boost support efficiency.
+            </div>
+          </div>
+
+          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
+            <div id="left" className="flex flex-col lg:w-1/2 gap-2">
+              <div className="text-[rgb(156,156,156)]">
+                B:Live - Dec 2023 - Mar 2024
               </div>
               <div className="text-2xl">UX Desgin Intern</div>
             </div>
@@ -102,8 +117,8 @@ const About = () => {
             </div>
 
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
-              Crafted a stunning portfolio design tailored for a web
-              developer, emphasizing UX and visual appeal.
+              Crafted a stunning portfolio design tailored for a web developer,
+              emphasizing UX and visual appeal.
             </div>
           </div>
 

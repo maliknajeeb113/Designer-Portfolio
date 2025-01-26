@@ -41,7 +41,7 @@ const Body = () => {
               Product Designer <br /> based in Bangalore.
             </h1>
             <span className='text-[rgb(156,156,156)]  md:text-lg '>
-              Curently working at Salesken.ai
+              Curently working at <Link to={'https://blive.co.in/'} className="underline" target="_blank">B:Live</Link>
             </span>
             <span className='text-[rgb(156,156,156)]  md:text-lg '>
               I focus on minimalism and easy-to-understand information.
