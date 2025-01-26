@@ -41,7 +41,7 @@ const About = () => {
             <span className="text-[rgb(156,156,156)] md:text-lg">
               I'm a dedicated{" "}
               <span className="bg-[rgb(210,170,146)] text-white">
-                UX/UI Designer
+                Product Designer
               </span>{" "}
               with experience working on diverse projects that focus on creating
               seamless user experiences. Currently, I’m at{" "}
