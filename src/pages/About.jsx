@@ -83,7 +83,7 @@ const About = () => {
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
-                Salesken - Aug 2024 - Present
+                Salesken - Aug 2024 - Jan 2025
               </div>
               <div className="text-2xl">UX/UI Desginer</div>
             </div>
