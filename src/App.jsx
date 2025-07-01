@@ -48,14 +48,14 @@ export const appRouter = createBrowserRouter([
         path: "/bLive",
         element: <BLive />,
       },
-      {
-        path: "/portfolio-project",
-        element: <TanishqPortfolio />,
-      },
-      {
-        path: "/brandshark",
-        element: <Brandshark />,
-      },
+      // {
+      //   path: "/portfolio-project",
+      //   element: <TanishqPortfolio />,
+      // },
+      // {
+      //   path: "/brandshark",
+      //   element: <Brandshark />,
+      // },
       {
         path: "/playground",
         element: <Playground />,
