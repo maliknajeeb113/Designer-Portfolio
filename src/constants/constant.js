@@ -19,13 +19,13 @@ export const jobsData = [
     desc: "Conducted market analysis, documented trends, and designed wireframes for Blive's Ezy App, enhancing user experience for a subscription-based EV rental service.",
     linkTo: "/blive",
   },
-  {
-    imgLink: tanishqCover,
-    jobTitle: "UX Case Study - Application Redesign",
-    companyName: "Portfolio Design",
-    desc: "Created a user-friendly website tailored to clients needs, providing a centralized platform to showcase their work, skills, and accomplishments efficiently, facilitating effective presentation of their portfolio.",
-    linkTo: "/portfolio-project",
-  },
+  // {
+  //   imgLink: tanishqCover,
+  //   jobTitle: "UX Case Study - Application Redesign",
+  //   companyName: "Portfolio Design",
+  //   desc: "Created a user-friendly website tailored to clients needs, providing a centralized platform to showcase their work, skills, and accomplishments efficiently, facilitating effective presentation of their portfolio.",
+  //   linkTo: "/portfolio-project",
+  // },
   // {
   //   imgLink: brandsharkCover,
   //   jobTitle: "Marketing Website Redesign",

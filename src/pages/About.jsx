@@ -71,7 +71,7 @@ const About = () => {
            <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
-                BLive - Mar 2025 - Present
+                BLive - Jan 2025 - Present
               </div>
               <div className="text-2xl">Product Designer</div>
             </div>
