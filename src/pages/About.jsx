@@ -66,10 +66,26 @@ const About = () => {
       <div className="container flex flex-col mt-16">
         <h1 className="text-4xl font-medium pb-10">Work Experience</h1>
         <div className="flex flex-col gap-10" id="cards">
+
+            {/* Blive */}
+           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
+            <div id="left" className="flex flex-col lg:w-1/2 gap-2">
+              <div className="text-[rgb(156,156,156)]">
+                BLive - Mar 2025 - Present
+              </div>
+              <div className="text-2xl">Product Designer</div>
+            </div>
+
+            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
+              Currently leading the design of a native application for BLive, focusing on enhancing user experience and interface design.
+            </div>
+          </div>
+            
+            {/* Salesken */}
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
-                Salesken - Aug 2024 - Present
+                Salesken - Aug 2024 - Feb 2025
               </div>
               <div className="text-2xl">UX/UI Desginer</div>
             </div>
@@ -79,6 +95,7 @@ const About = () => {
             </div>
           </div>
 
+            {/* Blive Internship */}
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
@@ -93,7 +110,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
+            {/* Freelance */}
+          {/* <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
                 Freelance - Oct 2023 - Dec 2023
@@ -105,9 +123,10 @@ const About = () => {
               Crafted a stunning portfolio design tailored for a web
               developer, emphasizing UX and visual appeal.
             </div>
-          </div>
-
-          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
+          </div> */}
+            
+            {/* Oasis InfoByte */}
+          {/* <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
                 Oasis InfoByte - Sep 2023 - Oct 2023
@@ -119,7 +138,7 @@ const About = () => {
               Crafted visually appealing and user-friendly web interfaces, and
               developed responsive websites.
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

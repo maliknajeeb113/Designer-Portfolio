@@ -7,7 +7,7 @@ export const Card = (props) => {
     <div className='flex flex-col gap-10' id='cards'>
       <div className='shadow-neu flex flex-col md:flex-row-reverse gap-4 md:gap-20 p-6 md:p-10 rounded-3xl justify-between'>
         <div className='md:w-1/2 ' id='project-image'>
-          <img src={imgLink} className='rounded-2xl w-full object-cover' />
+          <img src={imgLink} className='rounded-2xl w-full object-fit' />
         </div>
         <div
           id='project-description'
