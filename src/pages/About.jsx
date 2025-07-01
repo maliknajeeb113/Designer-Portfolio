@@ -85,20 +85,6 @@ const About = () => {
           <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
             <div id="left" className="flex flex-col lg:w-1/2 gap-2">
               <div className="text-[rgb(156,156,156)]">
-                B:Live - Jan 2025 - Present
-              </div>
-              <div className="text-2xl">Product Designer</div>
-            </div>
-
-            <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
-              Working on a sustainable EV rental platform for delivery
-              professionals, prioritizing user experience.
-            </div>
-          </div>
-
-          <div className="shadow-neu flex flex-col lg:flex-row gap-10 p-10 rounded-3xl justify-between lg:items-center">
-            <div id="left" className="flex flex-col lg:w-1/2 gap-2">
-              <div className="text-[rgb(156,156,156)]">
                 Salesken - Aug 2024 - Jan 2025
               </div>
               <div className="text-2xl">UX/UI Desginer</div>
