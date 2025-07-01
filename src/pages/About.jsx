@@ -77,7 +77,7 @@ const About = () => {
             </div>
 
             <div className="text-[rgb(156,156,156)]  md:text-lg font-thin lg:w-1/2">
-              Currently leading the design of a native application for BLive, focusing on enhancing user experience and interface design.
+              Working on a sustainable EV rental platform for delivery professionals, prioritizing user experience.
             </div>
           </div>
             
