@@ -41,7 +41,7 @@ const Body = () => {
               A Product Designer ✨<br /> based in Bangalore.
             </h1>
             <span className='text-[rgb(156,156,156)]  md:text-lg '>
-              {/* Currently working at <Link to={'https://www.linkedin.com/company/bliveindia/'} className="underline" target="_blank">B:Live</Link>  */}
+
               Currently designing intuitive B2B & B2C SaaS experiences at <Link to={'https://www.linkedin.com/company/bliveindia/'} className="underline font-medium" target="_blank">B:Live</Link>, focused on simplifying complex workflows.
 
             </span>
