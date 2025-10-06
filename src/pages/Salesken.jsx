@@ -2,7 +2,7 @@ import bliveCompare from "../assets/blive/bliveCompare.png";
 import blivePresentation from "../assets/blive/blivePresentation.jpeg";
 import salesken1 from "../assets/salesken/salesken-1.jpeg";
 import salesken2 from "../assets/salesken/salesken-2.jpeg";
-import salesken from "../assets/salesken/salesken.jpeg";
+import salesken from "../assets/salesken/salesken.png";
 
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -45,13 +45,13 @@ const BLive = () => {
 
             <div className='flex flex-col md:gap-4'>
               <h1 className='font-medium md:text-xl'>Role</h1>
-              <p className='text-sm md:text-lg font-thin'>UX/UI Designer</p>
+              <p className='text-sm md:text-lg font-thin'>Product Designer</p>
             </div>
 
             <div className='flex flex-col md:gap-4'>
               <h1 className='font-medium md:text-xl'>Team</h1>
               <p className='text-sm md:text-lg font-thin'>
-                Product Design Team
+                Design Team
               </p>
             </div>
           </div>
@@ -59,7 +59,7 @@ const BLive = () => {
           <div id='right' className='flex'>
             <Link
               to={
-                "https://www.behance.net/gallery/213328817/AI-Based-Sales-Intelligence-Platform-Internship-Work"
+                "https://www.behance.net/gallery/213328817/AI-Based-Sales-Intelligence-Platform"
               }
               target='_blank'>
               {" "}
@@ -178,14 +178,14 @@ const BLive = () => {
           The Native app is currently a work in progress, but significant
           strides have been made.
           <div className='my-3' />
-          This internship has proven to be the most challenging yet rewarding
+          This stint has proven to be the most challenging yet rewarding
           experience I've encountered, primarily due to the fast-paced and
           ambiguous environment. I truly valued the challenge of designing my
           first end-to-end product, which has greatly enhanced my confidence in
           making design decisions. This experience underscored the importance of
           being a collaborative team player and provided me with the opportunity
           to work closely with other designers and engineers.
-          <div className='my-3' />I am also in the process of developing Version
+          <div className='my-3' />PS: I was also in the process of developing Version
           2 of the mobile application.
         </div>
       </div>

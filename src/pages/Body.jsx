@@ -36,18 +36,21 @@ const Body = () => {
         <div className='flex flex-col gap-6' id='hero-left'>
           <div className=' flex flex-col gap-6'>
             <h1 className='!leading-[1.2] text-3xl md:text-5xl font-medium '>
-              Hey, I'm{" "}
-              <span className='text-[rgb(182,154,137)]'>Avni Garg.</span> <br />{" "}
-              Product Designer <br /> based in Bangalore.
+              Hey👋🏻, I'm{" "}
+              <span className='text-[rgb(182,154,137)]'>Avni Garg,</span> <br />{" "}
+              A Product Designer ✨<br /> based in Bangalore.
             </h1>
             <span className='text-[rgb(156,156,156)]  md:text-lg '>
-              Curently working at <Link to={'https://blive.co.in/'} className="underline" target="_blank">B:Live</Link>
+              {/* Currently working at <Link to={'https://www.linkedin.com/company/bliveindia/'} className="underline" target="_blank">B:Live</Link>  */}
+              Currently designing intuitive B2B & B2C SaaS experiences at <Link to={'https://www.linkedin.com/company/bliveindia/'} className="underline font-medium" target="_blank">B:Live</Link>, focused on simplifying complex workflows.
+
             </span>
             <span className='text-[rgb(156,156,156)]  md:text-lg '>
               I focus on minimalism and easy-to-understand information.
             </span>
           </div>
           <div className='flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]'>
+            {/* Todo - make the resume restricted */}
             <Link to='/Avni_Garg_Resume.pdf' target='_blank'>
               <button
                 className='flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]'
@@ -64,7 +67,7 @@ const Body = () => {
 
       {/* projects start*/}
       <div className='container flex flex-col my-16 gap-10'>
-        <h1 className='text-4xl font-medium'>My Work</h1>
+        <h1 className='text-4xl font-medium'>Case Studies</h1>
 
         {/* Map the job data */}
         {jobsData?.map((data, idx) => {
@@ -86,7 +89,7 @@ const Body = () => {
 
       <div
         id='contact'
-        className='container text-2xl md:text-5xl flex flex-col mb-10 md:my-16 shadow-neu rounded-3xl items-center justify-center text-center py-10 md:py-20 px-8 gap-8 font-medium'>
+        className='container text-2xl md:text-5xl flex flex-col mb-10 md:mb-16 shadow-neu rounded-3xl items-center justify-center text-center py-10 md:py-20 px-8 gap-8 font-medium'>
         <h1>Want to create something awesome? </h1>
         <h1>Drop me an email.</h1>
 
