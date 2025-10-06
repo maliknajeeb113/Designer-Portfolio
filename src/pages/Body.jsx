@@ -51,7 +51,7 @@ const Body = () => {
           </div>
           <div className='flex flex-col md:flex-row justify-start gap-6 text-[rgb(126,126,126)]'>
             {/* Todo - make the resume restricted */}
-            <Link to='/Avni_Garg_Resume.pdf' target='_blank'>
+            <Link to='https://drive.google.com/file/d/1B_9Bz25SG9cIbWIgQFeeLjLua008NC84/view?usp=drive_link' target='_blank'>
               <button
                 className='flex justify-center rounded-2xl active:shadow-neu-i items-center shadow-neu w-40 md:w-56 font-medium text-sm md:text-lg h-14 gap-3 cursor-pointer hover:scale-[1.02] duration-500 text-[rgb(126,126,126)]'
                 id='get-in-touch'>
