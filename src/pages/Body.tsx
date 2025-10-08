@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { TbMailFilled } from "react-icons/tb";
 import { motion } from "framer-motion";
 import Socials from "../components/Socials";
-import { jobsData } from "../constants/constant";
+import { jobsData } from "../constants";
 import Card  from "../components/Card";
 import hero from "../assets/heroImage.jpg";
 

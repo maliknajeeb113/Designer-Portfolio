@@ -1,4 +1,4 @@
-import { WorkExperience } from "../constants/constant";
+import { WorkExperience } from "../constants";
 
 const WorkExperienceCard = ({ company, period, title, description }: WorkExperience) => {
   return (

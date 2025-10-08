@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { MdSportsTennis } from "react-icons/md";
 import WorkExperienceCard from "../components/WorkExperienceCard";
-import { workExperienceData } from "../constants/constant";
+import { workExperienceData } from "../constants";
 
 const About = () => {
   useEffect(() => {

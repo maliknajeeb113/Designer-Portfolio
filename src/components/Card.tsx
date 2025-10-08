@@ -1,6 +1,7 @@
 import { FaArrowRight } from "react-icons/fa6";
 import Button from "./Button";
-import { JobData } from "../constants/constant";
+
+import { JobData } from "../constants";
 
 const Card = (props: JobData) => {
   const { imgLink, jobTitle, companyName, desc, linkTo } = props;
