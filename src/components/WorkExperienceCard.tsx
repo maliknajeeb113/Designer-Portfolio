@@ -1,5 +1,6 @@
-import { MdOutlineWork } from "react-icons/md";
-const WorkExperienceCard = ({ company, period, title, description }) => {
+import { WorkExperience } from "../constants/constant";
+
+const WorkExperienceCard = ({ company, period, title, description }: WorkExperience) => {
   return (
     <div className="shadow-neu flex flex-col gap-4 p-8 rounded-3xl justify-between">
       <div className="text-[rgb(156,156,156)]">

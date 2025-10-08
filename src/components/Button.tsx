@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Button = ({ to = "", onClick, children, nav=false }) => {
+export interface ButtonProps {
+  to?: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+  nav?: boolean;
+}
+
+const Button = ({ to = "", onClick, children, nav=false }: ButtonProps) => {
 
   return (
     <Link to={to} onClick={onClick}>

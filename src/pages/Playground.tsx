@@ -1,5 +1,4 @@
-import React, { lazy, Suspense } from "react";
-
+import React from "react";
 import bank from "../assets/playground/bank.gif";
 import coffee from "../assets/playground/coffee.gif";
 import porsche from "../assets/playground/Porsche.gif";

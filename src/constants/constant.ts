@@ -3,8 +3,24 @@ import salesken from "../assets/salesken/salesken.png";
 // import tanishqCover from "../assets/portfolio-project/tanishqCover.png";
 import bliveCover from "../assets/blive/bliveCover.png";
 
+export interface JobData {
+  imgLink: string;
+  jobTitle: string;
+  companyName: string;
+  desc: string;
+  linkTo: string;
+}
+
+export interface WorkExperience {
+  id: number;
+  company: string;
+  period: string;
+  title: string;
+  description: string;
+}
+
 // add new job data here
-export const jobsData = [
+export const jobsData: JobData[] = [
   {
     imgLink: salesken,
     jobTitle: "Product Designer - Native Application Redesign",
