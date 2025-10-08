@@ -81,6 +81,7 @@ const About = () => {
           {workExperienceData.map((experience) => (
             <WorkExperienceCard
               key={experience.id}
+              id={experience.id}
               company={experience.company}
               period={experience.period}
               title={experience.title}

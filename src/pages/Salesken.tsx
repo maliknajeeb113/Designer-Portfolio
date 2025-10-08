@@ -1,5 +1,3 @@
-import bliveCompare from "../assets/blive/bliveCompare.png";
-import blivePresentation from "../assets/blive/blivePresentation.jpeg";
 import salesken1 from "../assets/salesken/salesken-1.jpeg";
 import salesken2 from "../assets/salesken/salesken-2.jpeg";
 import salesken from "../assets/salesken/salesken.png";
@@ -117,7 +115,7 @@ const BLive = () => {
         </div>
         <div className='flex flex-col shadow-neu rounded-3xl p-8 gap-6 md:w-1/2'>
           <div className='text-2xl md:text-4xl'>UX Solution</div>
-          <div class=' text-[rgb(156,156,156)] font-thin text-lg'>
+          <div className=' text-[rgb(156,156,156)] font-thin text-lg'>
             Let’s create a platform that brings together easy scheduling, smart
             post-call insights, and real-time help all in one simple interface.
             Here’s what we’re aiming for:
@@ -149,7 +147,7 @@ const BLive = () => {
         <div className='text-2xl md:text-4xl'>Impact</div>
         <div className=' text-[rgb(156,156,156)] font-thin text-lg'>
           The redesigned platform led to:
-          <ul class='list-disc pl-4 pt-1 pb-1'>
+          <ul className='list-disc pl-4 pt-1 pb-1'>
             <li>
               <span className='font-medium'>20%</span> increase in platform
               adoption.

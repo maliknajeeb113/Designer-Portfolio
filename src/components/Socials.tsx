@@ -22,4 +22,4 @@ const Socials = () => {
     )
 }
 
-export default Socials
+export default Socials;
