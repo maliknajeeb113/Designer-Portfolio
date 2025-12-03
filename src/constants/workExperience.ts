@@ -19,7 +19,7 @@ export const workExperienceData: WorkExperience[] = [
     id: 2,
     company: "Salesken",
     period: "Aug 2024 - Jan 2025",
-    title: "Product Designer",
+    title: "Product Designer Intern",
     description: "Designed intuitive interfaces for a B2B AI-powered sales intelligence platform, optimizing workflows and enhancing data visualization.",
   },
   {
