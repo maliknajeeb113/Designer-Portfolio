@@ -10,7 +10,7 @@ interface ContainerProps {
 // side gaps) — tweak the px-* values here to adjust every section at once.
 const Container = ({ children, className = "" }: ContainerProps) => {
   return (
-    <div className={`mx-auto w-full max-w-[1600px] px-6 sm:px-10 lg:px-16 ${className}`}>
+    <div className={`mx-auto w-full max-w-[1600px] px-8 sm:px-12 lg:px-24 ${className}`}>
       {children}
     </div>
   );
