@@ -1,33 +1,61 @@
-import { FaArrowRight } from "react-icons/fa6";
-import Button from "./Button";
-
+import BrowserFrame from "./BrowserFrame";
 import { JobData } from "../constants";
 
-const Card = (props: JobData) => {
-  const { imgLink, jobTitle, companyName, desc, linkTo } = props;
+// A single case study on the home page: headline (with a green script accent word),
+// a company/period meta line, a stats row, and a macOS-window screenshot.
+const Card = ({ label, headline, company, period, icon, stats, image, urlBar }: JobData) => {
   return (
-    <div className='flex flex-col gap-10' id='cards'>
-      <div className='shadow-neu flex flex-col md:flex-row-reverse gap-4 md:gap-20 p-6 md:p-10 rounded-3xl justify-between items-center'>
-        <div className='md:w-1/2 ' id='project-image'>
-          <img src={imgLink} className='rounded-2xl w-full object-fit' />
-        </div>
-        <div
-          id='project-description'
-          className='flex flex-col gap-6 md:w-1/2 justify-between'>
-          <div className='flex flex-col gap-4'>
-            <div className='text-[rgb(156,156,156)] font-thin'>{companyName}</div>
-            <div className='text-2xl'>{jobTitle}</div>
-            <div className='text-[rgb(156,156,156)]  md:text-lg font-thin'>
-              {desc}
-            </div>
-          </div>
-          <Button to={linkTo}>
-            <FaArrowRight />
-            <span>View Project</span>
-          </Button>
+    <article className="flex flex-col gap-6">
+      {label && (
+        <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-ink/[0.04] px-3 py-1 text-xs font-medium text-ink-faint">
+          {label}
+        </span>
+      )}
+
+      <div className="flex flex-col gap-3">
+        <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl lg:text-[2.75rem]">
+          {headline.pre}
+          <span className="font-script text-[1.15em] text-brand-green">{headline.highlight}</span>
+          {headline.post}
+        </h2>
+        <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-ink-faint">
+          <img src={icon} alt="" className="h-4 w-4 shrink-0 object-contain" />
+          <span>
+            {company} · {period}
+          </span>
         </div>
       </div>
-    </div>
+
+      {/* stats — full-width 4-column bar with vertical dividers. Padded to 4 so a
+          case study with only 3 stats keeps an empty 4th column (columns stay
+          aligned); no divider is drawn before an empty slot. */}
+      <div className="grid grid-cols-4">
+        {[...stats, null, null, null, null].slice(0, 4).map((stat, i) => (
+          <div
+            key={stat ? stat.label : `empty-${i}`}
+            className={`px-2 sm:px-6 ${i === 0 ? "pl-0" : ""} ${
+              i > 0 && stat ? "border-l border-ink/10" : ""
+            }`}
+          >
+            {stat && (
+              <>
+                <div className="font-display text-xl font-bold text-ink sm:text-3xl lg:text-4xl">
+                  {stat.value}
+                </div>
+                <div className="mt-1 text-[11px] leading-tight text-ink-faint sm:text-sm">
+                  {stat.label}
+                </div>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* macOS-window screenshot */}
+      <BrowserFrame url={urlBar} className="mt-2">
+        <img src={image} alt="" className="block w-full" />
+      </BrowserFrame>
+    </article>
   );
 };
 

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# TypeScript / Vite build artifacts (emitted by `tsc -b`)
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts

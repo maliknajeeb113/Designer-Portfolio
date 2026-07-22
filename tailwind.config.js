@@ -6,14 +6,41 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        poppins: ["Poppins", "sans-serif"]
+      fontFamily: {
+        // v2 fonts. Satoshi (Fontshare) for display headings, Inter for body/UI,
+        // Satisfy for the handwritten accent word ("Effortless", etc.). Loaded via
+        // @import in src/index.css. `poppins` is kept for not-yet-migrated v1 pages.
+        display: ["Satoshi Variable", "Satoshi", "system-ui", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        script: ["Satisfy", "Georgia", "cursive"],
+        poppins: ["Poppins", "sans-serif"],
       },
-      boxShadow:{
+      colors: {
+        // v2 palette. Values are PROVISIONAL — sampled by eye from the Figma
+        // screenshot, not the real tokens. Edit the hexes here to correct them
+        // everywhere at once. Green is the one confirmed value (#1DAF61).
+        brand: {
+          green: '#1DAF61',        // primary accent — buttons, script words, status dot
+          'green-deep': '#143024', // footer background (dark pine green) — provisional
+          pink: '#E255A0',         // magenta accent — footer "work", CTA — provisional
+          'pink-soft': '#F7DCE9',  // soft pink — hero bow / light fills — provisional
+          amber: '#F5A623',        // meta "lightning" icon — provisional
+        },
+        ink: {
+          DEFAULT: '#1A1A1A',      // headings / near-black — provisional
+          muted: '#6B6B6B',        // body copy — provisional
+          faint: '#9AA0A6',        // labels, meta, captions — provisional
+        },
+        grid: '#CCCCCC',           // hand-drawn hero grid lines (confirmed rgb 204,204,204)
+      },
+      boxShadow: {
+        // macOS-window frame elevation for case-study screenshots
+        window: '0 20px 50px -12px rgba(0, 0, 0, 0.18)',
+        // v1 neumorphism — kept only until the pages still using it are migrated
         neu: '-8px -6px 15px #fff, 6px 8px 15px rgba(0, 0, 0, 0.15)',
         'neu-i': 'inset -8px -6px 15px #fff, inset 6px 8px 15px rgba(0, 0, 0, 0.15)',
       },
-      backgroundColor:{
+      backgroundColor: {
         primary: 'rgb(241, 241, 241)',
         'primary-dark': '#1e1e1e'
       }

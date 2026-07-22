@@ -7,6 +7,7 @@ import Error from "./components/Error";
 import Playground from "./pages/Playground";
 import Footer from "./components/Footer";
 import Salesken from "./pages/Salesken";
+import GridTest from "./pages/GridTest"; // TEMP: design review only, see V2_DESIGN.md §11a
 // import TanishqPortfolio from "./pages/TanishqPortfolio";
 // import Brandshark from "./pages/Brandshark";
 
@@ -59,6 +60,11 @@ export const appRouter = createBrowserRouter([
       {
         path: "/playground",
         element: <Playground />,
+      },
+      {
+        // TEMP: hand-drawn grid style comparison for design review — remove once decided
+        path: "/grid-test",
+        element: <GridTest />,
       },
       // {
       //   path: "/pre-onboarding",

@@ -1,69 +1,54 @@
-import { Cross as Hamburger } from "hamburger-react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import Button from './Button';
-import Socials from "./Socials";
+import { Link, useLocation } from "react-router-dom";
+import Container from "./Container";
 
-const variants = {
-  open: { opacity: 1},
-  closed: { opacity: 0 },
-}
+// Resume link (opens the hosted PDF in a new tab). Same target used by the
+// hero + footer "Resume" buttons.
+const RESUME_URL =
+  "https://drive.google.com/file/d/1B_9Bz25SG9cIbWIgQFeeLjLua008NC84/view?usp=drive_link";
 
+const navItems = [
+  { label: "WORK", to: "/" },
+  { label: "FUN", to: "/playground" },
+  { label: "ABOUT", to: "/about" },
+];
 
 const Navbar = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
+  const { pathname } = useLocation();
 
   return (
-    <motion.nav className={`bg-primary flex flex-col w-screen text-[rgb(85,85,85)] px-6 md:px-[10rem] font-poppins fixed top-0  z-10 items-center ${isNavOpen ? "min-h-screen" : ""}`} 
-    >
-      <div className={`container flex py-4 items-center justify-between`}>
-        <div className="font-medium text-3xl text-[rgb(182,154,137)]" id="Logo">
-          <Link to={"/"}>Avni.</Link>
+    <nav className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-sm font-sans">
+      <Container className="flex items-center justify-between py-4">
+        <Link to="/" className="font-display text-xl font-bold text-ink">
+          Avni garg<span className="text-brand-green">.</span>
+          <sup className="text-[0.5em] font-medium text-ink-faint">™</sup>
+        </Link>
+
+        <div className="flex items-center gap-1 sm:gap-2">
+          {navItems.map((item) => {
+            const active = pathname === item.to;
+            return (
+              <Link
+                key={item.label}
+                to={item.to}
+                className={`rounded-full px-3 py-1.5 text-xs font-medium tracking-wide transition-colors sm:text-sm ${
+                  active ? "bg-ink/[0.06] text-ink" : "text-ink-faint hover:text-ink"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full px-3 py-1.5 text-xs font-medium tracking-wide text-ink-faint transition-colors hover:text-ink sm:text-sm"
+          >
+            RESUME
+          </a>
         </div>
-        <div className={`${isNavOpen?"shadow-neu-i":"shadow-neu"} rounded-full p-3 z-10`} id="Hamburger">
-          <Hamburger
-            rounded
-            toggled={isNavOpen}
-            toggle={setIsNavOpen}
-          ></Hamburger>
-        </div>
-      </div>
-      <motion.div
-        animate={isNavOpen ? "open" : "closed"}
-        transition={{duration:1}}
-        exit={{ opacity: 0 }}
-        variants={variants}
-        id="nav-items"
-        aria-expanded={isNavOpen}
-      > 
-      <motion.div className={`${isNavOpen ? "":"hidden"}`}
-      animate={isNavOpen ? "open" : "closed"}
-        transition={{duration:1}}
-        exit={{ opacity: 0 }}
-        variants={variants}>
-        <div className="flex flex-col gap-10 items-center p-10">
-          
-
-            <Button to="/" onClick={toggleNav} nav={true}>Home</Button>
-
-         
-
-          <Button to="/about" onClick={toggleNav} nav={true}>About</Button>
-
-          
-          <Button to="/playground" onClick={toggleNav} nav={true}>Playground</Button>
-
-          <Socials/>
-
-        </div>
-        
-        </motion.div>
-      </motion.div>
-    </motion.nav>
+      </Container>
+    </nav>
   );
 };
 
