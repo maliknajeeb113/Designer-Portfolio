@@ -37,7 +37,7 @@ export const jobsData: JobData[] = [
     ],
     image: ticketThumbnail,
     urlBar: "finance-template.aligoal.com",
-    linkTo: "",
+    linkTo: "/ticketing",
   },
   { label: "Case Study 2",
     headline: { pre: "From Google Sheets to a ", highlight: "Asset", post: " Management." },
