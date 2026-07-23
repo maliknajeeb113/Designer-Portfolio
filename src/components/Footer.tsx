@@ -18,27 +18,29 @@ const Footer = () => {
     <footer className="relative overflow-hidden bg-brand-green-deep font-sans text-white">
       {/* subtle tone-on-tone grid (static, same look as the hero) */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.08]">
-        <HandDrawnGrid cellSize={100} wobble={3} color="#ffffff" className="h-full w-full" />
+        <HandDrawnGrid cellSize={60} wobble={3} color="#ffffff" className="h-full w-full" />
       </div>
 
-      <Container className="relative flex flex-col items-center gap-8 py-24 text-center sm:py-32">
-        <h2 className="font-display text-5xl font-medium sm:text-7xl">
+      <Container className="relative flex flex-col items-center gap-12 py-24 text-center sm:py-32">
+        <h2 className="font-display text-5xl font-medium sm:text-8xl">
           Let&rsquo;s <span className="text-brand-pink">work</span> together!!
         </h2>
         <a
           href={RESUME_URL}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-ink transition-transform duration-300 hover:scale-[1.03]"
+          className="inline-flex items-center gap-4 rounded-full bg-white py-2 pl-8 pr-3 text-lg font-medium text-brand-pink transition-transform duration-300 hover:scale-[1.03]"
         >
           Resume
-          <FiArrowUpRight className="h-4 w-4" />
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-pink-light">
+            <FiArrowUpRight className="h-5 w-5" />
+          </span>
         </a>
       </Container>
 
-      <Container className="relative flex items-center justify-between py-6 text-sm text-white/70">
-        <span>design&amp;build by Avnigarg</span>
-        <div className="flex items-center gap-5">
+      <Container className="relative flex items-center justify-between pb-10 text-sm text-white/70">
+        <span>Designed by Avni Garg</span>
+        <div className="flex items-center gap-8">
           {socials.map(({ icon: Icon, href, label }) => (
             <a
               key={label}

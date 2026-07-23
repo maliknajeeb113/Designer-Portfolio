@@ -12,7 +12,7 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar }: 
         </span>
       )}
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-6">
         <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl lg:text-[2.75rem]">
           {headline.pre}
           <span className="font-script text-[1.15em] text-brand-green">{headline.highlight}</span>
@@ -51,9 +51,12 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar }: 
         ))}
       </div>
 
-      {/* macOS-window screenshot */}
+      {/* macOS-window screenshot — fixed 1224:436 thumbnail ratio (per Figma),
+          anchored to the top so the bottom of the screenshot is clipped */}
       <BrowserFrame url={urlBar} className="mt-2">
-        <img src={image} alt="" className="block w-full" />
+        <div className="aspect-[1224/436] w-full overflow-hidden">
+          <img src={image} alt="" className="h-full w-full object-cover object-top" />
+        </div>
       </BrowserFrame>
     </article>
   );

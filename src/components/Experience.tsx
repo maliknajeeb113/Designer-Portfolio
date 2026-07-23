@@ -4,13 +4,13 @@ import { workExperienceData } from "../constants";
 // "Where I've been" — short about blurb + the experience list.
 const Experience = () => {
   return (
-    <section className="py-16 sm:py-24">
+    <section className="pb-16 sm:pb-24">
       <Container>
         <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">
           Where I&rsquo;ve <span className="font-script text-[1.15em] text-brand-green">been.</span>
         </h2>
 
-        <div className="mt-6 flex max-w-3xl flex-col gap-4 text-base text-ink-muted sm:text-lg">
+        <div className="mt-6 flex max-w-6xl flex-col gap-4 text-base text-ink-muted sm:text-lg">
           <p>
             I&rsquo;m Avni Garg, a Product Designer passionate about creating clean, intuitive, and
             human-centered digital experiences.

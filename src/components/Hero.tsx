@@ -42,7 +42,7 @@ const Hero = () => {
             </h1>
 
             {/* body — extra top gap after the headline */}
-            <p className="mt-4 max-w-3xl text-base text-ink-muted sm:text-lg">
+            <p className="mt-4 max-w-5xl text-base text-ink-muted sm:text-lg">
               Currently designing intuitive B2B &amp; B2C SaaS experiences at B:Live — focused on
               minimalism, easy-to-understand information, and workflows that get out of the way.
               0→1 products, given the care they deserve.

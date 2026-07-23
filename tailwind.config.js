@@ -22,8 +22,8 @@ export default {
         brand: {
           green: '#1DAF61',        // primary accent — buttons, script words, status dot
           'green-deep': '#143024', // footer background (dark pine green) — provisional
-          pink: '#E255A0',         // magenta accent — footer "work", CTA — provisional
-          'pink-soft': '#F7DCE9',  // soft pink — hero bow / light fills — provisional
+          pink: '#AD319C',         // primary pink accent — footer "work", Resume text
+          'pink-light': '#FFE2FB', // light pink — Resume icon badge / soft fills
           amber: '#F5A623',        // meta "lightning" icon — provisional
         },
         ink: {

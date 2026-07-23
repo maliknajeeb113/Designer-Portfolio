@@ -1,7 +1,6 @@
-// PLACEHOLDER screenshots — reusing v1 assets inside the macOS window frames
-// until the real dashboard exports are dropped in. Swap the `image` values below.
-import salesken from "../assets/salesken/salesken.png";
-import bliveCover from "../assets/blive/bliveCover.png";
+import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
+import assetThumbnail from "../assets/blive/asset-thumbnail.png";
+import saleskenThumbnail from "../assets/salesken/salesken-thumbnail.png";
 import bliveIcon from "../assets/blive/blive-icon.png";
 import saleskenIcon from "../assets/salesken/salesken-icon.png";
 
@@ -19,13 +18,13 @@ export interface JobData {
   period: string; // meta line — period
   icon: string; // company logo shown before the meta line
   stats: CaseStudyStat[];
-  image: string; // macOS-window screenshot (PLACEHOLDER for now)
+  image: string; // dashboard screenshot shown in the macOS-window frame
   urlBar: string; // text shown in the browser-frame URL bar
   linkTo: string; // case-study page link — intentionally EMPTY for now
 }
 
 export const jobsData: JobData[] = [
-  {
+  { label: "Case Study 1",
     headline: { pre: "From WhatsApp Chaos to a ", highlight: "Ticketing", post: " Platform" },
     company: "B:LIVE - EV MOBILITY PLATFORM",
     period: "PRESENT",
@@ -36,11 +35,11 @@ export const jobsData: JobData[] = [
       { value: "15min", label: "To acknowledgment" },
       { value: "0", label: "Orphaned tickets" },
     ],
-    image: salesken,
+    image: ticketThumbnail,
     urlBar: "finance-template.aligoal.com",
     linkTo: "",
   },
-  {
+  { label: "Case Study 2",
     headline: { pre: "From Google Sheets to a ", highlight: "Asset", post: " Management." },
     company: "B:LIVE - EV MOBILITY PLATFORM",
     period: "PRESENT",
@@ -51,7 +50,7 @@ export const jobsData: JobData[] = [
       { value: "35→55", label: "Fleet operators (B2B growth)" },
       { value: "Reduce", label: "Out-of-city incidents, significantly reduced" },
     ],
-    image: bliveCover,
+    image: assetThumbnail,
     urlBar: "finance-template.aligoal.com",
     linkTo: "",
   },
@@ -66,7 +65,7 @@ export const jobsData: JobData[] = [
       { value: "52%", label: "Lower spend" },
       { value: "45%", label: "Cleaner data" },
     ],
-    image: salesken,
+    image: saleskenThumbnail,
     urlBar: "finance-template.aligoal.com",
     linkTo: "",
   },

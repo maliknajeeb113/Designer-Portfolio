@@ -243,7 +243,7 @@ Built 2026-07-22 on branch `v2`. Home route `/` (`src/pages/Body.tsx`) now compo
 - `src/pages/Body.tsx` — **rewritten** as `<Hero/><Work/><Experience/>`.
 
 **PLACEHOLDERS to replace with real Figma exports** (all flagged in-code):
-- Case-study dashboard screenshots — currently reuse v1 assets (`salesken.png`, `bliveCover.png`) inside the `BrowserFrame`s. Real exports go in `jobsData[].image`.
+- ~~Case-study dashboard screenshots~~ — **done:** real thumbnails in place (`assets/blive/ticket-thumbnail.png`, `assets/blive/asset-thumbnail.png`, `assets/salesken/salesken-thumbnail.png`). Displayed at a fixed **1224:436** ratio (`aspect-[1224/436]`) with `object-cover object-top` so the top shows and the bottom is clipped.
 - Hero **social-proof avatars** — coloured circles, need real customer/brand marks.
 - Hero **bow** — removed for now (was a placeholder SVG); to be re-added later with the real asset.
 
