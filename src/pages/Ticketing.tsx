@@ -116,7 +116,7 @@ const Ticketing = () => {
             {chips.map((chip) => (
               <span
                 key={chip}
-                className="rounded-full border border-ink/15 px-3 py-1 text-xs font-medium text-ink-muted"
+                className="rounded-full bg-ink/[0.05] px-3 py-1 text-xs font-medium text-ink-muted"
               >
                 {chip}
               </span>
@@ -129,71 +129,91 @@ const Ticketing = () => {
               <img src={ticketThumbnail} alt="" className="h-full w-full object-cover object-top" />
             </div>
           </BrowserFrame>
+
+          {/* meta bar — full-width, horizontal, separated by vertical dividers.
+              On mobile it wraps to a 2×2 grid, so the divider is drawn only
+              between columns (odd items on mobile; every item but the first on sm). */}
+          <dl className="mt-24 grid grid-cols-2 sm:grid-cols-4">
+            {aboutMeta.map((row, i) => (
+              <div
+                key={row.k}
+                className={`border-ink/10 px-4 py-2 sm:px-6 sm:py-0 ${
+                  i % 2 === 1 ? "border-l" : ""
+                } ${i === 0 ? "sm:border-l-0 sm:pl-0" : "sm:border-l"}`}
+              >
+                <dt className="text-xs font-medium uppercase tracking-wide text-ink-faint">{row.k}</dt>
+                <dd className="mt-2 text-sm text-ink">{row.v}</dd>
+              </div>
+            ))}
+          </dl>
         </Container>
       </section>
 
       {/* ===== ABOUT ===== */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
-            <p className="text-lg text-ink-muted sm:text-xl">
-              I owned end-to-end UX for the admin dashboard (Ticket Master, Ticket Management, User
-              Management, Settings) and the rider-facing Help &amp; Support experience in the EZY DE
-              app — plus a new design system for the platform, built from the ground up. With a team
-              this small, I wasn&rsquo;t just producing screens; I was contributing to product logic
-              and negotiating trade-offs directly with engineering.
-            </p>
-            <dl className="flex flex-col gap-4">
-              {aboutMeta.map((row) => (
-                <div key={row.k} className="border-t border-ink/10 pt-3">
-                  <dt className="text-xs font-medium uppercase tracking-wide text-ink-faint">{row.k}</dt>
-                  <dd className="mt-1 text-sm text-ink">{row.v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <p className="text-lg text-ink-muted sm:text-xl">
+            I owned end-to-end UX for the admin dashboard (Ticket Master, Ticket Management, User
+            Management, Settings) and the rider-facing Help &amp; Support experience in the EZY DE
+            app — plus a new design system for the platform, built from the ground up. With a team
+            this small, I wasn&rsquo;t just producing screens; I was contributing to product logic
+            and negotiating trade-offs directly with engineering.
+          </p>
         </Container>
       </section>
 
       {/* ===== 1. WHO, WHY & WHAT ===== */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16">
         <Container>
           <SectionHeading number="1" title="Who, Why & What" />
 
           {/* Problem */}
-          <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
-            <div>
-              <p className="text-lg text-ink-muted">
-                B:Live manages EV fleets for delivery riders across cities. When something went wrong
-                — a payment failure, a vehicle breakdown, a document issue — this is how it got
-                &ldquo;handled.&rdquo;
-              </p>
-              <h3 className="mt-8 font-display text-2xl font-semibold text-ink">
-                The problem: issues everyone could see, nobody owned.
-              </h3>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {problemCards.map((card) => (
-                  <div key={card.title} className="rounded-2xl border border-ink/10 bg-white p-5">
-                    <div className="text-2xl">{card.emoji}</div>
-                    <div className="mt-3 font-medium text-ink">{card.title}</div>
-                    <p className="mt-1 text-sm text-ink-muted">{card.text}</p>
-                  </div>
-                ))}
+          <div className="mt-12">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Problem</span>
+            <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+              <div>
+                <p className="text-lg text-ink-muted">
+                  B:Live manages EV fleets for delivery riders across cities. When something went
+                  wrong — a payment failure, a vehicle breakdown, a document issue — this is how it
+                  got &ldquo;handled.&rdquo;
+                </p>
+                <h3 className="mt-8 font-display text-2xl font-semibold text-ink">
+                  The problem: issues everyone could see, nobody owned.
+                </h3>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {problemCards.map((card) => (
+                    <div key={card.title} className="rounded-2xl border border-ink/10 bg-white p-5">
+                      <div className="text-2xl">{card.emoji}</div>
+                      <div className="mt-3 font-medium text-ink">{card.title}</div>
+                      <p className="mt-1 text-sm text-ink-muted">{card.text}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
+              <PlaceholderImage label="Chaos / WhatsApp screenshot" className="min-h-[420px] lg:h-full" />
             </div>
-            <PlaceholderImage label="Chaos / WhatsApp screenshot" className="min-h-[420px] lg:h-full" />
           </div>
 
           {/* Research */}
-          <div className="mt-16 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center">
-            <div>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Research</span>
-              <p className="mt-4 text-lg text-ink-muted">
-                Before any layout, I went deep on how support actually worked today — and exactly
-                where it broke. (Placeholder — full research copy to come.)
-              </p>
+          <div className="mt-16">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Research</span>
+            <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+              <div className="flex flex-col gap-4 text-lg text-ink-muted">
+                <p>I ran research on two tracks over the first three weeks.</p>
+                <p>
+                  User interviews across every role that touches a support issue — riders, fleet
+                  operators, hub managers, deployment managers, and recovery managers. Historical
+                  complaint analysis, going through past issues raised via calls and WhatsApp to
+                  understand real categories, frequency, and where they died.
+                </p>
+                <p>
+                  Then I made research a habit, not a phase: recurring one-hour weekly sessions with
+                  all POCs, for three consecutive weeks, so every decision could be validated against
+                  real workflows before it hardened into spec.
+                </p>
+              </div>
+              <PlaceholderImage label="Research board / interviews" className="min-h-[320px]" />
             </div>
-            <PlaceholderImage label="Research board / interviews" className="min-h-[320px]" />
           </div>
 
           {/* Target personas */}
@@ -276,25 +296,15 @@ const Ticketing = () => {
           <SectionHeading number="3" title="Design Evolution" />
 
           {/* iterations */}
-          <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_1.4fr] lg:items-center">
-            <div>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Iterations</span>
-              <div className="mt-4 flex flex-col gap-4 text-lg text-ink-muted">
-                <p>I ran research on two tracks over the first three weeks.</p>
-                <p>
-                  User interviews across every role that touches a support issue — riders, fleet
-                  operators, hub managers, deployment managers, and recovery managers. Historical
-                  complaint analysis, going through past issues raised via calls and WhatsApp to
-                  understand real categories, frequency, and where they died.
-                </p>
-                <p>
-                  Then I made research a habit, not a phase: recurring one-hour weekly sessions with
-                  all POCs, for three consecutive weeks, so every decision could be validated against
-                  real workflows before it hardened into spec.
-                </p>
-              </div>
+          <div className="mt-12">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Iterations</span>
+            <div className="mt-6 grid gap-10 lg:grid-cols-[1.2fr_1.4fr] lg:items-start">
+              <p className="text-lg text-ink-muted">
+                From those insights, the design moved through several iterations before it settled.
+                (Placeholder — iterations copy to come.)
+              </p>
+              <PlaceholderImage label="Iteration screens grid" className="min-h-[320px]" />
             </div>
-            <PlaceholderImage label="Iteration screens grid" className="min-h-[320px]" />
           </div>
 
           {/* trade-offs */}
