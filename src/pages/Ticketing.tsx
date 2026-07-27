@@ -1,10 +1,17 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FiStar, FiChevronsRight } from "react-icons/fi";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import PlaceholderImage from "../components/PlaceholderImage";
 import BrowserFrame from "../components/BrowserFrame";
 import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
+import oldTicketing from "../assets/blive/old-ticketing.png";
+import researchImg from "../assets/blive/research.png";
+import adminSticker from "../assets/blive/personas/admin.png";
+import riderSticker from "../assets/blive/personas/rider.png";
+import dmSticker from "../assets/blive/personas/dm-manager.png";
+import recoverySticker from "../assets/blive/personas/recovery-manager.png";
 
 // NOTE: prose below is placeholder/first-pass copy — the client edits case-study
 // text by hand. Stickers use emojis for now; real graphics come later.
@@ -38,25 +45,31 @@ const problemCards = [
   { emoji: "🙅", title: "No assigned owner", text: "Tickets had no assignee and no clear next step." },
 ];
 
+// Each persona carries its own colour family: `bg` (card, lightest), `pill`
+// (a darker shade of the same hue for the Needs pill) and `text` (darkest, for
+// the pill label + the needs line).
 const personas = [
-  { emoji: "🧑‍💼", name: "Admin", text: "Oversees tickets, users, and settings across the whole platform." },
-  { emoji: "🛵", name: "Rider", text: "Raises issues from the EZY DE app and needs quick, clear help." },
-  { emoji: "🗂️", name: "DM Manager", text: "Manages deployment and vehicle logistics day to day." },
-  { emoji: "🔧", name: "Recovery Manager", text: "Handles breakdowns and vehicle recovery on the ground." },
+  { name: "Admin", role: "Oversees the whole support operation.", needs: "their riders' tickets to come to them, not a stranger.", bg: "bg-emerald-50/70", pill: "bg-emerald-100", text: "text-emerald-800", img: adminSticker },
+  { name: "Rider", role: "Raises issues from the EZY DE app.", needs: "quick, clear help without chasing anyone on the phone.", bg: "bg-blue-50/70", pill: "bg-blue-100", text: "text-blue-800", img: riderSticker },
+  { name: "DM Manager", role: "Manages deployment and vehicle logistics day to day.", needs: "tickets routed to the right team automatically.", bg: "bg-amber-50/70", pill: "bg-amber-100", text: "text-amber-800", img: dmSticker },
+  { name: "Recovery Manager", role: "Handles breakdowns and vehicle recovery on the ground.", needs: "full vehicle history before heading out on a recovery.", bg: "bg-brand-pink-light/40", pill: "bg-brand-pink-light", text: "text-brand-pink", img: recoverySticker },
 ];
 
 const jtbd = [
-  { when: "a payment or issue is raised", want: "to log it in-app and track it", so: "keep working without chasing people on the phone" },
+  { when: "my vehicle or payment has an issue (Rider)", want: "raise a complaint in app and track its status", so: "keep working without chasing people on the phone" },
   { when: "a new ticket comes in", want: "it routed to exactly one owner", so: "start resolving instead of triaging" },
   { when: "a rider has a problem", want: "to see the ticket's full history", so: "understand the relationship without re-asking" },
   { when: "reviewing support performance", want: "to see every team's SLA record", so: "hold teams accountable and spot systemic issues" },
 ];
 
+// Breadcrumb-style steps. `color` cycles the existing brand accents for the
+// step number (grey `label` on top, dark `text` statement below).
 const actionCards = [
-  { title: "One owner per ticket", text: "Every ticket gets exactly one accountable owner." },
-  { title: "Auto-assignment", text: "Route by category and team, automatically." },
-  { title: "Single source of truth", text: "One system replaces WhatsApp + spreadsheets." },
-  { title: "SLA visibility", text: "Acknowledgment and resolution tracked per team." },
+  { num: "01", label: "One owner per ticket", text: "Every ticket gets exactly one accountable owner.", color: "text-brand-green" },
+  { num: "02", label: "Auto-assignment", text: "Route by category and team, automatically.", color: "text-brand-pink" },
+  { num: "03", label: "Single source of truth", text: "One system replaces WhatsApp + spreadsheets.", color: "text-brand-amber" },
+  { num: "04", label: "SLA visibility", text: "Acknowledgment and resolution tracked per team.", color: "text-brand-green" },
+  { num: "05", label: "SLA visibility", text: "Acknowledgment and resolution tracked per team.", color: "text-brand-green" },
 ];
 
 const scopingCards = [
@@ -84,6 +97,11 @@ const Ticketing = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Desktop step grid: ≤4 steps share one row; 5+ wrap into rows of 3 (so 5 → 3 + 2).
+  // A single N-column grid keeps every card the same width, so row 2's cards line
+  // up as columns under row 1. Mobile always stacks top-down regardless.
+  const stepCols = actionCards.length > 4 ? 3 : Math.max(actionCards.length, 1);
 
   return (
     <motion.main
@@ -152,7 +170,7 @@ const Ticketing = () => {
       {/* ===== ABOUT ===== */}
       <section className="py-16">
         <Container>
-          <p className="text-lg text-ink-muted sm:text-xl">
+          <p className="text-xl text-ink-muted sm:text-xl">
             I owned end-to-end UX for the admin dashboard (Ticket Master, Ticket Management, User
             Management, Settings) and the rider-facing Help &amp; Support experience in the EZY DE
             app — plus a new design system for the platform, built from the ground up. With a team
@@ -170,9 +188,9 @@ const Ticketing = () => {
           {/* Problem */}
           <div className="mt-12">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Problem</span>
-            <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+            <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
               <div>
-                <p className="text-lg text-ink-muted">
+                <p className="text-xl text-ink-muted">
                   B:Live manages EV fleets for delivery riders across cities. When something went
                   wrong — a payment failure, a vehicle breakdown, a document issue — this is how it
                   got &ldquo;handled.&rdquo;
@@ -190,15 +208,23 @@ const Ticketing = () => {
                   ))}
                 </div>
               </div>
-              <PlaceholderImage label="Chaos / WhatsApp screenshot" className="min-h-[420px] lg:h-full" />
+              {/* image height is capped to the text column: the img is absolutely
+                  positioned so it doesn't drive row height — the text does. */}
+              <div className="relative h-64 lg:h-auto">
+                <img
+                  src={oldTicketing}
+                  alt="The old WhatsApp + spreadsheet ticketing flow"
+                  className="absolute inset-0 h-full w-full rounded-3xl border border-ink/10 object-cover object-top"
+                />
+              </div>
             </div>
           </div>
 
           {/* Research */}
           <div className="mt-16">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Research</span>
-            <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
-              <div className="flex flex-col gap-4 text-lg text-ink-muted">
+            <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+              <div className="flex flex-col gap-4 text-xl text-ink-muted max-w-2xl">
                 <p>I ran research on two tracks over the first three weeks.</p>
                 <p>
                   User interviews across every role that touches a support issue — riders, fleet
@@ -212,19 +238,46 @@ const Ticketing = () => {
                   real workflows before it hardened into spec.
                 </p>
               </div>
-              <PlaceholderImage label="Research board / interviews" className="min-h-[320px]" />
+              <div className="relative h-64 md:h-auto">
+                <img
+                  src={researchImg}
+                  alt="Research board and interviews"
+                  className="absolute inset-0 h-full w-full rounded-3xl border border-ink/10 object-cover object-top"
+                />
+              </div>
             </div>
           </div>
 
           {/* Target personas */}
           <div className="mt-16">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Target personas</span>
-            <div className="mt-6 grid grid-cols-2 gap-4">
+            <div className="mt-6 grid gap-6 lg:grid-cols-2">
               {personas.map((p) => (
-                <div key={p.name} className="rounded-2xl border border-ink/10 bg-white p-6">
-                  <div className="text-4xl">{p.emoji}</div>
-                  <div className="mt-4 font-display text-lg font-semibold text-ink">{p.name}</div>
-                  <p className="mt-1 text-sm text-ink-muted">{p.text}</p>
+                <div
+                  key={p.name}
+                  className={`relative flex min-h-[240px] flex-col overflow-hidden rounded-[2.25rem] border border-white/60 p-8 backdrop-blur-sm ${p.bg}`}
+                >
+                  <div className="relative z-10 max-w-[70%]">
+                    <h4 className="font-display text-4xl font-medium text-ink">{p.name}</h4>
+                    <p className="mt-3 text-lg text-ink-muted">{p.role}</p>
+                  </div>
+
+                  <div className="relative z-10 mt-auto max-w-[70%] pt-6">
+                    <span
+                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium ${p.pill} ${p.text}`}
+                    >
+                      <FiStar className="h-3.5 w-3.5" />
+                      Needs
+                    </span>
+                    <p className="mt-3">{p.needs}</p>
+                  </div>
+
+                  {/* persona sticker — capped by height, natural width */}
+                  <img
+                    src={p.img}
+                    alt=""
+                    className="pointer-events-none absolute bottom-6 right-6 h-28 w-auto object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -254,27 +307,72 @@ const Ticketing = () => {
           {/* Action plan */}
           <div className="mt-16">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Action plan</span>
-            <p className="mt-4 max-w-3xl text-lg text-ink-muted">
-              Research led to one insight: the product isn&rsquo;t a ticket list — it&rsquo;s an
-              ownership machine. Every ticket needs exactly one accountable owner, automatically.
+            <p className="mt-4 text-xl text-ink-muted">
+              Research pointed to one core insight: the product isn't a ticket list it's an ownership machine. Every ticket needed exactly one accountable owner, automatically.
             </p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {actionCards.map((card) => (
-                <div key={card.title} className="rounded-2xl border border-ink/10 bg-white p-5">
-                  <div className="font-medium text-ink">{card.title}</div>
-                  <p className="mt-1 text-sm text-ink-muted">{card.text}</p>
-                </div>
-              ))}
+            {/* breadcrumb-style steps: numbered cards joined by a >> badge. On
+                desktop it's an N-column grid (so 5 steps → 3 + 2, every card the
+                same width) with the connector pointing right, absolutely placed on
+                each card's right edge except at a row's end. On mobile everything
+                stacks and the connector points down between every pair. */}
+            <div
+              className="mt-8 flex flex-col lg:grid lg:gap-x-4 lg:gap-y-4"
+              style={{ gridTemplateColumns: `repeat(${stepCols}, minmax(0, 1fr))` }}
+            >
+              {actionCards.map((card, i) => {
+                const col = i % stepCols;
+                const isLast = i === actionCards.length - 1;
+                const isRowStart = col === 0;
+                const isRowEnd = col === stepCols - 1 || isLast; // last in its desktop row
+                const radius =
+                  isRowStart && isRowEnd
+                    ? "lg:rounded-[24px]"
+                    : isRowStart
+                      ? "lg:rounded-l-[24px] lg:rounded-r-[12px]"
+                      : isRowEnd
+                        ? "lg:rounded-l-[12px] lg:rounded-r-[24px]"
+                        : "lg:rounded-[12px]";
+                return (
+                  <Fragment key={i}>
+                    <div className={`relative flex items-start gap-7 rounded-[16px] bg-ink/[0.04] p-7 ${radius}`}>
+                      <span className={`font-sans text-xl font-medium leading-7 ${card.color}`}>
+                        {card.num}
+                      </span>
+                      <div className="w-px self-stretch bg-ink/10" />
+                      <div className="flex flex-col gap-4">
+                        <p className="text-base font-medium leading-6 text-ink-faint">{card.label}</p>
+                        <p className="font-sans text-xl font-medium leading-7 text-ink">{card.text}</p>
+                      </div>
+
+                      {/* desktop connector — centered in the gap between this card
+                          and the next (gap-x-4 = 16px, so shift its centre +8px past
+                          the right edge). Only when a card follows in the same row. */}
+                      {!isRowEnd && (
+                        <div className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-[calc(50%+8px)] items-center justify-center rounded-full bg-white p-1 shadow-[0px_0px_0px_1px_rgba(23,23,23,0.08),0px_1px_1px_-0.5px_rgba(23,23,23,0.04),0px_3px_3px_-1.5px_rgba(23,23,23,0.04)] lg:flex">
+                          <FiChevronsRight className="h-5 w-5 text-ink-faint" />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* mobile connector — in-flow, points down between every pair */}
+                    {!isLast && (
+                      <div className="relative z-10 -my-2 flex shrink-0 items-center justify-center self-center rounded-full bg-white p-1 shadow-[0px_0px_0px_1px_rgba(23,23,23,0.08),0px_1px_1px_-0.5px_rgba(23,23,23,0.04),0px_3px_3px_-1.5px_rgba(23,23,23,0.04)] lg:hidden">
+                        <FiChevronsRight className="h-5 w-5 rotate-90 text-ink-faint" />
+                      </div>
+                    )}
+                  </Fragment>
+                );
+              })}
             </div>
           </div>
         </Container>
       </section>
 
       {/* ===== 2. PRODUCT SCOPING ===== */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16">
         <Container>
           <SectionHeading number="2" title="Product Scoping" />
-          <p className="mt-6 max-w-3xl text-lg text-ink-muted">
+          <p className="mt-6 max-w-3xl text-xl text-ink-muted">
             User stories kept scope honest — one clear job per role, so the build stayed anchored to
             real needs instead of feature wishlists.
           </p>
@@ -299,7 +397,7 @@ const Ticketing = () => {
           <div className="mt-12">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Iterations</span>
             <div className="mt-6 grid gap-10 lg:grid-cols-[1.2fr_1.4fr] lg:items-start">
-              <p className="text-lg text-ink-muted">
+              <p className="text-xl text-ink-muted">
                 From those insights, the design moved through several iterations before it settled.
                 (Placeholder — iterations copy to come.)
               </p>
@@ -349,7 +447,7 @@ const Ticketing = () => {
               </div>
             ))}
           </div>
-          <div className="mt-12 flex max-w-4xl flex-col gap-4 text-lg text-ink-muted">
+          <div className="mt-12 flex max-w-4xl flex-col gap-4 text-xl text-ink-muted">
             <p>
               Support went from &ldquo;WhatsApp someone you know and hope&rdquo; to a system where
               every issue has a record, an owner, a status the rider can see, and a documented
