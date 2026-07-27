@@ -1,13 +1,15 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import { FiStar, FiChevronsRight } from "react-icons/fi";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
-import PlaceholderImage from "../components/PlaceholderImage";
 import BrowserFrame from "../components/BrowserFrame";
 import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
 import oldTicketing from "../assets/blive/old-ticketing.png";
 import researchImg from "../assets/blive/research.png";
+import iterationsImg from "../assets/blive/iterations.png";
+import liveChatImg from "../assets/blive/tradeoffs/live-chat.png";
+import kanbanImg from "../assets/blive/tradeoffs/kanban-vs-table.png";
 import adminSticker from "../assets/blive/personas/admin.png";
 import riderSticker from "../assets/blive/personas/rider.png";
 import dmSticker from "../assets/blive/personas/dm-manager.png";
@@ -84,11 +86,106 @@ const personaCards = [
   { src: supportCard, alt: "Support Team — user stories", left: "0%", top: "53.09%", width: "60.66%" },
 ];
 
+// Emphasis inside trade-off body copy — darker + heavier against the muted text.
+const Em = ({ children }: { children: ReactNode }) => (
+  <strong className="font-semibold text-ink">{children}</strong>
+);
+
+// Design trade-offs. `status` is a small coloured pill; colours reuse the persona
+// hue families (emerald / blue / amber / brand-pink). Items 1 & 4 are full-width
+// text; the two middle ones carry an image so the run reads balanced.
 const tradeoffs = [
-  { title: "Auto-assignment vs. manual triage", text: "Why auto-assignment won, with a manual override for edge cases." },
-  { title: "Live chat inside tickets", text: "Keeping the conversation attached to the ticket, not a side channel." },
-  { title: "Kanban vs. table view", text: "Why the table won for dense, operational ticket data." },
-  { title: "Ticket criticality / priority", text: "Encoding urgency without overwhelming the interface." },
+  {
+    status: "Shipped as proposed",
+    statusClass: "bg-emerald-50 text-emerald-700",
+    title: "Auto-assignment vs. manual triage.",
+    hasImage: false,
+    body: (
+      <>
+        <p>
+          Early scoping leaned toward manual assignment by an admin. But a Deployment Manager told
+          me riders call him, and only him, for everything — manual triage would just digitize the
+          old bottleneck.
+        </p>
+        <p className="font-medium text-ink">
+          I made the case that assignment had to be automatic and rule-based: category → department
+          → round-robin, with a DM exception so riders with a trusted contact keep them.
+        </p>
+        <p>
+          This is my favourite decision in the project — the system optimizes for load balance by
+          default, but yields to relationship continuity when it exists.
+        </p>
+      </>
+    ),
+  },
+  {
+    status: "Deferred to comments log",
+    statusClass: "bg-blue-50 text-blue-700",
+    title: "Live chat inside tickets.",
+    hasImage: true,
+    image: liveChatImg,
+    body: (
+      <>
+        <p>
+          I proposed a live chat between the ticket raiser and assignee — otherwise clarifying
+          conversations would leak right back to WhatsApp, recreating the exact problem we were
+          solving. </p>
+          <p>Engineering couldn&rsquo;t commit to real-time chat within the 2-month window, so
+          v1 shipped with a <Em>comments section + full activity log</Em> instead, keeping chat on
+          the roadmap.
+        </p>
+      </>
+    ),
+  },
+  {
+    status: "Users overruled me",
+    statusClass: "bg-amber-50 text-amber-700",
+    title: "Kanban vs. table view",
+    hasImage: true,
+    image: kanbanImg,
+    body: (
+      <>
+        <p>
+          I explored a kanban board — visually, four lifecycle stages map beautifully to columns.
+          But testing with actual users in our weekly sessions was clear: these are operations
+          people who live in spreadsheets. They wanted dense, scannable rows, and didn&rsquo;t want
+          to spend a minute longer in this tool than necessary. Engineering agreed, for effort
+          reasons.
+        </p>
+        <p className="font-medium text-ink">
+          Lesson: a view that matches the user&rsquo;s mental model beats a view that matches the
+          designer&rsquo;s.
+        </p>
+        <p>
+          Shipped: a table view with layered filters — date range, designation, category,
+          department, and dependent assignee filtering.
+        </p>
+      </>
+    ),
+  },
+  {
+    status: "Roadmapped, with AI",
+    statusClass: "bg-brand-pink-light/50 text-brand-pink",
+    title: "Ticket criticality / priority",
+    hasImage: false,
+    body: (
+      <>
+        <p>
+          An immobilized vehicle and a document query aren&rsquo;t the same emergency — I proposed a
+          criticality level so urgent tickets wouldn&rsquo;t just sit in round-robin order. Both PM
+          and engineering pushed back: with the assignment engine, city rules, and the DM exception
+          already in scope, priority logic (and the SLA behavior it implies) was too much for the
+          timeline.
+        </p>
+        <p>
+          We <Em>agreed to land it in the next version</Em>, alongside{" "}
+          <Em>AI integration — auto-classifying tickets, inferring criticality from descriptions,</Em>{" "}
+          and eventually suggesting resolutions from historical data. I lost the v1 battle, but the
+          proposal shaped the roadmap.
+        </p>
+      </>
+    ),
+  },
 ];
 
 const outcomeStats = [
@@ -140,7 +237,7 @@ const Ticketing = () => {
             {chips.map((chip) => (
               <span
                 key={chip}
-                className="rounded-full bg-ink/[0.05] px-3 py-1 text-xs font-medium text-ink-muted"
+                className="rounded-md bg-ink/[0.05] px-3 py-1 text-xs font-medium text-ink-muted"
               >
                 {chip}
               </span>
@@ -414,48 +511,81 @@ const Ticketing = () => {
 
           {/* iterations */}
           <div className="mt-12">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Iterations</span>
-            <div className="mt-6 grid gap-10 lg:grid-cols-[1.2fr_1.4fr] lg:items-start">
-              <p className="text-xl text-ink-muted">
-                From those insights, the design moved through several iterations before it settled.
-                (Placeholder — iterations copy to come.)
-              </p>
-              <PlaceholderImage label="Iteration screens grid" className="min-h-[320px]" />
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Design Iterations</span>
+            <div className="mt-6 flex flex-col gap-10 lg:flex-row lg:items-start">
+              <div className="flex flex-1 flex-col gap-6 text-xl text-ink-muted md:max-w-2xl">
+                <p>I ran research on two tracks over the first three weeks.</p>
+                <p>
+                  <strong className="font-semibold text-ink">
+                    User interviews across every role that touches a support
+                  </strong>{" "}
+                  issue riders, fleet operators, hub managers, deployment managers, and recovery
+                  managers.{" "}
+                  <strong className="font-semibold text-ink">Historical complaint analysis</strong>{" "}
+                  going through past issues raised via calls and WhatsApp to understand real
+                  categories, frequency, and where they died.
+                </p>
+                <p>
+                  Then I made research a habit, not a phase:{" "}
+                  <strong className="font-semibold text-ink">
+                    recurring one-hour weekly sessions with all POCs, for three consecutive weeks
+                  </strong>
+                  , so every decision could be validated against real workflows before it hardened
+                  into spec.
+                </p>
+              </div>
+              <img
+                src={iterationsImg}
+                alt="Design iteration screens"
+                className="w-full shrink-0 rounded-3xl border border-ink/10 lg:w-[600px]"
+              />
             </div>
           </div>
 
           {/* trade-offs */}
-          <div className="mt-16 flex flex-col gap-12">
-            {tradeoffs.map((t, i) => (
-              <div
-                key={t.title}
-                className={`grid gap-8 lg:grid-cols-2 lg:items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
-              >
-                <div>
-                  <h3 className="font-display text-2xl font-semibold text-ink">{t.title}</h3>
-                  <p className="mt-3 text-ink-muted">{t.text}</p>
-                </div>
-                <PlaceholderImage label={`${t.title} — screens`} className="min-h-[260px]" />
-              </div>
-            ))}
-          </div>
+          <div className="mt-16">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Design Trade-offs</span>
+            <div className="mt-8 flex flex-col gap-16">
+              {tradeoffs.map((t) => {
+                const heading = (
+                  <div>
+                    <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${t.statusClass}`}>
+                      {t.status}
+                    </span>
+                    <h3 className="mt-4 font-display text-3xl font-semibold text-ink">{t.title}</h3>
+                    <div className="mt-4 flex flex-col gap-4 text-lg text-ink-muted">{t.body}</div>
+                  </div>
+                );
 
-          {/* design system */}
-          <div className="mt-16 grid gap-10 lg:grid-cols-[1.2fr_1.4fr] lg:items-center">
-            <div>
-              <h3 className="font-display text-2xl font-semibold text-ink">Design system modernization</h3>
-              <p className="mt-3 text-ink-muted">
-                Built out from Align UI — a scalable component library that gave the platform a
-                consistent, fast-to-extend foundation across every surface.
-              </p>
+                // No image → copy runs full width. With image → copy is capped and
+                // the screenshot takes the right column, sized generously (a little
+                // bottom bleed is fine).
+                if (!t.hasImage) {
+                  return (
+                    <div key={t.title} className="w-full">
+                      {heading}
+                    </div>
+                  );
+                }
+
+                return (
+                  <div key={t.title} className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
+                    <div className="max-w-3xl">{heading}</div>
+                    <img
+                      src={t.image}
+                      alt={`${t.title} — screens`}
+                      className="w-full rounded-2xl border border-ink/10 object-top lg:h-[400px] lg:object-cover"
+                    />
+                  </div>
+                );
+              })}
             </div>
-            <PlaceholderImage label="Design system / components" className="min-h-[320px]" />
           </div>
         </Container>
       </section>
 
       {/* ===== 4. OUTCOME ===== */}
-      <section className="py-16 sm:py-24">
+      <section className="py-12">
         <Container>
           <SectionHeading number="4" title="Outcome 🏆" />
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
@@ -466,7 +596,7 @@ const Ticketing = () => {
               </div>
             ))}
           </div>
-          <div className="mt-12 flex max-w-4xl flex-col gap-4 text-xl text-ink-muted">
+          <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-xl text-ink-muted sm:p-10">
             <p>
               Support went from &ldquo;WhatsApp someone you know and hope&rdquo; to a system where
               every issue has a record, an owner, a status the rider can see, and a documented

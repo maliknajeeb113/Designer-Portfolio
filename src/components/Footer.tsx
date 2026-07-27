@@ -1,5 +1,5 @@
 import { FiArrowUpRight, FiMail } from "react-icons/fi";
-import { FaLinkedinIn, FaBehance, FaInstagram } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
 import Container from "./Container";
 import HandDrawnGrid from "./HandDrawnGrid";
 
@@ -9,8 +9,6 @@ const RESUME_URL =
 const socials = [
   { icon: FiMail, href: "mailto:avni.garg.in@gmail.com", label: "Email" },
   { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/garg-avni/", label: "LinkedIn" },
-  { icon: FaBehance, href: "https://www.behance.net/avniigarg", label: "Behance" },
-  { icon: FaInstagram, href: "https://www.instagram.com/avnigarg.ux/", label: "Instagram" },
 ];
 
 const Footer = () => {
