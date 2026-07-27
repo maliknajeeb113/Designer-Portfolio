@@ -15,10 +15,17 @@ const navItems = [
   { label: "ABOUT", to: "/about" },
 ];
 
+// Case-study pages live "under" WORK, so the WORK tab stays highlighted on them.
+const caseStudyPaths = ["/ticketing", "/salesken", "/bLive"];
+
 const Navbar = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+
+  // WORK ("/") also owns the case-study routes; every other tab is an exact match.
+  const isActive = (to: string) =>
+    to === "/" ? pathname === "/" || caseStudyPaths.includes(pathname) : pathname === to;
 
   // Close the mobile menu when tapping/clicking anywhere outside the nav.
   useEffect(() => {
@@ -51,7 +58,7 @@ const Navbar = () => {
               key={item.label}
               to={item.to}
               className={`rounded-full px-3 py-1.5 text-xs font-medium tracking-wide transition-colors sm:text-sm ${
-                pathname === item.to
+                isActive(item.to)
                   ? "bg-brand-pink-light text-brand-pink"
                   : "text-ink-faint hover:text-ink"
               }`}
@@ -100,7 +107,7 @@ const Navbar = () => {
                     to={item.to}
                     onClick={() => setOpen(false)}
                     className={`rounded-xl px-4 py-3 text-sm font-medium tracking-wide transition-colors ${
-                      pathname === item.to
+                      isActive(item.to)
                         ? "bg-brand-pink-light text-brand-pink"
                         : "text-ink-faint hover:text-ink"
                     }`}

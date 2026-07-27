@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
 import BrowserFrame from "./BrowserFrame";
 import { JobData } from "../constants";
 
 // A single case study on the home page: headline (with a green script accent word),
 // a company/period meta line, a stats row, and a macOS-window screenshot.
-const Card = ({ label, headline, company, period, icon, stats, image, urlBar }: JobData) => {
-  return (
-    <article className="flex flex-col gap-6">
+// When `linkTo` is set the whole card is clickable; hovering the screenshot dims it
+// and reveals a "View case study" affordance (the hover is scoped to the image only).
+const Card = ({ label, headline, company, period, icon, stats, image, urlBar, linkTo }: JobData) => {
+  const inner = (
+    <>
       {label && (
         <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-ink/[0.04] px-3 py-1 text-xs font-medium text-ink-faint">
           {label}
@@ -54,12 +58,35 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar }: 
       {/* macOS-window screenshot — fixed 1224:436 thumbnail ratio (per Figma),
           anchored to the top so the bottom of the screenshot is clipped */}
       <BrowserFrame url={urlBar} className="mt-2">
-        <div className="aspect-[1224/436] w-full overflow-hidden">
+        <div className="group relative aspect-[1224/436] w-full overflow-hidden">
           <img src={image} alt="" className="h-full w-full object-cover object-top" />
+          {linkTo && (
+            <>
+              {/* dim the screenshot on hover */}
+              <div className="absolute inset-0 bg-ink/0 transition-colors duration-300 group-hover:bg-ink/20" />
+              {/* "View case study" pill, fades in on hover */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <span className="inline-flex items-center gap-2 rounded-full border border-brand-green bg-white px-6 py-3 text-base font-medium text-brand-green shadow-lg">
+                  View case study
+                  <FiArrowRight className="h-4 w-4" />
+                </span>
+              </div>
+            </>
+          )}
         </div>
       </BrowserFrame>
-    </article>
+    </>
   );
+
+  if (linkTo) {
+    return (
+      <Link to={linkTo} className="flex flex-col gap-6">
+        {inner}
+      </Link>
+    );
+  }
+
+  return <article className="flex flex-col gap-6">{inner}</article>;
 };
 
 export default Card;

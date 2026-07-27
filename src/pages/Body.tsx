@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import Work from "../components/Work";
-import Experience from "../components/Experience";
 
 // Home / landing page. Navbar + Footer are provided by the App layout.
 const Body = () => {
@@ -20,7 +19,6 @@ const Body = () => {
     >
       <Hero />
       <Work />
-      <Experience />
     </motion.main>
   );
 };

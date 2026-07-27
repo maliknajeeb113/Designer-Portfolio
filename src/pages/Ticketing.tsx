@@ -10,6 +10,8 @@ import researchImg from "../assets/blive/research.png";
 import iterationsImg from "../assets/blive/iterations.png";
 import liveChatImg from "../assets/blive/tradeoffs/live-chat.png";
 import kanbanImg from "../assets/blive/tradeoffs/kanban-vs-table.png";
+import dsBeforeImg from "../assets/blive/design-system/before.png";
+import dsAfterImg from "../assets/blive/design-system/after.png";
 import adminSticker from "../assets/blive/personas/admin.png";
 import riderSticker from "../assets/blive/personas/rider.png";
 import dmSticker from "../assets/blive/personas/dm-manager.png";
@@ -70,11 +72,11 @@ const jtbd = [
 // Breadcrumb-style steps. `color` cycles the existing brand accents for the
 // step number (grey `label` on top, dark `text` statement below).
 const actionCards = [
-  { num: "01", label: "One owner per ticket", text: "Every ticket gets exactly one accountable owner.", color: "text-brand-green" },
-  { num: "02", label: "Auto-assignment", text: "Route by category and team, automatically.", color: "text-brand-pink" },
-  { num: "03", label: "Single source of truth", text: "One system replaces WhatsApp + spreadsheets.", color: "text-brand-amber" },
-  { num: "04", label: "SLA visibility", text: "Acknowledgment and resolution tracked per team.", color: "text-brand-green" },
-  { num: "05", label: "SLA visibility", text: "Acknowledgment and resolution tracked per team.", color: "text-brand-green" },
+  { num: "01", label: "Ticket Master", text: "Admins can configure categories, link them to departments, and define resolution reasons, so tickets are automatically sent to the right team.", color: "text-brand-green" },
+  { num: "02", label: "Ticket Management", text: "The operational workspace with a strict lifecycle and full audit logs.", color: "text-brand-pink" },
+  { num: "03", label: "Automated assignment engine", text: "Category → Department → Team member, with city-based segregation and a DM exception.", color: "text-brand-amber" },
+  { num: "04", label: "Rider-facing Help & Support", text: "In the EZY DE app, with FAQ deflection before ticket creation.", color: "text-brand-green" },
+  { num: "05", label: "User Management", text: "Because assignment logic needs to know who works where, in which city, in which role.", color: "text-brand-green" },
 ];
 
 // Scoping personas — exported as full illustrated cards from Figma. On desktop
@@ -579,6 +581,48 @@ const Ticketing = () => {
                   </div>
                 );
               })}
+            </div>
+          </div>
+
+          {/* design system modernization */}
+          <div className="mt-20">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
+              Design system modernization
+            </span>
+            <h3 className="mt-6 max-w-2xl font-display text-4xl font-semibold leading-tight text-ink">
+              Design system — built out from Align UI
+            </h3>
+            <p className="mt-6 text-lg text-ink-muted">
+              The dashboard had no usable design system, so alongside this project I built one for the
+              entire platform, not just this module. I started from <Em>Align UI,</Em> a purchased
+              component library, as the foundation — but a library alone is just raw components. I
+              designed and assembled the actual system B:Live needed: tokens adapted to B:Live&rsquo;s
+              brand (color, type, spacing, elevation), components customized and extended into tables,
+              filters, modals, dependent dropdowns, status tags, uploads, and empty states, and
+              reusable patterns — table + filter bar, detail view + activity log, confirmation/guardrail
+              states — built from those components.
+            </p>
+
+            {/* before / after — each labelled just above its top-left corner. Both
+                sit in the same aspect box so they render at exactly the same size. */}
+            <div className="mx-auto mt-10 grid max-w-5xl gap-8 sm:grid-cols-2">
+              {[
+                { label: "Before", src: dsBeforeImg },
+                { label: "After", src: dsAfterImg },
+              ].map((shot) => (
+                <div key={shot.label}>
+                  <span className="mb-3 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
+                    {shot.label}
+                  </span>
+                  <div className="aspect-[8/5] w-full overflow-hidden rounded-2xl border border-ink/10">
+                    <img
+                      src={shot.src}
+                      alt={`Dashboard ${shot.label.toLowerCase()} the design system`}
+                      className="h-full w-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </Container>
