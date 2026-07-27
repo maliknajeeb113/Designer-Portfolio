@@ -12,6 +12,9 @@ import adminSticker from "../assets/blive/personas/admin.png";
 import riderSticker from "../assets/blive/personas/rider.png";
 import dmSticker from "../assets/blive/personas/dm-manager.png";
 import recoverySticker from "../assets/blive/personas/recovery-manager.png";
+import riderCard from "../assets/blive/scoping/rider.png";
+import adminCard from "../assets/blive/scoping/admin.png";
+import supportCard from "../assets/blive/scoping/support-team.png";
 
 // NOTE: prose below is placeholder/first-pass copy — the client edits case-study
 // text by hand. Stickers use emojis for now; real graphics come later.
@@ -72,10 +75,13 @@ const actionCards = [
   { num: "05", label: "SLA visibility", text: "Acknowledgment and resolution tracked per team.", color: "text-brand-green" },
 ];
 
-const scopingCards = [
-  { emoji: "🛵", name: "Rider", story: "As a rider, I want to raise an issue from the app so I can get help fast.", tint: "bg-blue-50 border-blue-100" },
-  { emoji: "🧑‍💼", name: "Admin", story: "As an admin, I want every ticket auto-assigned so nothing is orphaned.", tint: "bg-amber-50 border-amber-100" },
-  { emoji: "🎧", name: "Support Team", story: "As support, I want full ticket history so I can resolve without re-asking.", tint: "bg-brand-pink-light/50 border-brand-pink/20" },
+// Scoping personas — exported as full illustrated cards from Figma. On desktop
+// they sit in a staggered collage; positions/sizes are percentages of the
+// original 1154×923 Figma frame so the layout scales with the container.
+const personaCards = [
+  { src: riderCard, alt: "Rider (Delivery Executives) — user stories", left: "0%", top: "3.47%", width: "48.87%" },
+  { src: adminCard, alt: "Admin (Business Owner) — user stories", left: "52.34%", top: "0%", width: "47.66%" },
+  { src: supportCard, alt: "Support Team — user stories", left: "0%", top: "53.09%", width: "60.66%" },
 ];
 
 const tradeoffs = [
@@ -372,17 +378,30 @@ const Ticketing = () => {
       <section className="py-16">
         <Container>
           <SectionHeading number="2" title="Product Scoping" />
-          <p className="mt-6 max-w-3xl text-xl text-ink-muted">
+          <span className="mt-10 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
+            User personas
+          </span>
+          <p className="mt-4 max-w-3xl text-xl text-ink-muted">
             User stories kept scope honest — one clear job per role, so the build stayed anchored to
             real needs instead of feature wishlists.
           </p>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {scopingCards.map((card) => (
-              <div key={card.name} className={`rounded-3xl border p-8 ${card.tint}`}>
-                <div className="text-4xl">{card.emoji}</div>
-                <div className="mt-4 font-display text-xl font-semibold text-ink">{card.name}</div>
-                <p className="mt-3 text-ink-muted">{card.story}</p>
-              </div>
+          {/* mobile: equal-width cards stacked one after another */}
+          <div className="mt-10 flex flex-col gap-6 lg:hidden">
+            {personaCards.map((card) => (
+              <img key={card.alt} src={card.src} alt={card.alt} className="w-full" />
+            ))}
+          </div>
+
+          {/* desktop: staggered collage matching the Figma frame (1154×923) */}
+          <div className="relative mt-10 hidden aspect-[1154/923] w-full lg:block">
+            {personaCards.map((card) => (
+              <img
+                key={card.alt}
+                src={card.src}
+                alt={card.alt}
+                className="absolute"
+                style={{ left: card.left, top: card.top, width: card.width }}
+              />
             ))}
           </div>
         </Container>
