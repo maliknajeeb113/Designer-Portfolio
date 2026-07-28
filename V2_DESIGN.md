@@ -21,6 +21,10 @@ Resolved so far (dated so we can track when a call was made):
 - **2026-07-23** — Display font stack is `"Satoshi Variable", Satoshi, system-ui, sans-serif` (prefers a locally-installed variable Satoshi; `system-ui` fallback, NOT Inter). The Fontshare `@import` now loads the **variable** Satoshi (weight range 300–900) instead of static weights — needed because headings use `font-semibold` (600), which Satoshi's static weights (400/500/700/900) skip. Font rule (**confirmed 2026-07-23**): **all bold heading text = Satoshi; regular/description/small text = Inter; ALL green accent text = Satisfy (script).** So Hero "Effortless.", the work-heading accents ("Ticketing"/"Asset"/"actually"), and "Where I've been." are all Satisfy. The footer "work" stays Satoshi because it's pink, not green. The one green-text exception left as Satoshi is the nav logo dot (`.` in "Avni garg.") — a wordmark glyph, left pending the user's call.
 - **2026-07-23** — Case-study **stats** are a full-width 4-column bar with vertical dividers (`Card.tsx`); a 3-stat case study keeps an empty 4th column so columns stay aligned, and no divider is drawn before an empty slot.
 - **2026-07-23** — **Cleanup before case-study work.** Deleted: `pages/GridTest.tsx` + its `/grid-test` route (grid finalised), `App.css` (empty), the dropped `pages/TanishqPortfolio.tsx` + `pages/Brandshark.tsx` and their asset folders (`assets/portfolio-project/`, `assets/brandshark/`), and the orphaned `assets/playground/subway.png`. Removed unused deps `hamburger-react`, `react-fast-marquee`, `react-router-hash-link` (and `roughjs` was already gone). Stripped the commented-out dead code from `App.tsx`. **Kept** the neumorphism `shadow-neu`/`.neu` classes — still used by the routed-but-not-yet-migrated v1 pages (About, Playground, Salesken, BLive) and their v1 components; remove only once those are migrated. This entry supersedes the now-stale references to those files in §1, §7, and §11a below.
+- **2026-07-27/28** — **Ticketing case study fully built** (`src/pages/Ticketing.tsx`, route `/ticketing`) — the first migrated case-study page and the template for the rest. Also this window: Playground rebuilt as an interactive board, "Where I've been." moved from Home to About, Navbar active-state fix, and clickable Work cards. See §14.
+- **2026-07-28** — **Local Figma Dev Mode MCP works** (`http://127.0.0.1:3845/mcp`) and is NOT subject to the cloud Starter-plan read cap (which is still exhausted, §11b). Workflow: user pastes a "Copy link to selection" URL → `get_screenshot` / `get_metadata` / `get_design_context` (load the `figma-design-to-code` skill first). `get_design_context` returns the **high-res source image-fill asset URLs** (download & commit — they expire in ~7 days). This is the sanctioned way to get real, non-blurry assets going forward.
+- **2026-07-28** — **Color-token discipline:** when porting a Figma design from a design system (e.g. Align UI), do NOT import that system's palette. Map onto existing `brand.*` tokens (cycle `green`/`pink`/`amber` for multi-colour accents) and translucent ink (`bg-ink/[0.04]`) for light neutral fills. Add a new token only when the palette genuinely can't express it, and confirm first.
+- **2026-07-28** — **Salesken is the next case study** (route `/salesken`, currently a v1 page). Plan: **copy `Ticketing.tsx` as the boilerplate/skeleton**, then adapt section-by-section from a Figma node the user will supply. Ticketing's section anatomy (header meta bar, numbered `SectionHeading`s, subsection labels, status-pill trade-offs, before/after image pairs, outcome stat grid + card) is the reusable pattern.
 
 ---
 
@@ -219,10 +223,11 @@ Temporary, unlinked route: `/grid-test` (page: `src/pages/GridTest.tsx`). On-pag
 
 ## 12. Next Steps
 
-Home page is built (§13). Immediate follow-ups:
-- User reviews the Home page visually (`npm run dev` → `/`) and corrects color tokens in `tailwind.config.js`.
-- Swap the placeholder assets listed in §13 for real Figma exports.
-- Then move to the next page (About / Playground / a case-study page) on the user's cue.
+Home, Ticketing case study, Playground, and About are built. Immediate follow-ups:
+- **Salesken case study** — copy `Ticketing.tsx` as the boilerplate, then adapt to the Figma node the user provides (see §14 for Ticketing's reusable section anatomy).
+- **BLive (Asset Management) case study** — the second B:Live case study (`linkTo` still empty in `jobsData[1]`); build after Salesken.
+- Wire the remaining Home Work cards' `linkTo` (`jobsData[1]` asset, `jobsData[2]` salesken) once those pages exist — the hover "View case study" CTA already lights up automatically when `linkTo` is set.
+- Real Playground avatars (placeholder tint circles in the meta line) and any real customer/brand marks for the Hero social-proof row.
 
 ## 13. v2 Home Page — Build Notes
 
@@ -253,3 +258,39 @@ Built 2026-07-22 on branch `v2`. Home route `/` (`src/pages/Body.tsx`) now compo
 **Known intentional gaps:** case-study `linkTo` empty; body copy is transcribed-from-design (not lorem) since it was visible; `Socials.tsx` is now unused (left in place); the old v1 `Card` neumorphic look is gone.
 
 **Verified:** `tsc -b` clean, `npm run build` succeeds (379 modules, no errors). Not visually verified by the agent (no headless browser available) — user checks in-browser.
+
+---
+
+## 14. v2 Case Study & Inner Pages — Build Notes (2026-07-27/28)
+
+Built section-by-section, user-paced, on branch `v2`. All colors are Tailwind tokens; all images are real (high-res, no blur) or explicit placeholders. Body copy is user-owned — the agent uses transcribed/placeholder text and the user edits it by hand.
+
+### Ticketing case study (`src/pages/Ticketing.tsx`, `/ticketing`) — the case-study template
+Self-contained page component (own `motion.main`, scrolls to top on mount). **Reusable section anatomy** to copy for Salesken/BLive:
+- **Header** — H1 with a green Satisfy accent word, a stats grid, grey chips (`bg-ink/[0.05]`), and a horizontal **meta bar** below the thumbnail (`Role / Team / Timeline / Scope`, label-on-top, vertical dividers).
+- **Numbered sections** via `SectionHeading` (`number` + `title`), with small uppercase **subsection labels** (`text-xs uppercase tracking-[0.2em] text-ink-faint`) — e.g. Problem, Research, Target personas.
+- **Persona "Needs" cards** — per-persona colour family passed as props (`bg`/`pill`/`text`, lightest→darkest of one hue) with glassy border + real sticker images.
+- **Breadcrumb action steps** — single N-column CSS grid; ≤4 steps in one row, 5+ wrap into rows of 3 (`stepCols`), `>>` badges centered in the gaps.
+- **Product Scoping** — Figma-exported persona collage: desktop = percentage-absolute-positioned images inside an `aspect-[W/H]` box; mobile = stacked full-width.
+- **Design Evolution** — three subsections: **Design Iterations** (copy + sized image, flex with a fixed `lg:w-[…]`), **Design Trade-offs** (4 items, coloured status pills reusing persona hues; each = argument left, and on the right either a screenshot or the copy runs full-width — 1st & 4th text-only `w-full`, 2nd & 3rd image rows `max-w-3xl` text + `lg:h-[400px] object-cover` image), and **Design system modernization** (label + big title + copy + a **Before/After** image pair in an `aspect-[8/5]` box, `object-cover`, `max-w-5xl` centered).
+- **Outcome** — stat grid + a closing prose **card** (`rounded-3xl border border-ink/10 bg-ink/[0.03]`).
+- Small reusable inline helper `Em` (`font-semibold text-ink`) for emphasis inside muted body copy.
+- Assets under `src/assets/blive/` (`personas/`, `scoping/`, `tradeoffs/`, `design-system/`).
+
+### Home Work cards clickable (`src/components/Card.tsx`)
+When `jobsData[].linkTo` is set the whole card is a React Router `<Link>`; hovering the **screenshot only** (`group` on the image container) dims it (`group-hover:bg-ink/20`) and reveals a **"View case study"** pill (white bg, green text + border, right arrow). Cards with empty `linkTo` render as a plain `<article>` (no hover, not clickable), so they light up automatically once linked.
+
+### Playground rebuilt (`src/pages/Playground.tsx`, `/playground`)
+Dropped the old v1 LazyImage grid. Now a **pink board** (`bg-brand-pink-light/40`) titled "Playground/Vibe Coding." with the 5 project GIFs (`playgroundImages`) **spread on a 3×2 grid with jitter + tilt**, each **draggable** (body) and **free-transformable** from any of 4 corner bumps (bumps show on hover; one gesture both scales — pointer distance from center — and rotates — pointer angle around center). Plain pointer-event listeners, no drag lib; resize/rotate handles `stopPropagation` so they never start a drag. Board is **full page width** (outside `Container`), `overflow-hidden`.
+
+### About page (`src/pages/About.tsx`, `/about`)
+Old v1 content removed entirely. Now just a page wrapper that renders `<Experience/>` (the "Where I've been." blurb + experience list), moved here from Home. `Body.tsx` no longer renders `<Experience/>`.
+
+### Navbar active state (`src/components/Navbar.tsx`)
+`isActive(to)` helper: **WORK** (`/`) stays highlighted on `/` **and** the case-study routes (`caseStudyPaths = ["/ticketing","/salesken","/bLive"]`); other tabs are exact-match. Applied to desktop + mobile.
+
+### Footer (`src/components/Footer.tsx`)
+Behance + Instagram removed; only **Email + LinkedIn** remain. (`Socials.tsx` still carries the old set but is unused.)
+
+### Cleanup done (2026-07-28)
+Deleted now-unused `components/LazyImage.tsx`, `components/WorkExperienceCard.tsx`, `assets/about.jpg`, and the 5 `assets/playground/*-small.jpg` placeholders. Slimmed `constants/playground.ts` to `{ id, actualImgPath, altText }` (dropped `placeholderImgPath` / `containerClassName` / `row`). Added `temp/` to `.gitignore`. `workExperience.ts` kept (used by `Experience`). `tsc` + `npm run build` clean.

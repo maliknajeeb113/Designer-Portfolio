@@ -1,50 +1,185 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import LazyImage from "../components/LazyImage";
+import Container from "../components/Container";
 import { playgroundImages } from "../constants";
 
+const rand = (min: number, max: number) => Math.random() * (max - min) + min;
+const clamp = (v: number, min: number, max: number) => Math.min(Math.max(v, min), max);
+
+interface Piece {
+  id: number;
+  src: string;
+  alt: string;
+  x: number;
+  y: number;
+  width: number;
+  rotate: number;
+  z: number;
+}
+
+// The four corner handles. All four run the same free-transform gesture, so the
+// only thing that differs is where the bump sits and its diagonal cursor.
+const corners = [
+  { pos: "-left-1.5 -top-1.5", cursor: "cursor-nwse-resize" },
+  { pos: "-right-1.5 -top-1.5", cursor: "cursor-nesw-resize" },
+  { pos: "-bottom-1.5 -left-1.5", cursor: "cursor-nesw-resize" },
+  { pos: "-bottom-1.5 -right-1.5", cursor: "cursor-nwse-resize" },
+];
+
+// A single GIF that can be dragged (by its body) and freely transformed from any
+// corner: dragging a corner scales the piece (pointer distance from the center)
+// and rotates it (pointer angle around the center) at the same time. Corner bumps
+// only show while the piece is hovered.
+const DraggablePiece = ({ piece, bringToFront }: { piece: Piece; bringToFront: () => number }) => {
+  const elRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ x: piece.x, y: piece.y });
+  const [width, setWidth] = useState(piece.width);
+  const [rotate, setRotate] = useState(piece.rotate);
+  const [z, setZ] = useState(piece.z);
+
+  const listen = (move: (ev: PointerEvent) => void) => {
+    const up = () => {
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", up);
+    };
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+  };
+
+  const startDrag = (e: React.PointerEvent) => {
+    if (e.button !== 0) return;
+    e.preventDefault();
+    setZ(bringToFront());
+    const startX = e.clientX;
+    const startY = e.clientY;
+    const origX = pos.x;
+    const origY = pos.y;
+    listen((ev) => setPos({ x: origX + ev.clientX - startX, y: origY + ev.clientY - startY }));
+  };
+
+  const startTransform = (e: React.PointerEvent) => {
+    e.stopPropagation(); // transform, don't drag
+    e.preventDefault();
+    setZ(bringToFront());
+    const el = elRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const angle = (px: number, py: number) => (Math.atan2(py - cy, px - cx) * 180) / Math.PI;
+    const dist = (px: number, py: number) => Math.hypot(px - cx, py - cy);
+    const startAngle = angle(e.clientX, e.clientY);
+    const startDist = Math.max(dist(e.clientX, e.clientY), 1);
+    const startRot = rotate;
+    const startW = width;
+    listen((ev) => {
+      setRotate(startRot + angle(ev.clientX, ev.clientY) - startAngle);
+      setWidth(Math.max(80, startW * (dist(ev.clientX, ev.clientY) / startDist)));
+    });
+  };
+
+  return (
+    <div
+      ref={elRef}
+      onPointerDown={startDrag}
+      style={{ left: pos.x, top: pos.y, width, zIndex: z, transform: `rotate(${rotate}deg)` }}
+      className="group absolute cursor-grab touch-none select-none active:cursor-grabbing"
+    >
+      <img
+        src={piece.src}
+        alt={piece.alt}
+        draggable={false}
+        className="pointer-events-none w-full rounded-2xl shadow-window"
+      />
+      {corners.map((c) => (
+        <span
+          key={c.pos}
+          onPointerDown={startTransform}
+          className={`absolute h-3 w-3 rounded-[3px] border border-ink/20 bg-white opacity-0 shadow transition-opacity group-hover:opacity-100 ${c.pos} ${c.cursor}`}
+        />
+      ))}
+    </div>
+  );
+};
+
+// Playground / Vibe Coding — a pink board where the project GIFs are spread out
+// evenly and can be dragged, resized, and rotated.
 const Playground = () => {
+  const canvasRef = useRef<HTMLDivElement>(null);
+  const topZ = useRef(playgroundImages.length);
+  const [pieces, setPieces] = useState<Piece[]>([]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Lay the pieces out on an even grid (with a little jitter + tilt) once the
+  // board can be measured, so they start spread out instead of piled up.
+  useLayoutEffect(() => {
+    const el = canvasRef.current;
+    if (!el) return;
+    const W = el.clientWidth;
+    const H = el.clientHeight;
+    const n = playgroundImages.length;
+    const cols = Math.min(3, n);
+    const rows = Math.ceil(n / cols);
+    const cellW = W / cols;
+    const cellH = H / rows;
+
+    setPieces(
+      playgroundImages.map((img, i) => {
+        const col = i % cols;
+        const row = Math.floor(i / cols);
+        const width = cellW * rand(0.66, 0.86);
+        const x = col * cellW + (cellW - width) / 2 + rand(-1, 1) * (cellW - width) * 0.35;
+        const y = row * cellH + (cellH - width) / 2 + rand(-1, 1) * Math.max(0, cellH - width) * 0.35;
+        return {
+          id: img.id,
+          src: img.actualImgPath,
+          alt: img.altText,
+          x: clamp(x, 0, Math.max(0, W - width)),
+          y: clamp(y, 0, Math.max(0, H - width)),
+          width,
+          rotate: rand(-6, 6),
+          z: i + 1,
+        };
+      }),
+    );
+  }, []);
+
+  const bringToFront = () => {
+    topZ.current += 1;
+    return topZ.current;
+  };
+
   return (
-    <motion.div
-      className="w-screen top-[120px] flex flex-col items-center font-poppins px-6 md:px-[10rem] mx-auto mt-[150px] mb-10"
+    <motion.main
+      className="bg-brand-pink-light/40 pb-24 pt-32 font-sans sm:pb-32 sm:pt-40"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="text-[rgb(182,154,137)] text-5xl font-medium">
-        Playground
-      </div>
+      <Container>
+        <h1 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
+          Playground/
+          <span className="font-script text-[1.15em] text-brand-green">Vibe Coding.</span>
+        </h1>
+        <p className="mt-4 text-sm text-ink-faint">
+          Drag the pieces around — grab a corner to resize &amp; rotate. ✦
+        </p>
+      </Container>
 
+      {/* scatter board — full page width */}
       <div
-        id="mega-grid"
-        className="container flex flex-col mt-16 gap-4 justify-center"
+        ref={canvasRef}
+        className="relative mt-10 h-[600px] w-full overflow-hidden sm:h-[680px] lg:h-[760px]"
       >
-        {Array.from(new Set(playgroundImages.map((img) => img.row)))
-          .sort((a, b) => a - b)
-          .map((rowNumber) => {
-            const rowImages = playgroundImages.filter((img) => img.row === rowNumber);
-            
-            return (
-              <div key={rowNumber} className={rowImages.length > 1 ? "flex flex-row gap-4" : ""}>
-                {rowImages.map((image) => (
-                  <div key={image.id} className={image.containerClassName}>
-                    <LazyImage
-                      imageSrc={image.actualImgPath}
-                      placeholderSrc={image.placeholderImgPath}
-                      altText={image.altText}
-                    />
-                  </div>
-                ))}
-              </div>
-            );
-          })}
+        {pieces.map((piece) => (
+          <DraggablePiece key={piece.id} piece={piece} bringToFront={bringToFront} />
+        ))}
       </div>
-    </motion.div>
+    </motion.main>
   );
 };
 
