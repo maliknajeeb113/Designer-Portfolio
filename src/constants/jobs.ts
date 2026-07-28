@@ -1,6 +1,6 @@
 import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
 import assetThumbnail from "../assets/blive/asset-thumbnail.png";
-import saleskenThumbnail from "../assets/salesken/salesken-thumbnail.png";
+import saleskenBanner from "../assets/salesken/salesken-banner.png";
 import bliveIcon from "../assets/blive/blive-icon.png";
 import saleskenIcon from "../assets/salesken/salesken-icon.png";
 
@@ -36,7 +36,7 @@ export const jobsData: JobData[] = [
       { value: "0", label: "Orphaned tickets" },
     ],
     image: ticketThumbnail,
-    urlBar: "finance-template.aligoal.com",
+    urlBar: "blive.co.in",
     linkTo: "/ticketing",
   },
   { label: "Case Study 2",
@@ -51,22 +51,23 @@ export const jobsData: JobData[] = [
       { value: "Reduce", label: "Out-of-city incidents, significantly reduced" },
     ],
     image: assetThumbnail,
-    urlBar: "finance-template.aligoal.com",
+    urlBar: "blive.co.in",
     linkTo: "",
   },
   {
     label: "Case Study 3",
-    headline: { pre: "Support that ", highlight: "actually", post: " resolves things." },
+    headline: { pre: "Giving sales reps something to say, ", highlight: "mid-call", post: "" },
     company: "SALESKEN.AI",
     period: "AUG 2025 - JAN 2026",
     icon: saleskenIcon,
     stats: [
-      { value: "72%", label: "Faster reports" },
-      { value: "52%", label: "Lower spend" },
-      { value: "45%", label: "Cleaner data" },
+      { value: "1st", label: "End-to-end product I owned solo" },
+      { value: "6", label: "Competitor platforms benchmarked" },
+      { value: "3", label: "Connected surfaces shipped" },
+      { value: "+200", label: "Used by customers" },
     ],
-    image: saleskenThumbnail,
-    urlBar: "finance-template.aligoal.com",
-    linkTo: "",
+    image: saleskenBanner,
+    urlBar: "www.salesken.ai",
+    linkTo: "/salesken",
   },
 ];
