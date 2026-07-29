@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Container from "../components/Container";
 import { playgroundImages } from "../constants";
+import bow from "../assets/playground/bow.png";
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 const clamp = (v: number, min: number, max: number) => Math.min(Math.max(v, min), max);
@@ -17,13 +18,14 @@ interface Piece {
   z: number;
 }
 
-// The four corner handles. All four run the same free-transform gesture, so the
-// only thing that differs is where the bump sits and its diagonal cursor.
+// The four corner handles. All four run the same free-transform gesture; each is a
+// curved-L bracket (two borders + a rounded corner) that traces the piece's own
+// rounded border, so it reads as an accent on the corner rather than a bump.
 const corners = [
-  { pos: "-left-1.5 -top-1.5", cursor: "cursor-nwse-resize" },
-  { pos: "-right-1.5 -top-1.5", cursor: "cursor-nesw-resize" },
-  { pos: "-bottom-1.5 -left-1.5", cursor: "cursor-nesw-resize" },
-  { pos: "-bottom-1.5 -right-1.5", cursor: "cursor-nwse-resize" },
+  { pos: "-left-[8px] -top-[8px] rounded-tl-full border-l-[3px] border-t-[3px]", cursor: "cursor-nwse-resize" },
+  { pos: "-right-[8px] -top-[8px] rounded-tr-full border-r-[3px] border-t-[3px]", cursor: "cursor-nesw-resize" },
+  { pos: "-bottom-[8px] -left-[8px] rounded-bl-full border-b-[3px] border-l-[3px]", cursor: "cursor-nesw-resize" },
+  { pos: "-bottom-[8px] -right-[8px] rounded-br-full border-b-[3px] border-r-[3px]", cursor: "cursor-nwse-resize" },
 ];
 
 // A single GIF that can be dragged (by its body) and freely transformed from any
@@ -89,13 +91,13 @@ const DraggablePiece = ({ piece, bringToFront }: { piece: Piece; bringToFront: (
         src={piece.src}
         alt={piece.alt}
         draggable={false}
-        className="pointer-events-none w-full rounded-2xl shadow-window"
+        className="pointer-events-none w-full rounded-3xl border border-ink-faint"
       />
       {corners.map((c) => (
         <span
           key={c.pos}
           onPointerDown={startTransform}
-          className={`absolute h-3 w-3 rounded-[3px] border border-ink/20 bg-white opacity-0 shadow transition-opacity group-hover:opacity-100 ${c.pos} ${c.cursor}`}
+          className={`absolute h-6 w-6 border-ink-faint opacity-0 transition-opacity group-hover:opacity-100 ${c.pos} ${c.cursor}`}
         />
       ))}
     </div>
@@ -164,6 +166,7 @@ const Playground = () => {
         <h1 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
           Playground/
           <span className="font-script text-[1.15em] text-brand-green">Vibe Coding.</span>
+          <img src={bow} alt="" className="ml-3 inline-block h-[2em] w-auto align-middle" />
         </h1>
         <p className="mt-4 text-sm text-ink-faint">
           Drag the pieces around — grab a corner to resize &amp; rotate. ✦

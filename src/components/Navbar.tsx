@@ -27,6 +27,10 @@ const Navbar = () => {
   const isActive = (to: string) =>
     to === "/" ? pathname === "/" || caseStudyPaths.includes(pathname) : pathname === to;
 
+  // Playground has a pink page background, so the fixed nav goes transparent there
+  // (backdrop-blur only) to sit seamlessly on the same colour instead of white.
+  const isPlayground = pathname === "/playground";
+
   // Close the mobile menu when tapping/clicking anywhere outside the nav.
   useEffect(() => {
     if (!open) return;
@@ -40,7 +44,12 @@ const Navbar = () => {
   }, [open]);
 
   return (
-    <nav ref={navRef} className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-sm font-sans">
+    <nav
+      ref={navRef}
+      className={`fixed top-0 z-50 w-full font-sans backdrop-blur-sm ${
+        isPlayground ? "" : "bg-white/90"
+      }`}
+    >
       <Container className="flex items-center justify-between py-4">
         <Link
           to="/"
@@ -59,7 +68,7 @@ const Navbar = () => {
               to={item.to}
               className={`rounded-full px-3 py-1.5 text-xs font-medium tracking-wide transition-colors sm:text-sm ${
                 isActive(item.to)
-                  ? "bg-brand-pink-light text-brand-pink"
+                  ? "text-brand-pink"
                   : "text-ink-faint hover:text-ink"
               }`}
             >
@@ -108,7 +117,7 @@ const Navbar = () => {
                     onClick={() => setOpen(false)}
                     className={`rounded-xl px-4 py-3 text-sm font-medium tracking-wide transition-colors ${
                       isActive(item.to)
-                        ? "bg-brand-pink-light text-brand-pink"
+                        ? "text-brand-pink"
                         : "text-ink-faint hover:text-ink"
                     }`}
                   >
