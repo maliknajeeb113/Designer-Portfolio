@@ -4,8 +4,10 @@ import { FiStar, FiChevronsRight } from "react-icons/fi";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import BrowserFrame from "../components/BrowserFrame";
+import bliveIcon from "../assets/blive/blive-icon.png";
 import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
 import oldTicketing from "../assets/blive/old-ticketing.png";
+import jtbdImg from "../assets/blive/jtbd.png";
 import researchImg from "../assets/blive/research.png";
 import iterationsImg from "../assets/blive/iterations.png";
 import liveChatImg from "../assets/blive/tradeoffs/live-chat.png";
@@ -23,50 +25,31 @@ import supportCard from "../assets/blive/scoping/support-team.png";
 // NOTE: prose below is placeholder/first-pass copy — the client edits case-study
 // text by hand. Stickers use emojis for now; real graphics come later.
 
-const headerStats = [
-  { value: "70%", label: "Faster ticket resolution" },
-  { value: "95%", label: "Auto-assignment accuracy" },
-  { value: "15min", label: "To acknowledgment" },
-  { value: "0", label: "Orphaned tickets" },
-];
+const chips = ["0→1 Product", "B2B SaaS", "Sole Design", "UX Research"];
 
-const chips = [
-  "Product Designer",
-  "0→1 Product",
-  "Admin Dashboard",
-  "Rider Help & Support",
-  "Design System",
-];
-
-const aboutMeta = [
-  { k: "Role", v: "Product Designer — end-to-end UX" },
-  { k: "Team", v: "Design + Engineering (small team)" },
-  { k: "Timeline", v: "2025 · ongoing" },
-  { k: "Scope", v: "Admin dashboard, Rider Help & Support, Design System" },
+const team = [
+  { name: "Avni Garg (Me)", role: "Product Designer" },
+  { name: "Prasenjit", role: "AVP of Product" },
+  { name: "Sneha Jha", role: "Associate Product Manager" },
+  { name: "Govind", role: "Senior Developer" },
+  { name: "Divyanshu", role: "Senior Frontend Developer" },
 ];
 
 const problemCards = [
-  { emoji: "📱", title: "Rider contact via WhatsApp", text: "Every issue arrived through scattered WhatsApp messages with no structure." },
-  { emoji: "🕳️", title: "No accountability", text: "Nothing had a single owner, so problems slipped through the cracks." },
-  { emoji: "📊", title: "Spreadsheets for records", text: "History lived in ad-hoc sheets that nobody fully trusted." },
-  { emoji: "🙅", title: "No assigned owner", text: "Tickets had no assignee and no clear next step." },
+  { emoji: "📱", title: "Rider contact through WhatsApp", text: "Riders called or WhatsApp'd whoever they personally knew at B:Live." },
+  { emoji: "📊", title: "Using spreadsheets for records", text: "Issues were noted in spreadsheets, forwarded manually, or simply forgotten." },
+  { emoji: "🕳️", title: "No accountability", text: "Zero digital record — no history, no status." },
+  { emoji: "🙅", title: "No assigned user", text: "Most issues died for one reason: no ticket was ever assigned to anyone." },
 ];
 
 // Each persona carries its own colour family: `bg` (card, lightest), `pill`
 // (a darker shade of the same hue for the Needs pill) and `text` (darkest, for
 // the pill label + the needs line).
 const personas = [
-  { name: "Admin", role: "Oversees the whole support operation.", needs: "their riders' tickets to come to them, not a stranger.", bg: "bg-emerald-50/70", pill: "bg-emerald-100", text: "text-emerald-800", img: adminSticker },
-  { name: "Rider", role: "Raises issues from the EZY DE app.", needs: "quick, clear help without chasing anyone on the phone.", bg: "bg-blue-50/70", pill: "bg-blue-100", text: "text-blue-800", img: riderSticker },
-  { name: "DM Manager", role: "Manages deployment and vehicle logistics day to day.", needs: "tickets routed to the right team automatically.", bg: "bg-amber-50/70", pill: "bg-amber-100", text: "text-amber-800", img: dmSticker },
-  { name: "Recovery Manager", role: "Handles breakdowns and vehicle recovery on the ground.", needs: "full vehicle history before heading out on a recovery.", bg: "bg-brand-pink-light/40", pill: "bg-brand-pink-light", text: "text-brand-pink", img: recoverySticker },
-];
-
-const jtbd = [
-  { when: "my vehicle or payment has an issue (Rider)", want: "raise a complaint in app and track its status", so: "keep working without chasing people on the phone" },
-  { when: "a new ticket comes in", want: "it routed to exactly one owner", so: "start resolving instead of triaging" },
-  { when: "a rider has a problem", want: "to see the ticket's full history", so: "understand the relationship without re-asking" },
-  { when: "reviewing support performance", want: "to see every team's SLA record", so: "hold teams accountable and spot systemic issues" },
+  { name: "Admin", role: "Oversees the whole support operation.", needs: "Needs to change routing rules (categories, departments, reasons) themselves, and reassign stuck tickets with the change always logged.", bg: "bg-emerald-50/70", pill: "bg-emerald-100", text: "text-emerald-800", img: adminSticker },
+  { name: "Rider", role: "Raises issues about payments, vehicles, documents. Low patience, on the road.", needs: "Needs a simple way to raise an issue and see it's being handled, without calling someone they know personally.", bg: "bg-blue-50/70", pill: "bg-blue-100", text: "text-blue-800", img: riderSticker },
+  { name: "DM Manager", role: "Personally allocated to specific riders, who call them for everything.", needs: "Needs their own riders' tickets to reach them directly, with enough context to respond like someone who already knows them.", bg: "bg-amber-50/70", pill: "bg-amber-100", text: "text-amber-800", img: dmSticker },
+  { name: "Recovery Manager", role: "Oversees the whole support operation.", needs: "Needs immediate visibility into dues-linked tickets (immobilization, payment, blocked closures) with an unambiguous payment-status reason on close.", bg: "bg-brand-pink-light/40", pill: "bg-brand-pink-light", text: "text-brand-pink", img: recoverySticker },
 ];
 
 // Breadcrumb-style steps. `color` cycles the existing brand accents for the
@@ -191,11 +174,11 @@ const tradeoffs = [
 ];
 
 const outcomeStats = [
-  { value: "70%", label: "Faster ticket resolution" },
-  { value: "15min", label: "To acknowledgment" },
-  { value: "90%", label: "Auto-assignment accuracy" },
-  { value: "4/5+", label: "Support satisfaction" },
-  { value: "100%", label: "Tickets with an owner" },
+  { value: "70%", label: "Ticket resolution time, post-launch." },
+  { value: "15min", label: "Average acknowledgment time." },
+  { value: "90%", label: "Tickets auto-routed to the right team." },
+  { value: "4/5+", label: "Post-resolution rider rating." },
+  { value: "100%", label: "Category coverage — zero orphaned tickets." },
 ];
 
 const Ticketing = () => {
@@ -224,18 +207,16 @@ const Ticketing = () => {
             <span className="font-script text-[1.15em] text-brand-green">Ticketing</span> Platform
           </h1>
 
-          {/* stats */}
-          <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
-            {headerStats.map((stat) => (
-              <div key={stat.label}>
-                <div className="font-display text-2xl font-bold text-ink sm:text-3xl">{stat.value}</div>
-                <div className="mt-1 text-xs text-ink-faint sm:text-sm">{stat.label}</div>
-              </div>
-            ))}
+          {/* meta line — company + period */}
+          <div className="mt-6 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-ink-faint">
+            <img src={bliveIcon} alt="" className="h-5 w-5 shrink-0 rounded object-contain" />
+            <span>B:Live — EV Mobility Platform</span>
+            <span className="text-ink-faint/50">·</span>
+            <span>Jan 2025 – Present</span>
           </div>
 
           {/* chips */}
-          <div className="mt-8 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             {chips.map((chip) => (
               <span
                 key={chip}
@@ -253,35 +234,35 @@ const Ticketing = () => {
             </div>
           </BrowserFrame>
 
-          {/* meta bar — full-width, horizontal, separated by vertical dividers.
-              On mobile it wraps to a 2×2 grid, so the divider is drawn only
-              between columns (odd items on mobile; every item but the first on sm). */}
-          <dl className="mt-24 grid grid-cols-2 sm:grid-cols-4">
-            {aboutMeta.map((row, i) => (
-              <div
-                key={row.k}
-                className={`border-ink/10 px-4 py-2 sm:px-6 sm:py-0 ${
-                  i % 2 === 1 ? "border-l" : ""
-                } ${i === 0 ? "sm:border-l-0 sm:pl-0" : "sm:border-l"}`}
-              >
-                <dt className="text-xs font-medium uppercase tracking-wide text-ink-faint">{row.k}</dt>
-                <dd className="mt-2 text-sm text-ink">{row.v}</dd>
-              </div>
-            ))}
-          </dl>
-        </Container>
-      </section>
-
-      {/* ===== ABOUT ===== */}
-      <section className="py-16">
-        <Container>
-          <p className="text-xl text-ink-muted sm:text-xl">
-            I owned end-to-end UX for the admin dashboard (Ticket Master, Ticket Management, User
-            Management, Settings) and the rider-facing Help &amp; Support experience in the EZY DE
-            app — plus a new design system for the platform, built from the ground up. With a team
-            this small, I wasn&rsquo;t just producing screens; I was contributing to product logic
-            and negotiating trade-offs directly with engineering.
-          </p>
+          {/* about + team */}
+          <div className="mt-20 grid gap-12 lg:grid-cols-[1.8fr_1fr]">
+            <div>
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
+                About
+              </span>
+              <p className="mt-4 text-xl leading-relaxed text-ink sm:text-2xl">
+                I owned end-to-end UX for the admin dashboard (Ticket Master, Ticket Management, User
+                Management, Settings) and the rider-facing Help &amp; Support experience in the EZY DE
+                app — plus I designed a new design system for the platform from the ground up. With a
+                team this small, I wasn&rsquo;t just producing screens; I was in every scoping
+                conversation, contributing to product logic, and negotiating trade-offs directly with
+                engineering.
+              </p>
+            </div>
+            <div>
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
+                Team
+              </span>
+              <ul className="mt-4 flex flex-col gap-3">
+                {team.map((member) => (
+                  <li key={member.name} className="flex items-baseline justify-between gap-4">
+                    <span className="text-sm font-medium text-ink">{member.name}</span>
+                    <span className="text-right text-sm text-ink-faint">{member.role}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -300,9 +281,7 @@ const Ticketing = () => {
                   wrong — a payment failure, a vehicle breakdown, a document issue — this is how it
                   got &ldquo;handled.&rdquo;
                 </p>
-                <h3 className="mt-8 font-display text-2xl font-semibold text-ink">
-                  The problem: issues everyone could see, nobody owned.
-                </h3>
+              
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   {problemCards.map((card) => (
                     <div key={card.title} className="rounded-2xl border border-ink/10 bg-white p-5">
@@ -332,14 +311,13 @@ const Ticketing = () => {
               <div className="flex flex-col gap-4 text-xl text-ink-muted max-w-2xl">
                 <p>I ran research on two tracks over the first three weeks.</p>
                 <p>
-                  User interviews across every role that touches a support issue — riders, fleet
-                  operators, hub managers, deployment managers, and recovery managers. Historical
-                  complaint analysis, going through past issues raised via calls and WhatsApp to
+                  <span className="text-ink">User interviews across every role that touches a support issue —</span> riders, fleet
+                  operators, hub managers, deployment managers, and recovery managers. <span className="text-ink">Historical complaint analysis,</span> going through past issues raised via calls and WhatsApp to
                   understand real categories, frequency, and where they died.
                 </p>
                 <p>
-                  Then I made research a habit, not a phase: recurring one-hour weekly sessions with
-                  all POCs, for three consecutive weeks, so every decision could be validated against
+                  Then <span className="text-ink">I made research a habit, not a phase: recurring one-hour weekly sessions with
+                  all POCs, for three consecutive weeks,</span>  so every decision could be validated against
                   real workflows before it hardened into spec.
                 </p>
               </div>
@@ -391,22 +369,13 @@ const Ticketing = () => {
           {/* JTBD framework */}
           <div className="mt-16">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-              Jobs-to-be-done
+              JTBD framework
             </span>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-ink/10">
-              <div className="grid grid-cols-3 bg-ink/[0.03] text-xs font-medium uppercase tracking-wide text-ink-faint">
-                <div className="p-4">When…</div>
-                <div className="p-4">I want to…</div>
-                <div className="p-4">So I can…</div>
-              </div>
-              {jtbd.map((row) => (
-                <div key={row.when} className="grid grid-cols-3 border-t border-ink/10 text-sm text-ink-muted">
-                  <div className="p-4">{row.when}</div>
-                  <div className="p-4">{row.want}</div>
-                  <div className="p-4">{row.so}</div>
-                </div>
-              ))}
-            </div>
+            <img
+              src={jtbdImg}
+              alt="Jobs-to-be-done framework — When / I want to / So I can"
+              className="mt-6 w-full rounded-2xl border border-ink/10"
+            />
           </div>
 
           {/* Action plan */}
@@ -480,7 +449,7 @@ const Ticketing = () => {
           <span className="mt-10 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
             User personas
           </span>
-          <p className="mt-4 max-w-3xl text-xl text-ink-muted">
+          <p className="mt-4 text-xl text-ink-muted">
             User stories kept scope honest — one clear job per role, so the build stayed anchored to
             real needs instead of feature wishlists.
           </p>
@@ -642,7 +611,7 @@ const Ticketing = () => {
           </div>
           <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-xl text-ink-muted sm:p-10">
             <p>
-              Support went from &ldquo;WhatsApp someone you know and hope&rdquo; to a system where
+              Support went from <Em>&ldquo;WhatsApp someone you know and hope&rdquo;</Em> to a system where
               every issue has a record, an owner, a status the rider can see, and a documented
               resolution. Service quality improved across the board — and for the first time, B:Live
               has the data to keep improving it.
