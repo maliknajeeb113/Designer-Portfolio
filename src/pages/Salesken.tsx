@@ -194,7 +194,7 @@ const Salesken = () => {
 
           {/* meta line — company + period */}
           <div className="mt-6 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-ink-faint">
-            <img src={saleskenIcon} alt="" className="h-5 w-5 shrink-0 rounded object-contain" />
+            <img src={saleskenIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" />
             <span>Salesken.ai</span>
             <span className="text-ink-faint/50">·</span>
             <span>Aug 2025 – Jan 2026</span>
@@ -225,7 +225,7 @@ const Salesken = () => {
               <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
                 About
               </span>
-              <p className="mt-4 text-xl leading-relaxed text-ink sm:text-2xl">
+              <p className="mt-4 text-xl leading-relaxed text-ink">
                 Co-Browser, a real-time AI assistant that surfaces the right prompt, product
                 context, and next step while a rep is still on the phone, designed end-to-end from
                 research through shipped UX.

@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { FiStar } from "react-icons/fi";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
-import bliveIcon from "../assets/blive-ezy/blive-icon.png";
+import BrowserFrame from "../components/BrowserFrame";
+import bliveIcon from "../assets/blive-ezy/blive-icon.svg";
 import heroImg from "../assets/blive-ezy/hero.png";
 import competitorLogos from "../assets/blive-ezy/competitor-logos.png";
 import researchBoardImg from "../assets/blive-ezy/research-board.png";
@@ -253,7 +254,7 @@ const BLive = () => {
 
           {/* meta line — company + period */}
           <div className="mt-6 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-ink-faint">
-            <img src={bliveIcon} alt="" className="h-5 w-5 shrink-0 rounded object-contain" />
+            <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" />
             <span>B:Live, EV Mobility Platform</span>
             <span className="text-ink-faint/50">·</span>
             <span>Apr 2026 – May 2026</span>
@@ -272,7 +273,9 @@ const BLive = () => {
           </div>
 
           {/* hero — redesigned EZY dashboard, with ratings + store annotations */}
-          <img src={heroImg} alt="The redesigned EZY rider app home screen" className="mt-12 w-full" />
+          <BrowserFrame url="blive.co.in" className="mt-12">
+            <img src={heroImg} alt="The redesigned EZY rider app home screen" className="w-full" />
+          </BrowserFrame>
 
           {/* about + team */}
           <div className="mt-20 grid gap-12 lg:grid-cols-[1.8fr_1fr]">

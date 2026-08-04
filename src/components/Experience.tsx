@@ -16,8 +16,8 @@ const Experience = () => {
             mainClassName="font-script text-[1.15em] text-brand-green"
             splitLevelClassName="overflow-hidden leading-[1.4] px-[0.25em]"
             staggerFrom="last"
-            staggerDuration={0.03}
-            rotationInterval={2200}
+            staggerDuration={0.05}
+            rotationInterval={3000}
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
           />
           <span>I am Avni.</span>
@@ -52,7 +52,7 @@ const Experience = () => {
               <div>
                 <div className="font-display text-lg font-semibold text-ink">{exp.title}</div>
                 <div className="mt-1 flex items-center gap-2 text-sm text-ink-faint">
-                  {exp.icon && <img src={exp.icon} alt="" className="h-4 w-4 shrink-0 object-contain" />}
+                  {exp.icon && <img src={exp.icon} alt="" className="h-5 w-5 shrink-0 object-contain" />}
                   {exp.company}
                 </div>
               </div>

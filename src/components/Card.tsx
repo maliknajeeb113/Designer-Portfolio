@@ -23,7 +23,7 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar, li
           {headline.post}
         </h2>
         <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-ink-faint">
-          <img src={icon} alt="" className="h-4 w-4 shrink-0 object-contain" />
+          <img src={icon} alt="" className="h-5 w-5 shrink-0 object-contain" />
           <span>
             {company} · {period}
           </span>

@@ -1,4 +1,4 @@
-import bliveIcon from "../assets/blive/blive-icon.png";
+import bliveIcon from "../assets/blive/blive-icon.svg";
 import saleskenIcon from "../assets/salesken/salesken-icon.svg";
 
 export interface WorkExperience {

@@ -4,7 +4,7 @@ import { FiStar, FiChevronsRight } from "react-icons/fi";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import BrowserFrame from "../components/BrowserFrame";
-import bliveIcon from "../assets/blive/blive-icon.png";
+import bliveIcon from "../assets/blive/blive-icon.svg";
 import warningIcon from "../assets/blive/warning.svg";
 import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
 import oldTicketing from "../assets/blive/old-ticketing.png";
@@ -210,7 +210,7 @@ const Ticketing = () => {
 
           {/* meta line — company + period */}
           <div className="mt-6 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-ink-faint">
-            <img src={bliveIcon} alt="" className="h-5 w-5 shrink-0 rounded object-contain" />
+            <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" />
             <span>B:Live, EV Mobility Platform</span>
             <span className="text-ink-faint/50">·</span>
             <span>Jan 2025 – Present</span>

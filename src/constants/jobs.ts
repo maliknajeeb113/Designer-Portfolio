@@ -1,7 +1,7 @@
 import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
 import ezyHomeCard from "../assets/blive-ezy/home-card.png";
 import saleskenBanner from "../assets/salesken/salesken-banner.png";
-import bliveIcon from "../assets/blive/blive-icon.png";
+import bliveIcon from "../assets/blive/blive-icon.svg";
 import saleskenIcon from "../assets/salesken/salesken-icon.svg";
 
 export interface CaseStudyStat {
