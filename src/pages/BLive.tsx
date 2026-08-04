@@ -1,16 +1,27 @@
-import { useEffect, type ReactNode } from "react";
+import { Fragment, useEffect, type ReactNode } from "react";
 import { motion } from "framer-motion";
-import { FiStar } from "react-icons/fi";
+import { FiStar, FiChevronsRight, FiCheckCircle, FiImage } from "react-icons/fi";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import BrowserFrame from "../components/BrowserFrame";
 import bliveIcon from "../assets/blive-ezy/blive-icon.svg";
 import heroImg from "../assets/blive-ezy/hero.png";
-import competitorLogos from "../assets/blive-ezy/competitor-logos.png";
+import competitorZypp from "../assets/blive-ezy/competitor-zypp.png";
+import competitorBounce from "../assets/blive-ezy/competitor-bounce.png";
+import competitorHala from "../assets/blive-ezy/competitor-hala.png";
+import competitorYulu from "../assets/blive-ezy/competitor-yulu.png";
+import competitorElectricV from "../assets/blive-ezy/competitor-electric-v.png";
+import ongroundResearchImg from "../assets/blive-ezy/onground-research.png";
 import researchBoardImg from "../assets/blive-ezy/research-board.png";
 import scopingUserStoryImg from "../assets/blive-ezy/scoping-user-story.png";
-import iterationsImg from "../assets/blive-ezy/iterations.png";
+import tradeoffPayoutImg from "../assets/blive-ezy/tradeoff-payout.png";
 import tradeoffSupportImg from "../assets/blive-ezy/tradeoff-support.png";
+import beatDay1Img from "../assets/blive-ezy/beat-day1.png";
+import beatWeek1Img from "../assets/blive-ezy/beat-week1.png";
+import beatWeek3Img from "../assets/blive-ezy/beat-week3.png";
+import riderOnboardingImg from "../assets/blive-ezy/rider-onboarding.png";
+import riderPayoutImg from "../assets/blive-ezy/rider-payout.png";
+import riderSupportImg from "../assets/blive-ezy/rider-support.png";
 
 // NOTE: prose below is transcribed from Figma — the client edits case-study copy
 // by hand. The placeholder phone mockups in the timeline are intentionally left
@@ -38,6 +49,7 @@ const timeline = [
     title: "Before he even signs up",
     body: "Before downloading EZY, he checks what a few options charge upfront. EZY's security deposit is higher than what Zypp Electric asks for, and he isn't sure he'll get it back if he stops riding.",
     quote: null,
+    image: null,
     principle: "Anchoring",
     definition:
       "People judge whether a cost is fair by comparing it to the first reference point they see, not in isolation.",
@@ -49,6 +61,7 @@ const timeline = [
     title: "Signing up",
     body: "A rider downloads EZY to start delivering. He fills in his phone number, gets an OTP, and lands on a long onboarding list, name, address, bank account, Aadhar, PAN, driving license, all typed in by hand.",
     quote: "Itna sab bharna padega? Baad mein karta hoon…",
+    image: beatDay1Img,
     principle: "Cognitive Load",
     definition:
       "The total effort it takes to complete and understand a task. The less effort, the more people finish it.",
@@ -60,7 +73,8 @@ const timeline = [
     title: "First payout",
     body: "A rider who pushes through starts working. At week's end he opens the app to check his earnings and finds numbers and categories, but no single clear answer to “how much do I have?” Some weeks the payout doesn't land on the day he expects, or his account gets blocked, with no explanation of why.",
     quote: "Bas final amount batao, itna detail nahi chahiye.",
-    principle: "Cognitive Load, earnings edition",
+    image: beatWeek1Img,
+    principle: "Cognitive Load - earnings edition",
     definition:
       "Data existing isn't the same as data being usable. If understanding a number takes effort, people give up before getting their answer.",
     application:
@@ -71,6 +85,7 @@ const timeline = [
     title: "Trying to earn more",
     body: "He notices other riders earn more, with no idea why, no in-app guidance on the best time to work, or how close he is to an incentive.",
     quote: "Aur zyada kama sakta hoon, but kaise?",
+    image: null,
     principle: "Missing Feedback Loop",
     definition:
       "People stay motivated when a system shows how close they are to a goal. Silence reads as “nothing I do here matters.”",
@@ -82,6 +97,7 @@ const timeline = [
     title: "The orders that skip him",
     body: "He notices the highest-paying orders never seem to come his way. He asks support, and is told to “change dark stores”, advice that doesn't hold up against how his day actually works.",
     quote: "App se help milti hi nahi.",
+    image: null,
     principle: "Perceived Fairness",
     definition:
       "People judge a system not just by their outcome, but by whether the process that produced it felt fair.",
@@ -93,6 +109,7 @@ const timeline = [
     title: "Something goes wrong",
     body: "His vehicle has an issue. He looks for help in the app, doesn't find a clear way to raise it, and calls the number he has saved instead. The call isn't picked up.",
     quote: "App se help milti hi nahi.",
+    image: beatWeek3Img,
     principle: "Peak-End Rule",
     definition:
       "People judge an experience mostly by its most intense moment and how it ends, not the average of everything before it.",
@@ -101,11 +118,21 @@ const timeline = [
   },
 ];
 
+// Competitor apps benchmarked, rendered as a row of app icons.
+const competitorLogos = [
+  competitorZypp,
+  competitorBounce,
+  competitorHala,
+  competitorYulu,
+  competitorElectricV,
+];
+
 // Research ran on two parallel tracks.
 const researchTracks = [
   {
     title: "Competitive research + in-house interviews",
     logos: competitorLogos,
+    icon: null,
     body: (
       <>
         <Em>5 sessions, 10 riders each</Em>, a mix of active and lapsed users. Alongside this,{" "}
@@ -117,6 +144,7 @@ const researchTracks = [
   {
     title: "On-ground research",
     logos: null,
+    icon: ongroundResearchImg,
     body: (
       <>
         <Em>Contextual inquiry with 3 riders,</Em> done alongside our collections team, who visit
@@ -161,13 +189,49 @@ const actionSteps = [
   },
 ];
 
+// Before → after, told through the same rider from the story above. `status` is a
+// small pill (green Live / blue Partial); `image` is a screen swapped in later.
+const riderStories = [
+  {
+    title: "Onboarding",
+    status: "Live",
+    statusClass: "bg-brand-green/10 text-brand-green",
+    before:
+      "Types in name, address, bank account, Aadhar, PAN, license by hand. Gives up around step two.",
+    after:
+      "Enters his phone number, most details are pulled in automatically. He just reviews and confirms.",
+    detail: "Drop-off: 10/20 → 4/20",
+    image: riderOnboardingImg as string | null,
+  },
+  {
+    title: "Payout visibility",
+    status: "Live",
+    statusClass: "bg-brand-green/10 text-brand-green",
+    before:
+      "Opens the app looking for one number, and instead finds payslips and line items to piece together.",
+    after:
+      "Sees exactly what he earned, right away, plus a status on every payout: Processing, Blocked, or Paid.",
+    detail: "Top reason riders were leaving is addressed",
+    image: riderPayoutImg as string | null,
+  },
+  {
+    title: "Support",
+    status: "Partial",
+    statusClass: "bg-blue-500/10 text-blue-600",
+    before: "Vehicle has an issue. He calls the saved number. Nobody picks up.",
+    after: "Raises a ticket in-app instead, and sees it logged with a status; someone owns it.",
+    detail: "A first support loop is in riders' hands",
+    image: riderSupportImg as string | null,
+  },
+];
+
 // Where research pushed back on assumptions — each with a status badge + prose.
 const tradeoffs = [
   {
     badge: "Shipped",
     badgeClass: "bg-emerald-50 text-emerald-700",
     title: "Payout visibility vs. hiding deductions",
-    image: null,
+    image: tradeoffPayoutImg,
     body: (
       <>
         <span className="text-ink-muted">
@@ -235,6 +299,9 @@ const BLive = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Breadcrumb layout: >4 steps wrap to a 3-column grid (so 5 → 3 + 2).
+  const stepCols = actionSteps.length > 4 ? 3 : Math.max(actionSteps.length, 1);
 
   return (
     <motion.main
@@ -336,25 +403,41 @@ const BLive = () => {
             {timeline.map((beat, i) => (
               <div
                 key={i}
-                className="rounded-3xl border border-ink/[0.06] bg-ink/[0.02] p-7 sm:p-9"
+                className="overflow-hidden rounded-3xl border border-ink/[0.06] bg-ink/[0.02] p-7 sm:p-9"
               >
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <h3 className="font-display text-2xl font-semibold text-ink">{beat.title}</h3>
-                  <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-                    {beat.when}
-                  </span>
-                </div>
-                <p className="mt-4 max-w-3xl text-lg text-ink-muted">{beat.body}</p>
-                {beat.quote && (
-                  <p className="mt-4 text-lg font-medium italic text-ink">“{beat.quote}”</p>
-                )}
-                {/* behavioural principle */}
-                <div className="mt-6 max-w-3xl rounded-r-lg border-l-[3px] border-brand-pink/70 bg-ink/[0.02] py-3 pl-5 pr-4">
-                  <p className="text-sm">
-                    <span className="font-semibold text-ink">{beat.principle}</span>{" "}
-                    <span className="text-ink-faint">{beat.definition}</span>{" "}
-                    <span className="text-ink-muted">{beat.application}</span>
-                  </p>
+                <div
+                  className={
+                    beat.image ? "grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-stretch" : ""
+                  }
+                >
+                  {/* text column — full width when there's no paired screen */}
+                  <div>
+                    <h3 className="font-display text-2xl font-semibold text-ink">{beat.title}</h3>
+                    <span className="mt-1 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
+                      {beat.when}
+                    </span>
+                    <p className="mt-4 text-lg text-ink-muted">{beat.body}</p>
+                    {beat.quote && (
+                      <p className="mt-4 text-lg font-medium italic text-ink">“{beat.quote}”</p>
+                    )}
+                    {/* behavioural principle */}
+                    <div className="mt-6 rounded-r-lg border-l-[3px] border-brand-pink/70 bg-ink/[0.02] py-3 pl-5 pr-4 text-sm">
+                      <p className="font-semibold text-ink">{beat.principle}</p>
+                        <p className="text-ink-faint">{beat.definition}</p>
+                        <p className="text-ink-muted">{beat.application}</p>
+                    </div>
+                  </div>
+
+                  {/* screen — half-cut phone, no tile, flush with the card's bottom edge */}
+                  {beat.image && (
+                    <div className="flex items-end justify-center">
+                      <img
+                        src={beat.image}
+                        alt={`${beat.title} — screen`}
+                        className="-mb-7 w-full max-w-[340px] sm:-mb-9"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -374,15 +457,22 @@ const BLive = () => {
                     className="flex flex-1 flex-col rounded-2xl border border-ink/10 bg-white p-6"
                   >
                     {track.logos ? (
-                      <img
-                        src={track.logos}
-                        alt="Competitor apps benchmarked"
-                        className="mb-5 h-12 w-auto object-contain place-self-start"
-                      />
+                      <div className="mb-5 flex flex-wrap items-center gap-2">
+                        {track.logos.map((logo) => (
+                          <img
+                            key={logo}
+                            src={logo}
+                            alt=""
+                            className="h-12 w-12 shrink-0 rounded-xl object-contain"
+                          />
+                        ))}
+                      </div>
                     ) : (
-                      <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-pink-light text-brand-pink place-self-start">
-                        <FiStar className="h-5 w-5" />
-                      </span>
+                      <img
+                        src={track.icon ?? undefined}
+                        alt=""
+                        className="mb-5 h-16 w-16 object-contain place-self-start"
+                      />
                     )}
                     <h4 className="font-display text-2xl font-semibold text-ink">{track.title}</h4>
                     <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-md bg-brand-pink-light px-2 py-1 text-sm font-medium text-brand-pink">
@@ -445,25 +535,65 @@ const BLive = () => {
           {/* Action plan */}
           <div className="mt-16">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Action plan</span>
-            <p className="mt-4 max-w-4xl text-xl text-ink-muted">
+            <p className="mt-4 text-xl text-ink-muted">
               Research pointed to one core insight: EZY wasn't failing because it was hard to use;
               it was failing because it gave riders no reason to open it after day one. With three
               months, I scoped the plan around the two problems most directly causing riders to
               leave.
             </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {actionSteps.map((card) => (
-                <div key={card.num} className="flex items-start gap-6 rounded-2xl bg-ink/[0.04] p-7">
-                  <span className={`font-sans text-xl font-medium leading-7 ${card.color}`}>
-                    {card.num}
-                  </span>
-                  <div className="w-px self-stretch bg-ink/10" />
-                  <div className="flex flex-col gap-3">
-                    <p className="text-base font-medium leading-6 text-ink-faint">{card.label}</p>
-                    <p className="font-sans text-lg leading-7 text-ink">{card.text}</p>
-                  </div>
-                </div>
-              ))}
+            {/* breadcrumb-style steps: numbered cards joined by a >> badge. On
+                desktop it's an N-column grid (5 steps → 3 + 2, every card the same
+                width) with the connector pointing right, absolutely placed on each
+                card's right edge except at a row's end. On mobile everything stacks
+                and the connector points down between every pair. */}
+            <div
+              className="mt-8 flex flex-col lg:grid lg:gap-x-4 lg:gap-y-4"
+              style={{ gridTemplateColumns: `repeat(${stepCols}, minmax(0, 1fr))` }}
+            >
+              {actionSteps.map((card, i) => {
+                const col = i % stepCols;
+                const isLast = i === actionSteps.length - 1;
+                const isRowStart = col === 0;
+                const isRowEnd = col === stepCols - 1 || isLast; // last in its desktop row
+                const radius =
+                  isRowStart && isRowEnd
+                    ? "lg:rounded-[24px]"
+                    : isRowStart
+                      ? "lg:rounded-l-[24px] lg:rounded-r-[12px]"
+                      : isRowEnd
+                        ? "lg:rounded-l-[12px] lg:rounded-r-[24px]"
+                        : "lg:rounded-[12px]";
+                return (
+                  <Fragment key={i}>
+                    <div className={`relative flex items-start gap-7 rounded-[16px] bg-ink/[0.04] p-7 ${radius}`}>
+                      <span className={`font-sans text-xl font-medium leading-7 ${card.color}`}>
+                        {card.num}
+                      </span>
+                      <div className="w-px self-stretch bg-ink/10" />
+                      <div className="flex flex-col gap-4">
+                        <p className="text-base font-medium leading-6 text-ink-faint">{card.label}</p>
+                        <p className="font-sans text-xl font-medium leading-7 text-ink">{card.text}</p>
+                      </div>
+
+                      {/* desktop connector — centered in the gap between this card
+                          and the next (gap-x-4 = 16px, so shift its centre +8px past
+                          the right edge). Only when a card follows in the same row. */}
+                      {!isRowEnd && (
+                        <div className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-[calc(50%+8px)] items-center justify-center rounded-full bg-white p-1 shadow-[0px_0px_0px_1px_rgba(23,23,23,0.08),0px_1px_1px_-0.5px_rgba(23,23,23,0.04),0px_3px_3px_-1.5px_rgba(23,23,23,0.04)] lg:flex">
+                          <FiChevronsRight className="h-5 w-5 text-ink-faint" />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* mobile connector — in-flow, points down between every pair */}
+                    {!isLast && (
+                      <div className="relative z-10 -my-2 flex shrink-0 items-center justify-center self-center rounded-full bg-white p-1 shadow-[0px_0px_0px_1px_rgba(23,23,23,0.08),0px_1px_1px_-0.5px_rgba(23,23,23,0.04),0px_3px_3px_-1.5px_rgba(23,23,23,0.04)] lg:hidden">
+                        <FiChevronsRight className="h-5 w-5 rotate-90 text-ink-faint" />
+                      </div>
+                    )}
+                  </Fragment>
+                );
+              })}
             </div>
           </div>
         </Container>
@@ -491,15 +621,69 @@ const BLive = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
               Design Iterations
             </span>
-            <p className="mt-4 max-w-4xl text-xl text-ink-muted">
+            <p className="mt-4 text-xl text-ink-muted">
               With a small team and a tight timeline, most of the real design work happened in
               negotiation, deciding what to push for, and what to let wait.
             </p>
-            <img
-              src={iterationsImg}
-              alt="Design iteration board in Figma"
-              className="mt-6 w-full rounded-2xl border border-ink/10"
-            />
+
+            {/* before → after, three cards */}
+            <h3 className="mt-12 font-display text-3xl font-semibold text-ink sm:text-4xl">
+              The same rider, now
+            </h3>
+            <p className="mt-3 text-xl text-ink-muted">
+              Three short stories, the same rider from the pain points, living through what changed.
+            </p>
+            <div className="mt-8 grid gap-6 lg:grid-cols-3 lg:gap-10">
+              {riderStories.map((story) => (
+                <div
+                  key={story.title}
+                  className="flex flex-col gap-7 rounded-3xl border border-ink/10 bg-white p-8 shadow-sm"
+                >
+                  {/* title + before */}
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-start justify-between gap-3">
+                      <h4 className="text-base font-semibold text-ink">{story.title}</h4>
+                      <span
+                        className={`shrink-0 rounded px-2 py-1 text-xs font-semibold uppercase tracking-wide ${story.statusClass}`}
+                      >
+                        {story.status}
+                      </span>
+                    </div>
+                    <span className="text-sm font-medium text-orange-500">Before</span>
+                    <p className="text-sm leading-relaxed text-ink-muted">{story.before}</p>
+                  </div>
+
+                  <div className="h-px w-full bg-ink/10" />
+
+                  {/* after */}
+                  <div className="flex flex-col gap-2">
+                    <span className="text-sm font-medium text-brand-green">After</span>
+                    <p className="text-sm leading-relaxed text-ink-muted">{story.after}</p>
+                  </div>
+
+                  {/* takeaway */}
+                  <div className="flex items-center gap-2">
+                    <FiCheckCircle className="h-4 w-4 shrink-0 text-brand-green" />
+                    <p className="text-sm font-medium text-ink">{story.detail}</p>
+                  </div>
+
+                  {/* screen — placeholder until the real export is supplied */}
+                  {story.image ? (
+                    <div className="mt-auto overflow-hidden rounded-xl border border-ink/10">
+                      <img
+                        src={story.image}
+                        alt={`${story.title} — before and after screens`}
+                        className="aspect-[656/360] w-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="mt-auto flex aspect-[656/360] items-center justify-center rounded-xl border border-dashed border-ink/15 bg-ink/[0.03] text-ink-faint">
+                      <FiImage className="h-7 w-7" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* trade-offs */}
@@ -507,27 +691,44 @@ const BLive = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
               Design Trade-offs
             </span>
-            <div className="mt-6 flex flex-col gap-12">
-              {tradeoffs.map((t) => (
-                <div key={t.title} className="grid gap-10 lg:grid-cols-2 lg:items-center">
-                  <div className="max-w-2xl">
+            <div className="mt-8 flex flex-col gap-16">
+              {tradeoffs.map((t) => {
+                const heading = (
+                  <div>
                     <span
-                      className={`inline-block rounded-lg px-2 py-1 text-xs font-medium ${t.badgeClass}`}
+                      className={`inline-block rounded-md px-2 py-1 text-xs font-medium ${t.badgeClass}`}
                     >
                       {t.badge}
                     </span>
                     <h3 className="mt-4 font-display text-3xl font-semibold text-ink">{t.title}</h3>
-                    <p className="mt-4 text-lg leading-relaxed">{t.body}</p>
+                    <p className="mt-4 text-lg leading-relaxed text-ink-muted">{t.body}</p>
                   </div>
-                  {t.image && (
+                );
+
+                // No image → copy runs full width. With image → copy is capped and
+                // the screenshot takes the right column, fixed height on desktop.
+                if (!t.image) {
+                  return (
+                    <div key={t.title} className="w-full">
+                      {heading}
+                    </div>
+                  );
+                }
+
+                return (
+                  <div
+                    key={t.title}
+                    className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14"
+                  >
+                    <div className="max-w-3xl">{heading}</div>
                     <img
                       src={t.image}
-                      alt={`${t.title} — screen`}
-                      className="w-full rounded-2xl border border-ink/10"
+                      alt={`${t.title} — screens`}
+                      className="w-full rounded-2xl border border-ink/10 object-top lg:h-[400px] lg:object-cover"
                     />
-                  )}
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -536,10 +737,10 @@ const BLive = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
               Design system modernization
             </span>
-            <h3 className="mt-3 font-display text-3xl font-semibold text-ink sm:text-4xl">
+            <h3 className="mt-3 font-display text-3xl font-semibold text-ink">
               Design system, built from scratch
             </h3>
-            <p className="mt-4 max-w-4xl text-xl text-ink-muted">
+            <p className="mt-4 text-xl text-ink-muted">
               EZY had no consistent design system to build on, so alongside this project, I built one
               from the ground up with my senior designer, not adapted from an existing component
               library. Every token, component, and pattern used across the redesigned onboarding and
