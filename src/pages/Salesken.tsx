@@ -4,7 +4,7 @@ import { FiStar, FiChevronsRight } from "react-icons/fi";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import BrowserFrame from "../components/BrowserFrame";
-import saleskenIcon from "../assets/salesken/salesken-icon.png";
+import saleskenIcon from "../assets/salesken/salesken-icon.svg";
 import heroDashboard from "../assets/salesken/hero-dashboard.png";
 import problemImg from "../assets/salesken/problem.png";
 import researchCardImg from "../assets/salesken/research-card.png";
@@ -30,7 +30,7 @@ const competitorLogos = [competitor1, competitor2, competitor3, competitor4, com
 // NOTE: prose below is transcribed from Figma — the client edits case-study copy
 // by hand. Decorative stickers/emojis from the design are intentionally skipped.
 
-const chips = ["Sole Designer", "UX Research", "AI Native App", "0→1 Product"];
+const chips = ["AI Native App", "Sole Designer", "UX Research", "0→1 Product"];
 
 const team = [
   { name: "Avni Garg (Me)", role: "Product Designer" },
@@ -53,7 +53,7 @@ const personas = [
     img: personaCustomerImg,
     body: (
       <>
-        Registers for a product demo on a client&rsquo;s site — e.g. a policy demo on Policy Bazaar —
+        Registers for a product demo on a client&rsquo;s site, e.g. a policy demo on Policy Bazaar,
         then joins a live session and needs to follow the walkthrough clearly, with zero technical
         setup on their end.
       </>
@@ -96,7 +96,7 @@ const researchTracks = [
     body: (
       <>
         <Em>Interviewed sales reps at other companies</Em> directly about <Em>call volume, daily workflow,</Em> and
-        where they got stuck — since they weren&rsquo;t Salesken customers, this stayed independent
+        where they got stuck; since they weren&rsquo;t Salesken customers, this stayed independent
         of any one product&rsquo;s framing.
       </>
     ),
@@ -134,8 +134,8 @@ const features = [
     body: (
       <>
         <p><Em>Two asks</Em> came out of the same review. First, agents were juggling a full day of Google
-        Calendar meetings with no way to tell customer sessions apart from internal ones at a glance
-        — so a <Em>&ldquo;Smart To-Do&rdquo;</Em> surface was added that pulls the agent&rsquo;s
+        Calendar meetings with no way to tell customer sessions apart from internal ones at a glance,
+        so a <Em>&ldquo;Smart To-Do&rdquo;</Em> surface was added that pulls the agent&rsquo;s
         calendar and separates upcoming customer meetings from internal meetings automatically.</p>
         <p>Second, stakeholders wanted agents to walk into a call already knowing who they&rsquo;re
         talking to, so a lookup tab was added where the agent can check a <Em>customer&rsquo;s email,
@@ -155,8 +155,8 @@ const features = [
           request. 
         </p>
         <p>
-          So the panel&rsquo;s email composer got that same <Em>rewrite step</Em> — the
-          agent writes loosely, the AI tightens tone and structure before it goes out — rather than
+          So the panel&rsquo;s email composer got that same <Em>rewrite step</Em>, the
+          agent writes loosely, the AI tightens tone and structure before it goes out, rather than
           leaving follow-up quality to whatever the agent had time to polish.
         </p>
       </>
@@ -205,7 +205,7 @@ const Salesken = () => {
             {chips.map((chip) => (
               <span
                 key={chip}
-                className="rounded-md bg-ink/[0.05] px-3 py-1 text-xs font-medium text-ink-muted"
+                className="rounded-md bg-ink/[0.05] px-2 py-1 text-xs font-medium text-ink-muted"
               >
                 {chip}
               </span>
@@ -213,7 +213,7 @@ const Salesken = () => {
           </div>
 
           {/* hero — co-browsing session */}
-          <BrowserFrame url="www.saleken.com" className="mt-12">
+          <BrowserFrame url="www.saleken.ai" className="mt-12">
             <div className="aspect-[16/10] w-full overflow-hidden">
               <img src={heroDashboard} alt="" className="h-full w-full object-cover object-top" />
             </div>
@@ -226,7 +226,7 @@ const Salesken = () => {
                 About
               </span>
               <p className="mt-4 text-xl leading-relaxed text-ink sm:text-2xl">
-                Co-Browser — a real-time AI assistant that surfaces the right prompt, product
+                Co-Browser, a real-time AI assistant that surfaces the right prompt, product
                 context, and next step while a rep is still on the phone, designed end-to-end from
                 research through shipped UX.
               </p>
@@ -261,7 +261,7 @@ const Salesken = () => {
                 <p className="text-xl text-ink-muted">
                   Salesken&rsquo;s own app needed the same fix it was meant to give customers.
                   Scheduling calls, checking deal insights, and getting real-time tips meant hopping
-                  between separate tools mid-workflow — a messy setup that cost reps time they
+                  between separate tools mid-workflow, a messy setup that cost reps time they
                   should&rsquo;ve spent talking to the customer, not searching for what to say to
                   them.
                 </p>
@@ -272,8 +272,8 @@ const Salesken = () => {
                   </figcaption>
                   <blockquote className="mt-3 text-lg italic text-ink-muted">
                     <Em>&ldquo;There are moments mid-call where I just don&rsquo;t know how to convince
-                    the customer — and that&rsquo;s exactly when I lose them.&rdquo;</Em> That was the
-                    pattern behind lost conversions — not a knowledge gap, but a freeze, at the one
+                    the customer, and that&rsquo;s exactly when I lose them.&rdquo;</Em> That was the
+                    pattern behind lost conversions, not a knowledge gap, but a freeze, at the one
                     moment a rep couldn&rsquo;t afford it.
                   </blockquote>
                 </figure>
@@ -292,7 +292,7 @@ const Salesken = () => {
           <div className="mt-20">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Target personas</span>
             <p className="mt-6 text-xl text-ink-muted">
-              Co-Browser is a two-sided product — an agent on a client company&rsquo;s sales floor,
+              Co-Browser is a two-sided product, an agent on a client company&rsquo;s sales floor,
               and a customer who registered for a demo on that company&rsquo;s site.
             </p>
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
@@ -306,7 +306,7 @@ const Salesken = () => {
                   </h4>
                   <div className="relative z-10 mt-auto max-w-[75%] pt-6">
                     <span
-                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium ${p.pill} ${p.text}`}
+                      className={`inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-sm font-medium ${p.pill} ${p.text}`}
                     >
                       <FiStar className="h-3.5 w-3.5" />
                       WHAT THEY WANT
@@ -359,7 +359,7 @@ const Salesken = () => {
                       <img src={track.sticker} alt="" className="mb-2 h-20 w-auto object-contain place-self-start" />
                     )}
                     <h4 className="font-display text-2xl font-semibold text-ink">{track.title}</h4>
-                    <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-pink-light px-3 py-1 text-sm font-medium text-brand-pink">
+                    <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-lg bg-brand-pink-light px-2 py-1 text-sm font-medium text-brand-pink">
                       <FiStar className="h-3.5 w-3.5" />
                       What I did
                     </span>
@@ -398,7 +398,7 @@ const Salesken = () => {
           <div className="mt-20">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Action plan</span>
             <p className="mt-4 text-xl text-ink-muted">
-              Three connected surfaces, not one screen — one for the customer, two supporting the
+              Three connected surfaces, not one screen; one for the customer, two supporting the
               agent through the session.
             </p>
             {/* breadcrumb-style steps joined by a >> badge (same pattern as Ticketing) */}
@@ -451,10 +451,10 @@ const Salesken = () => {
               How two sides meet
             </span>
             <p className="mt-4 text-xl text-ink-muted">
-              A co-browsing session, not a phone call — the customer and agent share one screen, but
+              A co-browsing session, not a phone call; the customer and agent share one screen, but
               see different things on it.
             </p>
-            <BrowserFrame url="www.saleken.com" className="mt-8">
+            <BrowserFrame url="www.saleken.ai" className="mt-8">
               <div className="aspect-[16/10] w-full overflow-hidden">
                 <img src={howTwoSidesImg} alt="" className="h-full w-full object-cover object-top" />
               </div>
@@ -504,7 +504,7 @@ const Salesken = () => {
                 <p>
                   <Em>Several rounds, directly in Figma.</Em> 
                 </p>
-                <p>I designed across three tracks — the
+                <p>I designed across three tracks, the
                   customer view, the agent view, and how they connect. Both the layout and the
                   information on screen changed a lot as I iterated.</p>
                 <p>
@@ -531,7 +531,7 @@ const Salesken = () => {
               {features.map((feature) => (
                 <div key={feature.title} className="grid gap-10 lg:grid-cols-2">
                   <div className="max-w-2xl">
-                    <span className="inline-block rounded-md bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+                    <span className="inline-block rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
                       {feature.badge}
                     </span>
                     <h3 className="mt-4 font-display text-3xl font-semibold text-ink">
@@ -576,8 +576,8 @@ const Salesken = () => {
               it&rsquo;s used by 200+ businesses.
             </p>
             <p className="font-medium text-ink">
-              This internship was the most challenging, most rewarding stretch of work I&rsquo;d done
-              — mostly because of how ambiguous and fast-moving it was.
+              This internship was the most challenging, most rewarding stretch of work I&rsquo;d done,
+              mostly because of how ambiguous and fast-moving it was.
             </p>
             <p>
               I didn&rsquo;t stay on to see it through to launch, so I can&rsquo;t claim specific

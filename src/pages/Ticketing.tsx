@@ -5,6 +5,7 @@ import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import BrowserFrame from "../components/BrowserFrame";
 import bliveIcon from "../assets/blive/blive-icon.png";
+import warningIcon from "../assets/blive/warning.svg";
 import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
 import oldTicketing from "../assets/blive/old-ticketing.png";
 import jtbdImg from "../assets/blive/jtbd.png";
@@ -25,7 +26,7 @@ import supportCard from "../assets/blive/scoping/support-team.png";
 // NOTE: prose below is placeholder/first-pass copy — the client edits case-study
 // text by hand. Stickers use emojis for now; real graphics come later.
 
-const chips = ["0→1 Product", "B2B SaaS", "Sole Design", "UX Research"];
+const chips = ["Internal Dashboard","UX Research","Sole Design","0→1 Product"];
 
 const team = [
   { name: "Avni Garg (Me)", role: "Product Designer" },
@@ -36,10 +37,10 @@ const team = [
 ];
 
 const problemCards = [
-  { emoji: "📱", title: "Rider contact through WhatsApp", text: "Riders called or WhatsApp'd whoever they personally knew at B:Live." },
-  { emoji: "📊", title: "Using spreadsheets for records", text: "Issues were noted in spreadsheets, forwarded manually, or simply forgotten." },
-  { emoji: "🕳️", title: "No accountability", text: "Zero digital record — no history, no status." },
-  { emoji: "🙅", title: "No assigned user", text: "Most issues died for one reason: no ticket was ever assigned to anyone." },
+  { title: "Rider contact through WhatsApp", text: "Riders called or WhatsApp'd whoever they personally knew at B:Live." },
+  { title: "Using spreadsheets for records", text: "Issues were noted in spreadsheets, forwarded manually, or simply forgotten." },
+  { title: "No accountability", text: "Zero digital record, no history, no status." },
+  { title: "No assigned user", text: "Most issues died for one reason: no ticket was ever assigned to anyone." },
 ];
 
 // Each persona carries its own colour family: `bg` (card, lightest), `pill`
@@ -58,7 +59,7 @@ const actionCards = [
   { num: "01", label: "Ticket Master", text: "Admins can configure categories, link them to departments, and define resolution reasons, so tickets are automatically sent to the right team.", color: "text-brand-green" },
   { num: "02", label: "Ticket Management", text: "The operational workspace with a strict lifecycle and full audit logs.", color: "text-brand-pink" },
   { num: "03", label: "Automated assignment engine", text: "Category → Department → Team member, with city-based segregation and a DM exception.", color: "text-brand-amber" },
-  { num: "04", label: "Rider-facing Help & Support", text: "In the EZY DE app, with FAQ deflection before ticket creation.", color: "text-brand-green" },
+  { num: "04", label: "Rider-facing Help & Support", text: "In the EZY app, with FAQ deflection before ticket creation.", color: "text-brand-green" },
   { num: "05", label: "User Management", text: "Because assignment logic needs to know who works where, in which city, in which role.", color: "text-brand-green" },
 ];
 
@@ -89,7 +90,7 @@ const tradeoffs = [
       <>
         <p>
           Early scoping leaned toward manual assignment by an admin. But a Deployment Manager told
-          me riders call him, and only him, for everything — manual triage would just digitize the
+          me riders call him, and only him, for everything; manual triage would just digitize the
           old bottleneck.
         </p>
         <p className="font-medium text-ink">
@@ -97,7 +98,7 @@ const tradeoffs = [
           → round-robin, with a DM exception so riders with a trusted contact keep them.
         </p>
         <p>
-          This is my favourite decision in the project — the system optimizes for load balance by
+          This is my favourite decision in the project; the system optimizes for load balance by
           default, but yields to relationship continuity when it exists.
         </p>
       </>
@@ -112,7 +113,7 @@ const tradeoffs = [
     body: (
       <>
         <p>
-          I proposed a live chat between the ticket raiser and assignee — otherwise clarifying
+          I proposed a live chat between the ticket raiser and assignee; otherwise clarifying
           conversations would leak right back to WhatsApp, recreating the exact problem we were
           solving. </p>
           <p>Engineering couldn&rsquo;t commit to real-time chat within the 2-month window, so
@@ -131,7 +132,7 @@ const tradeoffs = [
     body: (
       <>
         <p>
-          I explored a kanban board — visually, four lifecycle stages map beautifully to columns.
+          I explored a kanban board; visually, four lifecycle stages map beautifully to columns.
           But testing with actual users in our weekly sessions was clear: these are operations
           people who live in spreadsheets. They wanted dense, scannable rows, and didn&rsquo;t want
           to spend a minute longer in this tool than necessary. Engineering agreed, for effort
@@ -142,7 +143,7 @@ const tradeoffs = [
           designer&rsquo;s.
         </p>
         <p>
-          Shipped: a table view with layered filters — date range, designation, category,
+          Shipped: a table view with layered filters, date range, designation, category,
           department, and dependent assignee filtering.
         </p>
       </>
@@ -156,7 +157,7 @@ const tradeoffs = [
     body: (
       <>
         <p>
-          An immobilized vehicle and a document query aren&rsquo;t the same emergency — I proposed a
+          An immobilized vehicle and a document query aren&rsquo;t the same emergency; I proposed a
           criticality level so urgent tickets wouldn&rsquo;t just sit in round-robin order. Both PM
           and engineering pushed back: with the assignment engine, city rules, and the DM exception
           already in scope, priority logic (and the SLA behavior it implies) was too much for the
@@ -164,7 +165,7 @@ const tradeoffs = [
         </p>
         <p>
           We <Em>agreed to land it in the next version</Em>, alongside{" "}
-          <Em>AI integration — auto-classifying tickets, inferring criticality from descriptions,</Em>{" "}
+          <Em>AI integration, auto-classifying tickets, inferring criticality from descriptions,</Em>{" "}
           and eventually suggesting resolutions from historical data. I lost the v1 battle, but the
           proposal shaped the roadmap.
         </p>
@@ -178,7 +179,7 @@ const outcomeStats = [
   { value: "15min", label: "Average acknowledgment time." },
   { value: "90%", label: "Tickets auto-routed to the right team." },
   { value: "4/5+", label: "Post-resolution rider rating." },
-  { value: "100%", label: "Category coverage — zero orphaned tickets." },
+  { value: "100%", label: "Category coverage, zero orphaned tickets." },
 ];
 
 const Ticketing = () => {
@@ -210,7 +211,7 @@ const Ticketing = () => {
           {/* meta line — company + period */}
           <div className="mt-6 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-ink-faint">
             <img src={bliveIcon} alt="" className="h-5 w-5 shrink-0 rounded object-contain" />
-            <span>B:Live — EV Mobility Platform</span>
+            <span>B:Live, EV Mobility Platform</span>
             <span className="text-ink-faint/50">·</span>
             <span>Jan 2025 – Present</span>
           </div>
@@ -220,7 +221,7 @@ const Ticketing = () => {
             {chips.map((chip) => (
               <span
                 key={chip}
-                className="rounded-md bg-ink/[0.05] px-3 py-1 text-xs font-medium text-ink-muted"
+                className="rounded-md bg-ink/[0.05] px-2 py-1 text-xs font-medium text-ink-muted"
               >
                 {chip}
               </span>
@@ -228,7 +229,7 @@ const Ticketing = () => {
           </div>
 
           {/* thumbnail (same frame as the home page) */}
-          <BrowserFrame url="finance-template.aligoal.com" className="mt-12">
+          <BrowserFrame url="blive.co.in" className="mt-12">
             <div className="aspect-[1224/436] w-full overflow-hidden">
               <img src={ticketThumbnail} alt="" className="h-full w-full object-cover object-top" />
             </div>
@@ -240,10 +241,10 @@ const Ticketing = () => {
               <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
                 About
               </span>
-              <p className="mt-4 text-xl leading-relaxed text-ink sm:text-2xl">
+              <p className="mt-4 text-xl leading-relaxed text-ink">
                 I owned end-to-end UX for the admin dashboard (Ticket Master, Ticket Management, User
-                Management, Settings) and the rider-facing Help &amp; Support experience in the EZY DE
-                app — plus I designed a new design system for the platform from the ground up. With a
+                Management, Settings) and the rider-facing Help &amp; Support experience in the EZY
+                app, plus I designed a new design system for the platform from the ground up. With a
                 team this small, I wasn&rsquo;t just producing screens; I was in every scoping
                 conversation, contributing to product logic, and negotiating trade-offs directly with
                 engineering.
@@ -278,14 +279,16 @@ const Ticketing = () => {
               <div>
                 <p className="text-xl text-ink-muted">
                   B:Live manages EV fleets for delivery riders across cities. When something went
-                  wrong — a payment failure, a vehicle breakdown, a document issue — this is how it
+                  wrong, a payment failure, a vehicle breakdown, a document issue, this is how it
                   got &ldquo;handled.&rdquo;
                 </p>
               
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   {problemCards.map((card) => (
                     <div key={card.title} className="rounded-2xl border border-ink/10 bg-white p-5">
-                      <div className="text-2xl">{card.emoji}</div>
+                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-ink/10 bg-white shadow-sm">
+                        <img src={warningIcon} alt="" className="h-5 w-5" />
+                      </span>
                       <div className="mt-3 font-medium text-ink">{card.title}</div>
                       <p className="mt-1 text-sm text-ink-muted">{card.text}</p>
                     </div>
@@ -311,14 +314,14 @@ const Ticketing = () => {
               <div className="flex flex-col gap-4 text-xl text-ink-muted max-w-2xl">
                 <p>I ran research on two tracks over the first three weeks.</p>
                 <p>
-                  <span className="text-ink">User interviews across every role that touches a support issue —</span> riders, fleet
+                  <span className="text-ink">User interviews across every role that touches a support issue,</span> riders, fleet
                   operators, hub managers, deployment managers, and recovery managers. <span className="text-ink">Historical complaint analysis,</span> going through past issues raised via calls and WhatsApp to
                   understand real categories, frequency, and where they died.
                 </p>
                 <p>
                   Then <span className="text-ink">I made research a habit, not a phase: recurring one-hour weekly sessions with
                   all POCs, for three consecutive weeks,</span>  so every decision could be validated against
-                  real workflows before it hardened into spec.
+                  real workflows before it hardened into spec. 
                 </p>
               </div>
               <div className="relative h-64 md:h-auto">
@@ -347,7 +350,7 @@ const Ticketing = () => {
 
                   <div className="relative z-10 mt-auto max-w-[70%] pt-6">
                     <span
-                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium ${p.pill} ${p.text}`}
+                      className={`inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-sm font-medium ${p.pill} ${p.text}`}
                     >
                       <FiStar className="h-3.5 w-3.5" />
                       Needs
@@ -449,10 +452,6 @@ const Ticketing = () => {
           <span className="mt-10 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
             User personas
           </span>
-          <p className="mt-4 text-xl text-ink-muted">
-            User stories kept scope honest — one clear job per role, so the build stayed anchored to
-            real needs instead of feature wishlists.
-          </p>
           {/* mobile: equal-width cards stacked one after another */}
           <div className="mt-10 flex flex-col gap-6 lg:hidden">
             {personaCards.map((card) => (
@@ -483,32 +482,11 @@ const Ticketing = () => {
           {/* iterations */}
           <div className="mt-12">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Design Iterations</span>
-            <div className="mt-6 flex flex-col gap-10 lg:flex-row lg:items-start">
-              <div className="flex flex-1 flex-col gap-6 text-xl text-ink-muted md:max-w-2xl">
-                <p>I ran research on two tracks over the first three weeks.</p>
-                <p>
-                  <strong className="font-semibold text-ink">
-                    User interviews across every role that touches a support
-                  </strong>{" "}
-                  issue riders, fleet operators, hub managers, deployment managers, and recovery
-                  managers.{" "}
-                  <strong className="font-semibold text-ink">Historical complaint analysis</strong>{" "}
-                  going through past issues raised via calls and WhatsApp to understand real
-                  categories, frequency, and where they died.
-                </p>
-                <p>
-                  Then I made research a habit, not a phase:{" "}
-                  <strong className="font-semibold text-ink">
-                    recurring one-hour weekly sessions with all POCs, for three consecutive weeks
-                  </strong>
-                  , so every decision could be validated against real workflows before it hardened
-                  into spec.
-                </p>
-              </div>
+            <div className="mx-auto mt-6 aspect-[1516/960] w-1/2 overflow-hidden rounded-3xl border border-ink/10">
               <img
                 src={iterationsImg}
                 alt="Design iteration screens"
-                className="w-full shrink-0 rounded-3xl border border-ink/10 lg:w-[600px]"
+                className="h-full w-full object-cover object-top"
               />
             </div>
           </div>
@@ -520,7 +498,7 @@ const Ticketing = () => {
               {tradeoffs.map((t) => {
                 const heading = (
                   <div>
-                    <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${t.statusClass}`}>
+                    <span className={`inline-block rounded-md px-2 py-1 text-xs font-medium ${t.statusClass}`}>
                       {t.status}
                     </span>
                     <h3 className="mt-4 font-display text-3xl font-semibold text-ink">{t.title}</h3>
@@ -559,17 +537,17 @@ const Ticketing = () => {
               Design system modernization
             </span>
             <h3 className="mt-6 max-w-2xl font-display text-4xl font-semibold leading-tight text-ink">
-              Design system — built out from Align UI
+              Design system, built out from Align UI
             </h3>
             <p className="mt-6 text-lg text-ink-muted">
               The dashboard had no usable design system, so alongside this project I built one for the
               entire platform, not just this module. I started from <Em>Align UI,</Em> a purchased
-              component library, as the foundation — but a library alone is just raw components. I
+              component library, as the foundation, but a library alone is just raw components. I
               designed and assembled the actual system B:Live needed: tokens adapted to B:Live&rsquo;s
               brand (color, type, spacing, elevation), components customized and extended into tables,
               filters, modals, dependent dropdowns, status tags, uploads, and empty states, and
-              reusable patterns — table + filter bar, detail view + activity log, confirmation/guardrail
-              states — built from those components.
+              reusable patterns, table + filter bar, detail view + activity log, confirmation/guardrail
+              states, built from those components.
             </p>
 
             {/* before / after — each labelled just above its top-left corner. Both
@@ -613,12 +591,12 @@ const Ticketing = () => {
             <p>
               Support went from <Em>&ldquo;WhatsApp someone you know and hope&rdquo;</Em> to a system where
               every issue has a record, an owner, a status the rider can see, and a documented
-              resolution. Service quality improved across the board — and for the first time, B:Live
+              resolution. Service quality improved across the board, and for the first time, B:Live
               has the data to keep improving it.
             </p>
             <p>
               <span className="font-medium text-ink">What&rsquo;s next:</span> v2 is scoped to bring
-              ticket criticality/priority levels and AI integration — auto-classifying tickets,
+              ticket criticality/priority levels and AI integration, auto-classifying tickets,
               inferring urgency, and suggesting resolutions from the historical data this platform is
               now, for the first time, actually capturing.
             </p>

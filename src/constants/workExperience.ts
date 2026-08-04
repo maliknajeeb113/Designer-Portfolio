@@ -1,5 +1,5 @@
 import bliveIcon from "../assets/blive/blive-icon.png";
-import saleskenIcon from "../assets/salesken/salesken-icon.png";
+import saleskenIcon from "../assets/salesken/salesken-icon.svg";
 
 export interface WorkExperience {
   id: number;
@@ -14,7 +14,7 @@ export interface WorkExperience {
 export const workExperienceData: WorkExperience[] = [
   {
     id: 1,
-    company: "B:Live - Ev Mobility Platform",
+    company: "B:Live, Ev Mobility Platform",
     period: "Jan 2025 - Present",
     title: "Product Designer",
     description:
@@ -32,11 +32,11 @@ export const workExperienceData: WorkExperience[] = [
   },
   {
     id: 3,
-    company: "B:Live - Ev Mobility Platform",
+    company: "B:Live, Ev Mobility Platform",
     period: "Dec 2023 - Apr 2024",
     title: "UX/UI Design Intern",
     description:
-      "Redesigned the B2C Ezy App — an EV rental platform for delivery professionals — improving usability and the overall subscription experience.",
+      "Redesigned the B2C Ezy App, an EV rental platform for delivery professionals, improving usability and the overall subscription experience.",
     icon: bliveIcon,
   },
 ];

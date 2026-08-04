@@ -1,18 +1,31 @@
 import Container from "./Container";
+import RotatingText from "./RotatingText";
 import { workExperienceData } from "../constants";
+
+// Greetings the header rotates through (the script-green accent word).
+const greetings = ["Hi,", "Hola,", "Namaste,", "Namaskara,", "Bonjour,", "Ciao,"];
 
 // "Where I've been" — short about blurb + the experience list.
 const Experience = () => {
   return (
     <section className="pb-16 sm:pb-24">
       <Container>
-        <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">
-          Where I&rsquo;ve <span className="font-script text-[1.15em] text-brand-green">been.</span>
+        <h2 className="flex items-center gap-2 font-display text-5xl font-bold text-ink">
+          <RotatingText
+            texts={greetings}
+            mainClassName="font-script text-[1.15em] text-brand-green"
+            splitLevelClassName="overflow-hidden leading-[1.4] px-[0.25em]"
+            staggerFrom="last"
+            staggerDuration={0.03}
+            rotationInterval={2200}
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+          />
+          <span>I am Avni.</span>
         </h2>
 
         <div className="mt-6 flex max-w-6xl flex-col gap-4 text-base text-ink-muted sm:text-lg">
           <p>
-            I&rsquo;m Avni Garg, a Product Designer passionate about creating clean, intuitive, and
+            I&rsquo;m a Product Designer who is passionate about creating clean, intuitive, and
             human-centered digital experiences.
           </p>
           <p>

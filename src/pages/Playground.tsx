@@ -169,7 +169,7 @@ const Playground = () => {
           <img src={bow} alt="" className="ml-3 inline-block h-[2em] w-auto align-middle" />
         </h1>
         <p className="mt-4 text-sm text-ink-faint">
-          Drag the pieces around — grab a corner to resize &amp; rotate. ✦
+          Drag the pieces around, grab a corner to resize &amp; rotate. ✦
         </p>
       </Container>
 

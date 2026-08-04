@@ -1,8 +1,8 @@
 import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
-import assetThumbnail from "../assets/blive/asset-thumbnail.png";
+import ezyHomeCard from "../assets/blive-ezy/home-card.png";
 import saleskenBanner from "../assets/salesken/salesken-banner.png";
 import bliveIcon from "../assets/blive/blive-icon.png";
-import saleskenIcon from "../assets/salesken/salesken-icon.png";
+import saleskenIcon from "../assets/salesken/salesken-icon.svg";
 
 export interface CaseStudyStat {
   value: string;
@@ -26,7 +26,7 @@ export interface JobData {
 export const jobsData: JobData[] = [
   { label: "Case Study 1",
     headline: { pre: "From WhatsApp Chaos to a ", highlight: "Ticketing", post: " Platform" },
-    company: "B:LIVE - EV MOBILITY PLATFORM",
+    company: "B:LIVE, EV MOBILITY PLATFORM",
     period: "PRESENT",
     icon: bliveIcon,
     stats: [
@@ -39,20 +39,21 @@ export const jobsData: JobData[] = [
     urlBar: "blive.co.in",
     linkTo: "/ticketing",
   },
-  { label: "Case Study 2",
-    headline: { pre: "From Google Sheets to a ", highlight: "Asset", post: " Management." },
-    company: "B:LIVE - EV MOBILITY PLATFORM",
+  {
+    label: "Case Study 2",
+    headline: { pre: "From a one-time app to one riders actually ", highlight: "trust.", post: "" },
+    company: "B:LIVE, EV MOBILITY PLATFORM",
     period: "PRESENT",
     icon: bliveIcon,
     stats: [
-      { value: "1,790", label: "Live vehicles on platform" },
-      { value: "45", label: "Vehicle models onboarded" },
-      { value: "35→55", label: "Fleet operators (B2B growth)" },
-      { value: "Reduce", label: "Out-of-city incidents, significantly reduced" },
+      { value: "50%→20%", label: "Onboarding drop-off, before → after" },
+      { value: "4/20", label: "Riders drop off now, down from 10/20" },
+      { value: "10,000+", label: "User base" },
+      { value: "0→1", label: "Design system, built from scratch" },
     ],
-    image: assetThumbnail,
+    image: ezyHomeCard,
     urlBar: "blive.co.in",
-    linkTo: "",
+    linkTo: "/bLive",
   },
   {
     label: "Case Study 3",
