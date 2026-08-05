@@ -163,7 +163,7 @@ const Playground = () => {
       exit={{ opacity: 0 }}
     >
       <Container>
-        <h1 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
+        <h1 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
           Playground/
           <span className="font-script text-[1.15em] text-brand-green">Vibe Coding.</span>
           <img src={bow} alt="" className="ml-3 inline-block h-[2em] w-auto align-middle" />

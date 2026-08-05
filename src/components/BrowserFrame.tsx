@@ -16,14 +16,18 @@ const trafficLights = ["#FF5F57", "#FEBC2E", "#28C840"];
 const BrowserFrame = ({ url = "", children, className = "" }: BrowserFrameProps) => {
   return (
     <div
-      className={`overflow-hidden rounded-[32px] border-[12px] border-[#F7F7F7] bg-white shadow-window ${className}`}
+      className={`overflow-hidden rounded-[20px] border-[5px] border-[#F7F7F7] bg-white shadow-window sm:rounded-[32px] sm:border-[12px] ${className}`}
     >
       {/* title bar */}
-      <div className="flex items-center gap-3 border-b border-black/[0.06] bg-white px-4 py-2.5 sm:px-5 sm:py-3">
+      <div className="flex items-center gap-2 border-b border-black/[0.06] bg-white px-3 py-2 sm:gap-3 sm:px-5 sm:py-3">
         {/* traffic lights */}
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           {trafficLights.map((color) => (
-            <span key={color} className="h-3 w-3 rounded-full" style={{ backgroundColor: color }} />
+            <span
+              key={color}
+              className="h-2 w-2 rounded-full sm:h-3 sm:w-3"
+              style={{ backgroundColor: color }}
+            />
           ))}
         </div>
 
@@ -34,8 +38,8 @@ const BrowserFrame = ({ url = "", children, className = "" }: BrowserFrameProps)
         </div>
 
         {/* url bar */}
-        <div className="mx-auto flex min-w-0 max-w-md flex-1 items-center justify-center gap-1.5 rounded-md bg-white px-3 py-1.5 text-[11px] text-ink-faint ring-1 ring-black/[0.06] sm:text-xs">
-          <FiLock className="h-3 w-3 shrink-0" />
+        <div className="mx-auto flex min-w-0 max-w-md flex-1 items-center justify-center gap-1 rounded bg-white px-2 py-1 text-[10px] text-ink-faint ring-1 ring-black/[0.06] sm:gap-1.5 sm:rounded-md sm:px-3 sm:py-1.5 sm:text-xs">
+          <FiLock className="h-2.5 w-2.5 shrink-0 sm:h-3 sm:w-3" />
           <span className="truncate">{url}</span>
         </div>
 

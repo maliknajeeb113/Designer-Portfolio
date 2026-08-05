@@ -2,7 +2,10 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Container from "./Container";
 import HandDrawnGrid from "./HandDrawnGrid";
 
+// Resume link lives in .env (VITE_RESUME_URL) so it can be updated without a code
+// change; the literal is a safe fallback for local dev if the var is unset.
 const RESUME_URL =
+  import.meta.env.VITE_RESUME_URL ||
   "https://drive.google.com/file/d/1B_9Bz25SG9cIbWIgQFeeLjLua008NC84/view?usp=drive_link";
 
 // Placeholder avatars for the social-proof row. Swap for the real customer/brand
@@ -43,9 +46,9 @@ const Hero = () => {
 
             {/* body — extra top gap after the headline */}
             <p className="mt-4 max-w-5xl text-base text-ink-muted sm:text-lg">
-              Currently designing intuitive B2B &amp; B2C SaaS experiences at B:Live, focused on
-              minimalism, easy-to-understand information, and workflows that get out of the way.
-              0→1 products, given the care they deserve.
+              Product designer at B:Live, turning messy B2B &amp; B2C SaaS into something people
+              actually understand. I run the research, sweat the edge cases, and ship 0→1 — most
+              recently an EV rider app 10,000+ riders had quietly given up on.
             </p>
 
             {/* resume button */}

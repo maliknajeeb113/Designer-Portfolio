@@ -17,7 +17,7 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar, li
       )}
 
       <div className="flex flex-col gap-6">
-        <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl lg:text-[2.75rem]">
+        <h2 className="font-display text-2xl font-semibold leading-tight text-ink sm:text-4xl lg:text-[2.75rem]">
           {headline.pre}
           <span className="font-script text-[1.15em] text-brand-green">{headline.highlight}</span>
           {headline.post}
@@ -30,15 +30,16 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar, li
         </div>
       </div>
 
-      {/* stats — full-width 4-column bar with vertical dividers. Padded to 4 so a
-          case study with only 3 stats keeps an empty 4th column (columns stay
-          aligned); no divider is drawn before an empty slot. */}
-      <div className="grid grid-cols-4">
+      {/* stats — 2×2 on mobile (spaced by gap, no dividers), a full-width
+          4-column bar with vertical dividers from sm up. Padded to 4 so a case
+          study with only 3 stats keeps an empty slot (columns stay aligned); no
+          divider is drawn before an empty slot. */}
+      <div className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 sm:gap-0">
         {[...stats, null, null, null, null].slice(0, 4).map((stat, i) => (
           <div
             key={stat ? stat.label : `empty-${i}`}
-            className={`px-2 sm:px-6 ${i === 0 ? "pl-0" : ""} ${
-              i > 0 && stat ? "border-l border-ink/10" : ""
+            className={`sm:px-6 ${i === 0 ? "sm:pl-0" : ""} ${
+              i > 0 && stat ? "sm:border-l sm:border-ink/10" : ""
             }`}
           >
             {stat && (

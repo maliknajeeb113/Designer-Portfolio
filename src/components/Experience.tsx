@@ -1,6 +1,7 @@
 import Container from "./Container";
 import RotatingText from "./RotatingText";
 import { workExperienceData } from "../constants";
+import avniPhoto from "../assets/heroImage.jpg";
 
 // Greetings the header rotates through (the script-green accent word).
 const greetings = ["Hi,", "Hola,", "Namaste,", "Namaskara,", "Bonjour,", "Ciao,"];
@@ -10,33 +11,47 @@ const Experience = () => {
   return (
     <section className="pb-16 sm:pb-24">
       <Container>
-        <h2 className="flex items-center gap-2 font-display text-5xl font-bold text-ink">
-          <RotatingText
-            texts={greetings}
-            mainClassName="font-script text-[1.15em] text-brand-green"
-            splitLevelClassName="overflow-hidden leading-[1.4] px-[0.25em]"
-            staggerFrom="last"
-            staggerDuration={0.05}
-            rotationInterval={3000}
-            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-          />
-          <span>I am Avni.</span>
-        </h2>
+        <div className="flex flex-col gap-10 lg:flex-row-reverse lg:items-start lg:gap-16">
+          {/* portrait — leads on mobile, sits to the right on desktop */}
+          <div className="shrink-0 lg:w-72 xl:w-80">
+            <img
+              src={avniPhoto}
+              alt="Avni Garg"
+              className="aspect-[4/5] w-full rounded-3xl border border-ink/10 object-cover shadow-sm"
+            />
+          </div>
 
-        <div className="mt-6 flex max-w-6xl flex-col gap-4 text-base text-ink-muted sm:text-lg">
-          <p>
-            I&rsquo;m a Product Designer who is passionate about creating clean, intuitive, and
-            human-centered digital experiences.
-          </p>
-          <p>
-            Currently, I design B2B and B2C experiences at B:Live, helping fleet operators and
-            delivery professionals use EVs efficiently through smart fleet and mobility solutions.
-          </p>
-          <p>
-            I focus on simplifying complex workflows and crafting minimal, user-friendly interfaces
-            that make technology easy to use.
-          </p>
-          <p>Outside of work, I enjoy reading (a recent hobby!) and playing squash 🎾.</p>
+          <div className="lg:flex-1">
+            <h2 className="flex items-center gap-2 font-display text-3xl font-bold text-ink md:text-5xl">
+              <RotatingText
+                texts={greetings}
+                mainClassName="font-script text-[1.15em] text-brand-green"
+                splitLevelClassName="overflow-hidden leading-[1.4] px-[0.25em]"
+                staggerFrom="last"
+                staggerDuration={0.05}
+                rotationInterval={3000}
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              />
+              <span>I am Avni.</span>
+            </h2>
+
+            <div className="mt-6 flex flex-col gap-4 text-base text-ink-muted sm:text-lg">
+              <p>
+                I&rsquo;m a Product Designer who is passionate about creating clean, intuitive, and
+                human-centered digital experiences.
+              </p>
+              <p>
+                Currently, I design B2B and B2C experiences at B:Live, helping fleet operators and
+                delivery professionals use EVs efficiently through smart fleet and mobility
+                solutions.
+              </p>
+              <p>
+                I focus on simplifying complex workflows and crafting minimal, user-friendly
+                interfaces that make technology easy to use.
+              </p>
+              <p>Outside of work, I enjoy reading (a recent hobby!) and playing squash 🎾.</p>
+            </div>
+          </div>
         </div>
 
         {/* experience list */}

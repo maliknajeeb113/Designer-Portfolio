@@ -187,7 +187,7 @@ const Salesken = () => {
       {/* ===== HEADER ===== */}
       <section className="pt-32 sm:pt-40">
         <Container>
-          <h1 className="max-w-5xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
+          <h1 className="max-w-5xl font-display text-3xl font-semibold leading-tight text-ink sm:text-5xl">
             Giving sales reps something to say,{" "}
             <span className="font-script text-[1.15em] text-brand-green">mid-call</span>
           </h1>
@@ -225,7 +225,7 @@ const Salesken = () => {
               <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
                 About
               </span>
-              <p className="mt-4 text-xl leading-relaxed text-ink">
+              <p className="mt-4 text-lg sm:text-xl leading-relaxed text-ink">
                 Co-Browser, a real-time AI assistant that surfaces the right prompt, product
                 context, and next step while a rep is still on the phone, designed end-to-end from
                 research through shipped UX.
@@ -258,7 +258,7 @@ const Salesken = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Problem</span>
             <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:items-start">
               <div className="flex flex-col gap-6">
-                <p className="text-xl text-ink-muted">
+                <p className="text-lg sm:text-xl text-ink-muted">
                   Salesken&rsquo;s own app needed the same fix it was meant to give customers.
                   Scheduling calls, checking deal insights, and getting real-time tips meant hopping
                   between separate tools mid-workflow, a messy setup that cost reps time they
@@ -270,7 +270,7 @@ const Salesken = () => {
                   <figcaption className="text-sm font-medium text-ink-muted">
                     Gaps in the current app:
                   </figcaption>
-                  <blockquote className="mt-3 text-lg italic text-ink-muted">
+                  <blockquote className="mt-3 text-base sm:text-lg italic text-ink-muted">
                     <Em>&ldquo;There are moments mid-call where I just don&rsquo;t know how to convince
                     the customer, and that&rsquo;s exactly when I lose them.&rdquo;</Em> That was the
                     pattern behind lost conversions, not a knowledge gap, but a freeze, at the one
@@ -291,7 +291,7 @@ const Salesken = () => {
           {/* Target personas */}
           <div className="mt-20">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Target personas</span>
-            <p className="mt-6 text-xl text-ink-muted">
+            <p className="mt-6 text-lg sm:text-xl text-ink-muted">
               Co-Browser is a two-sided product, an agent on a client company&rsquo;s sales floor,
               and a customer who registered for a demo on that company&rsquo;s site.
             </p>
@@ -299,27 +299,22 @@ const Salesken = () => {
               {personas.map((p) => (
                 <div
                   key={p.name}
-                  className={`relative flex min-h-[240px] flex-col overflow-hidden rounded-[2rem] border border-white/60 p-8 backdrop-blur-sm ${p.bg}`}
+                  className={`flex flex-col rounded-[2rem] border border-white/60 p-8 backdrop-blur-sm ${p.bg}`}
                 >
-                  <h4 className="relative z-10 max-w-[70%] font-display text-3xl font-medium text-ink">
-                    {p.name}
-                  </h4>
-                  <div className="relative z-10 mt-auto max-w-[75%] pt-6">
+                  {/* name + sticker share the top row; copy runs full width below */}
+                  <div className="flex items-center gap-3">
+                    <h4 className="font-display text-2xl sm:text-3xl font-medium text-ink">{p.name}</h4>
+                    <img src={p.img} alt="" className="h-14 w-auto shrink-0 object-contain" />
+                  </div>
+                  <div className="mt-5">
                     <span
                       className={`inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-sm font-medium ${p.pill} ${p.text}`}
                     >
                       <FiStar className="h-3.5 w-3.5" />
                       WHAT THEY WANT
                     </span>
-                    <p className="mt-3 text-lg text-ink-muted">{p.body}</p>
+                    <p className="mt-3 text-base sm:text-lg text-ink-muted">{p.body}</p>
                   </div>
-
-                  {/* persona sticker — capped by height, natural width */}
-                  <img
-                    src={p.img}
-                    alt=""
-                    className="pointer-events-none absolute right-6 top-6 h-28 w-auto object-contain"
-                  />
                 </div>
               ))}
             </div>
@@ -328,7 +323,7 @@ const Salesken = () => {
           {/* Research */}
           <div className="mt-20">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Research</span>
-            <p className="mt-4 text-xl text-ink-muted">
+            <p className="mt-4 text-lg sm:text-xl text-ink-muted">
               I didn&rsquo;t have access to Salesken&rsquo;s own reps as interview subjects, so
               research ran on two tracks in parallel: a competitive teardown of how the market
               already solved this, and primary interviews with sales reps at other companies to get
@@ -358,12 +353,12 @@ const Salesken = () => {
                     {track.sticker && (
                       <img src={track.sticker} alt="" className="mb-2 h-20 w-auto object-contain place-self-start" />
                     )}
-                    <h4 className="font-display text-2xl font-semibold text-ink">{track.title}</h4>
+                    <h4 className="font-display text-xl sm:text-2xl font-semibold text-ink">{track.title}</h4>
                     <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-lg bg-brand-pink-light px-2 py-1 text-sm font-medium text-brand-pink">
                       <FiStar className="h-3.5 w-3.5" />
                       What I did
                     </span>
-                    <p className="mt-4 text-lg text-ink-muted">{track.body}</p>
+                    <p className="mt-4 text-base sm:text-lg text-ink-muted">{track.body}</p>
                   </div>
                 ))}
               </div>
@@ -397,7 +392,7 @@ const Salesken = () => {
           {/* Action plan */}
           <div className="mt-20">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Action plan</span>
-            <p className="mt-4 text-xl text-ink-muted">
+            <p className="mt-4 text-lg sm:text-xl text-ink-muted">
               Three connected surfaces, not one screen; one for the customer, two supporting the
               agent through the session.
             </p>
@@ -416,13 +411,13 @@ const Salesken = () => {
                             : "lg:rounded-[12px]"
                       }`}
                     >
-                      <span className={`font-sans text-xl font-medium leading-7 ${card.color}`}>
+                      <span className={`font-sans text-lg sm:text-xl font-medium leading-7 ${card.color}`}>
                         {card.num}
                       </span>
                       <div className="w-px self-stretch bg-ink/10" />
                       <div className="flex flex-col gap-4">
-                        <p className="text-base font-medium leading-6 text-ink-faint">{card.label}</p>
-                        <p className="font-sans text-xl leading-7 text-ink">{card.text}</p>
+                        <p className="text-sm sm:text-base font-medium leading-6 text-ink-faint">{card.label}</p>
+                        <p className="font-sans text-lg sm:text-xl leading-7 text-ink">{card.text}</p>
                       </div>
 
                       {/* desktop connector — between this card and the next */}
@@ -450,7 +445,7 @@ const Salesken = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
               How two sides meet
             </span>
-            <p className="mt-4 text-xl text-ink-muted">
+            <p className="mt-4 text-lg sm:text-xl text-ink-muted">
               A co-browsing session, not a phone call; the customer and agent share one screen, but
               see different things on it.
             </p>
@@ -459,7 +454,7 @@ const Salesken = () => {
                 <img src={howTwoSidesImg} alt="" className="h-full w-full object-cover object-top" />
               </div>
             </BrowserFrame>
-            <p className="mt-6 rounded-2xl border border-ink/10 bg-ink/[0.02] px-5 py-4 text-base text-ink-muted">
+            <p className="mt-6 rounded-2xl border border-ink/10 bg-ink/[0.02] px-5 py-4 text-sm sm:text-base text-ink-muted">
               Agent guides the customer live through the demo, responding to exactly where
               they&rsquo;re pointing.
             </p>
@@ -500,7 +495,7 @@ const Salesken = () => {
           <div className="mt-12">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Design Iterations</span>
             <div className="mt-6 flex flex-col gap-10 lg:flex-row lg:items-start">
-              <div className="flex flex-1 flex-col gap-6 text-xl text-ink-muted md:max-w-2xl">
+              <div className="flex flex-1 flex-col gap-6 text-lg sm:text-xl text-ink-muted md:max-w-2xl">
                 <p>
                   <Em>Several rounds, directly in Figma.</Em> 
                 </p>
@@ -534,10 +529,10 @@ const Salesken = () => {
                     <span className="inline-block rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
                       {feature.badge}
                     </span>
-                    <h3 className="mt-4 font-display text-3xl font-semibold text-ink">
+                    <h3 className="mt-4 font-display text-2xl sm:text-3xl font-semibold text-ink">
                       {feature.title}
                     </h3>
-                    <div className="mt-4 flex flex-col gap-4 text-lg text-ink-muted">
+                    <div className="mt-4 flex flex-col gap-4 text-base sm:text-lg text-ink-muted">
                       {feature.body}
                     </div>
                   </div>
@@ -560,13 +555,13 @@ const Salesken = () => {
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-4">
             {outcomeStats.map((stat) => (
               <div key={stat.label}>
-                <div className="font-display text-3xl font-bold text-ink sm:text-4xl">{stat.value}</div>
+                <div className="font-display text-2xl font-bold text-ink sm:text-4xl">{stat.value}</div>
                 <div className="mt-1 text-sm text-ink-faint">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-xl text-ink-muted sm:p-10">
+          <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-lg sm:text-xl text-ink-muted sm:p-10">
             <p>
               <span className="font-medium text-ink">Where it is now:</span> Co-Browser went into
               development after I left, and it&rsquo;s live today as part of Salesken&rsquo;s AI

@@ -203,7 +203,7 @@ const Ticketing = () => {
       {/* ===== HEADER ===== */}
       <section className="pt-32 sm:pt-40">
         <Container>
-          <h1 className="max-w-6xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
+          <h1 className="max-w-6xl font-display text-3xl font-semibold leading-tight text-ink sm:text-5xl">
             From WhatsApp Chaos to a{" "}
             <span className="font-script text-[1.15em] text-brand-green">Ticketing</span> Platform
           </h1>
@@ -241,7 +241,7 @@ const Ticketing = () => {
               <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
                 About
               </span>
-              <p className="mt-4 text-xl leading-relaxed text-ink">
+              <p className="mt-4 text-lg sm:text-xl leading-relaxed text-ink">
                 I owned end-to-end UX for the admin dashboard (Ticket Master, Ticket Management, User
                 Management, Settings) and the rider-facing Help &amp; Support experience in the EZY
                 app, plus I designed a new design system for the platform from the ground up. With a
@@ -277,7 +277,7 @@ const Ticketing = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Problem</span>
             <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
               <div>
-                <p className="text-xl text-ink-muted">
+                <p className="text-lg sm:text-xl text-ink-muted">
                   B:Live manages EV fleets for delivery riders across cities. When something went
                   wrong, a payment failure, a vehicle breakdown, a document issue, this is how it
                   got &ldquo;handled.&rdquo;
@@ -311,7 +311,7 @@ const Ticketing = () => {
           <div className="mt-16">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Research</span>
             <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-              <div className="flex flex-col gap-4 text-xl text-ink-muted max-w-2xl">
+              <div className="flex flex-col gap-4 text-lg sm:text-xl text-ink-muted max-w-2xl">
                 <p>I ran research on two tracks over the first three weeks.</p>
                 <p>
                   <span className="text-ink">User interviews across every role that touches a support issue,</span> riders, fleet
@@ -341,29 +341,24 @@ const Ticketing = () => {
               {personas.map((p) => (
                 <div
                   key={p.name}
-                  className={`relative flex min-h-[240px] flex-col overflow-hidden rounded-[2.25rem] border border-white/60 p-8 backdrop-blur-sm ${p.bg}`}
+                  className={`flex flex-col rounded-[2.25rem] border border-white/60 p-8 backdrop-blur-sm ${p.bg}`}
                 >
-                  <div className="relative z-10 max-w-[70%]">
-                    <h4 className="font-display text-4xl font-medium text-ink">{p.name}</h4>
-                    <p className="mt-3 text-lg text-ink-muted">{p.role}</p>
+                  {/* name + sticker share the top row; copy runs full width below */}
+                  <div className="flex items-center gap-3">
+                    <h4 className="font-display text-xl sm:text-2xl font-medium text-ink">{p.name}</h4>
+                    <img src={p.img} alt="" className="h-14 w-auto shrink-0 object-contain" />
                   </div>
+                  <p className="mt-4 text-sm text-ink-muted">{p.role}</p>
 
-                  <div className="relative z-10 mt-auto max-w-[70%] pt-6">
+                  <div className="mt-5">
                     <span
                       className={`inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-sm font-medium ${p.pill} ${p.text}`}
                     >
                       <FiStar className="h-3.5 w-3.5" />
                       Needs
                     </span>
-                    <p className="mt-3">{p.needs}</p>
+                    <p className="mt-3 text-sm">{p.needs}</p>
                   </div>
-
-                  {/* persona sticker — capped by height, natural width */}
-                  <img
-                    src={p.img}
-                    alt=""
-                    className="pointer-events-none absolute bottom-6 right-6 h-28 w-auto object-contain"
-                  />
                 </div>
               ))}
             </div>
@@ -384,7 +379,7 @@ const Ticketing = () => {
           {/* Action plan */}
           <div className="mt-16">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Action plan</span>
-            <p className="mt-4 text-xl text-ink-muted">
+            <p className="mt-4 text-lg sm:text-xl text-ink-muted">
               Research pointed to one core insight: the product isn't a ticket list it's an ownership machine. Every ticket needed exactly one accountable owner, automatically.
             </p>
             {/* breadcrumb-style steps: numbered cards joined by a >> badge. On
@@ -412,13 +407,13 @@ const Ticketing = () => {
                 return (
                   <Fragment key={i}>
                     <div className={`relative flex items-start gap-7 rounded-[16px] bg-ink/[0.04] p-7 ${radius}`}>
-                      <span className={`font-sans text-xl font-medium leading-7 ${card.color}`}>
+                      <span className={`font-sans text-lg sm:text-xl font-medium leading-7 ${card.color}`}>
                         {card.num}
                       </span>
                       <div className="w-px self-stretch bg-ink/10" />
                       <div className="flex flex-col gap-4">
-                        <p className="text-base font-medium leading-6 text-ink-faint">{card.label}</p>
-                        <p className="font-sans text-xl font-medium leading-7 text-ink">{card.text}</p>
+                        <p className="text-sm sm:text-base font-medium leading-6 text-ink-faint">{card.label}</p>
+                        <p className="font-sans text-lg sm:text-xl font-medium leading-7 text-ink">{card.text}</p>
                       </div>
 
                       {/* desktop connector — centered in the gap between this card
@@ -482,7 +477,7 @@ const Ticketing = () => {
           {/* iterations */}
           <div className="mt-12">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Design Iterations</span>
-            <div className="mx-auto mt-6 aspect-[1516/960] w-1/2 overflow-hidden rounded-3xl border border-ink/10">
+            <div className="mx-auto mt-6 aspect-[1516/960] w-full overflow-hidden rounded-3xl border border-ink/10 lg:w-1/2">
               <img
                 src={iterationsImg}
                 alt="Design iteration screens"
@@ -501,8 +496,8 @@ const Ticketing = () => {
                     <span className={`inline-block rounded-md px-2 py-1 text-xs font-medium ${t.statusClass}`}>
                       {t.status}
                     </span>
-                    <h3 className="mt-4 font-display text-3xl font-semibold text-ink">{t.title}</h3>
-                    <div className="mt-4 flex flex-col gap-4 text-lg text-ink-muted">{t.body}</div>
+                    <h3 className="mt-4 font-display text-2xl sm:text-3xl font-semibold text-ink">{t.title}</h3>
+                    <div className="mt-4 flex flex-col gap-4 text-base sm:text-lg text-ink-muted">{t.body}</div>
                   </div>
                 );
 
@@ -536,10 +531,10 @@ const Ticketing = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
               Design system modernization
             </span>
-            <h3 className="mt-6 max-w-2xl font-display text-4xl font-semibold leading-tight text-ink">
+            <h3 className="mt-6 max-w-2xl font-display text-3xl sm:text-4xl font-semibold leading-tight text-ink">
               Design system, built out from Align UI
             </h3>
-            <p className="mt-6 text-lg text-ink-muted">
+            <p className="mt-6 text-base sm:text-lg text-ink-muted">
               The dashboard had no usable design system, so alongside this project I built one for the
               entire platform, not just this module. I started from <Em>Align UI,</Em> a purchased
               component library, as the foundation, but a library alone is just raw components. I
@@ -582,12 +577,12 @@ const Ticketing = () => {
           <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
             {outcomeStats.map((stat) => (
               <div key={stat.label}>
-                <div className="font-display text-3xl font-bold text-ink sm:text-4xl">{stat.value}</div>
+                <div className="font-display text-2xl font-bold text-ink sm:text-4xl">{stat.value}</div>
                 <div className="mt-1 text-sm text-ink-faint">{stat.label}</div>
               </div>
             ))}
           </div>
-          <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-xl text-ink-muted sm:p-10">
+          <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-lg sm:text-xl text-ink-muted sm:p-10">
             <p>
               Support went from <Em>&ldquo;WhatsApp someone you know and hope&rdquo;</Em> to a system where
               every issue has a record, an owner, a status the rider can see, and a documented

@@ -8,7 +8,7 @@ interface SectionHeadingProps {
 
 // Numbered section heading used across the case-study pages ("1. Who, Why & What").
 const SectionHeading = ({ number, title, className = "" }: SectionHeadingProps) => (
-  <h2 className={`font-display text-3xl font-semibold text-brand-green sm:text-4xl ${className}`}>
+  <h2 className={`font-display text-2xl font-semibold text-brand-green sm:text-4xl ${className}`}>
     {number}. {title}
   </h2>
 );
