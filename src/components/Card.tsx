@@ -12,7 +12,7 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar, li
   const inner = (
     <>
       {label && (
-        <span className="inline-flex w-fit items-center gap-1.5 rounded-lg bg-ink/[0.04] px-3 py-1 text-xs font-medium text-ink/[0.6]">
+        <span className="inline-flex w-fit items-center gap-1.5 rounded-lg bg-ink/[0.04] px-2 py-1 text-xs font-medium text-ink/[0.6]">
           <RiBookletLine className="h-3.5 w-3.5 shrink-0 text-brand-green" />
           {label}
         </span>

@@ -51,6 +51,7 @@ const Hero = () => {
             {/* body — extra top gap after the headline */}
             <p className="mt-4 max-w-5xl text-base text-ink-muted sm:text-lg">
               Product designer at B:Live, turning messy B2B & B2C SaaS into something people actually understand.
+              <br />
               I run the research, sweat the edge cases, and ship 0→1 features. Frontend background, so the structure I design is structure engineers can build.
             </p>
 
@@ -78,7 +79,7 @@ const Hero = () => {
                 ))}
               </div>
               <span className="text-sm text-ink-faint">
-                B2B SaaS and EZY App used by 1k+ customers!
+                B2B SaaS and EZY App used by 10k+ users!
               </span>
             </div>
           </div>

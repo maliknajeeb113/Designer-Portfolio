@@ -93,7 +93,7 @@ const tradeoffs = [
           me riders call him, and only him, for everything; manual triage would just digitize the
           old bottleneck.
         </p>
-        <p className="font-medium text-ink">
+        <p className="text-ink">
           I made the case that assignment had to be automatic and rule-based: category → department
           → round-robin, with a DM exception so riders with a trusted contact keep them.
         </p>
@@ -117,7 +117,7 @@ const tradeoffs = [
           conversations would leak right back to WhatsApp, recreating the exact problem we were
           solving. </p>
           <p>Engineering couldn&rsquo;t commit to real-time chat within the 2-month window, so
-          v1 shipped with a <Em>comments section + full activity log</Em> instead, keeping chat on
+          v1 shipped with a <span className=" text-ink">comments section + full activity log</span> instead, keeping chat on
           the roadmap.
         </p>
       </>
@@ -138,7 +138,7 @@ const tradeoffs = [
           to spend a minute longer in this tool than necessary. Engineering agreed, for effort
           reasons.
         </p>
-        <p className="font-medium text-ink">
+        <p className="text-ink">
           Lesson: a view that matches the user&rsquo;s mental model beats a view that matches the
           designer&rsquo;s.
         </p>
@@ -164,8 +164,8 @@ const tradeoffs = [
           timeline.
         </p>
         <p>
-          We <Em>agreed to land it in the next version</Em>, alongside{" "}
-          <Em>AI integration, auto-classifying tickets, inferring criticality from descriptions,</Em>{" "}
+          We <span className="text-ink">agreed to land it in the next version</span>, alongside{" "}
+          <span className="text-ink">AI integration, auto-classifying tickets, inferring criticality from descriptions,</span>{" "}
           and eventually suggesting resolutions from historical data. I lost the v1 battle, but the
           proposal shaped the roadmap.
         </p>
@@ -204,16 +204,16 @@ const Ticketing = () => {
       <section className="pt-32 sm:pt-40">
         <Container>
           <h1 className="max-w-6xl font-display text-3xl font-semibold leading-tight text-ink sm:text-5xl">
-            From WhatsApp Chaos to a{" "}
-            <span className="font-script text-[1.15em] text-brand-green">Ticketing</span> Platform
+            From whatsapp chaos to a{" "}
+            <span className="font-script text-[1.15em] text-brand-green">Ticketing</span> system
           </h1>
 
           {/* meta line — company + period */}
-          <div className="mt-6 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-ink-faint">
+          <div className="mt-6 flex items-center gap-2 text-sm uppercase tracking-wide text-ink-faint">
             <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" />
             <span>B:Live, EV Mobility Platform</span>
             <span className="text-ink-faint/50">·</span>
-            <span>Jan 2025 – Present</span>
+            <span>2 MONTHS</span>
           </div>
 
           {/* chips */}
@@ -241,7 +241,7 @@ const Ticketing = () => {
               <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
                 About
               </span>
-              <p className="mt-4 text-lg sm:text-xl leading-relaxed text-ink">
+              <p className="mt-4 text-lg leading-relaxed text-ink">
                 I owned end-to-end UX for the admin dashboard (Ticket Master, Ticket Management, User
                 Management, Settings) and the rider-facing Help &amp; Support experience in the EZY
                 app, plus I designed a new design system for the platform from the ground up. With a
@@ -277,7 +277,7 @@ const Ticketing = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Problem</span>
             <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
               <div>
-                <p className="text-lg sm:text-xl text-ink-muted">
+                <p className="text-lg  text-ink">
                   B:Live manages EV fleets for delivery riders across cities. When something went
                   wrong, a payment failure, a vehicle breakdown, a document issue, this is how it
                   got &ldquo;handled.&rdquo;
@@ -285,7 +285,7 @@ const Ticketing = () => {
               
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   {problemCards.map((card) => (
-                    <div key={card.title} className="rounded-2xl border border-ink/10 bg-white p-5">
+                    <div key={card.title} className="rounded-2xl border border-ink/10 bg-ink-faint/[0.05] p-5">
                       <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-ink/10 bg-white shadow-sm">
                         <img src={warningIcon} alt="" className="h-5 w-5" />
                       </span>
@@ -301,7 +301,7 @@ const Ticketing = () => {
                 <img
                   src={oldTicketing}
                   alt="The old WhatsApp + spreadsheet ticketing flow"
-                  className="absolute inset-0 h-full w-full rounded-3xl border border-ink/10 object-cover object-top"
+                  className="absolute inset-0 h-full w-full rounded-3xl border border-ink/10 object-cover object-top bg-ink-faint/[0.05]"
                 />
               </div>
             </div>
@@ -311,7 +311,7 @@ const Ticketing = () => {
           <div className="mt-16">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Research</span>
             <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-              <div className="flex flex-col gap-4 text-lg sm:text-xl text-ink-muted max-w-2xl">
+              <div className="flex flex-col gap-4 text-lg text-ink-faint max-w-2xl">
                 <p>I ran research on two tracks over the first three weeks.</p>
                 <p>
                   <span className="text-ink">User interviews across every role that touches a support issue,</span> riders, fleet
@@ -378,8 +378,8 @@ const Ticketing = () => {
 
           {/* Action plan */}
           <div className="mt-16">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Action plan</span>
-            <p className="mt-4 text-lg sm:text-xl text-ink-muted">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink">Action plan</span>
+            <p className="mt-4 text-lg text-ink-muted">
               Research pointed to one core insight: the product isn't a ticket list it's an ownership machine. Every ticket needed exactly one accountable owner, automatically.
             </p>
             {/* breadcrumb-style steps: numbered cards joined by a >> badge. On
@@ -412,8 +412,8 @@ const Ticketing = () => {
                       </span>
                       <div className="w-px self-stretch bg-ink/10" />
                       <div className="flex flex-col gap-4">
-                        <p className="text-sm sm:text-base font-medium leading-6 text-ink-faint">{card.label}</p>
-                        <p className="font-sans text-lg sm:text-xl font-medium leading-7 text-ink">{card.text}</p>
+                        <p className="text-sm leading-6 text-ink-faint">{card.label}</p>
+                        <p className="font-sans text-lg leading-7 text-ink">{card.text}</p>
                       </div>
 
                       {/* desktop connector — centered in the gap between this card
@@ -445,10 +445,10 @@ const Ticketing = () => {
         <Container>
           <SectionHeading number="2" title="Product Scoping" />
           <span className="mt-10 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-            User personas
+            User story
           </span>
           {/* mobile: equal-width cards stacked one after another */}
-          <div className="mt-10 flex flex-col gap-6 lg:hidden">
+          <div className="mt-8 flex flex-col gap-6 lg:hidden">
             {personaCards.map((card) => (
               <img key={card.alt} src={card.src} alt={card.alt} className="w-full" />
             ))}
@@ -477,7 +477,7 @@ const Ticketing = () => {
           {/* iterations */}
           <div className="mt-12">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Design Iterations</span>
-            <div className="mx-auto mt-6 aspect-[1516/960] w-full overflow-hidden rounded-3xl border border-ink/10 lg:w-1/2">
+            <div className="mx-auto mt-6 aspect-[1516/960] w-full overflow-hidden rounded-3xl border border-ink/10 lg:w-2/3">
               <img
                 src={iterationsImg}
                 alt="Design iteration screens"
@@ -497,7 +497,7 @@ const Ticketing = () => {
                       {t.status}
                     </span>
                     <h3 className="mt-4 font-display text-2xl sm:text-3xl font-semibold text-ink">{t.title}</h3>
-                    <div className="mt-4 flex flex-col gap-4 text-base sm:text-lg text-ink-muted">{t.body}</div>
+                    <div className="mt-4 flex flex-col gap-4 text-base sm:text-lg text-ink-muted/[0.7]">{t.body}</div>
                   </div>
                 );
 
@@ -536,7 +536,7 @@ const Ticketing = () => {
             </h3>
             <p className="mt-6 text-base sm:text-lg text-ink-muted">
               The dashboard had no usable design system, so alongside this project I built one for the
-              entire platform, not just this module. I started from <Em>Align UI,</Em> a purchased
+              entire platform, not just this module. I started from <span className="text-ink">Align UI,</span> a purchased
               component library, as the foundation, but a library alone is just raw components. I
               designed and assembled the actual system B:Live needed: tokens adapted to B:Live&rsquo;s
               brand (color, type, spacing, elevation), components customized and extended into tables,
@@ -574,7 +574,13 @@ const Ticketing = () => {
       <section className="py-12">
         <Container>
           <SectionHeading number="4" title="Outcome 🏆" />
-          <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
+
+          <span className="mt-10 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
+            Resolved
+          </span>
+
+          <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
+            
             {outcomeStats.map((stat) => (
               <div key={stat.label}>
                 <div className="font-display text-2xl font-bold text-ink sm:text-4xl">{stat.value}</div>
@@ -582,7 +588,7 @@ const Ticketing = () => {
               </div>
             ))}
           </div>
-          <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-lg sm:text-xl text-ink-muted sm:p-10">
+          <div className="mt-12 flex flex-col gap-4 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-lg text-ink-muted sm:p-10">
             <p>
               Support went from <Em>&ldquo;WhatsApp someone you know and hope&rdquo;</Em> to a system where
               every issue has a record, an owner, a status the rider can see, and a documented
@@ -590,7 +596,7 @@ const Ticketing = () => {
               has the data to keep improving it.
             </p>
             <p>
-              <span className="font-medium text-ink">What&rsquo;s next:</span> v2 is scoped to bring
+              <span className="font-semibold text-ink">What&rsquo;s next:</span> v2 is scoped to bring
               ticket criticality/priority levels and AI integration, auto-classifying tickets,
               inferring urgency, and suggesting resolutions from the historical data this platform is
               now, for the first time, actually capturing.

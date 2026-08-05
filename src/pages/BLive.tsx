@@ -1,4 +1,4 @@
-import { Fragment, useEffect, type ReactNode } from "react";
+import { Fragment, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiStar, FiChevronsRight, FiCheckCircle, FiImage } from "react-icons/fi";
 import Container from "../components/Container";
@@ -14,14 +14,13 @@ import competitorElectricV from "../assets/blive-ezy/competitor-electric-v.png";
 import ongroundResearchImg from "../assets/blive-ezy/onground-research.png";
 import researchBoardImg from "../assets/blive-ezy/research-board.png";
 import scopingUserStoryImg from "../assets/blive-ezy/scoping-user-story.png";
-import tradeoffPayoutImg from "../assets/blive-ezy/tradeoff-payout.png";
-import tradeoffSupportImg from "../assets/blive-ezy/tradeoff-support.png";
 import beatDay1Img from "../assets/blive-ezy/beat-day1.png";
 import beatWeek1Img from "../assets/blive-ezy/beat-week1.png";
 import beatWeek3Img from "../assets/blive-ezy/beat-week3.png";
 import riderOnboardingImg from "../assets/blive-ezy/rider-onboarding.png";
 import riderPayoutImg from "../assets/blive-ezy/rider-payout.png";
 import riderSupportImg from "../assets/blive-ezy/rider-support.png";
+import designSystemImg from "../assets/blive-ezy/design-system.png";
 
 // NOTE: prose below is transcribed from Figma — the client edits case-study copy
 // by hand. The placeholder phone mockups in the timeline are intentionally left
@@ -35,11 +34,6 @@ const team = [
   { name: "Sneha Jha", role: "Associate Product Manager" },
   { name: "Divyanshu", role: "Frontend Developer" },
 ];
-
-// Emphasis inside body copy — darker + heavier against the muted text.
-const Em = ({ children }: { children: ReactNode }) => (
-  <strong className="font-semibold text-ink">{children}</strong>
-);
 
 // A rider's first week, beat by beat — each drop-off point paired with the
 // behavioural principle behind it (name → definition → how it applied here).
@@ -134,11 +128,11 @@ const researchTracks = [
     logos: competitorLogos,
     icon: null,
     body: (
-      <>
-        <Em>5 sessions, 10 riders each</Em>, a mix of active and lapsed users. Alongside this,{" "}
-        <Em>a direct benchmark against</Em> Zypp Electric, Bounce Daily, Halo, Yulu, and Eveez, plus
-        a review of what riders were already saying about <Em>EZY on the Play Store.</Em>
-      </>
+      <p >
+        <span className="text-ink">5 sessions, 10 riders each</span>, a mix of active and lapsed users. Alongside this,{" "}
+        <span className="text-ink">a direct benchmark against</span> Zypp Electric, Bounce Daily, Halo, Yulu, and Eveez, plus
+        a review of what riders were already saying about <span className="text-ink">EZY on the Play Store.</span>
+      </p>
     ),
   },
   {
@@ -146,11 +140,11 @@ const researchTracks = [
     logos: null,
     icon: ongroundResearchImg,
     body: (
-      <>
-        <Em>Contextual inquiry with 3 riders,</Em> done alongside our collections team, who visit
+      <p>
+        <span className="text-ink">Contextual inquiry with 3 riders,</span> done alongside our collections team, who visit
         riders directly. I took part in this in person, seeing where the{" "}
-        <Em>app's job was quietly being done by a person instead.</Em>
-      </>
+        <span className="text-ink">app's job was quietly being done by a person instead.</span>
+      </p>
     ),
   },
 ];
@@ -231,25 +225,17 @@ const tradeoffs = [
     badge: "Shipped",
     badgeClass: "bg-emerald-50 text-emerald-700",
     title: "Payout visibility vs. hiding deductions",
-    image: tradeoffPayoutImg,
     body: (
       <>
-        <span className="text-ink-muted">
-          Stakeholders wanted to hide full payout details from riders, worried that showing the
-          numbers might cause riders to leave the platform.
-        </span>{" "}
-        <Em>
-          Research said the opposite: riders were already leaving because they had no visibility
-          into what they earned.
-        </Em>{" "}
-        <span className="text-ink-muted">
-          I pushed back with the rider research directly, the risk wasn't showing riders their
-          payout, it was continuing to hide it.
-        </span>{" "}
-        <Em>
-          Full payout visibility went live. The one compromise: detailed deduction breakdowns still
-          aren't shown; riders see what they earned, not a line-by-line “why.”
-        </Em>
+      <p className="text-ink-faint">
+        <span className="text-ink">Stakeholders wanted to hide full payout details from riders,</span> worried that showing the numbers might cause riders to leave the platform. <span className="text-ink">Research said the opposite: riders were already leaving because they had no visibility into what they earned.</span>
+      </p>
+        <p className="mt-4 text-ink-faint">
+          I pushed back with the rider research directly, the risk wasn't showing riders their payout, it was continuing to hide it.
+        </p>
+        <p className="mt-4 text-ink">
+        Full payout visibility went live. The one compromise: detailed deduction breakdowns still aren't shown; riders see what they earned, not a line-by-line "why."
+      </p>
       </>
     ),
   },
@@ -257,20 +243,13 @@ const tradeoffs = [
     badge: "Designed but development on hold",
     badgeClass: "bg-amber-50 text-amber-700",
     title: "Call-first support with escalation logic",
-    image: tradeoffSupportImg,
     body: (
       <>
-        <span className="text-ink-muted">
+        <p className="text-ink-faint">
           Support was one of the clearest rider complaints; calls went unanswered, with no reliable
-          way to get help.
-        </span>{" "}
-        <Em>
-          I designed a 1-tap, call-first support entry point with escalation logic for unresolved
-          issues.
-        </Em>{" "}
-        <span className="text-ink-muted">
-          A basic ticketing flow shipped, but development on the fuller version hasn't started yet.
-        </span>
+          way to get help. <span className="text-ink">I designed a 1-tap, call-first support entry point with escalation logic for unresolved
+          issues.</span> A basic ticketing flow shipped, but <span className="text-ink">development on the fuller version hasn't started yet.</span>
+        </p>
       </>
     ),
   },
@@ -278,13 +257,12 @@ const tradeoffs = [
     badge: "Designed and validated, on hold",
     badgeClass: "bg-amber-50 text-amber-700",
     title: "Redeployment flow & more rental plans",
-    image: null,
     body: (
-      <span className="text-ink-muted">
+      <p className="text-ink-faint">
         Riders asked for an easier way to redeploy vehicles and more flexibility in rental plan
         options. Both were designed and tested with riders, but development on this part of the
         revamp is currently paused for business reasons, not because the need wasn't real.
-      </span>
+      </p>
     ),
   },
 ];
@@ -320,11 +298,11 @@ const BLive = () => {
           </h1>
 
           {/* meta line — company + period */}
-          <div className="mt-6 flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-ink-faint">
+          <div className="mt-6 flex items-center gap-2 text-sm uppercase tracking-wide text-ink-faint">
             <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" />
-            <span>B:Live, EV Mobility Platform</span>
+            <span>B:Live - EV Mobility Platform</span>
             <span className="text-ink-faint/50">·</span>
-            <span>Apr 2026 – May 2026</span>
+            <span>2 MONTHS</span>
           </div>
 
           {/* chips */}
@@ -350,7 +328,7 @@ const BLive = () => {
               <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
                 About
               </span>
-              <p className="mt-4 text-lg sm:text-xl leading-relaxed text-ink">
+              <p className="mt-4 text-lg leading-relaxed text-ink">
                 I owned all research and design for this project, every user interview, every hub
                 visit, and every screen. I worked with a senior designer on building the new design
                 system, and partnered closely with the PM on what made it into scope. With a team
@@ -383,17 +361,17 @@ const BLive = () => {
           {/* Problem */}
           <div className="mt-12 flex flex-col gap-4">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Problem</span>
-            <p className="text-xl sm:text-2xl font-semibold text-ink">An app riders needed once, then abandoned:</p>
-            <p className="text-lg sm:text-xl text-ink-muted">
-              <Em>Over 10,000 riders used EZY</Em> for exactly two things: signing up, and checking
+            <p className="text-xl text-ink font-medium">An app riders needed once, then abandoned:</p>
+            <p className="text-lg text-ink-faint">
+              <span className="text-ink">Over 10,000 riders used EZY</span> for exactly two things: signing up, and checking
               their rental. After that, the app gave them no reason to come back, even though it held
               information they actually cared about.
             </p>
-            <p className="mt-6 text-lg sm:text-xl text-ink">
-              <Em>A rider's first week with EZY</Em>
+            <p className="mt-6 text-lg  text-ink">
+              <span className="text-ink">A rider's first week with EZY</span>
               <span className="text-ink-muted">
                 , the way it actually happened, moment by moment, with the psychology behind each
-                drop-off point.
+                drop-off point:
               </span>
             </p>
           </div>
@@ -412,16 +390,16 @@ const BLive = () => {
                 >
                   {/* text column — full width when there's no paired screen */}
                   <div>
-                    <h3 className="font-display text-xl sm:text-2xl font-semibold text-ink">{beat.title}</h3>
+                    <h3 className="font-display text-md font-medium text-ink">{beat.title}</h3>
                     <span className="mt-1 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
                       {beat.when}
                     </span>
-                    <p className="mt-4 text-base sm:text-lg text-ink-muted">{beat.body}</p>
+                    <p className="mt-4 text-base sm:text-lg text-ink">{beat.body}</p>
                     {beat.quote && (
-                      <p className="mt-4 text-base sm:text-lg font-medium italic text-ink">“{beat.quote}”</p>
+                      <p className="mt-4 text-base font-medium italic text-blue-600">“{beat.quote}”</p>
                     )}
                     {/* behavioural principle */}
-                    <div className="mt-6 rounded-r-lg border-l-[3px] border-brand-pink/70 bg-ink/[0.02] py-3 pl-5 pr-4 text-sm">
+                    <div className="mt-6 rounded-r-lg border-l-[3px] border-red-400 bg-ink/[0.02] py-3 pl-5 pr-4 text-sm">
                       <p className="font-semibold text-ink">{beat.principle}</p>
                         <p className="text-ink-faint">{beat.definition}</p>
                         <p className="text-ink-muted">{beat.application}</p>
@@ -446,7 +424,7 @@ const BLive = () => {
           {/* Research */}
           <div className="mt-16">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Research</span>
-            <p className="mt-4 text-lg sm:text-xl text-ink-muted">
+            <p className="mt-4 text-lg text-ink">
               I ran research on two tracks over the course of a month.
             </p>
             <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:items-stretch">
@@ -474,12 +452,12 @@ const BLive = () => {
                         className="mb-5 h-16 w-16 object-contain place-self-start"
                       />
                     )}
-                    <h4 className="font-display text-xl sm:text-2xl font-semibold text-ink">{track.title}</h4>
+                    <h4 className="font-display text-xl font-medium text-ink">{track.title}</h4>
                     <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-md bg-brand-pink-light px-2 py-1 text-sm font-medium text-brand-pink">
                       <FiStar className="h-3.5 w-3.5" />
                       What I did
                     </span>
-                    <p className="mt-4 text-base sm:text-lg text-ink-muted">{track.body}</p>
+                    <p className="mt-4 text-base sm:text-lg text-ink-faint">{track.body}</p>
                   </div>
                 ))}
               </div>
@@ -492,7 +470,7 @@ const BLive = () => {
               </div>
             </div>
 
-            <p className="mt-8 text-lg sm:text-xl text-ink-muted">
+            <p className="mt-8 text-lg text-ink">
               The competitive benchmark shaped how I read parts of what riders said, like the
               deposit comparison in the story above, which only made sense once we saw what Zypp
               Electric was charging.
@@ -503,13 +481,13 @@ const BLive = () => {
               <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
                 Two different reads on the problem
               </span>
-              <h3 className="mt-3 font-display text-2xl font-semibold text-ink sm:text-4xl">
+              <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
                 Riders vs. stakeholders
               </h3>
               <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 <div className="rounded-2xl border border-ink/10 p-6">
                   <span className="text-sm font-semibold text-blue-600">What riders asked for</span>
-                  <p className="mt-2 text-base sm:text-lg text-ink-muted">
+                  <p className="mt-2 text-base sm:text-lg text-ink">
                     A ticketing/support flow, clear payout visibility, easier vehicle redeployment,
                     and more rental plan options.
                   </p>
@@ -518,7 +496,7 @@ const BLive = () => {
                   <span className="text-sm font-semibold text-blue-600">
                     What stakeholders assumed
                   </span>
-                  <p className="mt-2 text-base sm:text-lg text-ink-muted">
+                  <p className="mt-2 text-base sm:text-lg text-ink">
                     Riders mainly wanted to see their rider category, for example, their Diamond
                     tier status and its benefits.
                   </p>
@@ -534,8 +512,8 @@ const BLive = () => {
 
           {/* Action plan */}
           <div className="mt-16">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Action plan</span>
-            <p className="mt-4 text-lg sm:text-xl text-ink-muted">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink">Action plan</span>
+            <p className="mt-4 text-lg text-ink">
               Research pointed to one core insight: EZY wasn't failing because it was hard to use;
               it was failing because it gave riders no reason to open it after day one. With three
               months, I scoped the plan around the two problems most directly causing riders to
@@ -571,8 +549,8 @@ const BLive = () => {
                       </span>
                       <div className="w-px self-stretch bg-ink/10" />
                       <div className="flex flex-col gap-4">
-                        <p className="text-sm sm:text-base font-medium leading-6 text-ink-faint">{card.label}</p>
-                        <p className="font-sans text-lg sm:text-xl font-medium leading-7 text-ink">{card.text}</p>
+                        <p className="text-sm leading-6 text-ink-faint">{card.label}</p>
+                        <p className="font-sans text-lg leading-7 text-ink">{card.text}</p>
                       </div>
 
                       {/* desktop connector — centered in the gap between this card
@@ -603,6 +581,9 @@ const BLive = () => {
       <section className="py-16">
         <Container>
           <SectionHeading number="2" title="Product Scoping" />
+          <span className="mt-10 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
+            User story
+          </span>
           <img
             src={scopingUserStoryImg}
             alt="Rider user story — onboarding, earnings, and support"
@@ -621,13 +602,13 @@ const BLive = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
               Design Iterations
             </span>
-            <p className="mt-4 text-lg sm:text-xl text-ink-muted">
+            <p className="mt-4 text-lg sm:text-xl text-ink">
               With a small team and a tight timeline, most of the real design work happened in
               negotiation, deciding what to push for, and what to let wait.
             </p>
 
             {/* before → after, three cards */}
-            <h3 className="mt-12 font-display text-2xl font-semibold text-ink sm:text-4xl">
+            <h3 className="mt-12 font-display text-2xl font-semibold text-ink ">
               The same rider, now
             </h3>
             <p className="mt-3 text-lg sm:text-xl text-ink-muted">
@@ -662,10 +643,8 @@ const BLive = () => {
                   </div>
 
                   {/* takeaway */}
-                  <div className="flex items-center gap-2">
-                    <FiCheckCircle className="h-4 w-4 shrink-0 text-brand-green" />
-                    <p className="text-sm font-medium text-ink">{story.detail}</p>
-                  </div>
+                                      <p className="text-sm font-medium text-ink"><FiCheckCircle className="h-4 w-4 shrink-0 text-brand-green inline-block" />{" "}{story.detail}</p>
+
 
                   {/* screen — placeholder until the real export is supplied */}
                   {story.image ? (
@@ -692,43 +671,19 @@ const BLive = () => {
               Design Trade-offs
             </span>
             <div className="mt-8 flex flex-col gap-16">
-              {tradeoffs.map((t) => {
-                const heading = (
-                  <div>
-                    <span
-                      className={`inline-block rounded-md px-2 py-1 text-xs font-medium ${t.badgeClass}`}
-                    >
-                      {t.badge}
-                    </span>
-                    <h3 className="mt-4 font-display text-2xl sm:text-3xl font-semibold text-ink">{t.title}</h3>
-                    <p className="mt-4 text-base sm:text-lg leading-relaxed text-ink-muted">{t.body}</p>
-                  </div>
-                );
-
-                // No image → copy runs full width. With image → copy is capped and
-                // the screenshot takes the right column, fixed height on desktop.
-                if (!t.image) {
-                  return (
-                    <div key={t.title} className="w-full">
-                      {heading}
-                    </div>
-                  );
-                }
-
-                return (
-                  <div
-                    key={t.title}
-                    className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14"
+              {tradeoffs.map((t) => (
+                <div key={t.title} className="w-full">
+                  <span
+                    className={`inline-block rounded-md px-2 py-1 text-xs font-medium ${t.badgeClass}`}
                   >
-                    <div className="max-w-3xl">{heading}</div>
-                    <img
-                      src={t.image}
-                      alt={`${t.title} — screens`}
-                      className="w-full rounded-2xl border border-ink/10 object-top lg:h-[400px] lg:object-cover"
-                    />
+                    {t.badge}
+                  </span>
+                  <h3 className="mt-4 font-display text-2xl font-semibold text-ink">{t.title}</h3>
+                  <div className="mt-4 text-base sm:text-lg leading-relaxed text-ink-muted/[0.7]">
+                    {t.body}
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -737,15 +692,20 @@ const BLive = () => {
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
               Design system modernization
             </span>
-            <h3 className="mt-3 font-display text-2xl sm:text-3xl font-semibold text-ink">
+            <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
               Design system, built from scratch
             </h3>
-            <p className="mt-4 text-lg sm:text-xl text-ink-muted">
-              EZY had no consistent design system to build on, so alongside this project, I built one
-              from the ground up with my senior designer, not adapted from an existing component
-              library. Every token, component, and pattern used across the redesigned onboarding and
+            <p className="mt-4 text-lg text-ink-faint">
+              <span className="text-ink">EZY had no consistent design system to build on,</span> so alongside this project, I built one
+              from the <span className="text-ink">ground up with my senior designer,</span> not adapted from an existing component
+              library. <span className="text-ink">Every token, component, and pattern</span> used across the redesigned onboarding and
               payout flows came out of that system.
             </p>
+            <img
+              src={designSystemImg}
+              alt="EZY design system — before and after rider app screens"
+              className="mt-8 w-full rounded-3xl"
+            />
           </div>
         </Container>
       </section>
@@ -760,13 +720,13 @@ const BLive = () => {
           <div className="mt-6 grid grid-cols-1 divide-y divide-ink/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {outcomeStats.map((stat) => (
               <div key={stat.label} className="py-5 sm:px-8 sm:py-0 sm:first:pl-0">
-                <div className="font-display text-2xl font-bold text-ink sm:text-4xl">{stat.value}</div>
+                <div className="font-display text-2xl font-medium text-ink sm:text-4xl">{stat.value}</div>
                 <div className="mt-1 text-sm text-ink-faint">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          <p className="mt-12 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-lg sm:text-xl text-ink-muted sm:p-10">
+          <p className="mt-12 rounded-3xl border border-ink/10 bg-ink/[0.03] p-8 text-md text-ink-muted">
             Some of this shipped and is already measurable. Some is validated with riders but paused
             in development for business reasons; both are part of the honest picture.
           </p>

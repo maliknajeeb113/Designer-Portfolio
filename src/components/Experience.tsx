@@ -49,7 +49,14 @@ const Experience = () => {
                 I focus on simplifying complex workflows and crafting minimal, user-friendly
                 interfaces that make technology easy to use.
               </p>
-              <p>Outside of work, I enjoy reading (a recent hobby!) and playing squash 🎾.</p>
+              <p>
+                Lately, I&rsquo;ve been weaving AI into how I design, using it to move faster from
+                idea to interface, and vibe-coding my own side projects to see how far these tools
+                can go.
+              </p>
+              <p>
+                Outside of work, I enjoy reading (a recent hobby!), running, and playing squash 🎾.
+              </p>
             </div>
           </div>
         </div>

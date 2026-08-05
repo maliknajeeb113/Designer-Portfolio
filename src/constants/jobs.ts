@@ -25,7 +25,7 @@ export interface JobData {
 
 export const jobsData: JobData[] = [
   { label: "Case Study 1",
-    headline: { pre: "From whatsapp chaos to a ", highlight: "Ticketing", post: " platform" },
+    headline: { pre: "From whatsapp chaos to a ", highlight: "Ticketing", post: " system" },
     company: "B:LIVE, EV MOBILITY PLATFORM",
     period: "2 MONTHS",
     icon: bliveIcon,
