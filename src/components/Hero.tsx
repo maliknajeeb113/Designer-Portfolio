@@ -50,9 +50,8 @@ const Hero = () => {
 
             {/* body — extra top gap after the headline */}
             <p className="mt-4 max-w-5xl text-base text-ink-muted sm:text-lg">
-              Product designer at B:Live, turning messy B2B &amp; B2C SaaS into something people
-              actually understand. I run the research, sweat the edge cases, and ship 0→1 — most
-              recently an EV rider app 10,000+ riders had quietly given up on.
+              Product designer at B:Live, turning messy B2B & B2C SaaS into something people actually understand.
+              I run the research, sweat the edge cases, and ship 0→1 features. Frontend background, so the structure I design is structure engineers can build.
             </p>
 
             {/* resume button */}
@@ -60,7 +59,7 @@ const Hero = () => {
               href={RESUME_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 text-sm font-medium text-white transition-transform duration-300 hover:scale-[1.03]"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-green px-6 py-3 text-sm font-medium text-white transition-transform duration-300 hover:scale-[1.03]"
             >
               Resume
               <FiArrowUpRight className="h-4 w-4" />

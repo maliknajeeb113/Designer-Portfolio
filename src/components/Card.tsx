@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
+import { RiBookletLine } from "react-icons/ri";
 import BrowserFrame from "./BrowserFrame";
 import { JobData } from "../constants";
 
@@ -11,13 +12,14 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar, li
   const inner = (
     <>
       {label && (
-        <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-ink/[0.04] px-3 py-1 text-xs font-medium text-ink-faint">
+        <span className="inline-flex w-fit items-center gap-1.5 rounded-lg bg-ink/[0.04] px-3 py-1 text-xs font-medium text-ink/[0.6]">
+          <RiBookletLine className="h-3.5 w-3.5 shrink-0 text-brand-green" />
           {label}
         </span>
       )}
 
       <div className="flex flex-col gap-6">
-        <h2 className="font-display text-2xl font-semibold leading-tight text-ink sm:text-4xl lg:text-[2.75rem]">
+        <h2 className="font-display text-2xl font-medium leading-tight text-ink sm:text-4xl lg:text-[2.75rem]">
           {headline.pre}
           <span className="font-script text-[1.15em] text-brand-green">{headline.highlight}</span>
           {headline.post}
@@ -44,7 +46,7 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar, li
           >
             {stat && (
               <>
-                <div className="font-display text-xl font-bold text-ink sm:text-3xl lg:text-4xl">
+                <div className="font-display text-xl font-semibold text-ink sm:text-3xl lg:text-4xl">
                   {stat.value}
                 </div>
                 <div className="mt-1 text-[11px] leading-tight text-ink-faint sm:text-sm">

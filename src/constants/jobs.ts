@@ -25,9 +25,9 @@ export interface JobData {
 
 export const jobsData: JobData[] = [
   { label: "Case Study 1",
-    headline: { pre: "From WhatsApp Chaos to a ", highlight: "Ticketing", post: " Platform" },
+    headline: { pre: "From whatsapp chaos to a ", highlight: "Ticketing", post: " platform" },
     company: "B:LIVE, EV MOBILITY PLATFORM",
-    period: "PRESENT",
+    period: "2 MONTHS",
     icon: bliveIcon,
     stats: [
       { value: "70%", label: "Faster ticket resolution" },
@@ -43,7 +43,7 @@ export const jobsData: JobData[] = [
     label: "Case Study 2",
     headline: { pre: "From a one-time app to one riders actually ", highlight: "trust.", post: "" },
     company: "B:LIVE, EV MOBILITY PLATFORM",
-    period: "PRESENT",
+    period: "2 MONTHS",
     icon: bliveIcon,
     stats: [
       { value: "50%→20%", label: "Onboarding drop-off, before → after" },
@@ -59,7 +59,7 @@ export const jobsData: JobData[] = [
     label: "Case Study 3",
     headline: { pre: "Giving sales reps something to say, ", highlight: "mid-call", post: "" },
     company: "SALESKEN.AI",
-    period: "AUG 2025 - JAN 2026",
+    period: "5 MONTHS",
     icon: saleskenIcon,
     stats: [
       { value: "1st", label: "End-to-end product I owned solo" },
