@@ -1,6 +1,11 @@
 import { FiArrowUpRight } from "react-icons/fi";
 import Container from "./Container";
 import HandDrawnGrid from "./HandDrawnGrid";
+import avatar1 from "../assets/avatars/avatar-1.jpg";
+import avatar2 from "../assets/avatars/avatar-2.jpg";
+import avatar3 from "../assets/avatars/avatar-3.jpg";
+import avatar4 from "../assets/avatars/avatar-4.jpg";
+import avatar5 from "../assets/avatars/avatar-5.jpg";
 
 // Resume link lives in .env (VITE_RESUME_URL) so it can be updated without a code
 // change; the literal is a safe fallback for local dev if the var is unset.
@@ -8,9 +13,8 @@ const RESUME_URL =
   import.meta.env.VITE_RESUME_URL ||
   "https://drive.google.com/file/d/1B_9Bz25SG9cIbWIgQFeeLjLua008NC84/view?usp=drive_link";
 
-// Placeholder avatars for the social-proof row. Swap for the real customer/brand
-// marks (exported from Figma) when available.
-const avatars = ["#F7DCE9", "#D9F2E4", "#FCE9CE", "#DCE7FB", "#EADCF7"];
+// Social-proof row — customer headshots stacked with a slight overlap.
+const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5];
 
 const Hero = () => {
   return (
@@ -65,11 +69,12 @@ const Hero = () => {
             {/* social proof */}
             <div className="mt-2 flex items-center gap-3">
               <div className="flex -space-x-2">
-                {avatars.map((color) => (
-                  <span
-                    key={color}
-                    className="h-7 w-7 rounded-full border-2 border-white"
-                    style={{ backgroundColor: color }}
+                {avatars.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt=""
+                    className="h-8 w-8 rounded-full border-2 border-white object-cover"
                   />
                 ))}
               </div>
