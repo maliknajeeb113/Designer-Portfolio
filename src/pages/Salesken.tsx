@@ -206,7 +206,8 @@ const Salesken = () => {
                       <FiStar className="h-3.5 w-3.5" />
                       What I did
                     </span>
-                    <p className="mt-4 text-base text-ink-faint">{track.body}</p>
+                    {/* div, not p: track.body is itself a <p> */}
+                    <div className="mt-4 text-base text-ink-faint">{track.body}</div>
                   </div>
                 ))}
               </div>
