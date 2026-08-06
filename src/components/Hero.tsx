@@ -61,15 +61,21 @@ const Hero = () => {
               <FiArrowUpRight className="h-4 w-4" />
             </a>
 
-            {/* social proof */}
-            <div className="mt-2 flex items-center gap-3">
-              <div className="flex -space-x-2">
+            {/* social proof — wraps to two lines on narrow screens. Both the
+                avatar row and the avatars themselves are shrink-0: as flex
+                items they'd otherwise be compressed by the caption, collapsing
+                the -space-x-2 overlap so the text rode over the faces. */}
+            <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2">
+              <div className="flex shrink-0 -space-x-2">
                 {avatars.map((src, i) => (
                   <img
                     key={i}
                     src={src}
                     alt=""
-                    className="h-8 w-8 rounded-full border-2 border-white object-cover" loading="lazy" decoding="async" />
+                    className="h-8 w-8 shrink-0 rounded-full border-2 border-white object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 ))}
               </div>
               <span className="text-sm text-ink-faint">

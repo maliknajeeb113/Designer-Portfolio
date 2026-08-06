@@ -11,7 +11,7 @@
  */
 export const RESUME_URL =
   import.meta.env.VITE_RESUME_URL ||
-  "https://drive.google.com/file/d/1B_9Bz25SG9cIbWIgQFeeLjLua008NC84/view?usp=drive_link";
+  "https://drive.google.com/file/d/1otZgxPg1WxLn9e__235hoGs6Bs1W2DN4/view?usp=sharing";
 
 /**
  * Canonical production origin — used for canonical URLs, OG tags and the sitemap.
