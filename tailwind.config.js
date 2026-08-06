@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // v2 fonts. Satoshi (Fontshare) for display headings, Inter for body/UI,
-        // Satisfy for the handwritten accent word ("Effortless", etc.). Loaded via
-        // @import in src/index.css. `poppins` is kept for not-yet-migrated v1 pages.
-        display: ["Satoshi Variable", "Satoshi", "system-ui", "sans-serif"],
-        sans: ["Inter", "sans-serif"],
+        // v2 fonts, self-hosted via @font-face in src/index.css. Satoshi = display
+        // headings, Inter = body/UI, Satisfy = the handwritten accent word. Each
+        // family name matches its @font-face, so rendering no longer depends on a
+        // locally-installed font.
+        display: ["Satoshi", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
         script: ["Satisfy", "Georgia", "cursive"],
-        poppins: ["Poppins", "sans-serif"],
       },
       colors: {
         // v2 palette. Values are PROVISIONAL — sampled by eye from the Figma
