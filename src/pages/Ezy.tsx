@@ -57,7 +57,7 @@ const Ezy = () => {
 
           {/* hero — redesigned EZY dashboard, with ratings + store annotations */}
           <BrowserFrame url="blive.co.in" className="mt-12">
-            <img src={heroImg} alt="The redesigned EZY rider app home screen" className="w-full" loading="eager" fetchPriority="high" decoding="async" />
+            <img src={heroImg} alt="The redesigned EZY rider app home screen" className="w-full" loading="eager" decoding="async" />
           </BrowserFrame>
 
           {/* about + team */}

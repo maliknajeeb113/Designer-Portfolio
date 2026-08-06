@@ -25,7 +25,7 @@ const About = () => (
               alt="Avni Garg, product designer, smiling outdoors"
               width={1440}
               height={1800}
-              className="aspect-[4/5] w-full rounded-3xl border border-ink/10 object-cover shadow-sm" loading="eager" fetchPriority="high" decoding="async" />
+              className="aspect-[4/5] w-full rounded-3xl border border-ink/10 object-cover shadow-sm" loading="eager" decoding="async" />
           </div>
 
           <div className="lg:flex-1">

@@ -68,7 +68,6 @@ const Salesken = () => {
                 alt="The Salesken Co-Browser agent dashboard during a live customer session"
                 className="h-full w-full object-cover object-top"
                 loading="eager"
-                fetchPriority="high"
                 decoding="async"
               />
             </div>

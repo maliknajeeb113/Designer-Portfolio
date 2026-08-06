@@ -68,7 +68,6 @@ const Ticketing = () => {
                 alt="The B:Live ticket management dashboard, showing the ticket list with status, owner and category columns"
                 className="h-full w-full object-cover object-top"
                 loading="eager"
-                fetchPriority="high"
                 decoding="async"
               />
             </div>
