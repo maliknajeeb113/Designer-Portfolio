@@ -2,13 +2,11 @@ import { FiArrowUpRight, FiMail } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa6";
 import Container from "./Container";
 import HandDrawnGrid from "./HandDrawnGrid";
-
-const RESUME_URL =
-  "https://drive.google.com/file/d/1B_9Bz25SG9cIbWIgQFeeLjLua008NC84/view?usp=drive_link";
+import { RESUME_URL, SOCIALS } from "../config/site";
 
 const socials = [
-  { icon: FiMail, href: "mailto:avni.garg.in@gmail.com", label: "Email" },
-  { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/garg-avni/", label: "LinkedIn" },
+  { icon: FiMail, href: SOCIALS.email, label: "Email" },
+  { icon: FaLinkedinIn, href: SOCIALS.linkedin, label: "LinkedIn" },
 ];
 
 const Footer = () => {

@@ -53,7 +53,7 @@ export const jobsData: JobData[] = [
     ],
     image: ezyHomeCard,
     urlBar: "blive.co.in",
-    linkTo: "/bLive",
+    linkTo: "/ezy",
   },
   {
     label: "Case Study 3",

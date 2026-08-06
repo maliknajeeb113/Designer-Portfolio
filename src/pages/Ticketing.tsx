@@ -1,6 +1,6 @@
-import { Fragment, useEffect, type ReactNode } from "react";
-import { motion } from "framer-motion";
+import { Fragment, type ReactNode } from "react";
 import { FiStar, FiChevronsRight } from "react-icons/fi";
+import PageShell from "../components/PageShell";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import BrowserFrame from "../components/BrowserFrame";
@@ -183,23 +183,13 @@ const outcomeStats = [
 ];
 
 const Ticketing = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   // Desktop step grid: ≤4 steps share one row; 5+ wrap into rows of 3 (so 5 → 3 + 2).
   // A single N-column grid keeps every card the same width, so row 2's cards line
   // up as columns under row 1. Mobile always stacks top-down regardless.
   const stepCols = actionCards.length > 4 ? 3 : Math.max(actionCards.length, 1);
 
   return (
-    <motion.main
-      className="bg-white font-sans"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <PageShell>
       {/* ===== HEADER ===== */}
       <section className="pt-32 sm:pt-40">
         <Container>
@@ -604,7 +594,7 @@ const Ticketing = () => {
           </div>
         </Container>
       </section>
-    </motion.main>
+    </PageShell>
   );
 };
 

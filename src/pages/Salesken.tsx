@@ -1,6 +1,6 @@
-import { Fragment, useEffect, type ReactNode } from "react";
-import { motion } from "framer-motion";
+import { Fragment, type ReactNode } from "react";
 import { FiStar, FiChevronsRight } from "react-icons/fi";
+import PageShell from "../components/PageShell";
 import Container from "../components/Container";
 import SectionHeading from "../components/SectionHeading";
 import BrowserFrame from "../components/BrowserFrame";
@@ -172,18 +172,8 @@ const outcomeStats = [
 ];
 
 const Salesken = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <motion.main
-      className="bg-white font-sans"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <PageShell>
       {/* ===== HEADER ===== */}
       <section className="pt-32 sm:pt-40">
         <Container>
@@ -582,7 +572,7 @@ const Salesken = () => {
           </div>
         </Container>
       </section>
-    </motion.main>
+    </PageShell>
   );
 };
 

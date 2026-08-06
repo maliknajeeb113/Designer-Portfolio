@@ -1,18 +1,21 @@
-import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import BLive from "./pages/BLive";
-import Body from "./pages/Body";
-import Error from "./components/Error";
-import Playground from "./pages/Playground";
-import Footer from "./components/Footer";
-import Salesken from "./pages/Salesken";
-import Ticketing from "./pages/Ticketing";
+import { createBrowserRouter, Navigate, Outlet, ScrollRestoration } from "react-router-dom";
 
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Error from "./components/Error";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Playground from "./pages/Playground";
+import Ticketing from "./pages/Ticketing";
+import Salesken from "./pages/Salesken";
+import Ezy from "./pages/Ezy";
 
 function App() {
   return (
     <>
+      {/* Restores scroll on back/forward and resets to top on new navigations —
+          replaces the `window.scrollTo(0, 0)` effect each page used to run. */}
+      <ScrollRestoration />
       <Navbar />
       <Outlet />
       <Footer />
@@ -26,12 +29,14 @@ export const appRouter = createBrowserRouter([
     element: <App />,
     errorElement: <Error />,
     children: [
-      { path: "/", element: <Body /> },
+      { path: "/", element: <Home /> },
       { path: "/ticketing", element: <Ticketing /> },
-      { path: "/about", element: <About /> },
       { path: "/salesken", element: <Salesken /> },
-      { path: "/bLive", element: <BLive /> },
+      { path: "/ezy", element: <Ezy /> },
+      { path: "/about", element: <About /> },
       { path: "/playground", element: <Playground /> },
+      // Legacy URL — kept so previously shared /bLive links keep working.
+      { path: "/bLive", element: <Navigate to="/ezy" replace /> },
     ],
   },
 ]);

@@ -1,5 +1,5 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useLayoutEffect, useRef, useState } from "react";
+import PageShell from "../components/PageShell";
 import Container from "../components/Container";
 import { playgroundImages } from "../constants";
 import bow from "../assets/playground/bow.png";
@@ -111,10 +111,6 @@ const Playground = () => {
   const topZ = useRef(playgroundImages.length);
   const [pieces, setPieces] = useState<Piece[]>([]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   // Lay the pieces out on an even grid (with a little jitter + tilt) once the
   // board can be measured, so they start spread out instead of piled up.
   useLayoutEffect(() => {
@@ -155,13 +151,7 @@ const Playground = () => {
   };
 
   return (
-    <motion.main
-      className="bg-brand-pink-light/40 pb-24 pt-32 font-sans sm:pb-32 sm:pt-40"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <PageShell className="bg-brand-pink-light/40 pb-24 pt-32 sm:pb-32 sm:pt-40">
       <Container>
         <h1 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
           Playground/
@@ -182,7 +172,7 @@ const Playground = () => {
           <DraggablePiece key={piece.id} piece={piece} bringToFront={bringToFront} />
         ))}
       </div>
-    </motion.main>
+    </PageShell>
   );
 };
 

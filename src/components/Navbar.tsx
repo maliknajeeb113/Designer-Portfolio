@@ -3,11 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiArrowUpRight } from "react-icons/fi";
 import Container from "./Container";
-
-// Resume link (opens the hosted PDF in a new tab). Same target used by the
-// hero + footer "Resume" buttons.
-const RESUME_URL =
-  "https://drive.google.com/file/d/1B_9Bz25SG9cIbWIgQFeeLjLua008NC84/view?usp=drive_link";
+import { RESUME_URL } from "../config/site";
 
 const navItems = [
   { label: "WORK", to: "/" },
@@ -16,7 +12,7 @@ const navItems = [
 ];
 
 // Case-study pages live "under" WORK, so the WORK tab stays highlighted on them.
-const caseStudyPaths = ["/ticketing", "/salesken", "/bLive"];
+const caseStudyPaths = ["/ticketing", "/salesken", "/ezy"];
 
 const Navbar = () => {
   const { pathname } = useLocation();

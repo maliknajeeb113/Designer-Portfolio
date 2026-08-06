@@ -1,17 +1,12 @@
 import { FiArrowUpRight } from "react-icons/fi";
 import Container from "./Container";
 import HandDrawnGrid from "./HandDrawnGrid";
+import { RESUME_URL } from "../config/site";
 import avatar1 from "../assets/avatars/avatar-1.jpg";
 import avatar2 from "../assets/avatars/avatar-2.jpg";
 import avatar3 from "../assets/avatars/avatar-3.jpg";
 import avatar4 from "../assets/avatars/avatar-4.jpg";
 import avatar5 from "../assets/avatars/avatar-5.jpg";
-
-// Resume link lives in .env (VITE_RESUME_URL) so it can be updated without a code
-// change; the literal is a safe fallback for local dev if the var is unset.
-const RESUME_URL =
-  import.meta.env.VITE_RESUME_URL ||
-  "https://drive.google.com/file/d/1B_9Bz25SG9cIbWIgQFeeLjLua008NC84/view?usp=drive_link";
 
 // Social-proof row — customer headshots stacked with a slight overlap.
 const avatars = [avatar1, avatar2, avatar3, avatar4, avatar5];
