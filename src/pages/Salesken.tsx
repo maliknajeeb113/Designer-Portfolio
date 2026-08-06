@@ -1,7 +1,9 @@
-import { Fragment, type ReactNode } from "react";
-import { FiStar, FiChevronsRight } from "react-icons/fi";
+import { type ReactNode } from "react";
+import { FiStar } from "react-icons/fi";
 import PageShell from "../components/PageShell";
 import Container from "../components/Container";
+import BreadcrumbSteps from "../components/BreadcrumbSteps";
+import Eyebrow from "../components/Eyebrow";
 import SectionHeading from "../components/SectionHeading";
 import BrowserFrame from "../components/BrowserFrame";
 import saleskenIcon from "../assets/salesken/salesken-icon.svg";
@@ -212,9 +214,7 @@ const Salesken = () => {
           {/* about + team */}
           <div className="mt-20 grid gap-12 lg:grid-cols-[1.8fr_1fr]">
             <div>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-                About
-              </span>
+              <Eyebrow>About</Eyebrow>
               <p className="mt-4 text-lg leading-relaxed text-ink">
                 Co-Browser, a real-time AI assistant that surfaces the right prompt, product
                 context, and next step while a rep is still on the phone, designed end-to-end from
@@ -222,9 +222,7 @@ const Salesken = () => {
               </p>
             </div>
             <div>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-                Team
-              </span>
+              <Eyebrow>Team</Eyebrow>
               <ul className="mt-4 flex flex-col gap-3">
                 {team.map((member) => (
                   <li key={member.name} className="flex items-baseline justify-between gap-4">
@@ -245,7 +243,7 @@ const Salesken = () => {
 
           {/* Problem */}
           <div className="mt-12">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Problem</span>
+            <Eyebrow>Problem</Eyebrow>
             <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:items-start">
               <div className="flex flex-col gap-6">
                 <p className="text-lg text-ink">
@@ -280,7 +278,7 @@ const Salesken = () => {
 
           {/* Target personas */}
           <div className="mt-20">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Target personas</span>
+            <Eyebrow>Target personas</Eyebrow>
             <p className="mt-6 text-lg text-ink">
               Co-Browser is a two-sided product, an agent on a client company&rsquo;s sales floor,
               and a customer who registered for a demo on that company&rsquo;s site.
@@ -312,7 +310,7 @@ const Salesken = () => {
 
           {/* Research */}
           <div className="mt-20">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Research</span>
+            <Eyebrow>Research</Eyebrow>
             <p className="mt-4 text-lg text-ink">
               I didn&rsquo;t have access to Salesken&rsquo;s own reps as interview subjects, so
               research ran on two tracks in parallel: a competitive teardown of how the market
@@ -371,9 +369,7 @@ const Salesken = () => {
 
           {/* JTBD framework */}
           <div className="mt-20">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-              JTBD framework
-            </span>
+            <Eyebrow>JTBD framework</Eyebrow>
             <div className="mt-6 aspect-[1512/744] w-full overflow-hidden rounded-2xl border border-ink/10">
               <img src={jtbdImg} alt="Jobs-to-be-done framework" className="h-full w-full object-cover object-top" />
             </div>
@@ -381,60 +377,17 @@ const Salesken = () => {
 
           {/* Action plan */}
           <div className="mt-20">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink">Action plan</span>
+            <Eyebrow tone="ink">Action plan</Eyebrow>
             <p className="mt-4 text-lg text-ink-muted">
               Three connected surfaces, not one screen; one for the customer, two supporting the
               agent through the session.
             </p>
-            {/* breadcrumb-style steps joined by a >> badge (same pattern as Ticketing) */}
-            <div className="mt-8 flex flex-col lg:grid lg:grid-cols-3 lg:gap-x-4 lg:gap-y-4">
-              {actionSteps.map((card, i) => {
-                const isLast = i === actionSteps.length - 1;
-                return (
-                  <Fragment key={card.num}>
-                    <div
-                      className={`relative flex items-start gap-7 rounded-[16px] bg-ink/[0.04] p-7 ${
-                        i === 0
-                          ? "lg:rounded-l-[24px] lg:rounded-r-[12px]"
-                          : isLast
-                            ? "lg:rounded-l-[12px] lg:rounded-r-[24px]"
-                            : "lg:rounded-[12px]"
-                      }`}
-                    >
-                      <span className={`font-sans text-lg font-medium leading-7 ${card.color}`}>
-                        {card.num}
-                      </span>
-                      <div className="w-px self-stretch bg-ink/10" />
-                      <div className="flex flex-col gap-4">
-                        <p className="text-sm leading-6 text-ink-faint">{card.label}</p>
-                        <p className="font-sans text-lg leading-7 text-ink">{card.text}</p>
-                      </div>
-
-                      {/* desktop connector — between this card and the next */}
-                      {!isLast && (
-                        <div className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-[calc(50%+8px)] items-center justify-center rounded-full bg-white p-1 shadow-[0px_0px_0px_1px_rgba(23,23,23,0.08),0px_1px_1px_-0.5px_rgba(23,23,23,0.04),0px_3px_3px_-1.5px_rgba(23,23,23,0.04)] lg:flex">
-                          <FiChevronsRight className="h-5 w-5 text-ink-faint" />
-                        </div>
-                      )}
-                    </div>
-
-                    {/* mobile connector — points down between every pair */}
-                    {!isLast && (
-                      <div className="relative z-10 -my-2 flex shrink-0 items-center justify-center self-center rounded-full bg-white p-1 shadow-[0px_0px_0px_1px_rgba(23,23,23,0.08),0px_1px_1px_-0.5px_rgba(23,23,23,0.04),0px_3px_3px_-1.5px_rgba(23,23,23,0.04)] lg:hidden">
-                        <FiChevronsRight className="h-5 w-5 rotate-90 text-ink-faint" />
-                      </div>
-                    )}
-                  </Fragment>
-                );
-              })}
-            </div>
+            <BreadcrumbSteps steps={actionSteps} />
           </div>
 
           {/* How two sides meet */}
           <div className="mt-20">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-              How two sides meet
-            </span>
+            <Eyebrow>How two sides meet</Eyebrow>
             <p className="mt-4 text-lg text-ink">
               A co-browsing session, not a phone call; the customer and agent share one screen, but
               see different things on it.
@@ -456,9 +409,7 @@ const Salesken = () => {
       <section className="pt-12">
         <Container>
           <SectionHeading number="2" title="Product Scoping" />
-          <span className="mt-10 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-            User story
-          </span>
+          <Eyebrow className="mt-10">User story</Eyebrow>
           <div className="mt-6 grid gap-8 lg:grid-cols-2 lg:items-start">
             {[
               { src: scopingCustomerImg, alt: "Customer user story"},
@@ -483,7 +434,7 @@ const Salesken = () => {
 
           {/* iterations */}
           <div className="mt-12">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Design Iterations</span>
+            <Eyebrow>Design Iterations</Eyebrow>
             <div className="mt-6 flex flex-col gap-10 lg:flex-row lg:items-start">
               <div className="flex flex-1 flex-col gap-6 text-lg text-ink-faint md:max-w-2xl">
                 <p className="text-ink">Several rounds, directly in Figma.</p>
@@ -507,9 +458,7 @@ const Salesken = () => {
 
           {/* more features added — stakeholder review rounds (one section, two features) */}
           <div className="mt-20">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-              More features added
-            </span>
+            <Eyebrow>More features added</Eyebrow>
             <div className="mt-6 flex flex-col gap-16">
               {features.map((feature) => (
                 <div key={feature.title} className="grid gap-10 lg:grid-cols-2">

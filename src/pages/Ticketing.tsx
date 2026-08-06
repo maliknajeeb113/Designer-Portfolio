@@ -1,7 +1,9 @@
-import { Fragment, type ReactNode } from "react";
-import { FiStar, FiChevronsRight } from "react-icons/fi";
+import { type ReactNode } from "react";
+import { FiStar } from "react-icons/fi";
 import PageShell from "../components/PageShell";
 import Container from "../components/Container";
+import BreadcrumbSteps from "../components/BreadcrumbSteps";
+import Eyebrow from "../components/Eyebrow";
 import SectionHeading from "../components/SectionHeading";
 import BrowserFrame from "../components/BrowserFrame";
 import bliveIcon from "../assets/blive/blive-icon.svg";
@@ -183,11 +185,6 @@ const outcomeStats = [
 ];
 
 const Ticketing = () => {
-  // Desktop step grid: ≤4 steps share one row; 5+ wrap into rows of 3 (so 5 → 3 + 2).
-  // A single N-column grid keeps every card the same width, so row 2's cards line
-  // up as columns under row 1. Mobile always stacks top-down regardless.
-  const stepCols = actionCards.length > 4 ? 3 : Math.max(actionCards.length, 1);
-
   return (
     <PageShell>
       {/* ===== HEADER ===== */}
@@ -228,9 +225,7 @@ const Ticketing = () => {
           {/* about + team */}
           <div className="mt-20 grid gap-12 lg:grid-cols-[1.8fr_1fr]">
             <div>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-                About
-              </span>
+              <Eyebrow>About</Eyebrow>
               <p className="mt-4 text-lg leading-relaxed text-ink">
                 I owned end-to-end UX for the admin dashboard (Ticket Master, Ticket Management, User
                 Management, Settings) and the rider-facing Help &amp; Support experience in the EZY
@@ -241,9 +236,7 @@ const Ticketing = () => {
               </p>
             </div>
             <div>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-                Team
-              </span>
+              <Eyebrow>Team</Eyebrow>
               <ul className="mt-4 flex flex-col gap-3">
                 {team.map((member) => (
                   <li key={member.name} className="flex items-baseline justify-between gap-4">
@@ -264,7 +257,7 @@ const Ticketing = () => {
 
           {/* Problem */}
           <div className="mt-12">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Problem</span>
+            <Eyebrow>Problem</Eyebrow>
             <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
               <div>
                 <p className="text-lg  text-ink">
@@ -299,7 +292,7 @@ const Ticketing = () => {
 
           {/* Research */}
           <div className="mt-16">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Research</span>
+            <Eyebrow>Research</Eyebrow>
             <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
               <div className="flex flex-col gap-4 text-lg text-ink-faint max-w-2xl">
                 <p>I ran research on two tracks over the first three weeks.</p>
@@ -326,7 +319,7 @@ const Ticketing = () => {
 
           {/* Target personas */}
           <div className="mt-16">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Target personas</span>
+            <Eyebrow>Target personas</Eyebrow>
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               {personas.map((p) => (
                 <div
@@ -356,9 +349,7 @@ const Ticketing = () => {
 
           {/* JTBD framework */}
           <div className="mt-16">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-              JTBD framework
-            </span>
+            <Eyebrow>JTBD framework</Eyebrow>
             <img
               src={jtbdImg}
               alt="Jobs-to-be-done framework — When / I want to / So I can"
@@ -368,64 +359,11 @@ const Ticketing = () => {
 
           {/* Action plan */}
           <div className="mt-16">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink">Action plan</span>
+            <Eyebrow tone="ink">Action plan</Eyebrow>
             <p className="mt-4 text-lg text-ink-muted">
               Research pointed to one core insight: the product isn't a ticket list it's an ownership machine. Every ticket needed exactly one accountable owner, automatically.
             </p>
-            {/* breadcrumb-style steps: numbered cards joined by a >> badge. On
-                desktop it's an N-column grid (so 5 steps → 3 + 2, every card the
-                same width) with the connector pointing right, absolutely placed on
-                each card's right edge except at a row's end. On mobile everything
-                stacks and the connector points down between every pair. */}
-            <div
-              className="mt-8 flex flex-col lg:grid lg:gap-x-4 lg:gap-y-4"
-              style={{ gridTemplateColumns: `repeat(${stepCols}, minmax(0, 1fr))` }}
-            >
-              {actionCards.map((card, i) => {
-                const col = i % stepCols;
-                const isLast = i === actionCards.length - 1;
-                const isRowStart = col === 0;
-                const isRowEnd = col === stepCols - 1 || isLast; // last in its desktop row
-                const radius =
-                  isRowStart && isRowEnd
-                    ? "lg:rounded-[24px]"
-                    : isRowStart
-                      ? "lg:rounded-l-[24px] lg:rounded-r-[12px]"
-                      : isRowEnd
-                        ? "lg:rounded-l-[12px] lg:rounded-r-[24px]"
-                        : "lg:rounded-[12px]";
-                return (
-                  <Fragment key={i}>
-                    <div className={`relative flex items-start gap-7 rounded-[16px] bg-ink/[0.04] p-7 ${radius}`}>
-                      <span className={`font-sans text-lg sm:text-xl font-medium leading-7 ${card.color}`}>
-                        {card.num}
-                      </span>
-                      <div className="w-px self-stretch bg-ink/10" />
-                      <div className="flex flex-col gap-4">
-                        <p className="text-sm leading-6 text-ink-faint">{card.label}</p>
-                        <p className="font-sans text-lg leading-7 text-ink">{card.text}</p>
-                      </div>
-
-                      {/* desktop connector — centered in the gap between this card
-                          and the next (gap-x-4 = 16px, so shift its centre +8px past
-                          the right edge). Only when a card follows in the same row. */}
-                      {!isRowEnd && (
-                        <div className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-[calc(50%+8px)] items-center justify-center rounded-full bg-white p-1 shadow-[0px_0px_0px_1px_rgba(23,23,23,0.08),0px_1px_1px_-0.5px_rgba(23,23,23,0.04),0px_3px_3px_-1.5px_rgba(23,23,23,0.04)] lg:flex">
-                          <FiChevronsRight className="h-5 w-5 text-ink-faint" />
-                        </div>
-                      )}
-                    </div>
-
-                    {/* mobile connector — in-flow, points down between every pair */}
-                    {!isLast && (
-                      <div className="relative z-10 -my-2 flex shrink-0 items-center justify-center self-center rounded-full bg-white p-1 shadow-[0px_0px_0px_1px_rgba(23,23,23,0.08),0px_1px_1px_-0.5px_rgba(23,23,23,0.04),0px_3px_3px_-1.5px_rgba(23,23,23,0.04)] lg:hidden">
-                        <FiChevronsRight className="h-5 w-5 rotate-90 text-ink-faint" />
-                      </div>
-                    )}
-                  </Fragment>
-                );
-              })}
-            </div>
+            <BreadcrumbSteps steps={actionCards} />
           </div>
         </Container>
       </section>
@@ -434,9 +372,7 @@ const Ticketing = () => {
       <section className="py-16">
         <Container>
           <SectionHeading number="2" title="Product Scoping" />
-          <span className="mt-10 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-            User story
-          </span>
+          <Eyebrow className="mt-10">User story</Eyebrow>
           {/* mobile: equal-width cards stacked one after another */}
           <div className="mt-8 flex flex-col gap-6 lg:hidden">
             {personaCards.map((card) => (
@@ -466,7 +402,7 @@ const Ticketing = () => {
 
           {/* iterations */}
           <div className="mt-12">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Design Iterations</span>
+            <Eyebrow>Design Iterations</Eyebrow>
             <div className="mx-auto mt-6 aspect-[1516/960] w-full overflow-hidden rounded-3xl border border-ink/10 lg:w-2/3">
               <img
                 src={iterationsImg}
@@ -478,7 +414,7 @@ const Ticketing = () => {
 
           {/* trade-offs */}
           <div className="mt-16">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">Design Trade-offs</span>
+            <Eyebrow>Design Trade-offs</Eyebrow>
             <div className="mt-8 flex flex-col gap-16">
               {tradeoffs.map((t) => {
                 const heading = (
@@ -518,9 +454,7 @@ const Ticketing = () => {
 
           {/* design system modernization */}
           <div className="mt-20">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-              Design system modernization
-            </span>
+            <Eyebrow>Design system modernization</Eyebrow>
             <h3 className="mt-6 max-w-2xl font-display text-3xl sm:text-4xl font-semibold leading-tight text-ink">
               Design system, built out from Align UI
             </h3>
@@ -543,9 +477,7 @@ const Ticketing = () => {
                 { label: "After", src: dsAfterImg },
               ].map((shot) => (
                 <div key={shot.label}>
-                  <span className="mb-3 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-                    {shot.label}
-                  </span>
+                  <Eyebrow className="mb-3">{shot.label}</Eyebrow>
                   <div className="aspect-[8/5] w-full overflow-hidden rounded-2xl border border-ink/10">
                     <img
                       src={shot.src}
@@ -565,9 +497,7 @@ const Ticketing = () => {
         <Container>
           <SectionHeading number="4" title="Outcome 🏆" />
 
-          <span className="mt-10 block text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-            Resolved
-          </span>
+          <Eyebrow className="mt-10">Resolved</Eyebrow>
 
           <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
             
