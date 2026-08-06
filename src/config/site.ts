@@ -13,8 +13,11 @@ export const RESUME_URL =
   import.meta.env.VITE_RESUME_URL ||
   "https://drive.google.com/file/d/1B_9Bz25SG9cIbWIgQFeeLjLua008NC84/view?usp=drive_link";
 
-/** Canonical production origin — used for canonical URLs, OG tags and sitemap. */
-export const SITE_URL = "https://www.avnigarg.design";
+/**
+ * Canonical production origin — used for canonical URLs, OG tags and the sitemap.
+ * The apex (avnigarg.in) 301s to the www host, so www is the canonical form.
+ */
+export const SITE_URL = "https://www.avnigarg.in";
 
 /** Identity + defaults for page metadata. */
 export const SITE = {

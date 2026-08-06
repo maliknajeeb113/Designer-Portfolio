@@ -25,10 +25,13 @@ import {
   scopingCustomerImg,
   iterationsImg,
 } from "../content/salesken";
+import Seo from "../components/Seo";
+import { PAGE_SEO, caseStudyJsonLd } from "../config/seo";
 
 const Salesken = () => {
   return (
     <PageShell>
+    <Seo seo={PAGE_SEO.salesken} jsonLd={caseStudyJsonLd(PAGE_SEO.salesken)} />
       {/* ===== HEADER ===== */}
       <section className="pt-32 sm:pt-40">
         <Container>

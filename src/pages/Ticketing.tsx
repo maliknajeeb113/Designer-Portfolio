@@ -25,10 +25,13 @@ import {
   dsBeforeImg,
   dsAfterImg,
 } from "../content/ticketing";
+import Seo from "../components/Seo";
+import { PAGE_SEO, caseStudyJsonLd } from "../config/seo";
 
 const Ticketing = () => {
   return (
     <PageShell>
+    <Seo seo={PAGE_SEO.ticketing} jsonLd={caseStudyJsonLd(PAGE_SEO.ticketing)} />
       {/* ===== HEADER ===== */}
       <section className="pt-32 sm:pt-40">
         <Container>

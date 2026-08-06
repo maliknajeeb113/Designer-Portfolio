@@ -1,12 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { appRouter } from './App.tsx'
-import './index.css'
-import { RouterProvider } from 'react-router-dom'
+import { ViteReactSSG } from "vite-react-ssg";
+import { routes } from "./routes";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RouterProvider router={appRouter}/>
-  </React.StrictMode>,
-)
-
+// Entry point for both the browser and the static build. `vite-react-ssg`
+// hydrates on the client and, at build time, walks `routes` to emit a real HTML
+// file per route.
+export const createRoot = ViteReactSSG({ routes });

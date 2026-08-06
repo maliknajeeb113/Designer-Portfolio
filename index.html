@@ -2,13 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/avni.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- NOTE: the page title and description tags are deliberately absent here.
+         Every route supplies its own via the Seo component, and anything set in
+         this template would be emitted in addition to the per-page tag, leaving
+         each prerendered page with two of them. -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1DAF61" />
+
     <!-- preload the two above-the-fold fonts (display headings + body) so text
          swaps in fast; the rest load on demand via @font-face -->
     <link rel="preload" href="/fonts/satoshi-variable.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <title>Avni Garg</title>
   </head>
   <body>
     <div id="root"></div>

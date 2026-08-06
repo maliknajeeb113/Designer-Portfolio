@@ -4,6 +4,8 @@ import RotatingText from "../components/RotatingText";
 import Eyebrow from "../components/Eyebrow";
 import { workExperienceData } from "../constants";
 import avniPhoto from "../assets/heroImage.jpg";
+import Seo from "../components/Seo";
+import { PAGE_SEO, personJsonLd } from "../config/seo";
 
 // Greetings the header rotates through (the script-green accent word).
 const greetings = ["Hi,", "Hola,", "Namaste,", "Namaskara,", "Bonjour,", "Ciao,"];
@@ -12,6 +14,7 @@ const greetings = ["Hi,", "Hola,", "Namaste,", "Namaskara,", "Bonjour,", "Ciao,"
 // was a near-empty page wrapping an <Experience> component; both are one page now.
 const About = () => (
   <PageShell className="bg-white pt-32 sm:pt-40">
+    <Seo seo={PAGE_SEO.about} jsonLd={personJsonLd} />
     <section className="pb-16 sm:pb-24">
       <Container>
         <div className="flex flex-col gap-10 lg:flex-row-reverse lg:items-start lg:gap-16">

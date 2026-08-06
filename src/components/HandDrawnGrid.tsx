@@ -1,4 +1,5 @@
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+import { useIsomorphicLayoutEffect } from "../hooks/useIsomorphicLayoutEffect";
 
 interface HandDrawnGridProps {
   cellSize?: number; // px — fixed size of each grid cell (STATIC: does not stretch on resize)
@@ -73,7 +74,7 @@ const HandDrawnGrid = ({
   const ref = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
     const update = () => setSize({ w: el.clientWidth, h: el.clientHeight });

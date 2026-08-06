@@ -20,10 +20,13 @@ import {
   scopingUserStoryImg,
   designSystemImg,
 } from "../content/ezy";
+import Seo from "../components/Seo";
+import { PAGE_SEO, caseStudyJsonLd } from "../config/seo";
 
 const Ezy = () => {
   return (
     <PageShell>
+    <Seo seo={PAGE_SEO.ezy} jsonLd={caseStudyJsonLd(PAGE_SEO.ezy)} />
       {/* ===== HEADER ===== */}
       <section className="pt-32 sm:pt-40">
         <Container>

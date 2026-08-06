@@ -1,8 +1,11 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { useIsomorphicLayoutEffect } from "../hooks/useIsomorphicLayoutEffect";
 import PageShell from "../components/PageShell";
 import Container from "../components/Container";
 import { playgroundImages } from "../constants";
 import bow from "../assets/playground/bow.png";
+import Seo from "../components/Seo";
+import { PAGE_SEO } from "../config/seo";
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 const clamp = (v: number, min: number, max: number) => Math.min(Math.max(v, min), max);
@@ -113,7 +116,7 @@ const Playground = () => {
 
   // Lay the pieces out on an even grid (with a little jitter + tilt) once the
   // board can be measured, so they start spread out instead of piled up.
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const el = canvasRef.current;
     if (!el) return;
     const W = el.clientWidth;
@@ -152,6 +155,7 @@ const Playground = () => {
 
   return (
     <PageShell className="bg-brand-pink-light/40 pb-24 pt-32 sm:pb-32 sm:pt-40">
+    <Seo seo={PAGE_SEO.playground} />
       <Container>
         <h1 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
           Playground/
