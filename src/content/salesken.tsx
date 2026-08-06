@@ -3,25 +3,25 @@
 // touching layout code (and so the page isn't buried under asset imports).
 import { type ReactNode } from "react";
 import saleskenIcon from "../assets/salesken/salesken-icon.svg";
-import heroDashboard from "../assets/salesken/hero-dashboard.png";
-import problemImg from "../assets/salesken/problem.png";
-import researchCardImg from "../assets/salesken/research-card.png";
-import researchBoardImg from "../assets/salesken/research-board.png";
-import jtbdImg from "../assets/salesken/jtbd.png";
-import howTwoSidesImg from "../assets/salesken/how-two-sides.png";
-import scopingAgentImg from "../assets/salesken/scoping-agent.png";
-import scopingCustomerImg from "../assets/salesken/scoping-customer.png";
-import iterationsImg from "../assets/salesken/iterations.png";
-import featureSmartTodoImg from "../assets/salesken/feature-smart-todo.png";
-import featureAiEmailImg from "../assets/salesken/feature-ai-email.png";
-import personaCustomerImg from "../assets/salesken/persona-customer.png";
-import interviewSticker from "../assets/salesken/interview-sticker.png";
-import personaAgentImg from "../assets/salesken/persona-agent.png";
-import competitor1 from "../assets/salesken/competitors/competitor-1.png";
-import competitor2 from "../assets/salesken/competitors/competitor-2.png";
-import competitor3 from "../assets/salesken/competitors/competitor-3.png";
-import competitor4 from "../assets/salesken/competitors/competitor-4.png";
-import competitor5 from "../assets/salesken/competitors/competitor-5.png";
+import heroDashboard from "../assets/salesken/hero-dashboard.webp";
+import problemImg from "../assets/salesken/problem.webp";
+import researchCardImg from "../assets/salesken/research-card.webp";
+import researchBoardImg from "../assets/salesken/research-board.webp";
+import jtbdImg from "../assets/salesken/jtbd.webp";
+import howTwoSidesImg from "../assets/salesken/how-two-sides.webp";
+import scopingAgentImg from "../assets/salesken/scoping-agent.webp";
+import scopingCustomerImg from "../assets/salesken/scoping-customer.webp";
+import iterationsImg from "../assets/salesken/iterations.webp";
+import featureSmartTodoImg from "../assets/salesken/feature-smart-todo.webp";
+import featureAiEmailImg from "../assets/salesken/feature-ai-email.webp";
+import personaCustomerImg from "../assets/salesken/persona-customer.webp";
+import interviewSticker from "../assets/salesken/interview-sticker.webp";
+import personaAgentImg from "../assets/salesken/persona-agent.webp";
+import competitor1 from "../assets/salesken/competitors/competitor-1.webp";
+import competitor2 from "../assets/salesken/competitors/competitor-2.webp";
+import competitor3 from "../assets/salesken/competitors/competitor-3.webp";
+import competitor4 from "../assets/salesken/competitors/competitor-4.webp";
+import competitor5 from "../assets/salesken/competitors/competitor-5.webp";
 
 export const competitorLogos = [competitor1, competitor2, competitor3, competitor4, competitor5];
 

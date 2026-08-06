@@ -2,7 +2,7 @@ import bank from "../assets/playground/bank.gif";
 import coffee from "../assets/playground/coffee.gif";
 import zara from "../assets/playground/zara.gif";
 import porsche from "../assets/playground/Porsche.gif";
-import letter from "../assets/playground/letter.png";
+import letter from "../assets/playground/letter.webp";
 
 export interface PlaygroundImage {
   id: number;

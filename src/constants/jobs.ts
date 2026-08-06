@@ -1,6 +1,6 @@
-import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
-import ezyHomeCard from "../assets/blive-ezy/home-card.png";
-import saleskenBanner from "../assets/salesken/salesken-banner.png";
+import ticketThumbnail from "../assets/blive/ticket-thumbnail.webp";
+import ezyHomeCard from "../assets/blive-ezy/home-card.webp";
+import saleskenBanner from "../assets/salesken/salesken-banner.webp";
 import bliveIcon from "../assets/blive/blive-icon.svg";
 import saleskenIcon from "../assets/salesken/salesken-icon.svg";
 

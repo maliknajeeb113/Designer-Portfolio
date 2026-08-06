@@ -2,22 +2,22 @@
 // renders. Kept out of the page component so the prose can be edited without
 // touching layout code (and so the page isn't buried under asset imports).
 import bliveIcon from "../assets/blive-ezy/blive-icon.svg";
-import heroImg from "../assets/blive-ezy/hero.png";
-import competitorZypp from "../assets/blive-ezy/competitor-zypp.png";
-import competitorBounce from "../assets/blive-ezy/competitor-bounce.png";
-import competitorHala from "../assets/blive-ezy/competitor-hala.png";
-import competitorYulu from "../assets/blive-ezy/competitor-yulu.png";
-import competitorElectricV from "../assets/blive-ezy/competitor-electric-v.png";
-import ongroundResearchImg from "../assets/blive-ezy/onground-research.png";
-import researchBoardImg from "../assets/blive-ezy/research-board.png";
-import scopingUserStoryImg from "../assets/blive-ezy/scoping-user-story.png";
-import beatDay1Img from "../assets/blive-ezy/beat-day1.png";
-import beatWeek1Img from "../assets/blive-ezy/beat-week1.png";
-import beatWeek3Img from "../assets/blive-ezy/beat-week3.png";
-import riderOnboardingImg from "../assets/blive-ezy/rider-onboarding.png";
-import riderPayoutImg from "../assets/blive-ezy/rider-payout.png";
-import riderSupportImg from "../assets/blive-ezy/rider-support.png";
-import designSystemImg from "../assets/blive-ezy/design-system.png";
+import heroImg from "../assets/blive-ezy/hero.webp";
+import competitorZypp from "../assets/blive-ezy/competitor-zypp.webp";
+import competitorBounce from "../assets/blive-ezy/competitor-bounce.webp";
+import competitorHala from "../assets/blive-ezy/competitor-hala.webp";
+import competitorYulu from "../assets/blive-ezy/competitor-yulu.webp";
+import competitorElectricV from "../assets/blive-ezy/competitor-electric-v.webp";
+import ongroundResearchImg from "../assets/blive-ezy/onground-research.webp";
+import researchBoardImg from "../assets/blive-ezy/research-board.webp";
+import scopingUserStoryImg from "../assets/blive-ezy/scoping-user-story.webp";
+import beatDay1Img from "../assets/blive-ezy/beat-day1.webp";
+import beatWeek1Img from "../assets/blive-ezy/beat-week1.webp";
+import beatWeek3Img from "../assets/blive-ezy/beat-week3.webp";
+import riderOnboardingImg from "../assets/blive-ezy/rider-onboarding.webp";
+import riderPayoutImg from "../assets/blive-ezy/rider-payout.webp";
+import riderSupportImg from "../assets/blive-ezy/rider-support.webp";
+import designSystemImg from "../assets/blive-ezy/design-system.webp";
 
 // NOTE: prose below is transcribed from Figma — the client edits case-study copy
 // by hand. The placeholder phone mockups in the timeline are intentionally left

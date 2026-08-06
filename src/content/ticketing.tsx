@@ -4,22 +4,22 @@
 import { type ReactNode } from "react";
 import bliveIcon from "../assets/blive/blive-icon.svg";
 import warningIcon from "../assets/blive/warning.svg";
-import ticketThumbnail from "../assets/blive/ticket-thumbnail.png";
-import oldTicketing from "../assets/blive/old-ticketing.png";
-import jtbdImg from "../assets/blive/jtbd.png";
-import researchImg from "../assets/blive/research.png";
-import iterationsImg from "../assets/blive/iterations.png";
-import liveChatImg from "../assets/blive/tradeoffs/live-chat.png";
-import kanbanImg from "../assets/blive/tradeoffs/kanban-vs-table.png";
-import dsBeforeImg from "../assets/blive/design-system/before.png";
-import dsAfterImg from "../assets/blive/design-system/after.png";
-import adminSticker from "../assets/blive/personas/admin.png";
-import riderSticker from "../assets/blive/personas/rider.png";
-import dmSticker from "../assets/blive/personas/dm-manager.png";
-import recoverySticker from "../assets/blive/personas/recovery-manager.png";
-import riderCard from "../assets/blive/scoping/rider.png";
-import adminCard from "../assets/blive/scoping/admin.png";
-import supportCard from "../assets/blive/scoping/support-team.png";
+import ticketThumbnail from "../assets/blive/ticket-thumbnail.webp";
+import oldTicketing from "../assets/blive/old-ticketing.webp";
+import jtbdImg from "../assets/blive/jtbd.webp";
+import researchImg from "../assets/blive/research.webp";
+import iterationsImg from "../assets/blive/iterations.webp";
+import liveChatImg from "../assets/blive/tradeoffs/live-chat.webp";
+import kanbanImg from "../assets/blive/tradeoffs/kanban-vs-table.webp";
+import dsBeforeImg from "../assets/blive/design-system/before.webp";
+import dsAfterImg from "../assets/blive/design-system/after.webp";
+import adminSticker from "../assets/blive/personas/admin.webp";
+import riderSticker from "../assets/blive/personas/rider.webp";
+import dmSticker from "../assets/blive/personas/dm-manager.webp";
+import recoverySticker from "../assets/blive/personas/recovery-manager.webp";
+import riderCard from "../assets/blive/scoping/rider.webp";
+import adminCard from "../assets/blive/scoping/admin.webp";
+import supportCard from "../assets/blive/scoping/support-team.webp";
 
 // NOTE: prose below is placeholder/first-pass copy — the client edits case-study
 // text by hand. Stickers use emojis for now; real graphics come later.

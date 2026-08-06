@@ -3,7 +3,7 @@ import { useIsomorphicLayoutEffect } from "../hooks/useIsomorphicLayoutEffect";
 import PageShell from "../components/PageShell";
 import Container from "../components/Container";
 import { playgroundImages } from "../constants";
-import bow from "../assets/playground/bow.png";
+import bow from "../assets/playground/bow.webp";
 import Seo from "../components/Seo";
 import { PAGE_SEO } from "../config/seo";
 
