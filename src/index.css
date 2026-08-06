@@ -51,6 +51,14 @@ body {
   @apply overflow-x-hidden;
 }
 
+/* Visible keyboard focus. :focus-visible only matches keyboard/AT navigation,
+   so pointer users never see a ring — nothing had a focus style before. */
+:focus-visible {
+  outline: 2px solid theme('colors.brand.green');
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* Respect the OS "reduce motion" setting: near-instant instead of removed, so
    anything relying on an animation/transition completing still finishes. */
 @media (prefers-reduced-motion: reduce) {

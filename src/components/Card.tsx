@@ -62,7 +62,13 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar, li
           anchored to the top so the bottom of the screenshot is clipped */}
       <BrowserFrame url={urlBar} className="mt-2">
         <div className="group relative aspect-[1224/436] w-full overflow-hidden">
-          <img src={image} alt="" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
+          <img
+            src={image}
+            alt={`${headline.pre}${headline.highlight}${headline.post} — ${company} case study`}
+            className="h-full w-full object-cover object-top"
+            loading="lazy"
+            decoding="async"
+          />
           {linkTo && (
             <>
               {/* dim the screenshot on hover */}

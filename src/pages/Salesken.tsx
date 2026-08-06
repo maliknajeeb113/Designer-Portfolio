@@ -63,7 +63,14 @@ const Salesken = () => {
           {/* hero — co-browsing session */}
           <BrowserFrame url="www.saleken.ai" className="mt-12">
             <div className="aspect-[16/10] w-full overflow-hidden">
-              <img src={heroDashboard} alt="" className="h-full w-full object-cover object-top" loading="eager" fetchPriority="high" decoding="async" />
+              <img
+                src={heroDashboard}
+                alt="The Salesken Co-Browser agent dashboard during a live customer session"
+                className="h-full w-full object-cover object-top"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
             </div>
           </BrowserFrame>
 
@@ -246,7 +253,13 @@ const Salesken = () => {
             </p>
             <BrowserFrame url="www.saleken.ai" className="mt-8">
               <div className="aspect-[16/10] w-full overflow-hidden">
-                <img src={howTwoSidesImg} alt="" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
+                <img
+                  src={howTwoSidesImg}
+                  alt="The customer and agent views of one co-browsing session, side by side"
+                  className="h-full w-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </BrowserFrame>
             <p className="mt-6 rounded-2xl border border-ink/10 bg-ink/[0.02] px-5 py-4 text-sm sm:text-base text-ink-muted">

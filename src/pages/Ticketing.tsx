@@ -63,7 +63,14 @@ const Ticketing = () => {
           {/* thumbnail (same frame as the home page) */}
           <BrowserFrame url="blive.co.in" className="mt-12">
             <div className="aspect-[1224/436] w-full overflow-hidden">
-              <img src={ticketThumbnail} alt="" className="h-full w-full object-cover object-top" loading="eager" fetchPriority="high" decoding="async" />
+              <img
+                src={ticketThumbnail}
+                alt="The B:Live ticket management dashboard, showing the ticket list with status, owner and category columns"
+                className="h-full w-full object-cover object-top"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
             </div>
           </BrowserFrame>
 
