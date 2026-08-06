@@ -51,6 +51,19 @@ body {
   @apply overflow-x-hidden;
 }
 
+/* Respect the OS "reduce motion" setting: near-instant instead of removed, so
+   anything relying on an animation/transition completing still finishes. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .neu{
   box-shadow: -8px -6px 15px rgb(241, 241, 241), 6px 8px 15px rgba(0, 0, 0, .15);
   transition: box-shadow 0.2s ease-in-out;

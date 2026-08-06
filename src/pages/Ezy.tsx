@@ -37,7 +37,7 @@ const Ezy = () => {
 
           {/* meta line — company + period */}
           <div className="mt-6 flex items-center gap-2 text-sm uppercase tracking-wide text-ink-faint">
-            <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" />
+            <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" loading="lazy" decoding="async" />
             <span>B:Live - EV Mobility Platform</span>
             <span className="text-ink-faint/50">·</span>
             <span>2 MONTHS</span>
@@ -57,7 +57,7 @@ const Ezy = () => {
 
           {/* hero — redesigned EZY dashboard, with ratings + store annotations */}
           <BrowserFrame url="blive.co.in" className="mt-12">
-            <img src={heroImg} alt="The redesigned EZY rider app home screen" className="w-full" />
+            <img src={heroImg} alt="The redesigned EZY rider app home screen" className="w-full" loading="eager" fetchPriority="high" decoding="async" />
           </BrowserFrame>
 
           {/* about + team */}
@@ -144,8 +144,7 @@ const Ezy = () => {
                       <img
                         src={beat.image}
                         alt={`${beat.title} — screen`}
-                        className="-mb-7 w-full max-w-[340px] sm:-mb-9"
-                      />
+                        className="-mb-7 w-full max-w-[340px] sm:-mb-9" loading="lazy" decoding="async" />
                     </div>
                   )}
                 </div>
@@ -173,16 +172,14 @@ const Ezy = () => {
                             key={logo}
                             src={logo}
                             alt=""
-                            className="h-12 w-12 shrink-0 rounded-xl object-contain"
-                          />
+                            className="h-12 w-12 shrink-0 rounded-xl object-contain" loading="lazy" decoding="async" />
                         ))}
                       </div>
                     ) : (
                       <img
                         src={track.icon ?? undefined}
                         alt=""
-                        className="mb-5 h-16 w-16 object-contain place-self-start"
-                      />
+                        className="mb-5 h-16 w-16 object-contain place-self-start" loading="lazy" decoding="async" />
                     )}
                     <h4 className="font-display text-xl font-medium text-ink">{track.title}</h4>
                     <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-md bg-brand-pink-light px-2 py-1 text-sm font-medium text-brand-pink">
@@ -197,8 +194,7 @@ const Ezy = () => {
                 <img
                   src={researchBoardImg}
                   alt="Research synthesis board — competitive teardown and interview notes"
-                  className="h-full w-full object-cover object-top"
-                />
+                  className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
               </div>
             </div>
 
@@ -262,8 +258,7 @@ const Ezy = () => {
           <img
             src={scopingUserStoryImg}
             alt="Rider user story — onboarding, earnings, and support"
-            className="mt-10 w-full max-w-3xl"
-          />
+            className="mt-10 w-full max-w-3xl" loading="lazy" decoding="async" />
         </Container>
       </section>
 
@@ -325,8 +320,7 @@ const Ezy = () => {
                       <img
                         src={story.image}
                         alt={`${story.title} — before and after screens`}
-                        className="aspect-[656/360] w-full object-cover"
-                      />
+                        className="aspect-[656/360] w-full object-cover" loading="lazy" decoding="async" />
                     </div>
                   ) : (
                     <div className="mt-auto flex aspect-[656/360] items-center justify-center rounded-xl border border-dashed border-ink/15 bg-ink/[0.03] text-ink-faint">
@@ -373,8 +367,7 @@ const Ezy = () => {
             <img
               src={designSystemImg}
               alt="EZY design system — before and after rider app screens"
-              className="mt-8 w-full rounded-3xl"
-            />
+              className="mt-8 w-full rounded-3xl" loading="lazy" decoding="async" />
           </div>
         </Container>
       </section>

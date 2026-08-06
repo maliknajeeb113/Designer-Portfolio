@@ -42,7 +42,7 @@ const Salesken = () => {
 
           {/* meta line — company + period */}
           <div className="mt-6 flex items-center gap-2 text-sm uppercase tracking-wide text-ink-faint">
-            <img src={saleskenIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" />
+            <img src={saleskenIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" loading="lazy" decoding="async" />
             <span>Salesken.ai</span>
             <span className="text-ink-faint/50">·</span>
             <span>5 MONTHS</span>
@@ -63,7 +63,7 @@ const Salesken = () => {
           {/* hero — co-browsing session */}
           <BrowserFrame url="www.saleken.ai" className="mt-12">
             <div className="aspect-[16/10] w-full overflow-hidden">
-              <img src={heroDashboard} alt="" className="h-full w-full object-cover object-top" />
+              <img src={heroDashboard} alt="" className="h-full w-full object-cover object-top" loading="eager" fetchPriority="high" decoding="async" />
             </div>
           </BrowserFrame>
 
@@ -126,8 +126,7 @@ const Salesken = () => {
                 <img
                   src={problemImg}
                   alt="The existing Real-Time Sales Assistance screen"
-                  className="h-full w-full object-cover object-left-top"
-                />
+                  className="h-full w-full object-cover object-left-top" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -148,7 +147,7 @@ const Salesken = () => {
                   {/* name + sticker share the top row; copy runs full width below */}
                   <div className="flex items-center gap-3">
                     <h4 className="font-display text-2xl font-medium text-ink">{p.name}</h4>
-                    <img src={p.img} alt="" className="h-14 w-auto shrink-0 object-contain" />
+                    <img src={p.img} alt="" className="h-14 w-auto shrink-0 object-contain" loading="lazy" decoding="async" />
                   </div>
                   <div className="mt-5">
                     <span
@@ -188,14 +187,13 @@ const Salesken = () => {
                             key={i}
                             src={logo}
                             alt=""
-                            className="h-12 w-12 rounded-[12px] object-contain"
-                          />
+                            className="h-12 w-12 rounded-[12px] object-contain" loading="lazy" decoding="async" />
                         ))}
                       </div>
                     )}
                     {/* persona sticker for the interview track */}
                     {track.sticker && (
-                      <img src={track.sticker} alt="" className="mb-2 h-20 w-auto object-contain place-self-start" />
+                      <img src={track.sticker} alt="" className="mb-2 h-20 w-auto object-contain place-self-start" loading="lazy" decoding="async" />
                     )}
                     <h4 className="font-display text-xl font-semibold text-ink">{track.title}</h4>
                     <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-lg bg-brand-pink-light px-2 py-1 text-sm font-medium text-brand-pink">
@@ -210,16 +208,14 @@ const Salesken = () => {
                 <img
                   src={researchCardImg}
                   alt="Competitive teardown board in Notion"
-                  className="h-full w-full object-cover object-top"
-                />
+                  className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
               </div>
             </div>
             <div className="mt-8 aspect-[1512/630] w-full overflow-hidden rounded-2xl border border-ink/10">
               <img
                 src={researchBoardImg}
                 alt="Research synthesis board"
-                className="h-full w-full object-cover object-top"
-              />
+                className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -227,7 +223,7 @@ const Salesken = () => {
           <div className="mt-20">
             <Eyebrow>JTBD framework</Eyebrow>
             <div className="mt-6 aspect-[1512/744] w-full overflow-hidden rounded-2xl border border-ink/10">
-              <img src={jtbdImg} alt="Jobs-to-be-done framework" className="h-full w-full object-cover object-top" />
+              <img src={jtbdImg} alt="Jobs-to-be-done framework" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -250,7 +246,7 @@ const Salesken = () => {
             </p>
             <BrowserFrame url="www.saleken.ai" className="mt-8">
               <div className="aspect-[16/10] w-full overflow-hidden">
-                <img src={howTwoSidesImg} alt="" className="h-full w-full object-cover object-top" />
+                <img src={howTwoSidesImg} alt="" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
               </div>
             </BrowserFrame>
             <p className="mt-6 rounded-2xl border border-ink/10 bg-ink/[0.02] px-5 py-4 text-sm sm:text-base text-ink-muted">
@@ -275,8 +271,7 @@ const Salesken = () => {
                 <img
                   src={shot.src}
                   alt={shot.alt}
-                  className="w-full"
-                />
+                  className="w-full" loading="lazy" decoding="async" />
               </div>
             ))}
           </div>
@@ -307,8 +302,7 @@ const Salesken = () => {
               <img
                 src={iterationsImg}
                 alt="Design iteration board in Figma"
-                className="w-full shrink-0 rounded-3xl border border-ink/10 md:w-[700px]"
-              />
+                className="w-full shrink-0 rounded-3xl border border-ink/10 md:w-[700px]" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -332,8 +326,7 @@ const Salesken = () => {
                   <img
                     src={feature.image}
                     alt={`${feature.title} — screen`}
-                    className="w-full rounded-2xl border border-ink/10 object-cover object-top"
-                  />
+                    className="w-full rounded-2xl border border-ink/10 object-cover object-top" loading="lazy" decoding="async" />
                 </div>
               ))}
             </div>

@@ -94,8 +94,7 @@ const DraggablePiece = ({ piece, bringToFront }: { piece: Piece; bringToFront: (
         src={piece.src}
         alt={piece.alt}
         draggable={false}
-        className="pointer-events-none w-full rounded-3xl border border-ink-faint"
-      />
+        className="pointer-events-none w-full rounded-3xl border border-ink-faint" loading="lazy" decoding="async" />
       {corners.map((c) => (
         <span
           key={c.pos}
@@ -160,7 +159,7 @@ const Playground = () => {
         <h1 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
           Playground/
           <span className="font-script text-[1.15em] text-brand-green">Vibe Coding.</span>
-          <img src={bow} alt="" className="ml-3 inline-block h-[2em] w-auto align-middle" />
+          <img src={bow} alt="" className="ml-3 inline-block h-[2em] w-auto align-middle" loading="lazy" decoding="async" />
         </h1>
         <p className="mt-4 text-sm text-ink-faint">
           Drag the pieces around, grab a corner to resize &amp; rotate. ✦

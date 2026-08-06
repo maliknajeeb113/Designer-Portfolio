@@ -25,8 +25,7 @@ const About = () => (
               alt="Avni Garg, product designer, smiling outdoors"
               width={1440}
               height={1800}
-              className="aspect-[4/5] w-full rounded-3xl border border-ink/10 object-cover shadow-sm"
-            />
+              className="aspect-[4/5] w-full rounded-3xl border border-ink/10 object-cover shadow-sm" loading="eager" fetchPriority="high" decoding="async" />
           </div>
 
           <div className="lg:flex-1">
@@ -79,7 +78,7 @@ const About = () => (
                 <h2 className="font-display text-lg font-semibold text-ink">{exp.title}</h2>
                 <div className="mt-1 flex items-center gap-2 text-sm text-ink-faint">
                   {exp.icon && (
-                    <img src={exp.icon} alt="" className="h-5 w-5 shrink-0 object-contain" />
+                    <img src={exp.icon} alt="" className="h-5 w-5 shrink-0 object-contain" loading="lazy" decoding="async" />
                   )}
                   {exp.company}
                 </div>

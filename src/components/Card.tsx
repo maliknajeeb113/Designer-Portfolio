@@ -25,7 +25,7 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar, li
           {headline.post}
         </h2>
         <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-ink-faint">
-          <img src={icon} alt="" className="h-5 w-5 shrink-0 object-contain" />
+          <img src={icon} alt="" className="h-5 w-5 shrink-0 object-contain" loading="lazy" decoding="async" />
           <span>
             {company} · {period}
           </span>
@@ -62,7 +62,7 @@ const Card = ({ label, headline, company, period, icon, stats, image, urlBar, li
           anchored to the top so the bottom of the screenshot is clipped */}
       <BrowserFrame url={urlBar} className="mt-2">
         <div className="group relative aspect-[1224/436] w-full overflow-hidden">
-          <img src={image} alt="" className="h-full w-full object-cover object-top" />
+          <img src={image} alt="" className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
           {linkTo && (
             <>
               {/* dim the screenshot on hover */}

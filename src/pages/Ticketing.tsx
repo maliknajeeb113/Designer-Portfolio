@@ -42,7 +42,7 @@ const Ticketing = () => {
 
           {/* meta line — company + period */}
           <div className="mt-6 flex items-center gap-2 text-sm uppercase tracking-wide text-ink-faint">
-            <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" />
+            <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" loading="lazy" decoding="async" />
             <span>B:Live, EV Mobility Platform</span>
             <span className="text-ink-faint/50">·</span>
             <span>2 MONTHS</span>
@@ -63,7 +63,7 @@ const Ticketing = () => {
           {/* thumbnail (same frame as the home page) */}
           <BrowserFrame url="blive.co.in" className="mt-12">
             <div className="aspect-[1224/436] w-full overflow-hidden">
-              <img src={ticketThumbnail} alt="" className="h-full w-full object-cover object-top" />
+              <img src={ticketThumbnail} alt="" className="h-full w-full object-cover object-top" loading="eager" fetchPriority="high" decoding="async" />
             </div>
           </BrowserFrame>
 
@@ -115,7 +115,7 @@ const Ticketing = () => {
                   {problemCards.map((card) => (
                     <div key={card.title} className="rounded-2xl border border-ink/10 bg-ink-faint/[0.05] p-5">
                       <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-ink/10 bg-white shadow-sm">
-                        <img src={warningIcon} alt="" className="h-5 w-5" />
+                        <img src={warningIcon} alt="" className="h-5 w-5" loading="lazy" decoding="async" />
                       </span>
                       <div className="mt-3 font-medium text-ink">{card.title}</div>
                       <p className="mt-1 text-sm text-ink-muted">{card.text}</p>
@@ -129,8 +129,7 @@ const Ticketing = () => {
                 <img
                   src={oldTicketing}
                   alt="The old WhatsApp + spreadsheet ticketing flow"
-                  className="absolute inset-0 h-full w-full rounded-3xl border border-ink/10 object-cover object-top bg-ink-faint/[0.05]"
-                />
+                  className="absolute inset-0 h-full w-full rounded-3xl border border-ink/10 object-cover object-top bg-ink-faint/[0.05]" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -156,8 +155,7 @@ const Ticketing = () => {
                 <img
                   src={researchImg}
                   alt="Research board and interviews"
-                  className="absolute inset-0 h-full w-full rounded-3xl border border-ink/10 object-cover object-top"
-                />
+                  className="absolute inset-0 h-full w-full rounded-3xl border border-ink/10 object-cover object-top" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -174,7 +172,7 @@ const Ticketing = () => {
                   {/* name + sticker share the top row; copy runs full width below */}
                   <div className="flex items-center gap-3">
                     <h4 className="font-display text-xl sm:text-2xl font-medium text-ink">{p.name}</h4>
-                    <img src={p.img} alt="" className="h-14 w-auto shrink-0 object-contain" />
+                    <img src={p.img} alt="" className="h-14 w-auto shrink-0 object-contain" loading="lazy" decoding="async" />
                   </div>
                   <p className="mt-4 text-sm text-ink-muted">{p.role}</p>
 
@@ -198,8 +196,7 @@ const Ticketing = () => {
             <img
               src={jtbdImg}
               alt="Jobs-to-be-done framework — When / I want to / So I can"
-              className="mt-6 w-full rounded-2xl border border-ink/10"
-            />
+              className="mt-6 w-full rounded-2xl border border-ink/10" loading="lazy" decoding="async" />
           </div>
 
           {/* Action plan */}
@@ -221,7 +218,7 @@ const Ticketing = () => {
           {/* mobile: equal-width cards stacked one after another */}
           <div className="mt-8 flex flex-col gap-6 lg:hidden">
             {personaCards.map((card) => (
-              <img key={card.alt} src={card.src} alt={card.alt} className="w-full" />
+              <img key={card.alt} src={card.src} alt={card.alt} className="w-full" loading="lazy" decoding="async" />
             ))}
           </div>
 
@@ -233,8 +230,7 @@ const Ticketing = () => {
                 src={card.src}
                 alt={card.alt}
                 className="absolute"
-                style={{ left: card.left, top: card.top, width: card.width }}
-              />
+                style={{ left: card.left, top: card.top, width: card.width }} loading="lazy" decoding="async" />
             ))}
           </div>
         </Container>
@@ -252,8 +248,7 @@ const Ticketing = () => {
               <img
                 src={iterationsImg}
                 alt="Design iteration screens"
-                className="h-full w-full object-cover object-top"
-              />
+                className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -289,8 +284,7 @@ const Ticketing = () => {
                     <img
                       src={t.image}
                       alt={`${t.title} — screens`}
-                      className="w-full rounded-2xl border border-ink/10 object-top lg:h-[400px] lg:object-cover"
-                    />
+                      className="w-full rounded-2xl border border-ink/10 object-top lg:h-[400px] lg:object-cover" loading="lazy" decoding="async" />
                   </div>
                 );
               })}
@@ -327,8 +321,7 @@ const Ticketing = () => {
                     <img
                       src={shot.src}
                       alt={`Dashboard ${shot.label.toLowerCase()} the design system`}
-                      className="h-full w-full object-cover object-top"
-                    />
+                      className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
                   </div>
                 </div>
               ))}

@@ -69,8 +69,7 @@ const Hero = () => {
                     key={i}
                     src={src}
                     alt=""
-                    className="h-8 w-8 rounded-full border-2 border-white object-cover"
-                  />
+                    className="h-8 w-8 rounded-full border-2 border-white object-cover" loading="lazy" decoding="async" />
                 ))}
               </div>
               <span className="text-sm text-ink-faint">

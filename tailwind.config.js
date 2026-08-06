@@ -43,6 +43,18 @@ export default {
       backgroundColor: {
         primary: 'rgb(241, 241, 241)',
         'primary-dark': '#1e1e1e'
+      },
+      keyframes: {
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+      },
+      animation: {
+        // No fill-mode on purpose: the element's resting opacity stays 1, so if
+        // animations never run (reduced motion, old browser) content is visible
+        // rather than stuck transparent.
+        'fade-in': 'fade-in 0.5s ease-out',
       }
     },
   },
