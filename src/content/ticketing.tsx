@@ -48,7 +48,7 @@ export const personas = [
   { name: "Admin", role: "Oversees the whole support operation.", needs: "Needs to change routing rules (categories, departments, reasons) themselves, and reassign stuck tickets with the change always logged.", bg: "bg-emerald-50/70", pill: "bg-emerald-100", text: "text-emerald-800", img: adminSticker },
   { name: "Rider", role: "Raises issues about payments, vehicles, documents. Low patience, on the road.", needs: "Needs a simple way to raise an issue and see it's being handled, without calling someone they know personally.", bg: "bg-blue-50/70", pill: "bg-blue-100", text: "text-blue-800", img: riderSticker },
   { name: "DM Manager", role: "Personally allocated to specific riders, who call them for everything.", needs: "Needs their own riders' tickets to reach them directly, with enough context to respond like someone who already knows them.", bg: "bg-amber-50/70", pill: "bg-amber-100", text: "text-amber-800", img: dmSticker },
-  { name: "Recovery Manager", role: "Oversees the whole support operation.", needs: "Needs immediate visibility into dues-linked tickets (immobilization, payment, blocked closures) with an unambiguous payment-status reason on close.", bg: "bg-brand-pink-light/40", pill: "bg-brand-pink-light", text: "text-brand-pink", img: recoverySticker },
+  { name: "Recovery Manager", role: "Oversees the whole vehicle recovery operation.", needs: "Needs immediate visibility into dues-linked tickets (immobilization, payment, blocked closures) with an unambiguous payment-status reason on close.", bg: "bg-brand-pink-light/40", pill: "bg-brand-pink-light", text: "text-brand-pink", img: recoverySticker },
 ];
 
 // Breadcrumb-style steps. `color` cycles the existing brand accents for the
