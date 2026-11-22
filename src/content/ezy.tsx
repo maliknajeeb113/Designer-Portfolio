@@ -1,4 +1,4 @@
-// Content for the EZY rider app (B:Live) case study: copy, imagery and the data the page
+// Content for the EZY rider app (BLive) case study: copy, imagery and the data the page
 // renders. Kept out of the page component so the prose can be edited without
 // touching layout code (and so the page isn't buried under asset imports).
 import bliveIcon from "../assets/blive-ezy/blive-icon.svg";

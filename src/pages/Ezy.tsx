@@ -38,7 +38,7 @@ const Ezy = () => {
           {/* meta line — company + period */}
           <div className="mt-6 flex items-center gap-2 text-sm uppercase tracking-wide text-ink-faint">
             <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" loading="lazy" decoding="async" />
-            <span>B:Live - EV Mobility Platform</span>
+            <span>BLive - EV Mobility Platform</span>
             <span className="text-ink-faint/50">·</span>
             <span>2 MONTHS</span>
           </div>

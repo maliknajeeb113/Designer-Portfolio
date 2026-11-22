@@ -25,7 +25,7 @@ export const SITE = {
   role: "Product Designer",
   title: "Avni Garg — Product Designer",
   description:
-    "Product designer at B:Live turning complex B2B & B2C SaaS into interfaces people actually understand. Research-led, 0→1, end to end.",
+    "Product designer at BLive turning complex B2B & B2C SaaS into interfaces people actually understand. Research-led, 0→1, end to end.",
   location: "Bangalore, India",
   email: "avni.garg.in@gmail.com",
 } as const;

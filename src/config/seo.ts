@@ -14,17 +14,17 @@ export const PAGE_SEO = {
     path: "/",
     title: `${SITE.name} — Product Designer`,
     description:
-      "Product designer at B:Live turning complex B2B & B2C SaaS into interfaces people actually understand. Research-led, 0→1, end to end.",
+      "Product designer at BLive turning complex B2B & B2C SaaS into interfaces people actually understand. Research-led, 0→1, end to end.",
   },
   about: {
     path: "/about",
     title: `About — ${SITE.name}`,
     description:
-      "Product designer in Bangalore working on B2B and B2C EV mobility software at B:Live. Previously Salesken.ai. Research, systems, and 0→1 product design.",
+      "Product designer in Bangalore working on B2B and B2C EV mobility software at BLive. Previously Salesken.ai. Research, systems, and 0→1 product design.",
   },
   ticketing: {
     path: "/ticketing",
-    title: `Ticketing platform for B:Live — ${SITE.name}`,
+    title: `Ticketing platform for BLive — ${SITE.name}`,
     description:
       "Case study: replacing WhatsApp-and-spreadsheet support with a ticketing system that gives every issue one accountable owner. 70% faster resolution.",
   },
@@ -63,7 +63,7 @@ export const personJsonLd = {
   email: SITE.email,
   url: SITE_URL,
   address: { "@type": "PostalAddress", addressLocality: "Bangalore", addressCountry: "IN" },
-  worksFor: { "@type": "Organization", name: "B:Live", url: "https://www.blive.co.in" },
+  worksFor: { "@type": "Organization", name: "BLive", url: "https://www.blive.co.in" },
   knowsAbout: [
     "Product Design",
     "UX Research",
