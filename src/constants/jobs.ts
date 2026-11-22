@@ -31,7 +31,7 @@ export const jobsData: JobData[] = [
     icon: bliveIcon,
     stats: [
       { value: "70%", label: "Faster ticket resolution" },
-      { value: "95%", label: "Auto-assignment accuracy" },
+      { value: "90%", label: "Auto-assignment accuracy" },
       { value: "15min", label: "To acknowledgment" },
       { value: "0", label: "Orphaned tickets" },
     ],
