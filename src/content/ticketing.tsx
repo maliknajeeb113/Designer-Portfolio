@@ -1,4 +1,4 @@
-// Content for the B:Live ticketing platform case study: copy, imagery and the data the page
+// Content for the BLive ticketing platform case study: copy, imagery and the data the page
 // renders. Kept out of the page component so the prose can be edited without
 // touching layout code (and so the page isn't buried under asset imports).
 import { type ReactNode } from "react";
@@ -35,7 +35,7 @@ export const team = [
 ];
 
 export const problemCards = [
-  { title: "Rider contact through WhatsApp", text: "Riders called or WhatsApp'd whoever they personally knew at B:Live." },
+  { title: "Rider contact through WhatsApp", text: "Riders called or WhatsApp'd whoever they personally knew at BLive." },
   { title: "Using spreadsheets for records", text: "Issues were noted in spreadsheets, forwarded manually, or simply forgotten." },
   { title: "No accountability", text: "Zero digital record, no history, no status." },
   { title: "No assigned user", text: "Most issues died for one reason: no ticket was ever assigned to anyone." },

@@ -49,7 +49,7 @@ const About = () => (
                 human-centered digital experiences.
               </p>
               <p>
-                Currently, I design B2B and B2C experiences at B:Live, helping fleet operators and
+                Currently, I design B2B and B2C experiences at BLive, helping fleet operators and
                 delivery professionals use EVs efficiently through smart fleet and mobility
                 solutions.
               </p>

@@ -43,7 +43,7 @@ const Ticketing = () => {
           {/* meta line — company + period */}
           <div className="mt-6 flex items-center gap-2 text-sm uppercase tracking-wide text-ink-faint">
             <img src={bliveIcon} alt="" className="h-6 w-6 shrink-0 rounded object-contain" loading="lazy" decoding="async" />
-            <span>B:Live, EV Mobility Platform</span>
+            <span>BLive, EV Mobility Platform</span>
             <span className="text-ink-faint/50">·</span>
             <span>2 MONTHS</span>
           </div>
@@ -65,7 +65,7 @@ const Ticketing = () => {
             <div className="aspect-[1224/436] w-full overflow-hidden">
               <img
                 src={ticketThumbnail}
-                alt="The B:Live ticket management dashboard, showing the ticket list with status, owner and category columns"
+                alt="The BLive ticket management dashboard, showing the ticket list with status, owner and category columns"
                 className="h-full w-full object-cover object-top"
                 loading="eager"
                 decoding="async"
@@ -112,7 +112,7 @@ const Ticketing = () => {
             <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
               <div>
                 <p className="text-lg  text-ink">
-                  B:Live manages EV fleets for delivery riders across cities. When something went
+                  BLive manages EV fleets for delivery riders across cities. When something went
                   wrong, a payment failure, a vehicle breakdown, a document issue, this is how it
                   got &ldquo;handled.&rdquo;
                 </p>
@@ -307,7 +307,7 @@ const Ticketing = () => {
               The dashboard had no usable design system, so alongside this project I built one for the
               entire platform, not just this module. I started from <span className="text-ink">Align UI,</span> a purchased
               component library, as the foundation, but a library alone is just raw components. I
-              designed and assembled the actual system B:Live needed: tokens adapted to B:Live&rsquo;s
+              designed and assembled the actual system BLive needed: tokens adapted to BLive&rsquo;s
               brand (color, type, spacing, elevation), components customized and extended into tables,
               filters, modals, dependent dropdowns, status tags, uploads, and empty states, and
               reusable patterns, table + filter bar, detail view + activity log, confirmation/guardrail
@@ -356,7 +356,7 @@ const Ticketing = () => {
             <p>
               Support went from <Em>&ldquo;WhatsApp someone you know and hope&rdquo;</Em> to a system where
               every issue has a record, an owner, a status the rider can see, and a documented
-              resolution. Service quality improved across the board, and for the first time, B:Live
+              resolution. Service quality improved across the board, and for the first time, BLive
               has the data to keep improving it.
             </p>
             <p>
